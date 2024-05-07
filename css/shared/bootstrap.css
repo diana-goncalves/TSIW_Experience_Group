@@ -1,0 +1,61 @@
+/* Cartão */
+.event-card {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+    border: 0.3rem solid;
+    border-image: linear-gradient(to bottom left, #FFEE32, #666666) 1;
+    box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    background-color: #333533;
+    min-height: 270px;
+   
+  }
+  /* Titulo do cartão */
+  .event-title {
+    color: #faf4f4;
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  /*  Texto do cartão  */
+  .event-description {
+    color: #faf4f4;
+    margin-top: 2rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  /* + icon, anchor para site do evento */
+  .event-link {
+    display: flex;
+    align-items: center;
+    color: #FFD100;
+    font-weight: 300;
+    font-size: 2rem;
+    text-decoration: none;
+    height: 1.3rem;
+    line-height: 1;
+  }
+  /* div do carrossel */
+  #carousel {
+    margin: 2rem;
+    max-width: 31.25rem;
+  }
+  /* elementos do carrossel (neste caso é o cartão)*/
+  .carousel-item {
+    padding: 0;
+  }
+  /* traços que controlam carrossel */
+  .carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: inherit;
+    margin: 0;
+  }
+  /* mudar a cor do traço (indicador) ativo */
+  .carousel-indicators .active {
+    background-color: #ffd100;
+  }
+/* Cartão */

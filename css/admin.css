@@ -1,0 +1,136 @@
+:root {
+    background-color: #333533;
+    
+}
+.row {
+    background-color: #333533;
+    max-height: 100vh;
+    overflow: hidden;
+    padding-left: 0;
+}
+#menu_desktop {
+    padding: 0;
+    background-color: #333533;
+    max-height: 100%;
+    overflow-y: auto;
+    max-width: 21rem;
+    
+}
+#menu_mobile {
+    background-color: #333533;
+    padding: 0;
+}
+#content {
+    padding: 0;   
+}
+#pills-tabContent {
+    background-color: #333533;
+}
+.card {
+    margin-top: 2rem;
+    border-color: #D6D6D6;
+    border-left: 0;
+    background-color: #333533;
+    margin-right: 2rem;
+    max-height: 100%;
+    overflow-y: auto;
+    border-radius: 0;
+}
+.card-body {
+    border-top: solid;
+    border-width: 1px;
+    border-color: #faf4f4;
+    padding: 0;
+}
+.cardContent {
+    margin: 2rem;
+    /* border-color: #D6D6D6; */
+    background-color: #333533;
+    max-height: 100%;
+    overflow-y: auto;
+    border-radius: 0;
+}
+.card-bodyContent {
+    /* border: solid;
+    border-width: 1px;
+    border-color: #faf4f4; */
+    padding: 1rem;
+}
+.nav-pills .nav-link {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    border-radius: 0;
+    background-color: #333533;
+    color: #faf4f4;
+    height: 4rem;
+}
+.nav-pills .nav-link.active{
+    border-left: 0.25rem solid #FAF4F4;
+    background-color: #FFD100;
+    /* Comentado porque contraste com o texto é muito baixo */
+    /* mix-blend-mode: multiply; */
+}
+.nav-pills .nav-link.active{
+    color: black;
+    padding: 0;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black; */
+}
+h2 {
+    color: #faf4f4;
+    text-align: center;
+    margin: 1rem;
+}
+h4 {
+    padding-left: 0.5rem;
+    border-left: 0.25rem solid #FFD100;
+    color: #FFD100;
+    margin-bottom: 1rem;
+}
+hr {
+    background-color: #faf4f4;
+    /* color: #faf4f4; */
+    margin: 0;
+    height: 0.2rem;
+}
+#btnGuardar {
+    width: 7.625rem;
+    height: 2.4375rem;
+    flex-shrink: 0;
+    background: #FFD100;
+    color: #333533;
+    border: 0;
+    border-radius: 0;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
+}
+.form-control {
+    background-color: #333533;
+    border-radius: 0;
+}
+label {
+    color: #FAF4F4;
+}
+.form-floating {
+    margin-left: 1rem;
+}
+.form-floating input{
+    background-color: #333533;
+    color: #FAF4F4;
+}
+.form-floating>.form-control-plaintext:focus, .form-floating>.form-control-plaintext:not(:placeholder-shown), .form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#buttons {
+    height: 100vh;
+}
+#imgSVG {
+    margin-bottom: -1rem;
+    margin-right: 1rem;
+}
