@@ -1,7 +1,7 @@
 :root {
     /*Color*/
     --font-color: #D6D6D6;
-    --color-white: #FFFFFF;
+    --color-white: #FAF4F4;
     --color-yellow: #FFD100;
     --color-light-yellow: #FFEE32;
     --color-black: #202020;
@@ -11,5 +11,5 @@
     --color-gray-gradient: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(102,102,102,0.2) 100%);
     --color-yellow-gradient: linear-gradient(0deg, rgba(255,238,50,1) 0%, rgba(255,209,0,1) 100%);
     --color-yellowToGray-gradient: linear-gradient(0deg, rgba(255,238,50,1) 0%, rgba(102,102,102,0.2) 100%);
-    --color-yellowToSolidGray-gradient: linear-gradient(0deg, rgba(255,238,50,1) 0%, rgba(102,102,102,1) 100%);
+    --color-yellowToSolidGray-gradient: linear-gradient(0deg, rgba(255,238,50,1) 0%, rgba(102,102,102,1) 1);
 }   

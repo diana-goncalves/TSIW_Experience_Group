@@ -1,3 +1,5 @@
+@import url("variables.css");
+
 /* Cartão */
 .event-card {
     padding-top: 0.75rem;
@@ -7,20 +9,20 @@
     border-image: linear-gradient(to bottom left, #FFEE32, #666666) 1;
     box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
-    background-color: #333533;
+    background-color: var(--color-dark-gray);
     min-height: 270px;
    
   }
   /* Titulo do cartão */
   .event-title {
-    color: #faf4f4;
+    color: var(--color-white);
     text-decoration: underline;
     font-weight: 700;
     font-size: 2rem;
   }
   /*  Texto do cartão  */
   .event-description {
-    color: #faf4f4;
+    color: var(--color-white);
     margin-top: 2rem;
     font-weight: 500;
     font-size: 1rem;
@@ -29,7 +31,7 @@
   .event-link {
     display: flex;
     align-items: center;
-    color: #FFD100;
+    color: var(--color-yellow);
     font-weight: 300;
     font-size: 2rem;
     text-decoration: none;
@@ -56,6 +58,6 @@
   }
   /* mudar a cor do traço (indicador) ativo */
   .carousel-indicators .active {
-    background-color: #ffd100;
+    background-color: var(--color-yellow);
   }
 /* Cartão */
