@@ -20,7 +20,7 @@
 }
 /* Cartão que contém botões desktop */
 .card {
-    margin-top: 2rem;
+   /* margin-top: 2rem;  Remover comentario para adicionar margem entre navbar e o resto do site */
     border-color: var(--color-light-gray);
     border-left: 0;
     background-color: var(--color-dark-gray);
@@ -104,6 +104,11 @@ hr {
 }
 label {
     color: var(--color-white);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 24px);
+   
 }
 .form-floating {
     margin-left: 1rem;
@@ -122,8 +127,10 @@ label {
 }
 /* Icon adicionar imagem */
 #imgSVG {
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
     margin-bottom: -1rem;
     margin-right: 1rem;
+    margin-left: 1rem;
 }
 /* Botões menu mobile */
 .nav-pills .nav-item {
@@ -143,6 +150,48 @@ label {
     background-color: var(--color-yellow);
     color: var(--color-black);
     padding: 0.5rem;
+}
+.icon-search {
+    color: var(--color-yellow);
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+#btnFiltro {
+    width: 7.625rem;
+    height: 2.4375rem;
+    flex-shrink: 0;
+    background: transparent;
+    color: var(--color-yellow);
+    border: 1px solid var(--color-light-gray);
+    border-radius: 0;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
+    margin: 0.5rem;
+    
+}
+#btnOrder {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--color-light-gray);
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
+    scale: 1.05;
+    margin: 0.5rem;
 
 }
-/* Botões menu mobile */
+/* Tabela */
+.table>:not(caption)>*>* {
+    background-color: transparent;
+    border-width: 1px;
+    border-color: var(--color-white);
+    
+}
+thead {
+    background-color: var(--color-yellow);
+}
+.table th {
+    color: var(--color-dark-gray);
+}
+/* Tabela */

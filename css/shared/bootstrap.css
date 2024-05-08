@@ -6,7 +6,7 @@
     padding-bottom: 0.75rem;
     margin-bottom: 2rem;
     border: 0.3rem solid;
-    border-image: linear-gradient(to bottom left, #FFEE32, #666666) 1;
+    border-image: var(--color-yellowToSolidGray-gradient);
     box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
     background-color: var(--color-dark-gray);
