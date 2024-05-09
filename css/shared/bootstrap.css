@@ -4,7 +4,7 @@
 .event-card {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    margin-bottom: 2rem;
+    margin: 2rem;
     border: 0.3rem solid;
     border-image: var(--color-yellowToSolidGray-gradient);
     box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
@@ -67,3 +67,7 @@
     background-color: var(--color-yellow);
 }
 /* Cartão */
+.card-interior {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+}
