@@ -3,11 +3,11 @@
 /*Import CSS Shared*/
 /* @import url("./shared/reset.css"); */
 @import url("./shared/variables.css");
-@import url("./shared/base.css");
+/* @import url("./shared/base.css"); */
 @import url("./shared/bootstrap.css");
 /*Import CSS Pages*/
-@import url("./pages/...");
-@import url("./pages/...");
+@import url("./Escape-Room/hall.css");
+@import url("./pages/admin.css");
 @import url("./pages/...");
 @import url("./pages/...");
 @import url("./pages/...");
