@@ -1,0 +1,19 @@
+.imgSala{
+    object-fit:cover;
+    position: absolute;
+}
+
+.imgComputador{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    transition: all 0.5s;
+}
+.imgSaida{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    transition: all 0.5s;
+}

@@ -6,6 +6,7 @@
 /* @import url("./shared/base.css"); */
 @import url("./shared/bootstrap.css");
 /*Import CSS Pages*/
+@import url("./Escape-Room/Sala.css");
 @import url("./Escape-Room/hall.css");
 @import url("./pages/admin.css");
 @import url("./pages/...");

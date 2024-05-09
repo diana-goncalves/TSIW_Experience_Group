@@ -1,3 +1,24 @@
+.erBody{
+    padding-top: 0;
+    overflow: hidden;
+}
+
 .imgHero{
+    position: absolute;
     object-fit:cover;
+}
+
+.imgLeft{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    transition: all 0.5s;
+}
+.imgRight{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    transition: all 0.5s;
 }

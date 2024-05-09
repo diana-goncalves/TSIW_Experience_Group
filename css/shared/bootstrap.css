@@ -71,3 +71,7 @@
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
 }
+
+.navbar{
+  background-color: #333533;
+}
