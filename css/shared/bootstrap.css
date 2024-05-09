@@ -11,24 +11,26 @@
     backdrop-filter: blur(20px);
     background-color: var(--color-dark-gray);
     min-height: 270px;
-   
+
   }
+
   /* Titulo do cartão */
-  .event-title {
+.event-title {
     color: var(--color-white);
     text-decoration: underline;
     font-weight: 700;
     font-size: 2rem;
-  }
+}
   /*  Texto do cartão  */
-  .event-description {
+.event-description {
     color: var(--color-white);
     margin-top: 2rem;
     font-weight: 500;
     font-size: 1rem;
-  }
+}
+
   /* + icon, anchor para site do evento */
-  .event-link {
+.event-link {
     display: flex;
     align-items: center;
     color: var(--color-yellow);
@@ -37,27 +39,31 @@
     text-decoration: none;
     height: 1.3rem;
     line-height: 1;
-  }
+}
+
   /* div do carrossel */
-  #carousel {
+#carousel {
     margin: 2rem;
     max-width: 31.25rem;
-  }
+}
+
   /* elementos do carrossel (neste caso é o cartão)*/
-  .carousel-item {
+.carousel-item {
     padding: 0;
-  }
+}
+
   /* traços que controlam carrossel */
-  .carousel-indicators {
+.carousel-indicators {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     width: inherit;
     margin: 0;
-  }
+}
+
   /* mudar a cor do traço (indicador) ativo */
-  .carousel-indicators .active {
+.carousel-indicators .active {
     background-color: var(--color-yellow);
-  }
+}
 /* Cartão */

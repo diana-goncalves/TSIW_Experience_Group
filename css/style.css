@@ -14,3 +14,7 @@
 @import url("./pages/...");
 @import url("./pages/...");
 @import url("./pages/...");
+
+body {
+    padding-top: 90px;
+}
