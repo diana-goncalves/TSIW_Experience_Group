@@ -1,11 +1,10 @@
-:root {
-    background-color: var(--color-dark-gray);
+body {
+    padding-top: 0 !important;
 }
 /* Div que contém tudo */
 .row {
     background-color: var(--color-dark-gray);
-    max-height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding-left: 0;
 }
 #menu_desktop {
@@ -44,6 +43,7 @@
 .card-bodyContent {
     padding: 1rem;
 }
+
 /* Botões desktop */
 .nav-pills .nav-link {
     text-align: center;
