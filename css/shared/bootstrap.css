@@ -5,6 +5,7 @@
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     margin: 2rem;
+    margin-top: 8rem;
     border: 0.3rem solid;
     border-image: var(--color-yellowToSolidGray-gradient);
     box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
