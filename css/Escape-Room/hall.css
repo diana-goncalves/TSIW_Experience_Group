@@ -1,8 +1,8 @@
 .erBody{
     padding-top: 0;
     overflow: hidden;
+    transition: all 0.5s;
 }
-
 .imgHero{
     position: absolute;
     object-fit:cover;

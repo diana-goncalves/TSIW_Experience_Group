@@ -17,3 +17,47 @@
     display: none;
     transition: all 0.5s;
 }
+.modal-background{
+    background-color: var(--color-dark-gray) !important;
+    border-color: var(--color-black) !important;
+    color: var(--font-color) !important;
+}
+
+.draggable {
+    background-color:var(--color-yellow);
+    border-radius: 0.2rem;
+    color: var(--color-dark-gray);
+    margin:5px;
+    padding:3px;
+    transition: all 0.5s;
+    cursor:grab;
+}
+
+.grabbable:active {
+    cursor: grabbing;
+}
+
+#options1,#options2,#options3{
+    border: 2px solid #ffd100;
+    padding: 2rem;
+}
+
+
+
+.drop{
+    display:inline-block;
+    min-width:2rem;
+    min-height:1.5rem;
+    border-style:solid;
+    border-width:0px;
+    border-bottom-width:0.2rem;
+    margin-top: 0.5rem;
+}
+
+.certo{
+    background-color: #058d0a;
+}
+
+.errado{
+    background-color: #bc0505;
+}

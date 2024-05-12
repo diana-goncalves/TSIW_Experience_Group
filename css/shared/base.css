@@ -1,11 +1,13 @@
-html {
+/* html {
     font-size: calc(100vw / 1920 * 10);
-  }
+  } */
 
 body{
-    font-size: 2rem;
+    /* font-size: 2rem;
     line-height: 160%;
-    overflow: hidden;
+    overflow: hidden; */
+    padding-top: 90px;
+    background-color: var(--color-dark-gray);
 }
 
 

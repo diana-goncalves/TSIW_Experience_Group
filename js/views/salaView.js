@@ -27,3 +27,4 @@ salaPortaArea.addEventListener("mouseleave",(e)=>{
     e.preventDefault();
     imgSaida.style.display="none"
 });
+    
