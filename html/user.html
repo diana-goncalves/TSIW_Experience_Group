@@ -32,8 +32,13 @@
                     <button class="nav-link active" id="pills-dados-tab" data-bs-toggle="pill" data-bs-target="#pills-dados" type="button" role="tab" aria-controls="pills-dados-tab" aria-selected="true">
                         Dados pessoais
                     </button>
+                    
                     <button class="nav-link" id="pills-password-tab" data-bs-toggle="pill" data-bs-target="#pills-password" type="button" role="tab" aria-controls="pills-password-tab" aria-selected="false">
                         Password
+                    </button>
+
+                    <button class="nav-link" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email-tab" aria-selected="false">
+                        Verificação de email
                     </button>
 
                 </div>
@@ -62,6 +67,10 @@
 
                     <li class="nav-item" role="presentation">
                         <button class="nav-item" id="pills-password-tab" data-bs-toggle="pill" data-bs-target="#pills-password" type="button" role="tab" aria-controls="pills-password-tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-blockquote-left" viewBox="0 0 16 16"><path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm.79-5.373q.168-.117.444-.275L3.524 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562Q2 7.587 2 7.969q0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282q.036-.305.123-.498a1.4 1.4 0 0 1 .252-.37 2 2 0 0 1 .346-.298zm2.167 0q.17-.117.445-.275L5.692 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562q-.165.31-.164.692 0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282a1.8 1.8 0 0 1 .118-.492q.087-.194.257-.375a2 2 0 0 1 .346-.3z"/></svg></button>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-item" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email-tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-blockquote-left" viewBox="0 0 16 16"><path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm.79-5.373q.168-.117.444-.275L3.524 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562Q2 7.587 2 7.969q0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282q.036-.305.123-.498a1.4 1.4 0 0 1 .252-.37 2 2 0 0 1 .346-.298zm2.167 0q.17-.117.445-.275L5.692 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562q-.165.31-.164.692 0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282a1.8 1.8 0 0 1 .118-.492q.087-.194.257-.375a2 2 0 0 1 .346-.3z"/></svg></button>
                     </li>
 
                 </ul>
@@ -180,6 +189,45 @@
 
                             <div class="row justify-content-center align-items-center g-2">
                                 
+                                <div class="form-floating mb-3 col">
+                                    
+                                    <!-- <label for="formDataNascimento">Data de nascimento</label> -->
+                                    <!-- <BR></BR> -->
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="email"
+                                        id="formEmailAtual"
+                                        placeholder=""
+                                        readonly
+                                    />
+
+                                    <label for="formAlcunha">Email atual</label>
+
+                                </div>
+
+                                <br><br>
+                                <br><br>
+                                
+                                <div class="form-floating mb-3 col">
+                                    
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        name="NovoEmail"
+                                        id="formNovoEmail"
+                                        placeholder=""
+                                    />
+
+                                    <label for="formAlcunha">Novo email</label>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row justify-content-center align-items-center g-2">
+                                
                                 <div class="form-floating mb-3 col text-end ">
                                     
                                     <button type="submit" class="btn btn-primary button_color" id="btnGuardar">
@@ -251,6 +299,46 @@
                     </form>
 
                 </div>   
+
+                <!-- Verificação de email -->
+
+                <div class="tab-pane fade" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab" tabindex="0">
+                    
+                    <h4>Verificação de email</h4>
+                    
+                    <form>
+                        
+                        <div class="row justify-content-center  g-2 text-truncate">
+                            
+                            <div class="form-floating mb-3 col text-truncate">
+                                
+                                
+
+                            </div>
+
+                            <div class="form-floating mb-3 col">
+                                
+                               
+
+                            </div>
+
+                            <div class="row justify-content-center align-items-center g-2">
+                                
+                                <div class="form-floating mb-3 col text-end ">
+                                    
+                                    <button type="submit" class="btn btn-primary button_color" id="btnGuardar">
+                                       Guardar
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>  
 
             </div>
 

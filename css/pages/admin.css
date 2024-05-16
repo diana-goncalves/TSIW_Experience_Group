@@ -106,7 +106,6 @@ label {
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: calc(100% - 24px);
-   
 }
 .form-floating {
     background-color: transparent;
