@@ -109,11 +109,16 @@ label {
    
 }
 .form-floating {
+    background-color: transparent;
     margin-left: 1rem;
 }
 .form-floating input{
     background-color: transparent;
     color: var(--color-white);
+}
+/* Cor do background do input selecionado */
+.form-floating input:focus {
+    background-color: white;
 }
 .form-floating>.form-control-plaintext:focus, .form-floating>.form-control-plaintext:not(:placeholder-shown), .form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown) {
     padding-top: 0;
@@ -193,3 +198,26 @@ thead {
     color: var(--color-dark-gray);
 }
 /* Tabela */
+
+
+/* Definições da conta  */
+
+.form-select {
+    background-color: transparent;
+    color: var(--color-white);
+    border-radius: 0;
+}
+#formGenero {
+    background-color: transparent;
+    color: var(--color-white);
+}
+#formGenero option{
+    background-color: white;
+    color: var(--color-dark-gray);
+}
+.form-floating>.form-select {
+    padding-top: 0; 
+    padding-bottom: 0;
+}
+
+/* Definições da conta  */
