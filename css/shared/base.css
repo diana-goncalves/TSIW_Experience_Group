@@ -8,6 +8,7 @@ body{
     overflow: hidden; */
     padding-top: 90px;
     background-color: var(--color-dark-gray);
+    font-family: "Poppins";
 }
 
 
@@ -16,4 +17,3 @@ body{
         font-size: 10px;
     }
 }
-
