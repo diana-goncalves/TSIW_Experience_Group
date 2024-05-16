@@ -26,22 +26,22 @@ let grabAndDrops = [
     },
 ];
 
-let Exercise;
+let Exercise = [];
 
 
 
 let startGame = () =>{  
-    let rep = [];
     let id = 0;
     for (let i = 1; i <= 3; i++) {
-        const index = Math.floor(Math.random() * grabAndDrops.length);//nao pode ter o mesmo index
-        if (rep.includes(index)) {
+        let index = Math.floor(Math.random() * grabAndDrops.length);//nao pode ter o mesmo index
+        if (Exercise.some(element => element.text == grabAndDrops[index].text && element.choices == grabAndDrops[index].choices && element.result == grabAndDrops[index].result)) {
             i-=1;
+            console.log("dsdsadasd");
         }else{
-            rep.push(index);
-            opt = grabAndDrops[index];
+            Exercise.push(grabAndDrops[index]);
+
             //Make the Options 
-            opt.choices.forEach(element => {
+            Exercise[i-1].choices.forEach(element => {
                 let span = document.createElement("span");
                 span.draggable="true";
                 span.ondragstart = drag ;
@@ -51,10 +51,9 @@ let startGame = () =>{
                 document.querySelector(`#options${i}`).appendChild(span);
                 id+=1;
             });
-
             let line = document.createElement("p");
             line.classList.add("line");
-            line.innerHTML = opt.text;
+            line.innerHTML = Exercise[i-1].text;
             document.querySelector(`#exercise${i}`).appendChild(line);   
         }
     }        
@@ -65,6 +64,7 @@ let resetGame = ()=>{
         document.querySelector(`#options${i}`).innerHTML = "";
         document.querySelector(`#exercise${i}`).innerHTML = "";
     }
+    Exercise = [];
 }
 
 const minigameModal = document.getElementById('miniGame1');
@@ -75,9 +75,6 @@ minigameModal.addEventListener('shown.bs.modal', () => {
 })
 
 minigameModal.addEventListener('hidden.bs.modal', () => {
-    // Aqui você pode executar alguma ação após a modal ser fechada
-    console.log('A modal foi fechada.');
-    // Por exemplo, limpar ou reiniciar algo após fechar a modal
     resetGame();
 });
 
@@ -117,17 +114,40 @@ function dropSpan(e) {
     let father;
     if (data.slice(4,6) <= 4) {
        father = `options1`
-    } else if(data.slice(4,6)> 4  && data.slice(4,6) <= 9 ){
+    } else if(data.slice(4,6)> 4 && data.slice(4,6) <= 9 ){
         father = `options2` 
     } else{
         father = `options3`
     }
-    console.log("FATHER:"+father);
     if (father == e.target.id) {
         document.querySelector(`#${father}`).appendChild(elementDropped);
     }else{
         return;
     }
-
-    
 }
+
+document.querySelector(".CompleteLevel").addEventListener("click",(e)=>{
+    e.preventDefault();
+    let isAllCorrect = true;
+    for (let i = 1; i <= 3; i++) {
+        let answers = document.querySelectorAll(`#exercise${i} .draggable`);
+        if (answers.length<3) {
+            alert("Tens que completar para puder seguir")
+            return 0;
+        } else {
+            answers.forEach((element,index) => {
+                if (element.textContent  == Exercise[i-1].result[index]) {
+                    element.classList.add("certo");
+                } else {
+                    element.classList.add("errado");
+                    isAllCorrect = false;
+                }
+            });
+        }
+    }
+    if (answers != [] && isAllCorrect) {
+        alert("GAME OVER");
+    }
+})
+
+

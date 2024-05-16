@@ -22,3 +22,8 @@
     display: none;
     transition: all 0.5s;
 }
+.dio{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
