@@ -92,3 +92,9 @@
 .card-body {
   padding: 0;
 }
+
+/* Mudar cor da sombra e borda dos inputs quando estão selecionados */
+input:focus {
+  border-color: var(--color-light-yellow) !important;
+  box-shadow: 0 0 5px var(--color-light-yellow) !important; 
+}
