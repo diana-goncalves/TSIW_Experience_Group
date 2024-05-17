@@ -21,8 +21,8 @@
 
           <form id="loginForm">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Nome de utilizador</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Nome de utilizador">
+              <label for="inputNomeUtilizador" class="form-label">Nome de utilizador</label>
+              <input type="text" class="form-control" id="inputNomeUtilizador" aria-describedby="Nome de utilizador">
             </div>
             <div class="mb-3">
               <label for="InputPassword1" class="form-label">Palavra-passe</label>
@@ -32,7 +32,7 @@
               <!-- botão iphone -->
               <div id="lembrarBTN"><div class="ellipse "></div></div>
 
-              <input type="checkbox" class="form-check-input d-none" id="checkbox">
+              <input type="checkbox" class="form-check-input d-none" id="checkbox" value="lembrar">
 
               <label class="form-check-label" for="exampleCheck1" id="labelLembrar"> Lembrar da minha conta</label>
 
@@ -54,6 +54,28 @@
             
             <span class="HeaderLoginPage" id="criarHeader">CRIAR</span>
     
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nome de utilizador</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Nome de utilizador">
+              </div>
+              <div class="mb-3">
+                <label for="InputPassword1" class="form-label">Palavra-passe</label>
+                <input type="password" class="form-control" id="InputPassword1">
+              </div>
+              
+              <button type="submit" class="btn btn-primary" id="criarContaBTN" >Criar conta</button>
+  
+              <div class="mt-3 form-check d-flex align-items-center p-0 text-nowrap" id="containerMudarParaLogin">
+  
+                <label class="form-check-label" for="loginButton" id="labelLogin">Ja tens conta?</label>
+                
+                <span id="loginButton">Iniciar sessão</span>
+  
+              </div>
+  
+            </form>
+
           </div>
     
         </div>

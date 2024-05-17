@@ -75,6 +75,7 @@
 }
 
 #loginForm {
+    display: block;
     position: relative;
     width: 50%;
     margin: 4rem;
@@ -103,6 +104,52 @@
     margin-left: 1rem;
     text-decoration: underline;
     cursor: pointer;
+}
+
+#registerForm {
+    display: none;
+    position: absolute;
+    width: 50%;
+    left: 4rem;
+    top: 36%;
+    transform: rotate(-8deg);
+}
+
+#registerForm input[type="text"],
+#registerForm input[type="password"] {
+    width: 340px;
+    height: 50px;
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+    /* border: 1px solid black; */
+}
+
+#registerForm label {
+    color: black;
+    
+}
+
+#criarContaBTN {
+    width: 340px;
+    height: 50px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0;
+}
+
+#containerMudarParaLogin {
+    position: relative;
+    top: 1rem;
+    width: 340px;
+}
+
+#loginButton {
+    margin-left: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--color-dark-gray);
+
 }
 
 /* Versão mobile e para tablets */
