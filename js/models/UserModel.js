@@ -23,13 +23,16 @@ export function add(username, password) {
 }
 
 // LOGIN DO UTILIZADOR
-export function login(username, password) {
-  const user = users.find(
-    (user) => user.username === username && user.password === password
-  );
+export function login(username, password, keep=false) {
+  const user = users.find((user) => user.username === username && user.password === password);
   if (user) {
-    sessionStorage.setItem("loggedUser", JSON.stringify(user));
-    return true;
+    if (keep) {
+      localStorage.setItem("loggedUser", JSON.stringify(user));
+      return true;  
+    }else{
+      sessionStorage.setItem("loggedUser", JSON.stringify(user));
+      return true;
+    }
   } else {
     throw Error("Invalid login!");
   }
@@ -37,17 +40,30 @@ export function login(username, password) {
 
 // LOGOUT DO UTILIZADOR
 export function logout() {
-  sessionStorage.removeItem("loggedUser");
+  if (sessionStorage.loggedUser) {
+    sessionStorage.removeItem("loggedUser");
+  }
+  if (localStorage.loggedUser) {
+    localStorage.removeItem("loggedUser");
+  }
 }
 
 // VERIFICA EXISTÊNCIA DE ALGUÉM AUTENTICADO
 export function isLogged() {
-  return sessionStorage.getItem("loggedUser") ? true : false;
+  if (localStorage.loggedUser) {
+    return true;
+  }else{
+    return sessionStorage.getItem("loggedUser") ? true : false;
+  }
 }
 
 // DEVOLVE UTILZIADOR AUTENTICADO
 export function getUserLogged() {
-  return JSON.parse(sessionStorage.getItem("loggedUser"));
+  if (localStorage.loggedUser) {
+    return JSON.parse(localStorage.getItem("loggedUser"));
+  }else{
+    return JSON.parse(sessionStorage.getItem("loggedUser"));
+  }
 }
 
 export function findUser(userId) {
