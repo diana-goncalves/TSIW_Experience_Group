@@ -12,4 +12,5 @@
     --color-yellow-gradient: linear-gradient(0deg, rgba(255,238,50,1) 0%, rgba(255,209,0,1) 100%);
     --color-yellowToGray-gradient: linear-gradient(0deg, rgba(255,238,50,1) 0%, rgba(102,102,102,0.2) 100%);
     --color-yellowToSolidGray-gradient: linear-gradient(to bottom left, #FFEE32, #666666) 1;
+    --color-greyToDarkGrey-gradient: linear-gradient(180deg, rgba(214, 214, 214, 0.8) 0%, rgba(112, 112, 112, 0.8) 100%);
 }   
