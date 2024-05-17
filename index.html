@@ -1,247 +1,296 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>TSIW Experience</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
 
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+<head>
+    <title>TSIW Experience</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-        <!-- FontAwesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="./css/style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    </head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
 
-    <body style="background-color: #333533;" data-bs-spy="scroll" data-bs-target="#navbarNav">
-        <header>
-            <!-- Animation Homepage -->
-            <!-- <div class="splash">
+</head>
+
+<body style="background-color: #333533;" data-bs-spy="scroll" data-bs-target="#navbarNav">
+    <header>
+        <!-- Animation Homepage -->
+        <!-- <div class="splash">
                 <img class="logo" src="./logo.svg" alt="TSIW logo">
             </div> -->
 
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
-                <div class="container">
-                    <a class="navbar-brand" href="./index.html">
-                        <img src="./media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
-                    </a>
-                    <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link text-white home_page" href="#home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white projects_page" href="#projects">Projetos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white about_page" href="#about">Sobre</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white er_page" href="escapeRoom">Escape Room</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white admin_page" href="./html/admin.html">ADMIN</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link text-white user_icon" href="#account"><i class="fas fa-user"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white home_page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white projects_page" href="#projects">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white about_page" href="#about">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white er_page" href="escapeRoom">Escape Room</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white admin_page" href="./html/admin.html">ADMIN</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white user_icon" href="#account"><i class="fas fa-user"></i></a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
-        <main>
+    <main>
 
-            <!-- Home section -->
-            <section id="home">
-                <!-- Cartões para os eventos -->
-                <div id="carousel" class="carousel slide">
-                    <div class="carousel-inner mt-5">
-                        <div class="carousel-item active">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="event-card d-flex">
-                                        <div class="card-interior">
-                                            <h2 class="card-title event-title">ICPEC</h2>
-                                            <p class="card-text event-description">
-                                                A 5.ª edição da International Computer Programming Education Conference vai realizar-se nos dias 27 e 28 de junho de 2024.
-                                            </p>
-                                        </div>
-                                        <a href="https://www.esmad.ipp.pt/noticias/5th-icpec-%20international-computer-programming-education-conference" target="_blank" class="event-link align-self-end">+</a>
+        <!-- Home section -->
+        <section id="home">
+            <!-- Cartões para os eventos -->
+            <div id="carousel" class="carousel slide">
+                <div class="carousel-inner mt-5">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="event-card d-flex">
+                                    <div class="card-interior">
+                                        <h2 class="card-title event-title">ICPEC</h2>
+                                        <p class="card-text event-description">
+                                            A 5.ª edição da International Computer Programming Education Conference vai
+                                            realizar-se nos dias 27 e 28 de junho de 2024.
+                                        </p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="event-card d-flex">
-                                        <div class="card-interior">
-                                            <h2 class="card-title event-title">OPEN DAYS</h2>
-                                            <p class="card-text event-description">
-                                                Queres vir conhecer a ESMAD? Nos dias 17 e 24 de abril, a ESMAD abre portas a todos os estudantes do Ensino Secundário e Profissional que nos queiram visitar!
-                                            </p>
-                                        </div>
-                                        <a href="https://www.esmad.ipp.pt/noticias/open-days" target="_blank" class="event-link align-self-end">+</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="event-card d-flex">
-                                        <div class="card-interior">
-                                            <h2 class="card-title event-title">MAD GAME JAM</h2>
-                                            <p class="card-text event-description">
-                                                Se gostas de criar jogos, ou queres entrar nesta aventura, então agarra esta oportunidade.
-                                            </p>
-                                        </div>
-                                        <a href="https://madjam.esmad.ipp.pt/" target="_blank" class="event-link align-self-end">+</a>
-                                    </div>
+                                    <a href="https://www.esmad.ipp.pt/noticias/5th-icpec-%20international-computer-programming-education-conference"
+                                        target="_blank" class="event-link align-self-end">+</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="event-card d-flex">
+                                    <div class="card-interior">
+                                        <h2 class="card-title event-title">OPEN DAYS</h2>
+                                        <p class="card-text event-description">
+                                            Queres vir conhecer a ESMAD? Nos dias 17 e 24 de abril, a ESMAD abre portas
+                                            a todos os estudantes do Ensino Secundário e Profissional que nos queiram
+                                            visitar!
+                                        </p>
+                                    </div>
+                                    <a href="https://www.esmad.ipp.pt/noticias/open-days" target="_blank"
+                                        class="event-link align-self-end">+</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Cartões para os eventos -->
-            </section>
 
-            <!-- Projects section -->
-            <section id="projects">
-                <!-- code here -->
-            </section>
-
-            <section id="about" class="text-white py-5">
-                <div class="container">
-                    <h2 class="text-end mt-5 mb-2">Catálogo do Curso</h2>
-                    <p class="text-end mb-5">Clica no + para entenderes melhor aquilo que estudamos</p>
-
-                    <div class="row row-cols-1 row-cols-md-3 g-1">
-                        <div class="col">
-                            <div class="card h-100 text-white custom-border w-75 vh-50">
-                                <div class="card-body">
-                                    <h5 class="card-title text-warning m-lg-3">1º Ano</h5>
-                                    <ul>
-                                        <li>Algoritmia e Estruturas de Dados</li>
-                                        <li>Fundamentos de Design</li>
-                                        <li>Matemática I</li>
-                                        <li>Sistemas Computacionais</li>
-                                        <li>Tecnologias Web</li>
-                                        <li>Conceção e Produção Multimédia</li>
-                                        <li>Interfaces e Design para Aplicações</li>
-                                        <li>Matemática II</li>
-                                        <li>Programação Orientada a Objetos</li>
-                                        <li>Projeto I</li>
-                                    </ul>
-                                    <button class="btn text-warning fs-1 float-end">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 text-white custom-border w-75 vh-50">
-                                <div class="card-body">
-                                    <h5 class="card-title text-warning m-lg-3">2º Ano</h5>
-                                    <ul>
-                                        <li>Bases de Dados</li>
-                                        <li>Computação Gráfica</li>
-                                        <li>Engenharia de Software</li>
-                                        <li>Ergonomia Cognitiva e Design de Interação</li>
-                                        <li>Programação Web I</li>
-                                        <li>Inteligência Artificial</li>
-                                        <li>Programação Web II</li>
-                                        <li>Projeto II</li>
-                                        <li>Testes e Performance Web</li>
-                                        <li>Cadeira Opcional</li>
-                                    </ul>
-                                    <button class="btn text-warning fs-1 float-end">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card h-100 text-white custom-border w-75 vh-50">
-                                <div class="card-body">
-                                    <h5 class="card-title text-warning m-lg-3">3º Ano</h5>
-                                    <ul>
-                                        <li>Computação Móvel e Ubíqua</li>
-                                        <li>Inovação e Empreendedorismo</li>
-                                        <li>Negócio Eletrónico e Segurança</li>
-                                        <li>Prototipagem Avançada em Plataformas Digitais</li>
-                                        <li>Serviços e Interfaces para a <br>Cloud</li>
-                                        <li>Marketing Digital</li>
-                                        <li>Projeto Final/Estágio</li>
-                                        <li>Usabilidade e User Experience</li><br>
-                                    </ul>
-                                    <button class="btn text-warning fs-1 float-end">+</button>
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="event-card d-flex">
+                                    <div class="card-interior">
+                                        <h2 class="card-title event-title">MAD GAME JAM</h2>
+                                        <p class="card-text event-description">
+                                            Se gostas de criar jogos, ou queres entrar nesta aventura, então agarra esta
+                                            oportunidade.
+                                        </p>
+                                    </div>
+                                    <a href="https://madjam.esmad.ipp.pt/" target="_blank"
+                                        class="event-link align-self-end">+</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+            <!-- Cartões para os eventos -->
+        </section>
+
+        <!-- Projects section -->
+        <section id="projects">
+            <!-- code here -->
+        </section>
+
+        <!-- About section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2 class="text-end mt-5 mb-2">Catálogo do Curso</h2>
+                <p class="text-end mb-5">Clica no + para entenderes melhor aquilo que estudamos</p>
+
+                <div class="row row-cols-1 row-cols-md-3 g-1">
+                    <div class="col">
+                        <div class="card h-100 custom-border w-75 vh-50">
+                            <div class="card-body">
+                                <h5 class="card-title text-warning m-lg-3 m-md-3">1º Ano</h5>
+                                <ul>
+                                    <li>Algoritmia e Estruturas de Dados</li>
+                                    <li>Fundamentos de Design</li>
+                                    <li>Matemática I</li>
+                                    <li>Sistemas Computacionais</li>
+                                    <li>Tecnologias Web</li>
+                                    <li>Conceção e Produção Multimédia</li>
+                                    <li>Interfaces e Design para Aplicações</li>
+                                    <li>Matemática II</li>
+                                    <li>Programação Orientada a Objetos</li>
+                                    <li>Projeto I</li>
+                                </ul>
+                                <button class="btn text-warning fs-1 float-end">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 custom-border w-75 vh-50">
+                            <div class="card-body">
+                                <h5 class="card-title text-warning m-lg-3 m-md-3">2º Ano</h5>
+                                <ul>
+                                    <li>Bases de Dados</li>
+                                    <li>Computação Gráfica</li>
+                                    <li>Engenharia de Software</li>
+                                    <li>Ergonomia Cognitiva e Design de Interação</li>
+                                    <li>Programação Web I</li>
+                                    <li>Inteligência Artificial</li>
+                                    <li>Programação Web II</li>
+                                    <li>Projeto II</li>
+                                    <li>Testes e Performance Web</li>
+                                    <li>Cadeira Opcional</li>
+                                </ul>
+                                <button class="btn text-warning fs-1 float-end">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 custom-border w-75 vh-50">
+                            <div class="card-body">
+                                <h5 class="card-title text-warning m-lg-3 m-md-3">3º Ano</h5>
+                                <ul>
+                                    <li>Computação Móvel e Ubíqua</li>
+                                    <li>Inovação e Empreendedorismo</li>
+                                    <li>Negócio Eletrónico e Segurança</li>
+                                    <li>Prototipagem Avançada em Plataformas Digitais</li>
+                                    <li>Serviços e Interfaces para a <br>Cloud</li>
+                                    <li>Marketing Digital</li>
+                                    <li>Projeto Final/Estágio</li>
+                                    <li>Usabilidade e User Experience</li><br>
+                                </ul>
+                                <button class="btn text-warning fs-1 float-end">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profissional Exits and Access Forms section -->
+        <section id="exits-access" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h2 class="text-center mt-5 mb-5">Saídas Profissionais</h2>
+                        <div class="card h-75 custom-width">
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Conceção e
+                                        desenvolvimento de produtos para a Web.</li>
+                                    <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Desenvolvimento de
+                                        produtos multiplataforma.</li>
+                                    <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Desenvolvimento de
+                                        plataformas web e de comercio eletrónico.</li>
+                                    <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> UI/UX Developer.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h2 class="text-center mt-5 mb-5">Formas de Acesso</h2>
+                        <div class="card h-75 custom-width">
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mt-5 mb-4">
+                                        <span class="text-warning">&#9679;</span> Concurso Nacional de Acesso: <br>!!!
+                                        COLOCAR INFO !!!
+                                    </li>
+                                    <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Candidaturas maiores
+                                        de
+                                        23 anos.</li>
+                                    <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Regimes de
+                                        reingressos e
+                                        mudança de par instituição/curso.</li>
+                                    <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Concurso especial
+                                        para
+                                        estudantes internacionais.</li>
+                                </ul>
+                                <div class="text-end mt-4 m-lg-4"><a href="https://www.dges.gov.pt" target="_blank"
+                                        class="text-muted text-decoration-none">DGES</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>Å
+
+        <!-- Escape Room section -->
+        <section id="escapeRoom">
+            <!-- code here -->
+        </section>
+
+        <!-- Account section -->
+        <section id="account">
+            <!-- code here -->
+        </section>
+
+    </main>
 
 
-            <!-- Escape Room section -->
-            <section id="escapeRoom">
-                <!-- code here -->
-            </section>
+    <footer>
+        <!-- place footer here -->
+    </footer>
 
-            <!-- Account section -->
-            <section id="account">
-                <!-- code here -->
-            </section>
-
-        </main>
+    <!-- Referências ao js -->
+    <script src="./js/init.js"></script>
+    <script type="module" src="./js/views/NavbarView.js"></script>
+    <script type="module" src="./js/views/SplashView.js"></script>
 
 
-        <footer>
-            <!-- place footer here -->
-        </footer>
-
-        <!-- Referências ao js -->
-        <script src="./js/init.js"></script>
-        <script type="module" src="./js/views/NavbarView.js"></script>
-        <script type="module" src="./js/views/SplashView.js"></script>
-
-
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"
-        ></script>
+        crossorigin="anonymous"></script>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
 
-    </body>
+</body>
+
 </html>

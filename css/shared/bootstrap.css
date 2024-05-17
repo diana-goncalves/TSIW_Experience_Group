@@ -1,69 +1,70 @@
+/* //////////// HOME /////////// */
 /* Cartão */
 .event-card {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    margin: 2rem;
-    margin-top: 8rem;
-    border: 0.3rem solid;
-    border-image: var(--color-yellowToSolidGray-gradient);
-    box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(20px);
-    background-color: var(--color-dark-gray);
-    min-height: 270px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin: 2rem;
+  margin-top: 8rem;
+  border: 0.3rem solid;
+  border-image: var(--color-yellowToSolidGray-gradient);
+  box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  background-color: var(--color-dark-gray);
+  min-height: 270px;
 
-  }
+}
 
   /* Titulo do cartão */
 .event-title {
-    color: var(--color-white);
-    text-decoration: underline;
-    font-weight: 700;
-    font-size: 2rem;
+  color: var(--color-white);
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 2rem;
 }
   /*  Texto do cartão  */
 .event-description {
-    color: var(--color-white);
-    margin-top: 2rem;
-    font-weight: 500;
-    font-size: 1rem;
+  color: var(--color-white);
+  margin-top: 2rem;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
   /* + icon, anchor para site do evento */
 .event-link {
-    display: flex;
-    align-items: center;
-    color: var(--color-yellow);
-    font-weight: 300;
-    font-size: 2rem;
-    text-decoration: none;
-    height: 1.3rem;
-    line-height: 1;
+  display: flex;
+  align-items: center;
+  color: var(--color-yellow);
+  font-weight: 300;
+  font-size: 2rem;
+  text-decoration: none;
+  height: 1.3rem;
+  line-height: 1;
 }
 
   /* div do carrossel */
 #carousel {
-    margin: 2rem;
-    max-width: 31.25rem;
+  margin: 2rem;
+  max-width: 31.25rem;
 }
 
   /* elementos do carrossel (neste caso é o cartão)*/
 .carousel-item {
-    padding: 0;
+  padding: 0;
 }
 
   /* traços que controlam carrossel */
 .carousel-indicators {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: inherit;
-    margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: inherit;
+  margin: 0;
 }
 
   /* mudar a cor do traço (indicador) ativo */
 .carousel-indicators .active {
-    background-color: var(--color-yellow);
+  background-color: var(--color-yellow);
 }
 /* Cartão */
 .card-interior {
@@ -75,6 +76,7 @@
   background-color: #333533;
 }
 
+/* //////////// ABOUT /////////// */
 /* Cards do Catálogo do Curso */
 .custom-border {
   border: 0.3rem solid;
@@ -88,6 +90,7 @@
   max-height: 100%;
   overflow-y: auto;
   border-radius: 0;
+  color: var(--color-white);
 }
 .card-body {
   padding: 0;
@@ -96,5 +99,5 @@
 /* Mudar cor da sombra e borda dos inputs quando estão selecionados */
 input:focus {
   border-color: var(--color-light-yellow) !important;
-  box-shadow: 0 0 5px var(--color-light-yellow) !important; 
+  box-shadow: 0 0 5px var(--color-light-yellow) !important;
 }
