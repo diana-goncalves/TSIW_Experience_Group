@@ -11,109 +11,154 @@
 
 <body>
 
-    <section class="Autenticar">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">
+            <img src="../media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white home_page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white projects_page" href="#projects">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white about_page" href="#about">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white er_page" href="escapeRoom">Escape Room</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white admin_page" href="admin.html">ADMIN</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white user_icon" href="#account"><i class="fas fa-user"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <section class="Autenticar">
+  
+    <div class="AutenticarDesktop">
       
-      <div class="AutenticarDesktop">
-        
-        <div class="container-sm" id="loginContainer">
-      
-          <span class="HeaderLoginPage" id="entrarHeader">ENTRAR</span> 
+      <div class="container-sm" id="loginContainer">
+    
+        <span class="HeaderLoginPage" id="entrarHeader">ENTRAR</span> 
 
-          <form id="loginForm">
-           
-            <div class="vectorLogin"><img src="../media/icons/LoginVector.svg" alt="Person icon"></div>
+        <form id="loginForm">
+          
+          <!-- Linhas e icon no mobile -->
 
-            <div class="retangulo_login_claro"></div>
+          <div class="vectorLogin"><img src="../media/icons/LoginVector.svg" alt="Person icon"></div>
 
-            <div class="retangulo_login_escuro"></div>
+          <div class="retangulo_login_claro"></div>
+
+          <div class="retangulo_login_escuro"></div>
+
+          <!-- Linhas e icon no mobile -->
+          
+          <div class="mb-3">
             
+            <label for="inputNomeUtilizador" class="form-label">Nome de utilizador</label>
+            
+            <input type="text" class="form-control" id="inputNomeUtilizador" aria-describedby="Nome de utilizador">
+          
+          </div>
+          
+          <div class="mb-3">
+            
+            <label for="InputPassword1" class="form-label">Palavra-passe</label>
+            
+            <input type="password" class="form-control" id="InputPassword1">
+
+          </div>
+
+          <div class="mb-3 form-check d-flex align-items-center p-0 containerLembrar_Criar_Iniciar">
+            <!-- botão iphone -->
+            <div id="lembrarBTN"><div class="ellipse "></div></div>
+
+            <!-- É PRECISO MELHORAR ACESSIBILIDADE DESTE BOTÃO -->
+
+            <input type="checkbox" class="form-check-input d-none" id="checkbox" value="lembrar">
+
+            <label class="form-check-label" for="checkbox" id="labelLembrar"> Lembrar da minha conta</label>
+
+          </div>
+          
+          <button type="submit" class="btn btn-primary" id="entrarBTN" >Iniciar sessão</button>
+
+          <div class="mt-3 form-check d-flex align-items-center p-0 containerLembrar_Criar_Iniciar">
+
+            <label class="form-check-label" for="criarButton" id="labelLembrar">Ainda não tens conta?</label>
+            
+            <button id="criarButton" type="button">Criar conta</button>
+
+          </div>
+
+        </form>
+
+        <div class="container-sm" id="registerContainer">
+          
+          <span class="HeaderLoginPage" id="criarHeader">CRIAR</span>
+  
+          <form id="registerForm">
+            
+            <!-- Linhas e icon no mobile -->
+
+            <div class="vectorRegister"><img src="../media/icons/LoginVector.svg" alt="Person icon"></div>
+
+            <div class="retangulo_register_claro"></div>
+
+            <div class="retangulo_register_escuro"></div>
+
+            <!-- Linhas e icon no mobile -->
+
             <div class="mb-3">
               
-              <label for="inputNomeUtilizador" class="form-label">Nome de utilizador</label>
-              
-              <input type="text" class="form-control" id="inputNomeUtilizador" aria-describedby="Nome de utilizador">
-            
+              <label for="inputNomeUtilizadorRegister" class="form-label">Nome de utilizador</label>
+
+              <input type="text" class="form-control" id="inputNomeUtilizadorRegister" aria-describedby="Nome de utilizador">
+
             </div>
-            
+
             <div class="mb-3">
-              
+
               <label for="InputPassword1" class="form-label">Palavra-passe</label>
-              
+
               <input type="password" class="form-control" id="InputPassword1">
 
             </div>
-
-            <div class="mb-3 form-check d-flex align-items-center p-0 containerLembrar_Criar_Iniciar">
-              <!-- botão iphone -->
-              <div id="lembrarBTN"><div class="ellipse "></div></div>
-
-              <!-- É PRECISO MELHORAR ACESSIBILIDADE DESTE BOTÃO -->
-
-              <input type="checkbox" class="form-check-input d-none" id="checkbox" value="lembrar">
-
-              <label class="form-check-label" for="checkbox" id="labelLembrar"> Lembrar da minha conta</label>
-
-            </div>
             
-            <button type="submit" class="btn btn-primary" id="entrarBTN" >Iniciar sessão</button>
+            <button type="submit" class="btn btn-primary" id="criarContaBTN" >Criar conta</button>
 
-            <div class="mt-3 form-check d-flex align-items-center p-0 containerLembrar_Criar_Iniciar">
+            <div class="mt-3 form-check d-flex align-items-center containerLembrar_Criar_Iniciar">
 
-              <label class="form-check-label" for="criarButton" id="labelLembrar">Ainda não tens conta?</label>
+              <label class="form-check-label" for="loginButton" id="labelLogin">Ja tens conta?</label>
               
-              <button id="criarButton" type="button">Criar conta</button>
+              <button id="loginButton" type="button">Iniciar sessão</button>
 
             </div>
 
           </form>
 
-          <div class="container-sm" id="registerContainer">
-            
-            <span class="HeaderLoginPage" id="criarHeader">CRIAR</span>
-    
-            <form id="registerForm">
-              
-              <div class="vectorRegister"><img src="../media/icons/LoginVector.svg" alt="Person icon"></div>
-
-              <div class="retangulo_register_claro"></div>
-
-              <div class="retangulo_register_escuro"></div>
-
-              <div class="mb-3">
-                
-                <label for="inputNomeUtilizadorRegister" class="form-label">Nome de utilizador</label>
-
-                <input type="text" class="form-control" id="inputNomeUtilizadorRegister" aria-describedby="Nome de utilizador">
-
-              </div>
-
-              <div class="mb-3">
-
-                <label for="InputPassword1" class="form-label">Palavra-passe</label>
-
-                <input type="password" class="form-control" id="InputPassword1">
-
-              </div>
-              
-              <button type="submit" class="btn btn-primary" id="criarContaBTN" >Criar conta</button>
-  
-              <div class="mt-3 form-check d-flex align-items-center containerLembrar_Criar_Iniciar">
-  
-                <label class="form-check-label" for="loginButton" id="labelLogin">Ja tens conta?</label>
-                
-                <button id="loginButton" type="button">Iniciar sessão</button>
-  
-              </div>
-  
-            </form>
-
-          </div>
-    
         </div>
+  
+      </div>
 
-      </div> 
+    </div> 
 
-    </section>
+  </section>
   
   <script src="../js/views/login&register.js"></script>
   

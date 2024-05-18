@@ -2,6 +2,11 @@ body {
     padding-top: 0 !important;
 }
 /* Div que contém tudo */
+#wrapperContainer {
+    margin-top: 5rem;
+    margin-left: 1px;   /* 1px para ver a borda do botão */
+}
+
 .row {
     background-color: var(--color-dark-gray);
     padding-left: 0;

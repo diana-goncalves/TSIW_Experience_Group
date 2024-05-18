@@ -1,7 +1,10 @@
+.Autenticar {
+    padding-top: calc(58px + 4rem);
+}
+
 #loginContainer{
     position: relative;
     margin: auto;
-    margin-top: 4rem;
     max-width: 945px;
     min-height: 614px;
     padding: 0;
