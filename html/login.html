@@ -28,23 +28,23 @@
               <label for="InputPassword1" class="form-label">Palavra-passe</label>
               <input type="password" class="form-control" id="InputPassword1">
             </div>
-            <div class="mb-3 form-check d-flex align-items-center p-0">
+            <div class="mb-3 form-check d-flex align-items-center p-0 containerLembrar_Criar_Iniciar">
               <!-- botão iphone -->
               <div id="lembrarBTN"><div class="ellipse "></div></div>
 
               <input type="checkbox" class="form-check-input d-none" id="checkbox" value="lembrar">
 
-              <label class="form-check-label" for="exampleCheck1" id="labelLembrar"> Lembrar da minha conta</label>
+              <label class="form-check-label" for="checkbox" id="labelLembrar"> Lembrar da minha conta</label>
 
             </div>
             
             <button type="submit" class="btn btn-primary" id="entrarBTN" >Iniciar sessão</button>
 
-            <div class="mt-3 form-check d-flex align-items-center p-0 ">
+            <div class="mt-3 form-check d-flex align-items-center p-0 containerLembrar_Criar_Iniciar">
 
               <label class="form-check-label" for="criarButton" id="labelLembrar">Ainda não tens conta?</label>
               
-              <span id="criarButton">Criar conta</span>
+              <button id="criarButton" type="button">Criar conta</button>
 
             </div>
 
@@ -56,8 +56,8 @@
     
             <form id="registerForm">
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nome de utilizador</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Nome de utilizador">
+                <label for="inputNomeUtilizadorRegister" class="form-label">Nome de utilizador</label>
+                <input type="text" class="form-control" id="inputNomeUtilizadorRegister" aria-describedby="Nome de utilizador">
               </div>
               <div class="mb-3">
                 <label for="InputPassword1" class="form-label">Palavra-passe</label>
@@ -66,11 +66,11 @@
               
               <button type="submit" class="btn btn-primary" id="criarContaBTN" >Criar conta</button>
   
-              <div class="mt-3 form-check d-flex align-items-center p-0 text-nowrap" id="containerMudarParaLogin">
+              <div class="mt-3 form-check d-flex align-items-center containerLembrar_Criar_Iniciar">
   
                 <label class="form-check-label" for="loginButton" id="labelLogin">Ja tens conta?</label>
                 
-                <span id="loginButton">Iniciar sessão</span>
+                <button id="loginButton" type="button">Iniciar sessão</button>
   
               </div>
   
@@ -80,12 +80,7 @@
     
         </div>
 
-      </div>
-
-      <div class="AutenticarMobile">
-
-      </div>
-      
+      </div> 
 
     </section>
   
