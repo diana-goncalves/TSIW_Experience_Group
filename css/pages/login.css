@@ -158,7 +158,14 @@
     border: 0;
 }
 
-
+.retangulo_register_escuro,
+.retangulo_register_claro,
+.vectorRegister,
+.retangulo_login_escuro,
+.retangulo_login_claro,
+.vectorLogin {
+   display: none;
+}
 
 /* Versão mobile e para tablets */
 
@@ -241,6 +248,7 @@
     color: var(--color-black);
     border: 0;
     border-radius: 0;
+    margin-top: 7rem;
 }
 
 #criarButton {
@@ -286,7 +294,7 @@
     color: var(--color-black);
     border: 0;
     border-radius: 0;
-    margin-top: 1rem;
+    margin-top: 10rem;
 }
 
 #containerMudarParaLogin {
@@ -308,5 +316,71 @@
 .containerLembrar_Criar_Iniciar {
     width: 279px;
 }
+
+.retangulo_register_escuro {
+    display: block;
+    z-index: -1;
+    width: calc(100vw + 220px);
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    height: 18.1px;
+    transform: translate(-50%, -50%) rotate(-142.9deg);
+    transform-origin: center;
+    background: var(--color-gradientLoginMobile);
+}
+
+.retangulo_register_claro {
+    display: block;
+    z-index: -1;
+    width: calc(100vw + 220px);
+    position: absolute;
+    top: 18%;
+    left: 60%;
+    height: 32px;
+    transform: translate(-50%, -50%) rotate(142.9deg);
+    transform-origin: center;
+    background: var(--color-greyToDarkGrey-gradient);
+
+}
+
+.vectorRegister {
+    display: block;
+    text-align: center;
+    margin-bottom: 8rem;
+} 
+
+.retangulo_login_escuro {
+    display: block;
+    z-index: -1;
+    width: calc(100vw + 220px);
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    height: 18.1px;
+    transform: translate(-50%, -50%) rotate(142.9deg);
+    transform-origin: center;
+    background: var(--color-gradientLoginMobile);
+}
+
+.retangulo_login_claro {
+    display: block;
+    z-index: -1;
+    width: calc(100vw + 220px);
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    height: 32px;
+    transform: translate(-50%, -50%) rotate(-142.9deg);
+    transform-origin: center;
+    background: var(--color-greyToDarkGrey-gradient);
+}
+
+.vectorLogin {
+    display: block;
+    text-align: center;
+    margin-bottom: 8rem;
+} 
+
 
 }
