@@ -3,7 +3,7 @@ body {
 }
 /* Div que contém tudo */
 #wrapperContainer {
-    margin-top: 5rem;
+    /* margin-top: auto;   Distância entre navbar e o resto do site */
     margin-left: 1px;   /* 1px para ver a borda do botão */
 }
 
