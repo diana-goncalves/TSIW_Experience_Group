@@ -60,7 +60,7 @@
         <img usemap="#salaMap" class="imgSaida img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/Sala1_Saida.png" alt="Saida" title="Saida">
     </section>
 
-    <!-- Modal -->
+    <!-- Modal MiniGame -->
     <div class="modal fade"  id="miniGame1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
@@ -123,35 +123,60 @@
         </div>
     </div>
 
+    <!-- Botao Inventory -->
     <button class="btn btn-primary inventaryBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#inventory" aria-controls="inventory">Inventory</button>
+    
+    <!-- Inventory -->
+    <div class="InventoryZone"></div>
 
-    <div class="offcanvas offcanvas-bottom modal-background" tabindex="-1" id="inventory" aria-labelledby="inventoryTitle">
+    <!-- Collectibles -->
+    <div class="offcanvas offcanvas-bottom modal-background" tabindex="-1" id="collectibles" aria-labelledby="CollectiblesTitle">
         <div class="offcanvas-header d-flex justify-content-between">
-            <h5 class="offcanvas-title mx-1 " id="inventoryTitle">Inventory</h5>
-            <h5 class="offcanvas-title mx-5 ">Tropheus</h5>
+            <h5 class="offcanvas-title mx-1 goto"  data-bs-toggle="offcanvas" data-bs-target="#inventory">Inventory</h5>
+            <h5 class="offcanvas-title mx-5 " id="CollectiblesTitle">Tropheus</h5>
             <button type="button" class="btn-close-white btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="container-fluid ">
-                <div class="d-flex flex-wrap justify-content-between">
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
-                    <div class="inventorySlot bg-black rounded-1 mx-1 mt-3"></div>
+            <div class=" container-fluid text-center">
+                <div class="Collectibles row row-cols-4 justify-content-center">
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+
+                    <div class="w-100 d-block d-xl-none"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
+                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="ItemZone">
+        <img src="../../media/img/ER-assets/Lanterna.png" alt="Lanterna" id="lanterna" class="img-fluid item">
+    </div>
 
+    <div id="flashlight"></div>
     
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -159,5 +184,6 @@
     <!-- Referências ao js -->
     <script src="../../js/views/salaView.js"></script>
     <script src="../../js/views/MiniGamesView.js"></script>
+    <script type="module" src="../../js/views/inventoryView.js"></script>
 </body>
 </html>

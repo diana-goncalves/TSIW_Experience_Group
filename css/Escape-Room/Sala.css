@@ -156,12 +156,3 @@
 }
 
 /*---------------------------------------------*/
-.inventaryBtn{
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-}
-.inventorySlot{
-    height: 6.5rem !important;
-    width: 6.5rem !important;
-}

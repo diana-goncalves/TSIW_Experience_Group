@@ -63,11 +63,11 @@
         <img usemap="#heroMap" class="imgRight img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-right.png" title="Sala 202" alt="Sala 202">
     </section>
     
-    <button type="button" class="btn btn-primary dio" id="liveToastBtn" data-bs-target="#teste">Show live toast</button>
+    <button type="button" class="btn btn-primary dio" id="liveToastBtn">Show live toast</button>
 
-    <div class="toast-container position-fixed bottom-0 end-0">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
+    <div class="toast-container position-fixed bottom-0 end-0 p-2  ">
+        <div id="liveToast" class="toast modal-background" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header modal-background">
             <img src="..." class="rounded me-2" alt="...">
             <strong class="me-auto">Bootstrap</strong>
             <small>11 mins ago</small>
@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    <div class="toast-container position-static" id="teste">
+    <div class="toast-container position-static m-2" id="teste">
         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <img src="source" class="rounded me-2" alt="Bootstrap" />

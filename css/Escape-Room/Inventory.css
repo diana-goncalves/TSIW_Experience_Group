@@ -1,0 +1,66 @@
+.inventaryBtn{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+.inventorySlot, .collectibleSlot{
+    height: 6rem !important;
+    width: 6rem !important;
+    background-color: var(--color-black);
+}
+
+.inventorySlot:hover{
+    background-color: var(--color-light-gray) !important;
+}
+
+.collectibleSlot:hover{
+    background-color: var(--color-yellow) !important;
+}
+
+.goto:hover{
+    color: var(--color-yellow);
+    cursor: pointer;
+}
+
+.inventorySlot>.item{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.item{
+    position: absolute;
+    top: 30rem;
+    left: 35rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    transition: all 0.5s;
+}
+@media only screen and (max-width: 1024px) {
+    .inventorySlot{
+        height: 8rem !important;
+        width: 8rem !important;
+    }
+  }
+
+
+/*-----------------------------------------*/
+
+#flashlight{
+    display: none;
+    z-index: 3;
+}
+
+#flashlight:before{
+    content: "" ; 
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    pointer-events: none;
+    background: radial-gradient(circle 16rem at var(--Xpos) var(--Ypos),
+    rgba(127, 26, 223, .60),
+    rgba(0,0,0,1));
+}

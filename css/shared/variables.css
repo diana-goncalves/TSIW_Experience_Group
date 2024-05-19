@@ -14,4 +14,8 @@
     --color-yellowToSolidGray-gradient: linear-gradient(to bottom left, #FFEE32, #666666) 1;
     --color-greyToDarkGrey-gradient: linear-gradient(180deg, rgba(214, 214, 214, 0.8) 0%, rgba(112, 112, 112, 0.8) 100%);
     --color-gradientLoginMobile: linear-gradient(90deg, rgba(0, 0, 0, 0), #707070);
+    /*position*/
+    --Xpos: 50vw;
+    --Ypos: 50vh;
+    --hidden: transparent;
 }   

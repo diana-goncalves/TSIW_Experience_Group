@@ -28,15 +28,12 @@ let grabAndDrops = [
 
 let Exercise = [];
 
-
-
 let startGame = () =>{  
     let id = 0;
     for (let i = 1; i <= 3; i++) {
         let index = Math.floor(Math.random() * grabAndDrops.length);//nao pode ter o mesmo index
         if (Exercise.some(element => element.text == grabAndDrops[index].text && element.choices == grabAndDrops[index].choices && element.result == grabAndDrops[index].result)) {
             i-=1;
-            console.log("dsdsadasd");
         }else{
             Exercise.push(grabAndDrops[index]);
 
