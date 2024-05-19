@@ -72,11 +72,6 @@
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
 }
 
-.navbar{
-  background-color: #333533;
-  border-bottom: 1px solid var(--color-white);
-}
-
 /* //////////// ABOUT /////////// */
 /* Cards do Catálogo do Curso */
 .custom-border {
@@ -102,3 +97,24 @@ input:focus {
   border-color: var(--color-light-yellow) !important;
   box-shadow: 0 0 5px var(--color-light-yellow) !important;
 }
+
+/* NAVBAR */
+
+.navbar{
+  max-height: 60px;
+  background-color: #333533;
+  border-bottom: 1px solid var(--color-white);
+}
+
+/* NAVBAR */
+
+/* TABLETS */
+
+@media only screen and (max-width: 1023px) {
+  #navbarNav {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+/* TABLETS */

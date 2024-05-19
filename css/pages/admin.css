@@ -1,6 +1,14 @@
-body {
+#adminBody,
+#accountBody {
     padding-top: 0 !important;
+    overflow-x: hidden;
 }
+
+#accountBody {
+    padding-top: 0 !important;
+    overflow-x: hidden;
+}
+
 /* Div que contém tudo */
 #wrapperContainer {
     /* margin-top: auto;   Distância entre navbar e o resto do site */
