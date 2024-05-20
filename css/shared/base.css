@@ -6,7 +6,6 @@ body{
     /* font-size: 2rem;
     line-height: 160%;
     overflow: hidden; */
-    padding-top: 90px;
     background-color: var(--color-dark-gray);
     font-family: "Poppins";
     color: var(--color-white)

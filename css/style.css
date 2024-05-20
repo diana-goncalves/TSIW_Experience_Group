@@ -18,3 +18,14 @@
 @import url("./Escape-Room/Sala.css");
 @import url("./Escape-Room/hall.css");
 @import url("./Escape-Room/Inventory.css");
+
+/* Só me funciona aqui >>> VER */
+/* Adiciona a imagem de background */
+#home {
+    position: relative;  /* Necessário para posicionar o conteúdo sobre a imagem */
+    background-image: url('../media/img/Bg.jpg');
+    background-size: cover;  /* Garante que a imagem cubra toda a seção */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;  /* Altura mínima para cobrir o ecrã inteir */
+}

@@ -45,6 +45,8 @@
 #carousel {
   margin: 2rem;
   max-width: 31.25rem;
+  position: relative;  /* Posiciona o carrossel sobre o fundo */
+  z-index: 1;  /* Garante que o carrossel esteja acima do fundo */
 }
 
   /* elementos do carrossel (neste caso é o cartão)*/
