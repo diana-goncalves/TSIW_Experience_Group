@@ -3,17 +3,24 @@
 .event-card {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  margin: 2rem;
   margin-top: 8rem;
   border: 0.3rem solid;
   border-image: var(--color-yellowToSolidGray-gradient);
   box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(20px);
-  background-color: var(--color-dark-gray);
+  background-color: transparent;
   min-height: 270px;
+  max-height: ;
 
 }
-
+#eventContainer {
+  background-color: var(--color-dark-gray);
+  padding: 0;
+}
+#eventInterior {
+  padding-left: 1.5rem;
+  max-height: fit-content;
+}
   /* Titulo do cartão */
 .event-title {
   color: var(--color-white);
@@ -27,6 +34,7 @@
   margin-top: 2rem;
   font-weight: 500;
   font-size: 1rem;
+  
 }
 
   /* + icon, anchor para site do evento */
