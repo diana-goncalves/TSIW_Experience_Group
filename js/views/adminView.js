@@ -16,5 +16,3 @@ container.style.marginTop = alturaNav + 'px';
 let estadoUser = User.getUserLogged();
 
 document.querySelector(".headerAccount").innerHTML = `${estadoUser.username}`;
-
-// document.querySelector("#menu_container").innerHTML += `<svg id="iconLogout" src="../../media/icons/Logout.svg"></svg>`
