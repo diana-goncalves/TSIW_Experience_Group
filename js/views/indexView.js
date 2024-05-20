@@ -1,4 +1,3 @@
-import * as User from "../models/UserModel.js";
 
 document.addEventListener('DOMContentLoaded', function () {
     var scrollSpy = new bootstrap.ScrollSpy(document.body, {

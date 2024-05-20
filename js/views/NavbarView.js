@@ -12,13 +12,26 @@ document.addEventListener("DOMContentLoaded", function() {
     
     let estadoUser = User.getUserLogged();
 
-    if (estadoUser.id === 1) {
+    // Mudar navbar caso user ou admin estiverem logados
+    
+    if (estadoUser) {
+        // admin
+        if (estadoUser.id === 1) {
         
-        document.querySelector(".navbar-nav").innerHTML += `<li class="nav-item">
-        <a class="nav-link admin_page" href="./html/admin.html">ADMIN</a></li>`
-        
+            document.querySelector(".navbar-nav").innerHTML += `<li class="nav-item">
+            <a class="nav-link admin_page" href="./html/admin.html">ADMIN</a></li>`
+            
+        } 
+        // user
+        else {
+    
+            // document.querySelector(".navbar-nav").innerHTML += `<li class="nav-item">
+            // <a class="nav-link" href="./html/account.html">${estadoUser.username}</a></li>`
+            document.querySelector(".user_icon").href = "../../html/account.html"
+            document.querySelector(".user_icon").innerHTML += ` ${estadoUser.username}</i>`
+            
+        }
     }
-
 
     // Adiciona um evento de clique ao elemento 'navbarToggler'
     navbarToggler.addEventListener("click", function() {

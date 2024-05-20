@@ -53,6 +53,7 @@ registerForm.addEventListener("submit", (event) => {
     const valorPasseRegister = document.querySelector("#InputPasswordRegister").value;
 
     User.add(valorNomeRegister, valorPasseRegister);
+    alert("Registado com sucesso")
     MudarParaLogin();
 })
 
@@ -63,4 +64,8 @@ loginForm.addEventListener("submit", event => {
     const valorPasseLogin = document.querySelector("#InputPassword1").value;
     
     User.login(valorNomeLogin,valorPasseLogin,lembrar)
-})
+    setTimeout(() => {
+        location.href = "../../index.html";
+      }, 500);
+    } 
+)
