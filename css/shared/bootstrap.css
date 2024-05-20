@@ -105,6 +105,12 @@ input:focus {
   background-color: #333533;
   border-bottom: 1px solid var(--color-white);
 }
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  text-decoration: underline;
+  text-decoration-color: var(--color-light-yellow);
+  text-decoration-thickness: 3px;
+  /* font-size: 20px; */
+}
 
 /* NAVBAR */
 
