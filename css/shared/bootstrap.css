@@ -9,8 +9,8 @@
   box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(20px);
   background-color: transparent;
-  min-height: 270px;
-  max-height: ;
+  height: 270px;
+  width: fit-content;
 
 }
 #eventContainer {
@@ -20,6 +20,8 @@
 #eventInterior {
   padding-left: 1.5rem;
   max-height: fit-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
   /* Titulo do cartão */
 .event-title {
@@ -27,6 +29,11 @@
   text-decoration: underline;
   font-weight: 700;
   font-size: 2rem;
+  display: -webkit-box; /* Fallback for older browsers */
+  -webkit-box-orient: vertical; /* Defines the orientation for the box */
+  -webkit-line-clamp: 1; /* Limits the text to 3 lines */
+  overflow: hidden; /* Ensures that the overflowing content is hidden */
+  text-overflow: ellipsis; /* Adds the ellipsis (...) */
 }
   /*  Texto do cartão  */
 .event-description {
@@ -34,7 +41,11 @@
   margin-top: 2rem;
   font-weight: 500;
   font-size: 1rem;
-  
+  display: -webkit-box; /* Fallback for older browsers */
+  -webkit-box-orient: vertical; /* Defines the orientation for the box */
+  -webkit-line-clamp: 3; /* Limits the text to 3 lines */
+  overflow: hidden; /* Ensures that the overflowing content is hidden */
+  text-overflow: ellipsis; /* Adds the ellipsis (...) */
 }
 
   /* + icon, anchor para site do evento */
@@ -47,6 +58,8 @@
   text-decoration: none;
   height: 1.3rem;
   line-height: 1;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
   /* div do carrossel */
@@ -130,6 +143,15 @@ input:focus {
   #navbarNav {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+  }
+  .event-card {
+    height: 132.5px;
+  }
+  .event-description {
+    color: var(--color-white);
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
   }
 }
 
