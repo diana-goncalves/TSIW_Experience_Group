@@ -29,11 +29,11 @@
   text-decoration: underline;
   font-weight: 700;
   font-size: 2rem;
-  display: -webkit-box; /* Fallback for older browsers */
-  -webkit-box-orient: vertical; /* Defines the orientation for the box */
-  -webkit-line-clamp: 1; /* Limits the text to 3 lines */
-  overflow: hidden; /* Ensures that the overflowing content is hidden */
-  text-overflow: ellipsis; /* Adds the ellipsis (...) */
+  display: -webkit-box;
+  -webkit-box-orient: vertical; /* Necessário para adicionar ellipsis ao texto */
+  -webkit-line-clamp: 1; /* Limite de linhas do titulo */
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
   /*  Texto do cartão  */
 .event-description {
@@ -41,11 +41,11 @@
   margin-top: 2rem;
   font-weight: 500;
   font-size: 1rem;
-  display: -webkit-box; /* Fallback for older browsers */
-  -webkit-box-orient: vertical; /* Defines the orientation for the box */
-  -webkit-line-clamp: 3; /* Limits the text to 3 lines */
-  overflow: hidden; /* Ensures that the overflowing content is hidden */
-  text-overflow: ellipsis; /* Adds the ellipsis (...) */
+  display: -webkit-box; /* Necessário para adicionar ellipsis ao texto */
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 3; /* Limite de linhas do texto */
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
   /* + icon, anchor para site do evento */
