@@ -137,6 +137,16 @@ input:focus {
 
 /* NAVBAR */
 
+#iconLogout {
+  display: block;
+  height: 50px;
+  width: 50px;
+  color: var(--color-yellow);
+  position: absolute;
+  z-index: 1000;
+  
+}
+
 /* TABLETS */
 
 @media only screen and (max-width: 1023px) {

@@ -1,4 +1,7 @@
-import * as User from "../models/UserModel.js";
+import { getUserLogged } from "../models/UserModel.js";
+
+// ERRO PARA RESOLVER: RETIRAR ICON PARA FAZER LOGIN DA NAVBAR NA PÁGINA DE PERFIL E ADMIN
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // Seleciona o elemento com a classe 'navbar-toggler'
@@ -10,17 +13,18 @@ document.addEventListener("DOMContentLoaded", function() {
     let navPAI = document.querySelector(".navbar");
     
     
-    let estadoUser = User.getUserLogged();
+    let estadoUser = getUserLogged();
 
-    // Mudar navbar caso user ou admin estiverem logados
+    // Mudar navbar caso user ou admin estiverem logados  <i class="fas fa-sign-out"></i>
     
     if (estadoUser) {
         // admin
         if (estadoUser.id === 1) {
         
-            document.querySelector(".navbar-nav").innerHTML += `<li class="nav-item">
-            <a class="nav-link admin_page" href="./html/admin.html">ADMIN</a></li>`
-            
+            // document.querySelector(".navbar-nav").innerHTML += `<li class="nav-item">
+            // <a class="nav-link admin_page" href="./html/admin.html">ADMIN</a></li>`
+            document.querySelector(".user_icon").href = "../../html/admin.html"
+            document.querySelector(".user_icon").innerHTML = ` ${estadoUser.username}`
         } 
         // user
         else {
@@ -28,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // document.querySelector(".navbar-nav").innerHTML += `<li class="nav-item">
             // <a class="nav-link" href="./html/account.html">${estadoUser.username}</a></li>`
             document.querySelector(".user_icon").href = "../../html/account.html"
-            document.querySelector(".user_icon").innerHTML += ` ${estadoUser.username}</i>`
+            document.querySelector(".user_icon").innerHTML = ` ${estadoUser.username}`
             
         }
     }
