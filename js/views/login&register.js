@@ -1,4 +1,6 @@
- // script para o botão remember me
+import * as User from "../models/UserModel.js";
+ 
+// script para o botão remember me
 
  document.addEventListener('DOMContentLoaded', function () {
     const rememberMeButton = document.querySelector('#lembrarBTN')
@@ -20,4 +22,20 @@ document.querySelector("#criarButton").addEventListener('click', function () {
 document.querySelector("#loginButton").addEventListener('click', function () {
     document.querySelector("#loginForm").style.display = 'block';
     document.querySelector("#registerForm").style.display = 'none';
+})
+
+// form e submit de users
+
+const loginForm =  document.querySelector("#loginForm");
+const registerForm = document.querySelector("#registerForm");
+
+User.init()
+
+registerForm.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+    const valorNomeRegister = document.querySelector("#inputNomeUtilizadorRegister").value;
+    const valorPasseRegister = document.querySelector("#InputPasswordRegister").value;
+
+    User.add(valorNomeRegister,valorPasseRegister);
 })
