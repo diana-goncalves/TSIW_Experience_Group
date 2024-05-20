@@ -52,7 +52,7 @@ export function getInventory() {
 }
 
 function getNextId() {
-    return inventoryItens.length > 0 ? inventoryItens.length + 1 : 1;
+    return items.length > 0 ? items.length + 1 : 1;
 }
 
 /**
@@ -67,7 +67,7 @@ class Item {
     img = "";
     room = "";
 
-    constructor(x,y,name,img){
+    constructor(x,y,name,img,room){
         this.id = getNextId();
         this.x = x;
         this.y = y;
