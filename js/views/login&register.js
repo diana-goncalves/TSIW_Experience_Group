@@ -57,15 +57,23 @@ registerForm.addEventListener("submit", (event) => {
     MudarParaLogin();
 })
 
+
 loginForm.addEventListener("submit", event => {
     event.preventDefault();
 
     const valorNomeLogin = document.querySelector("#inputNomeUtilizador").value;
     const valorPasseLogin = document.querySelector("#InputPassword1").value;
     
-    User.login(valorNomeLogin,valorPasseLogin,lembrar)
-    setTimeout(() => {
-        location.href = "../../index.html";
-      }, 500);
+    try {
+        
+        User.login(valorNomeLogin,valorPasseLogin,lembrar)
+    
+        setTimeout(() => {
+            location.href = "../../index.html";
+        }, 500);
     } 
-)
+     catch (error) {
+        alert("Não foi possivel iniciar sessão!")
+    }
+    
+})

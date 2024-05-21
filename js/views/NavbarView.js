@@ -1,4 +1,4 @@
-import { getUserLogged } from "../models/UserModel.js";
+import { getUserLogged,logout } from "../models/UserModel.js";
 
 // ERRO PARA RESOLVER: RETIRAR ICON PARA FAZER LOGIN DA NAVBAR NA PÁGINA DE PERFIL E ADMIN
 
@@ -15,26 +15,48 @@ document.addEventListener("DOMContentLoaded", function() {
     
     let estadoUser = getUserLogged();
 
-    // Mudar navbar caso user ou admin estiverem logados  <i class="fas fa-sign-out"></i>
+    // Mudar navbar caso user ou admin estiverem logados  
     
     if (estadoUser) {
         // admin
         if (estadoUser.id === 1) {
         
-            // document.querySelector(".navbar-nav").innerHTML += `<li class="nav-item">
-            // <a class="nav-link admin_page" href="./html/admin.html">ADMIN</a></li>`
             document.querySelector(".user_icon").href = "../../html/admin.html"
             document.querySelector(".user_icon").innerHTML = ` ${estadoUser.username}`
+            document.querySelector("#LoginLogout_Container").innerHTML += 
+            `
+            <li class="nav-item">
+                <button class="logoutButton" id="logoutIndex"><i class="fas fa-sign-out" style="color: var(--color-yellow);"></i></button>    
+            </li>
+            
+            `
+            
         } 
         // user
         else {
     
-            // document.querySelector(".navbar-nav").innerHTML += `<li class="nav-item">
-            // <a class="nav-link" href="./html/account.html">${estadoUser.username}</a></li>`
             document.querySelector(".user_icon").href = "../../html/account.html"
             document.querySelector(".user_icon").innerHTML = ` ${estadoUser.username}`
+            document.querySelector("#LoginLogout_Container").innerHTML += 
+            `
+            <li class="nav-item">
+                <button class="logoutButton" id="logoutIndex"><i class="fas fa-sign-out" style="color: var(--color-yellow);"></i></button>    
+            </li>
             
+            `
         }
+
+        document.querySelector("#logoutIndex").addEventListener("click", event => {
+            event.preventDefault()
+
+            logout()
+            
+            setTimeout(() => {
+                location.href = "../../index.html";
+            }, 500);
+    
+        })
+
     }
 
     // Adiciona um evento de clique ao elemento 'navbarToggler'
@@ -55,3 +77,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+

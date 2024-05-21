@@ -11,8 +11,31 @@ const container = document.querySelector("#wrapperContainer");
 container.style.marginTop = alturaNav + 'px';
 
 
-// Mudar username
+
 
 let estadoUser = User.getUserLogged();
 
-document.querySelector(".headerAccount").innerHTML = `${estadoUser.username}`;
+if(estadoUser) {
+    
+    // Mudar username
+    document.querySelector(".headerAccount").innerHTML = `${estadoUser.username}`;
+
+    // Logout
+    document.querySelector(".logoutButton").addEventListener("click", event => {
+        event.preventDefault()
+
+        User.logout()
+        
+        setTimeout(() => {
+            location.href = "../../index.html";
+        }, 500);
+
+    })
+
+} else {
+    alert("Tens que fazer login primeiro!")
+    
+    setTimeout(() => {
+        location.href = "../../html/login.html";
+    }, 500);
+}

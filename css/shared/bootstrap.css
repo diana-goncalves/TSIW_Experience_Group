@@ -137,14 +137,19 @@ input:focus {
 
 /* NAVBAR */
 
-#iconLogout {
-  display: block;
-  height: 50px;
-  width: 50px;
-  color: var(--color-yellow);
-  position: absolute;
-  z-index: 1000;
-  
+.logoutButton {
+  background: none;
+  margin-top: 1rem;
+  padding: 0;
+  border: 0;
+  color: red;
+  /* height: 50px;
+  width: 50px; */
+}
+
+#logoutIndex {
+  margin-top: 0;
+  padding: 8px;
 }
 
 /* TABLETS */
