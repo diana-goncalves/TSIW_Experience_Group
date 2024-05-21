@@ -36,7 +36,9 @@ if(estadoUser) {
 } else {
     alert("Tens que fazer login primeiro!")
     
-    setTimeout(() => {
-        location.href = "../../html/login.html";
-    }, 500);
+    // setTimeout(() => {
+    //     location.href = "../../html/login.html";
+    // }, 500);
+    location.href = "../../html/login.html";
+
 }
