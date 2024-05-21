@@ -17,15 +17,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
+    <!-- Gauge.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gauge.js@1.3.8/dist/gauge.min.js"></script>
 </head>
 
 <body style="background-color: #333533;" data-bs-spy="scroll" data-bs-target="#navbarNav">
     <header>
-        <!-- Animation Homepage -->
-        <!-- <div class="splash">
-                <img class="logo" src="./logo.svg" alt="TSIW logo">
-            </div> -->
-
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
             <div class="container ">
@@ -48,12 +45,13 @@
                             <a class="nav-link about_page" href="#about">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link er_page" href="escapeRoom">Escape Room</a>
+                            <a class="nav-link er_page" href="#escapeRoom">Escape Room</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav" id="LoginLogout_Container">
                         <li class="nav-item">
-                            <a class="nav-link text-white user_icon" href="./html/login.html"><i class="fas fa-user"></i></a>
+                            <a class="nav-link text-white user_icon" href="./html/login.html"><i
+                                    class="fas fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +84,7 @@
 
                     <div class="carousel-item">
                         <div class="container text-justify" id="eventContainer">
-                            
+
                             <div class="event-card d-flex">
                                 <div class="card-interior" id="eventInterior">
                                     <h2 class="card-title event-title">OPEN DAYS</h2>
@@ -99,13 +97,13 @@
                                 <a href="https://www.esmad.ipp.pt/noticias/open-days" target="_blank"
                                     class="event-link align-self-end">+</a>
                             </div>
-                           
+
                         </div>
                     </div>
 
                     <div class="carousel-item">
                         <div class="container text-justify" id="eventContainer">
-                            
+
                             <div class="event-card d-flex">
                                 <div class="card-interior" id="eventInterior">
                                     <h2 class="card-title event-title">MAD GAME JAM</h2>
@@ -117,7 +115,7 @@
                                 <a href="https://madjam.esmad.ipp.pt/" target="_blank"
                                     class="event-link align-self-end">+</a>
                             </div>
-                         
+
                         </div>
                     </div>
                 </div>
@@ -138,13 +136,20 @@
                         <h2 class="text-center">UI</h2>
                         <img src="./media/img/ui.avif" class="img-fluid border-image mx-auto" alt="UI Image">
                         <div class="col-10 mx-auto mt-3">
-                            <p>O UI ou User Interface é responsável pela <strong style="color: var(--color-yellow);">ideia</strong>, pelas <strong style="color: var(--color-yellow);">sensaçoes</strong> e <strong style="color: var(--color-yellow);">emoções</strong> que as aplicações web transmitem ao utilizador.</p>
+                            <p>O UI ou User Interface é responsável pela <strong
+                                    style="color: var(--color-yellow);">ideia</strong>, pelas <strong
+                                    style="color: var(--color-yellow);">sensações</strong> e <strong
+                                    style="color: var(--color-yellow);">emoções</strong> que as aplicações web
+                                transmitem ao utilizador.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <h2 class="text-center">UX</h2>
                         <div class="col-10 mx-auto">
-                            <p>O UX ou User Experience, foca-se na <strong style="color: var(--color-yellow);">sensação</strong> que o produto causa e em tornar a <strong style="color: var(--color-yellow);">interação do utilizador</strong> o mais eficiente e simples.</p>
+                            <p>O UX ou User Experience, foca-se na <strong
+                                    style="color: var(--color-yellow);">sensação</strong> que o produto causa e em
+                                tornar a <strong style="color: var(--color-yellow);">interação do utilizador</strong> o
+                                mais eficiente e simples.</p>
                         </div>
                         <img src="./media/img/ux.avif" class="img-fluid border-image mx-auto" alt="UX Image">
                     </div>
@@ -152,7 +157,8 @@
                 <div class="row my-5">
                     <div class="col-md-6">
                         <h2 class="text-center">Desenvolvimento de Software</h2>
-                        <img src="./media/img/Web Developer.avif" class="img-fluid border-image mx-auto" alt="Software Development">
+                        <img src="./media/img/Web Developer.avif" class="img-fluid border-image mx-auto"
+                            alt="Software Development">
                     </div>
                     <div class="col-md-6">
                         <h2 class="text-center">Apps móveis</h2>
@@ -163,8 +169,11 @@
         </section>
 
         <!-- Projects section -->
-        <section id="projects">
-            <!-- code here -->
+        <section id="projects" class="py-5">
+            <div class="container">
+                <h2 class="text-start mt-5 mb-2">Projetos</h2>
+                <p class="text-start mb-5">Explora alguns dos projetos feitos pelos estudantes do nosso curso</p>
+            </div>
         </section>
 
         <!-- About section -->
@@ -172,7 +181,6 @@
             <div class="container">
                 <h2 class="text-end mt-5 mb-2">Catálogo do Curso</h2>
                 <p class="text-end mb-5">Clica no + para entenderes melhor aquilo que estudamos</p>
-
                 <div class="row row-cols-1 row-cols-md-3 g-1">
                     <div class="col">
                         <div class="card h-100 custom-border w-75 vh-50 mx-auto">
@@ -236,15 +244,13 @@
             </div>
         </section>
 
-
-
         <!-- Profissional Exits and Access Forms section -->
-        <section id="exits-access" class="py-5">
+        <section class="py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <h2 class="text-center mt-5 mb-5">Saídas Profissionais</h2>
-                        <div class="card h-75 custom-width">
+                        <div class="card h-75 custom-width" id="exits-access-card">
                             <div class="card-body">
                                 <ul class="list-unstyled">
                                     <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Conceção e
@@ -261,22 +267,18 @@
                     </div>
                     <div class="col-md-6 mb-4">
                         <h2 class="text-center mt-5 mb-5">Formas de Acesso</h2>
-                        <div class="card h-75 custom-width">
+                        <div class="card h-75 custom-width" id="access-ways-card">
                             <div class="card-body">
                                 <ul class="list-unstyled">
                                     <li class="mt-5 mb-4">
-                                        <span class="text-warning">&#9679;</span> Concurso Nacional de Acesso: <br>!!!
-                                        COLOCAR INFO !!!
+                                        <span class="text-warning">&#9679;</span> Concurso Nacional de Acesso: (FALTA)
                                     </li>
                                     <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Candidaturas maiores
-                                        de
-                                        23 anos.</li>
+                                        de 23 anos.</li>
                                     <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Regimes de
-                                        reingressos e
-                                        mudança de par instituição/curso.</li>
+                                        reingressos e mudança de par instituição/curso.</li>
                                     <li class="mt-5 mb-4"><span class="text-warning">&#9679;</span> Concurso especial
-                                        para
-                                        estudantes internacionais.</li>
+                                        para estudantes internacionais.</li>
                                 </ul>
                                 <div class="text-end mt-4 m-lg-4"><a href="https://www.dges.gov.pt" target="_blank"
                                         class="text-muted text-decoration-none">DGES</a></div>
@@ -287,9 +289,38 @@
             </div>
         </section>
 
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-start mt-5 mb-2">Empregabilidade</h2>
+                <p class="text-start mb-5">Questionário de empregabilidade (diplomados em TSIW)</p>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <canvas id="gauge1" width="200" height="200"></canvas>
+                        <div class="gauge-label">Empregado</div>
+                    </div>
+                    <div class="col-md-3">
+                        <canvas id="gauge2" width="200" height="200"></canvas>
+                        <div class="gauge-label">Estuda</div>
+                    </div>
+                    <div class="col-md-3">
+                        <canvas id="gauge3" width="200" height="200"></canvas>
+                        <div class="gauge-label">Outra / não procura emprego</div>
+                    </div>
+                    <div class="col-md-3">
+                        <canvas id="gauge4" width="200" height="200"></canvas>
+                        <div class="gauge-label">Desempregado</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Escape Room section -->
-        <section id="escapeRoom">
-            <!-- code here -->
+        <section id="escapeRoom" class="py-5">
+            <div class="container">
+                <h2 class="text-end mt-5 mb-2">Ainda tens Dúvidas?</h2>
+                <p class="text-end mb-5">Clica no botão para descobrires mais sobre o nosso curso de forma interativa
+                </p>
+            </div>
         </section>
 
         <!-- Account section -->
@@ -299,17 +330,45 @@
 
     </main>
 
-
-    <footer>
-        <!-- place footer here -->
+    <footer class="custom-footer py-5">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <p class="mb-1">TSIW Experience © 2024</p>
+                <p class="mb-1">Mapa</p>
+                <p class="mb-1">Acessibilidade</p>
+            </div>
+            <div class="text-center">
+                <a href="#top" class="text-warning d-inline-block fs-2">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+            <div class="text-end">
+                <p class="mb-1">Escola Superior de Media Artes e Design</p>
+                <p class="mb-1">Rua D. Sancho I, n.º 981</p>
+                <p class="mb-1">4480-876 Vila do Conde</p>
+                <p class="mb-1">Portugal</p>
+                <p class="mb-1">T. +351 252 291 700</p>
+                <p class="mb-1">E. geral@esmad.ipp.pt</p>
+            </div>
+            <div class="text-end">
+                <img src="./media/img/IPP Logo.png" alt="P.PORTO Logo" class="img-fluid" style="max-height: 50px;">
+            </div>
+        </div>
     </footer>
+
+
+    <!-- Sscript for FontAwesome icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+
 
     <!-- Referências ao js -->
     <script type="module" src="./js/init.js"></script>
     <script type="module" src="./js/views/NavbarView.js"></script>
     <script type="module" src="./js/views/indexView.js"></script>
-    <!-- <script type="module" src="./js/views/SplashView.js"></script> -->
 
+    <!-- Gauge.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gauge.js@1.3.8/dist/gauge.min.js"></script>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -319,7 +378,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
