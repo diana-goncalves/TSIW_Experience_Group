@@ -111,9 +111,9 @@
   border-radius: 0;
   color: var(--color-white);
 }
-/* .card-body {
+.card-body {
   padding: 0;
-} */
+}
 
 /* Mudar cor da sombra e borda dos inputs quando estão selecionados */
 input:focus {
