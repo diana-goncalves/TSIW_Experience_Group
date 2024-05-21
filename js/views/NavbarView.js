@@ -46,15 +46,19 @@ document.addEventListener("DOMContentLoaded", function() {
             `
         }
 
+        // logout
+
         document.querySelector("#logoutIndex").addEventListener("click", event => {
             event.preventDefault()
 
-            logout()
             
-            setTimeout(() => {
+            if (confirm("Queres mesmo terminar sessão?")) {
+                
+                logout()
+
                 location.href = "../../index.html";
-            }, 500);
-    
+            
+            }
         })
 
     }

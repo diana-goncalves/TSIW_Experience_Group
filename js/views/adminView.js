@@ -24,12 +24,13 @@ if(estadoUser) {
     document.querySelector(".logoutButton").addEventListener("click", event => {
         event.preventDefault()
 
-        User.logout()
-        
-        setTimeout(() => {
+        if (confirm("Queres mesmo terminar sessão?")) {
+            
+            User.logout()
+            
             location.href = "../../index.html";
-        }, 500);
-
+            
+        }
     })
 
 } else {
