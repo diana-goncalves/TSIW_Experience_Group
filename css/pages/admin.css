@@ -94,7 +94,7 @@ hr {
     margin: 0;
     height: 0.2rem;
 }
-#btnGuardar {
+.btnGuardar {
     width: 7.625rem;
     height: 2.4375rem;
     flex-shrink: 0;
@@ -107,6 +107,11 @@ hr {
     font-weight: 400;
     line-height: normal;
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
+}
+.btnGuardar:hover, .btnGuardar:focus {
+    border: 0;
+    color: var(--color-yellow);
+    background-color: var(--color-black);
 }
 /* Inputs */
 
@@ -154,11 +159,23 @@ label {
     height: 100vh;
 }
 /* Icon adicionar imagem */
-#imgSVG {
+.imgBTN {
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
-    margin-bottom: -1rem;
+    background: transparent;
+    color: var(--color-yellow);
+    padding: 0;
+    border: 0;
     margin-right: 1rem;
-    margin-left: 1rem;
+}
+.imgBTN i {
+    display: block;
+    background: transparent;
+    font-size: 2.5rem;
+}
+.imgBTN:hover, .imgBTN:focus {
+    color: var(--color-yellow);
+    background-color: var(--color-black);
+    border: 0;
 }
 /* Botões menu mobile */
 .nav-pills .nav-item {
@@ -184,13 +201,13 @@ label {
     margin-right: 1rem;
     margin-left: 1rem;
 }
-#btnFiltro {
+.btnFiltro {
     width: 7.625rem;
     height: 2.4375rem;
     flex-shrink: 0;
-    background: transparent;
-    color: var(--color-yellow);
-    border: 1px solid var(--color-light-gray);
+    background: var(--color-yellow);
+    color: var(--color-black);
+    border: 0;
     border-radius: 0;
     font-size: 1.25rem;
     font-style: normal;
@@ -200,14 +217,24 @@ label {
     margin: 0.5rem;
     
 }
-#btnOrder {
-    background-color: transparent;
+.btnFiltro:hover, .btnFiltro:focus {
+    border: 0;
+    color: var(--color-yellow);
+    background-color: var(--color-black     );
+}
+.btnOrder {
+    color: var(--color-black);
+    width: 2.625rem;
+    height: 2.4375rem;
+    background-color: var(--color-yellow);
+    border: 0;
     border-radius: 50%;
-    border: 1px solid var(--color-light-gray);
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
-    scale: 1.05;
-    margin: 0.5rem;
-
+}
+.btnOrder:hover, .btnOrder:focus {
+    border: 0;
+    color: var(--color-yellow);
+    background-color: var(--color-black);
 }
 /* Tabela */
 table {
@@ -282,15 +309,12 @@ thead {
     width: inherit;
     height: 2.4375rem;
     flex-shrink: 0;
-    background: var(--color-yellow);
-    color: var(--color-dark-gray);
     border: 0;
     border-radius: 0;
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
 }
 .form-text {
     color: var(--color-white);

@@ -120,6 +120,11 @@ input:focus {
   border-color: var(--color-light-yellow) !important;
   box-shadow: 0 0 5px var(--color-light-yellow) !important;
 }
+/* Mudar cor da sombra e borda dos botões quando estão selecionados */
+button:focus {
+  border-color: var(--color-black) !important;
+  box-shadow: 0 0 5px var(--color-black) !important;
+}
 
 /* NAVBAR */
 

@@ -124,7 +124,7 @@ function renderTableUsers(users = []) {
 let isFiltered = false;
 
 const filterInputUsers = document.querySelector("#procuraUser");
-const filterButtonUsers = document.querySelector("#btnFiltro");
+const filterButtonUsers = document.querySelector("#btnFiltroUser");
 
 filterButtonUsers.addEventListener("click", () => {
     
