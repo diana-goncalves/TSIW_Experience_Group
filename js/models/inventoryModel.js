@@ -1,4 +1,3 @@
-let inventory = [];
 let items = [];
 
 // CARREGAR ITEMS DA LOCALSTORAGE
@@ -6,38 +5,30 @@ export function init(){
     if (localStorage.items) {
         const tempItems = JSON.parse(localStorage.items);
         for (let item of tempItems) {
-            items.push(new Item(item.x,item.y,item.name,item.img,item.room));
+            items.push(new Item(item.x,item.y,item.name,item.img,item.room, item.inInventory));
         }
     } else {
         items = [];
     }
-    if (sessionStorage.inventory) {
-        const tempInventory = JSON.parse(sessionStorage.inventory);
-        for (let itemInv of tempInventory) {
-            inventory.push(itemInv);
-        }
-    } else {
-        inventory = [];
-    }
 }
 
 // ADICIONAR ITEM
-export function addItem(x,y,name,img,room){
-    items.push(new Item(x,y,name,img,room));
+export function addItem(x,y,name,img,room,inInventory = false){
+    items.push(new Item(x,y,name,img,room,inInventory));
     localStorage.setItem("items", JSON.stringify(items))
 }
 
 // ADICIONAR ITEM AO INVENTARIO
 export function AddToInventory(item) {
-    index = items.findIndex(element => element.name == item)
-    inventory.push(items.splice(index,1))
+    let index = items.findIndex(element => element.name == item)
+    items[index].inInventory = true;
+    console.log(items);
     localStorage.setItem("items", JSON.stringify(items))
-    sessionStorage.setItem("inventory", JSON.stringify(inventory))
 }
 
 // OBTER ITEMS DA ROOM
 export function getItemsRoom(room) {
-    let filterItems = items.filter(element => element.room.toLowerCase() == room.toLowerCase());
+    let filterItems = items.filter(element => element.room.toLowerCase() == room.toLowerCase() && element.inInventory == false);
     return filterItems;
 }
 
@@ -48,11 +39,8 @@ export function getItems() {
 
 // OBTER INVENTORY
 export function getInventory() {
-    return inventory;
-}
-
-function getNextId() {
-    return items.length > 0 ? items.length + 1 : 1;
+    let filterinventory = items.filter(element => element.inInventory === true)
+    return filterinventory;
 }
 
 /**
@@ -60,19 +48,20 @@ function getNextId() {
  */
 
 class Item {
-    id = null;
     x = null;
     y = null;
     name = "";
     img = "";
     room = "";
+    inInventory = false;
 
-    constructor(x,y,name,img,room){
-        this.id = getNextId();
+    constructor(x,y,name,img,room,inInventory){
         this.x = x;
         this.y = y;
         this.name = name;
         this.img = img;
         this.room = room;
+        this.inInventory = inInventory;
     }
 }
+

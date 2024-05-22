@@ -37,6 +37,7 @@
     height: 3.5rem;
     width: 3.5rem;
     transition: all 0.5s;
+    cursor: pointer;
 }
 @media only screen and (max-width: 1024px) {
     .inventorySlot{

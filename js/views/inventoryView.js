@@ -1,8 +1,5 @@
-import * as invItems from "./models/inventoryModel.js";
+import * as invItems from "../models/inventoryModel.js";
 
-
-
-let items = document.querySelectorAll(".item");
 let mouseX = 0;
 let mouseY = 0;
 
@@ -34,35 +31,82 @@ let InventoryView = () =>{
             </div>
         </div>
     </div>`
+    fillInventory();
+
+    let items = document.querySelectorAll(".ItemZone .item");
+    console.log(items);
+    items.forEach(element => {
+        element.addEventListener("click",setItemZone)
+    });
+
 }
 
-
-InventoryView();
-
-items.forEach(item => {
+// RESET DOS INVENTORY
+let resetInventory = ()=>{
     let inventorySlot = document.querySelectorAll(".inventorySlot");
-    item.addEventListener("click",(e)=>{
-        console.log("fdfsfd");
-        e.preventDefault();
+    for (const slot of inventorySlot) {
+        slot.innerHTML = ""
+    }    
+}
+
+function fillInventory() {
+    let InventaryItems = invItems.getInventory();
+    let inventorySlot = document.querySelectorAll(".inventorySlot");
+
+    InventaryItems.forEach(item => {        
+        let img = document.createElement('img');
+        img.src = item.img;
+        img.alt = item.name;
+        img.id = item.name;
+        img.className = 'img-fluid item';
+        
         for (const slot of inventorySlot) {
             if (slot.innerHTML == "") {
-                slot.appendChild(item);
-
-                item.addEventListener("click", inventoryItemClick)
-                return
+                slot.appendChild(img);
+                // remove addeventlistener do click para o inventory
+                img.addEventListener("click", inventoryItemClick);
+                return;
             }
         }
     })
-});
-
+}
 
 function inventoryItemClick(event) {
     console.log( event.target.id.slice(0,3));
     if (event.target.id == "lanterna") {
         turnpower()
     }
-    // Adicione aqui a lógica adicional que você deseja
+   
 }
+
+function setItemZone(e) {
+    e.preventDefault();
+    invItems.AddToInventory(e.target.id);
+    e.target.remove();
+    resetInventory();
+    fillInventory();
+}
+
+InventoryView();
+
+
+
+// este codigo tem que ir para a sala
+// ITEMS.forEach(item => {
+//     let inventorySlot = document.querySelectorAll(".inventorySlot");
+//     item.addEventListener("click",(e)=>{
+//         console.log("fdfsfd");
+//         e.preventDefault();
+//         for (const slot of inventorySlot) {
+//             if (slot.innerHTML == "") {
+//                 slot.appendChild(item);
+
+//                 item.addEventListener("click", inventoryItemClick)
+//                 return
+//             }
+//         }
+//     })
+// });
 
 function turnpower() {
     if (flashlight.style.display === "none" || flashlight.style.display === "") {
