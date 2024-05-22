@@ -2,8 +2,6 @@ import * as User from "../models/UserModel.js"
 
 User.init()
 
-// Array que guarda os userss
-let users = User.users;
 // User que está logado
 let estadoUser = User.getUserLogged();
 
@@ -32,31 +30,7 @@ if(estadoUser) {
         
         // Adicionar utilizadores à tabela de Users
 
-        users.forEach(user => {
-            document.querySelector("#table-Users").innerHTML += 
-            `
-                <tr>
-                    <td>${user.username}</td>
-                    <td>${user.id}</td>
-                    <td style="text-align: center;">
-                        
-                        <div class="dropdown">
-                            
-                            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:var(--color-yellow);border:0;">
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </button>
-
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item remove" id="${user.username}" href="#">Remover</a></li>
-                                <li><a class="dropdown-item bloquear">Bloquear</a></li>
-                            </ul>
-
-                        </div>
-                       
-                    </td>
-                </tr>
-            `
-        });
+        renderTableUsers(User.getUsers());
        
     }
 
@@ -72,29 +46,102 @@ if(estadoUser) {
 
 }
 
+function renderTableUsers(users = []) {
+    
+    const tabelaUsers = document.querySelector("#table-Users");
+    
+    // Limpar tabela primeiro
+    tabelaUsers.innerHTML = "";
+    
+    // Caso não encontre users ( filtro não encontra nenhum nome igual )
+    if (users.length === 0) {
+        tabelaUsers.innerHTML = 
+        `
+            <tr>
+                <td colspan="3" style="text-align:center;">Não foram encontrados utilizadores!</td>
+            </tr>
+        `
+        return;
+    }
+    
+    users.forEach(user => {
+        tabelaUsers.innerHTML += 
+        `
+            <tr>
+                <td>${user.username}</td>
+                <td>${user.id}</td>
+                <td style="text-align: center;">
+                    
+                    <div class="dropdown">
+                        
+                        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:var(--color-yellow);border:0;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
 
-// Clicar no botão remover USER
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item remove" id="${user.username}" href="#">Remover</a></li>
+                            <li><a class="dropdown-item bloquear">Bloquear</a></li>
+                        </ul>
 
-const btnsRemove = document.getElementsByClassName("remove");
+                    </div>
+                   
+                </td>
+            </tr>
+        `
+    });
 
-for (const button of btnsRemove) {
-    button.addEventListener("click", () => {
-        if(confirm("Queres mesmo remover o utilizador?")) {
-            User.removeUser(button.id);
-            location.reload();
-        }
-    })
+    // Clicar no botão remover USER
+
+    const btnsRemove = document.getElementsByClassName("remove");
+
+    for (const button of btnsRemove) {
+        button.addEventListener("click", () => {
+            if(confirm("Queres mesmo remover o utilizador?")) {
+                User.removeUser(button.id);
+                location.reload();
+            }
+        })
+    }
+
+    // Clicar no botão bloquear USER - PARA JÁ FAZ O MESMO QUE O BOTÃO REMOVER
+
+    const btnsBloquear = document.getElementsByClassName("bloquear");
+
+    for (const button of btnsBloquear) {
+        button.addEventListener("click", () => {
+            if(confirm("Queres mesmo bloquear o utilizador?")) {
+                User.removeUser(button.id);
+                location.reload();
+            }
+        })
+    }
+
 }
 
-// Clicar no botão bloquear USER - PARA JÁ FAZ O MESMO QUE O BOTÃO REMOVER
+// Clicar no botão filtrar
 
-const btnsBloquear = document.getElementsByClassName("bloquear");
+// guardar estado do botão
+let isFiltered = false;
 
-for (const button of btnsBloquear) {
-    button.addEventListener("click", () => {
-        if(confirm("Queres mesmo bloquear o utilizador?")) {
-            User.removeUser(button.id);
-            location.reload();
-        }
-    })
-}
+const filterInputUsers = document.querySelector("#procuraUser");
+const filterButtonUsers = document.querySelector("#btnFiltro");
+
+filterButtonUsers.addEventListener("click", () => {
+    
+    // Se já tiver filtrado, limpa o input e carrega a tabela outra vez com todos os users
+    if (isFiltered) {
+        filterInputUsers.value = "";
+        renderTableUsers(User.getUsers());
+        filterButtonUsers.textContent = "Filtrar";
+    } 
+    // Carregar tabela só com os users que correspondem ao filtro
+    else {
+        renderTableUsers(User.getUsers(filterInputUsers.value));
+        filterButtonUsers.textContent = "Limpar";
+        filterInputUsers.value = "";
+    }
+
+    // mudar estado do botão
+    isFiltered = !isFiltered;
+
+})

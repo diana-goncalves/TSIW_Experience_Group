@@ -81,6 +81,17 @@ function getNextId() {
   return users.length > 0 ? users.length + 1 : 1;
 }
 
+export function getUsers(filterName = "", isSorted = false) {
+  // Criar nova array caso o admin queira procurar por um nome
+  let filteredUsers = users.filter((user) => (user.username.toLowerCase().includes(filterName.toLowerCase()) || filterName === ""));
+
+  filteredUsers = isSorted
+    ? filteredUsers.sort((a, b) => a.username.localeCompare(b.username))
+    : filteredUsers; 
+
+  return filteredUsers;  
+}
+
 /**
  * CLASSE QUE MODELA UM UTILIZADOR NA APLICAÇÃO
  */
@@ -96,4 +107,4 @@ class User {
   }
 }
 
-export {users};
+// export {users};

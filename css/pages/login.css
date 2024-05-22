@@ -161,6 +161,12 @@
     border: 0;
 }
 
+#inputNomeUtilizador {
+    color: var(--color-black);
+}
+#InputPassword1 {
+    color: var(--color-black);
+}
 .retangulo_register_escuro,
 .retangulo_register_claro,
 .vectorRegister,
