@@ -92,6 +92,11 @@ export function getUsers(filterName = "", isSorted = false) {
   return filteredUsers;  
 }
 
+export function sortUsers() {
+  users.sort((a, b) => a.username.localeCompare(b.username));
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
 /**
  * CLASSE QUE MODELA UM UTILIZADOR NA APLICAÇÃO
  */

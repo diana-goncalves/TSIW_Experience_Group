@@ -145,3 +145,14 @@ filterButtonUsers.addEventListener("click", () => {
     isFiltered = !isFiltered;
 
 })
+
+// Clicar no botão organizar - é preciso arranjar isto, ele está a organizar mas muda a array e não a tabela
+
+const orderButtonUsers = document.querySelector("#btnOrderUser");
+
+orderButtonUsers.addEventListener("click", () => {
+    
+    User.sortUsers();
+    renderTableUsers(User.getUsers());
+
+})
