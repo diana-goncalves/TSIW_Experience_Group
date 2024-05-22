@@ -138,7 +138,6 @@ filterButtonUsers.addEventListener("click", () => {
     else {
         renderTableUsers(User.getUsers(filterInputUsers.value));
         filterButtonUsers.textContent = "Limpar";
-        filterInputUsers.value = "";
     }
 
     // mudar estado do botão
@@ -146,13 +145,19 @@ filterButtonUsers.addEventListener("click", () => {
 
 })
 
-// Clicar no botão organizar - é preciso arranjar isto, ele está a organizar mas muda a array e não a tabela
-
+// Clicar no botão organizar
+let isSorted = false;
 const orderButtonUsers = document.querySelector("#btnOrderUser");
 
 orderButtonUsers.addEventListener("click", () => {
     
-    User.sortUsers();
-    renderTableUsers(User.getUsers());
-
+    if(isSorted) {
+        // Caso já tenham clicado para organizar, tirar o sort
+        renderTableUsers(User.getUsers(filterInputUsers.value));
+    } else {
+        // Organizar a lista de users filtrados, se não houver filtros organiza APENAS a tabela
+        renderTableUsers(User.sortUsers(User.getUsers(filterInputUsers.value)));
+    }
+    
+    isSorted = !isSorted;
 })

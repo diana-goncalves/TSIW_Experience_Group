@@ -38,18 +38,28 @@ function initdata() {
             },
             {
                 id: 2,
+                username: "Auser",
+                password: "Apass",
+            },
+            {
+                id: 3,
                 username: "user1",
                 password: "pass1",
             },
             {
-                id: 3,
+                id: 4,
                 username: "user2",
                 password: "pass2",
             },
             {
-                id: 4,
-                username: "user3",
-                password: "pass3",
+                id: 5,
+                username: "Zuser",
+                password: "Zpass",
+            },
+            {
+                id: 6,
+                username: "userB",
+                password: "passB",
             }
         ];
         users.forEach((user) => {
