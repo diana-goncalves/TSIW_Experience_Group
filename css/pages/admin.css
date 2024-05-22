@@ -128,7 +128,7 @@ label {
     max-width: calc(100% - 24px);
 }
 .form-floating {
-    margin-left: 1rem;
+    margin-right: 1rem;
 }
 /* Cor da label depois de escrever algo no input */
 .form-floating>.form-control:not(:placeholder-shown)~label {

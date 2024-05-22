@@ -122,7 +122,6 @@ input:focus {
 }
 /* Mudar cor da sombra e borda dos botões quando estão selecionados */
 button:focus {
-  border-color: var(--color-black) !important;
   box-shadow: 0 0 5px var(--color-black) !important;
 }
 
@@ -147,14 +146,22 @@ button:focus {
   margin-top: 1rem;
   padding: 0;
   border: 0;
-  color: red;
-  /* height: 50px;
-  width: 50px; */
+  color: var(--color-white);
+  height: 4rem;
 }
-
+.logoutButton:hover, .logoutButton:focus {
+  background: red;
+  border-left: 0.25rem solid var(--color-white);
+}
 #logoutIndex {
   margin-top: 0;
   padding: 8px;
+  height: auto;
+}
+#logoutIndex:hover, #logoutIndex:focus {
+  background: none;
+  border-left: 0;
+  border: 0;
 }
 
 /* //////////// FOOTER /////////// */
