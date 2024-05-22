@@ -1,7 +1,16 @@
 import { getUserLogged,logout } from "../models/UserModel.js";
 
-// ERRO PARA RESOLVER: RETIRAR ICON PARA FAZER LOGIN DA NAVBAR NA PÁGINA DE PERFIL E ADMIN
+// Ajustar dinamicamente margem entre navbar e resto da página
 
+const nav = document.querySelector("#navbarNav");
+
+const alturaNav = nav.clientHeight;
+
+const container = document.querySelector("body");
+
+container.style.marginTop = alturaNav + 'px'; // Para aumentar distancia adicionar por exemplo: (alturaNav + 64 + 'px') -> para adicionar 64px
+
+// ERRO PARA RESOLVER: RETIRAR ICON PARA FAZER LOGIN DA NAVBAR NA PÁGINA DE PERFIL E ADMIN
 
 document.addEventListener("DOMContentLoaded", function() {
     // Seleciona o elemento com a classe 'navbar-toggler'
@@ -81,4 +90,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
 

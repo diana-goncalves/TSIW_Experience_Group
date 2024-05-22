@@ -8,11 +8,11 @@
 /*Import CSS Pages*/
 @import url("./pages/admin.css");
 @import url("./pages/login.css");
+@import url("./pages/projetos.css");
 /* @import url("./pages/...");
 @import url("./pages/...");
 @import url("./pages/...");
-@import url("./pages/...");
-@import url("./pages/..."); */
+@import url("./pages/...");  */
 
 /* Escape Room*/
 @import url("./Escape-Room/Sala.css");

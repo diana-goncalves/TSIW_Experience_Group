@@ -1,0 +1,10 @@
+/* Header. Inclui titulos e form */
+.jumbotron {
+    margin-top: 8rem;
+}
+/* Linhas brancas (hr) */
+.my-2 {
+    color: var(--color-white);
+    opacity: 0.99; 
+    height: 1px;
+}

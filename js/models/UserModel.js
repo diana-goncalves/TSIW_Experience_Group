@@ -89,3 +89,5 @@ class User {
     this.password = password;
   }
 }
+
+export {users};
