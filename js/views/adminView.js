@@ -47,8 +47,8 @@ if(estadoUser) {
                             </button>
 
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Remover</a></li>
-                                <li><a class="dropdown-item" href="#">Bloquear</a></li>
+                                <li><a class="dropdown-item remove" id="${user.username}" href="#">Remover</a></li>
+                                <li><a class="dropdown-item bloquear">Bloquear</a></li>
                             </ul>
 
                         </div>
@@ -70,4 +70,31 @@ if(estadoUser) {
     // }, 500);
     location.href = "../../html/login.html";
 
+}
+
+
+// Clicar no botão remover USER
+
+const btnsRemove = document.getElementsByClassName("remove");
+
+for (const button of btnsRemove) {
+    button.addEventListener("click", () => {
+        if(confirm("Queres mesmo remover o utilizador?")) {
+            User.removeUser(button.id);
+            location.reload();
+        }
+    })
+}
+
+// Clicar no botão bloquear USER - PARA JÁ FAZ O MESMO QUE O BOTÃO REMOVER
+
+const btnsBloquear = document.getElementsByClassName("bloquear");
+
+for (const button of btnsBloquear) {
+    button.addEventListener("click", () => {
+        if(confirm("Queres mesmo bloquear o utilizador?")) {
+            User.removeUser(button.id);
+            location.reload();
+        }
+    })
 }

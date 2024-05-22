@@ -48,6 +48,12 @@ export function logout() {
   }
 }
 
+// REMOVER USER ( ADMIN )
+export function removeUser(username) {
+  users = users.filter((user) => user.username !== username);
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
 // VERIFICA EXISTÊNCIA DE ALGUÉM AUTENTICADO
 export function isLogged() {
   if (localStorage.loggedUser) {
