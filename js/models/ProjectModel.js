@@ -5,7 +5,7 @@ export function init() {
     if(localStorage.projects) {
         const tempProjects = JSON.parse(localStorage.projects);
         for(let project of tempProjects) {
-            projects.push(new Project(project.name, project.photo, project.link, project.author));
+            projects.push(new Project(project.name, project.photo, project.link, project.author, project.msgProjects));
         }
     } else {
         projects = [];
@@ -13,11 +13,11 @@ export function init() {
 }
 
 // ADICIONAR PROJETOS
-export function addProject(name, photo, link, author) {
+export function addProject(name, photo, link, author, msgProjects) {
     if (projects.some((element) => element.name.toLowerCase() === name.toLowerCase() && element.author.toLowerCase() === author.toLowerCase())) {
         throw Error(`Projeto já Existe!`);
     } else {
-        projects.push(new Project(name, photo, link, author));
+        projects.push(new Project(name, photo, link, author, msgProjects));
         localStorage.setItem("projects", JSON.stringify(projects));
     }
 }
@@ -45,12 +45,15 @@ class Project {
     photo = "";
     link = "";
     author = "";
+    msgProjects = "";
+
 
     constructor(name, photo, author){
         this.name = name;
         this.photo = photo;
         this.link = link;
         this.author = author;
+        this.msgProjects = msgProjects; 
     }
 }
 

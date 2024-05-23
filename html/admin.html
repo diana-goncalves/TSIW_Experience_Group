@@ -295,19 +295,18 @@
 
                                 </div>
 
-                                <div class="row justify-content-center align-items-center g-2">
-                                    
-                                    <div class="form-floating mb-3 col text-end ">
-                                        
-                                        <button type="button" class="btn btn-primary button_color imgBTN" id="imgTestemunho">
+                                <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+                                       
+                                    <div class="imgInputContainer">
+                                        <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputTestemunhos">
+                                        <label for="fileInputTestemunhos" class="fileInputLabel">
                                             <i class="fa-regular fa-file-image"></i>
-                                        </button>
-                                        
-                                        <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarTestemunhos">
-                                            Guardar
-                                        </button>
-
+                                        </label>
                                     </div>
+                                    
+                                    <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarTestemunhos">
+                                        Guardar
+                                    </button>
 
                                 </div>
 
@@ -426,12 +425,14 @@
                                     <div class="form-floating mb-3 col">
                                         
                                         <input
-                                            type="date"
+                                            type="text"
                                             class="form-control"
-                                            name="formData"
-                                            id="formDataP"
-                                            placeholder="dd/mm/aaaa"
+                                            name="formAuthor"
+                                            id="formAuthorP"
+                                            placeholder=""
                                         />
+
+                                        <label for="formAuthorP">Autor</label>
                                         
                                     </div>
 
@@ -455,11 +456,14 @@
                                 
                                 <div class="row justify-content-center align-items-center g-2">
                                 
-                                    <div class="form-floating mb-3 col text-end ">
-                                        
-                                        <button type="button" class="btn btn-primary button_color imgBTN" id="imgProjeto">
-                                            <i class="fa-regular fa-file-image"></i>
-                                        </button>
+                                    <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+                                       
+                                        <div class="imgInputContainer">
+                                            <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputProjects">
+                                            <label for="fileInputProjects" class="fileInputLabel">
+                                                <i class="fa-regular fa-file-image"></i>
+                                            </label>
+                                        </div>
                                         
                                         <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarProjetos">
                                             Guardar
@@ -611,11 +615,14 @@
                                 
                                 <div class="row justify-content-center align-items-center g-2">
                                 
-                                    <div class="form-floating mb-3 col text-end ">
-                                        
-                                        <button type="button" class="btn btn-primary button_color imgBTN" id="imgEvento">
-                                            <i class="fa-regular fa-file-image"></i>
-                                        </button>
+                                    <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+                                       
+                                        <div class="imgInputContainer">
+                                            <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputEvents">
+                                            <label for="fileInputEvents" class="fileInputLabel">
+                                                <i class="fa-regular fa-file-image"></i>
+                                            </label>
+                                        </div>
                                         
                                         <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarEventos">
                                             Guardar
@@ -753,20 +760,23 @@
                                 
                                 </div>
 
-                                <div class="row justify-content-center g-2 ">
-                                    
-                                    <div class="form-floating mb-3 col text-end ">
-                                        
-                                        <button type="button" class="btn btn-primary button_color imgBTN" id="imgPerguntas">
-                                            <i class="fa-regular fa-file-image"></i>
-                                        </button>
+                                <div class="row justify-content-center align-items-center g-2">
+                                
+                                    <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+                                       
+                                        <div class="imgInputContainer">
+                                            <input type="file" name="file" class="fileInput"  accept=".png, .jpg, .jpeg" id="fileInputPerguntas">
+                                            <label for="fileInputPerguntas" class="fileInputLabel">
+                                                <i class="fa-regular fa-file-image"></i>
+                                            </label>
+                                        </div>
                                         
                                         <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarPerguntas">
                                             Guardar
                                         </button>
 
                                     </div>
-                                    
+
                                 </div>
                                 
                             </div>
@@ -810,12 +820,15 @@
                             </div>
 
                             <div class="row justify-content-center align-items-center g-2">
-                            
-                                <div class="form-floating col text-end mt-4">
                                 
-                                    <button type="button" class="btn btn-primary button_color imgBTN" id="imgColecionaveis">
-                                        <i class="fa-regular fa-file-image"></i>
-                                    </button>
+                                <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+                                   
+                                    <div class="imgInputContainer">
+                                        <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputColecionaveis">
+                                        <label for="fileInputColecionaveis" class="fileInputLabel">
+                                            <i class="fa-regular fa-file-image"></i>
+                                        </label>
+                                    </div>
                                     
                                     <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarColecionaveis">
                                         Guardar
