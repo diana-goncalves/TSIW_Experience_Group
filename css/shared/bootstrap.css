@@ -23,7 +23,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-  /* Titulo do cartão */
+
+/* Titulo do cartão */
 .event-title {
   color: var(--color-white);
   text-decoration: underline;
@@ -35,7 +36,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-  /*  Texto do cartão  */
+
+/*  Texto do cartão  */
 .event-description {
   color: var(--color-white);
   margin-top: 2rem;
@@ -48,7 +50,7 @@
   text-overflow: ellipsis;
 }
 
-  /* + icon, anchor para site do evento */
+/* + icon, anchor para site do evento */
 .event-link {
   display: flex;
   align-items: center;
@@ -62,7 +64,7 @@
   margin-bottom: 0.5rem;
 }
 
-  /* div do carrossel */
+/* div do carrossel */
 #carousel {
   margin: 2rem;
   max-width: 31.25rem;
@@ -70,12 +72,12 @@
   z-index: 1;  /* Garante que o carrossel esteja acima do fundo */
 }
 
-  /* elementos do carrossel (neste caso é o cartão)*/
+/* elementos do carrossel (neste caso é o cartão)*/
 .carousel-item {
   padding: 0;
 }
 
-  /* traços que controlam carrossel */
+/* traços que controlam carrossel */
 .carousel-indicators {
   position: absolute;
   bottom: 0;
@@ -85,7 +87,7 @@
   margin: 0;
 }
 
-  /* mudar a cor do traço (indicador) ativo */
+/* mudar a cor do traço (indicador) ativo */
 .carousel-indicators .active {
   background-color: var(--color-yellow);
 }
@@ -111,9 +113,9 @@
   border-radius: 0;
   color: var(--color-white);
 }
-.card-body {
+/* .card-body {
   padding: 0;
-}
+} */
 
 /* Mudar cor da sombra e borda dos inputs quando estão selecionados */
 input:focus {
@@ -125,8 +127,7 @@ button:focus {
   box-shadow: 0 0 5px var(--color-black) !important;
 }
 
-/* NAVBAR */
-
+/* //////////// NAVBAR /////////// */
 .navbar{
   max-height: 60px;
   background-color: #333533;
@@ -138,8 +139,6 @@ button:focus {
   text-decoration-thickness: 3px;
   /* font-size: 20px; */
 }
-
-/* NAVBAR */
 
 .logoutButton {
   background: none;
@@ -164,6 +163,50 @@ button:focus {
   border: 0;
 }
 
+/* //////////// ESCAPE ROOM /////////// */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.subtitle {
+  font-size: 2rem;
+  font-weight: normal;
+  color: black;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.btn-custom {
+  background-color: var(--color-yellow);
+  font-weight: bold;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.7);
+  display: block;
+  margin: 0 auto;
+}
+.btn-custom:hover {
+  background-color: var(--color-yellow);
+}
+#escapeRoom {
+  padding: 0 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+.escape-container {
+  background: #e0e0e0;
+  border-radius: 10px;
+  padding: 60px 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
 /* //////////// FOOTER /////////// */
 .custom-footer {
   background-color: var(--color-black);
@@ -181,7 +224,7 @@ button:focus {
   transform: translateX(-50%);
 }
 
-
+/* //////////// MEDIA QUERIES /////////// */
 /* TABLETS */
 
 @media only screen and (max-width: 1023px) {
@@ -198,6 +241,24 @@ button:focus {
     font-weight: 500;
     font-size: 1rem;
   }
+
+  .custom-footer .text-center {
+    position: absolute;
+    top: -60px; /* Ajusta a posição da seta  do footer */
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
-/* TABLETS */
+
+
+/* MOBILE */
+
+@media only screen and (max-width: 1023px) {
+  .custom-footer .text-center {
+    position: absolute;
+    top: -40px; /* Ajusta a posição da seta  do footer */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
