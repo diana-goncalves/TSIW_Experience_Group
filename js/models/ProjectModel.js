@@ -37,6 +37,17 @@ export function getProjects() {
     return projects;
 }
 
+export function editProjects() {
+
+}
+export function postProjects() {
+
+}
+export function hideProjects() {
+    
+}
+
+
 /**
  *  Classe que modela os Projetos
  */
@@ -48,7 +59,7 @@ class Project {
     msgProjects = "";
 
 
-    constructor(name, photo, author){
+    constructor(name, photo, link, author, msgProjects){
         this.name = name;
         this.photo = photo;
         this.link = link;

@@ -1,5 +1,6 @@
 import * as invItems from "./models/inventoryModel.js";
 import * as User from "./models/UserModel.js";
+import * as Project from "./models/ProjectModel.js";
 
 initdata();
 
@@ -66,4 +67,48 @@ function initdata() {
             User.add(user.username, user.password);
         });
     }
+
+    if(!localStorage.projects) {
+        const projects = [
+            {
+                name: "Design Tokens",
+                photo: "../media/projetos/Beatriz Rodrigues.jpeg",
+                link: "nunca ouviu falar",
+                author: "Beatriz Lopes",
+                msgProjects: "Research on Design Tokens - Managing and Exporting"
+            },
+            {
+                name: "CustoJusto Pro",
+                photo: "../media/projetos/Maria Lima.jpg",
+                link: "nunca ouviu falar",
+                author: "Maria Lima",
+                msgProjects: "Revitalização do Front-end do CustoJusto"
+            },
+            {
+                name: "Gestão de Portfólio de Projetos",
+                photo: "../media/projetos/BrunoRodrigues.jpg",
+                link: "nunca ouviu falar",
+                author: "Bruno Rodrigues",
+                msgProjects: "Portfólio de Projetos da plataforma SCRAIM"
+            }
+        ];
+        projects.forEach((project) => {
+            Project.addProject(project.name, project.photo, project.link, project.author, project.msgProjects)
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

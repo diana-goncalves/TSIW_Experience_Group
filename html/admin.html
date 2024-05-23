@@ -163,11 +163,10 @@
                                     <thead>
                                         
                                         <tr>
-                                            
+                                            <th scope="col" style="width: 8px;text-align: center;">ID Membro</th>
                                             <th scope="col">Nome</th>
                                             <!-- <th scope="col">Data de nascimento</th>
                                             <th scope="col">Categoria</th> -->
-                                            <th scope="col">ID Membro</th>
                                             <th scope="col" style="width: 16px;text-align: center;">GERIR</th>
 
                                         </tr>
@@ -385,7 +384,7 @@
                         
                         <h4>Projetos</h4>
                         
-                        <form>
+                        <form id="formProjetos">
                             
                             <div class="row justify-content-center  g-2 text-truncate">
                                 
@@ -397,6 +396,7 @@
                                         name="Nome"
                                         id="formNomeP"
                                         placeholder=""
+                                        required
                                     />
 
                                     <label for="formNomeP">Nome</label>
@@ -411,6 +411,7 @@
                                         name="Mensagem"
                                         id="formMsgP"
                                         placeholder=""
+                                        required
                                     />
 
                                     <label for="formMsgP">Mensagem</label>
@@ -430,6 +431,7 @@
                                             name="formAuthor"
                                             id="formAuthorP"
                                             placeholder=""
+                                            required
                                         />
 
                                         <label for="formAuthorP">Autor</label>
@@ -441,11 +443,12 @@
                                     <div class="form-floating mb-3 col">
                                         
                                         <input
-                                            type="url"
+                                            type="text"
                                             class="form-control"
                                             name="LinkP"
                                             id="formLinkP"
                                             placeholder=""
+                                            required
                                         />
 
                                         <label for="formLinkP">Link do Projeto</label>
@@ -507,7 +510,7 @@
                                 
                             </div>
                             
-                            <div class="table-responsive" id="table-projetos">
+                            <div class="table-responsive">
                             
                                 <table class="table table-dark table-bordered">
                                     
@@ -515,18 +518,19 @@
                                         
                                         <tr>
                                             
+                                            <th scope="col">Autor</th>
                                             <th scope="col">Nome</th>
                                             <th scope="col">Mensagem</th>
-                                            <th scope="col">Data</th>
                                             <th scope="col">Link</th>
+                                            <th scope="col">Imagem</th>
                                             <th scope="col">Estado</th>
-                                            <th scope="col">ID</th>
+                                            <th scope="col" style="width: 16px;text-align: center;">GERIR</th>
         
                                         </tr>
         
                                     </thead>
         
-                                    <tbody>
+                                    <tbody id="table-projetos">
                                         
                                         <!-- Conteúdo vai ser adicionado dinamicamente -->
                             

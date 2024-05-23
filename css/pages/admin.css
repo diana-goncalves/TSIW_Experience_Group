@@ -288,6 +288,7 @@ thead {
 .dropdown-item {
     color: var(--color-white);
     text-align: center;
+    cursor: pointer;
 }
 .dropdown-item:hover{
     background-color: var(--color-yellow);

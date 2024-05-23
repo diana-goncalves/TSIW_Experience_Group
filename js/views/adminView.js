@@ -1,6 +1,8 @@
 import * as User from "../models/UserModel.js"
+import * as Project from "../models/ProjectModel.js"
 
 User.init()
+Project.init()
 
 // User que está logado
 let estadoUser = User.getUserLogged();
@@ -31,6 +33,7 @@ if(estadoUser) {
         // Adicionar utilizadores à tabela de Users
 
         renderTableUsers(User.getUsers());
+        renderTableProjects(Project.getProjects());
        
     }
 
@@ -47,7 +50,7 @@ if(estadoUser) {
 
 }
 
-// GERIR UTILIZADORES
+// GERIR UTILIZADORES ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function renderTableUsers(users = []) {
     
@@ -71,8 +74,8 @@ function renderTableUsers(users = []) {
         tabelaUsers.innerHTML += 
         `
             <tr>
+                <td style="text-align:center;">${user.id}</td>
                 <td>${user.username}</td>
-                <td>${user.id}</td>
                 <td style="text-align: center;">
                     
                     <div class="dropdown">
@@ -101,7 +104,7 @@ function renderTableUsers(users = []) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo remover o utilizador?")) {
                 User.removeUser(button.id);
-                location.reload();
+                renderTableUsers(User.getUsers());
             }
         })
     }
@@ -114,7 +117,7 @@ function renderTableUsers(users = []) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo bloquear o utilizador?")) {
                 User.removeUser(button.id);
-                location.reload();
+                renderTableUsers(User.getUsers());
             }
         })
     }
@@ -166,4 +169,149 @@ orderButtonUsers.addEventListener("click", () => {
 })
 
 
-// GERIR UTILIZADORES
+// GERIR UTILIZADORES ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// GERIR PROJETOS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// adicionar novo Projeto
+
+function newProject() {
+    document.querySelector("#formProjetos").addEventListener("submit",(event) => {
+        event.preventDefault();
+        try {
+            Project.addProject(
+                document.querySelector("#formNomeP").value,
+                // document.querySelector("fileInputProjects").value//,
+                "teste",
+                document.querySelector("#formLinkP").value,
+                document.querySelector("#formAuthorP").value,
+                document.querySelector("#formMsgP").value
+            );
+            alert("Projeto adicionado com sucesso!");
+            renderTableProjects(Project.getProjects());
+        } catch (error) {
+            alert(error.message);
+        }
+    });
+}
+
+// adicionar novo Projeto
+
+function renderTableProjects(projects = []) {
+    
+    const tabelaProjects = document.querySelector("#table-projetos");
+    
+    // Limpar tabela primeiro
+    tabelaProjects.innerHTML = "";
+    
+    // Caso não encontre users ( filtro não encontra nenhum nome igual )
+    if (projects.length === 0) {
+        tabelaProjects.innerHTML = 
+        `
+            <tr>
+                <td colspan="7" style="text-align:center;">Não foram encontrados projetos!</td>
+            </tr>
+        `
+        return;
+    }
+    
+    projects.forEach(project => {
+        tabelaProjects.innerHTML += 
+        `
+            <tr>
+                <td>${project.author}</td>
+                <td>${project.name}</td>
+                <td>${project.msgProjects}</td>
+                <td>${project.link}</td>
+                <td>${project.photo}</td>
+                <td>NÃO IMPLEMENTADO</td>
+                <td style="text-align: center;">
+                    
+                    <div class="dropdown">
+                        
+                        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:var(--color-yellow);border:0;">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item removeP" id="${project.name}"">Remover</a></li>
+                            <li><a class="dropdown-item editarP" id="${project.name}">Editar</a></li>
+                            <li><a class="dropdown-item publicarP" id="${project.name}">Publicar</a></li>
+                            <li><a class="dropdown-item ocultarP" id="${project.name}">Ocultar</a></li>    
+                        </ul>
+
+                    </div>
+                   
+                </td>
+            </tr>
+        `
+    });
+
+    // Clicar no botão remover PROJETO
+
+    const btnsRemoveP = document.getElementsByClassName("removeP");
+
+    for (const button of btnsRemoveP) {
+        button.addEventListener("click", () => {
+            if(confirm("Queres mesmo remover o projeto?")) {
+                Project.removeProjects(button.id);
+                location.reload();
+            }
+        })
+    }
+
+    // Clicar no botão editar - NAO IMPLEMENTADO
+
+    const btnsEditarP = document.getElementsByClassName("editarP");
+
+    for (const button of btnsEditarP) {
+        button.addEventListener("click", () => {
+            if(confirm("Queres mesmo editar o projeto?")) {
+                Project.editProject(button.id);
+                renderTableProjects(Project.getProjects());
+            }
+        })
+    }
+
+    // Clicar no botão publicar - NAO IMPLEMENTADO
+
+    const btnsPublicarP = document.getElementsByClassName("publicarP");
+
+    for (const button of btnsPublicarP) {
+        button.addEventListener("click", () => {
+            if(confirm("Queres mesmo publicar o projeto?")) {
+                Project.postProject(button.id);
+                renderTableProjects(Project.getProjects());
+            }
+        })
+    }
+
+    // Clicar no botão ocultar - NAO IMPLEMENTADO
+
+    const btnsOcultarP = document.getElementsByClassName("ocultarP");
+
+    for (const button of btnsOcultarP) {
+        button.addEventListener("click", () => {
+            if(confirm("Queres mesmo publicar o projeto?")) {
+                Project.hideProject(button.id);
+                renderTableProjects(Project.getProjects());
+            }
+        })
+    }
+
+
+    newProject()
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// GERIR PROJETOS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
