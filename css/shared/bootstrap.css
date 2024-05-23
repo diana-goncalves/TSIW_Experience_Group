@@ -126,6 +126,9 @@ input:focus {
 button:focus {
   box-shadow: 0 0 5px var(--color-black) !important;
 }
+.carousel-indicators button:active, .carousel-indicators button:focus {
+  box-shadow: none !important;
+}
 
 /* //////////// NAVBAR /////////// */
 .navbar{

@@ -42,9 +42,12 @@ if(estadoUser) {
     // setTimeout(() => {
     //     location.href = "../../html/login.html";
     // }, 500);
+    
     location.href = "../../html/login.html";
 
 }
+
+// GERIR UTILIZADORES
 
 function renderTableUsers(users = []) {
     
@@ -161,3 +164,6 @@ orderButtonUsers.addEventListener("click", () => {
     
     isSorted = !isSorted;
 })
+
+
+// GERIR UTILIZADORES
