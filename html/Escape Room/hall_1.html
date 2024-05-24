@@ -51,16 +51,16 @@
         <!-- Imagem Principal -->
         <img usemap="#heroMap" class="img-fluid img-responsive d-block vh-100 w-100" src="../../media/img/ER-assets/hall1.jpg" alt="Hall 1">
         <map name="heroMap">
-            <area id="hall1Left" shape="rect" coords="31,568,703,1992" title="Sala 201" alt="Sala 201" href="Sala201.html">
-            <area id="hall1hall" shape="rect" coords="1776,910,2191,1277" title="Corredor Meio" alt="Corredor Meio" href="hall_2.html">
-            <area id="hall1Right" shape="rect" coords="2838,680,3561,1924" title="Sala 202" alt="Sala 202" href="#">
+            <area id="hall1Left" shape="rect" coords="14,228,331,712" title="Sala 202" alt="Sala 202" href="./Sala202.html">
+            <area id="hall1tohall2" shape="rect" coords="896,350,1108,482" title="Corredor Meio" alt="Corredor Meio" href="hall_2.html">
+            <area id="hall1Right" shape="rect" coords="1420,270,1799,732" title="Sala 203" alt="Sala 203" href="#">
         </map>
         <!-- Imagens para interação -->
-        <img usemap="#heroMap" class="imgLeft img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-left.png" title="Sala 201" alt="Sala 201">
-        <img usemap="#heroMap" class="imgRight img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-right.png" title="Sala 202" alt="Sala 202">
+        <img usemap="#heroMap" class="imgLeft img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-esquerda.png" title="Sala 202" alt="para sala 202">
+        <img usemap="#heroMap" class="imgRight img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-direita.png" title="Sala 203" alt="para sala 203">
+        <img usemap="#heroMap" class="imgFront img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-to-hall2.png" title="corredor do meio" alt="para corredor do meio">
     </section>
     
-    <button type="button" class="btn btn-primary dio" id="liveToastBtn">Show live toast</button>
 
     <div class="toast-container position-fixed bottom-0 end-0 p-2  ">
         <div id="liveToast" class="toast modal-background" role="alert" aria-live="assertive" aria-atomic="true">
@@ -114,11 +114,22 @@
         </div>
     </div>
     
+    <!-- Botao Inventory -->
+    <button class="btn btn-primary inventaryBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#inventory" aria-controls="inventory">Inventory</button>
     
+    <!-- Inventory -->
+    <div class="InventoryZone"></div>
+    
+    <div class="ItemZone"></div>
+
+    <div id="flashlight"></div>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <!-- Referências ao js -->
     <script src="../../js/views/hall1View.js"></script>
+    <script type="module" src="../../js/views/inventoryView.js"></script>
+
 </body>
 </html>
