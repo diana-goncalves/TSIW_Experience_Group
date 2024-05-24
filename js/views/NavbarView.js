@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector("#LoginLogout_Container").innerHTML += 
             `
             <li class="nav-item">
-                <button class="logoutButton" id="logoutIndex"><i class="fas fa-sign-out" style="color: var(--color-yellow);"></i></button>    
+                <button class="logoutButton" id="logoutIndex"><i class="fas fa-sign-out" style="color: var(--color-yellow) !important;"></i></button>    
             </li>
             
             `
