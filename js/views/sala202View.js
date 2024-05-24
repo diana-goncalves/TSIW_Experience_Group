@@ -12,7 +12,7 @@ function setItems() {
     //iniciar dados
     init();
     // Vai bucar os items desta sala
-    let roomItems = getItemsRoom("sala 201");
+    let roomItems = getItemsRoom("sala 202");
     roomItems.forEach(element => {
         // criar item
         let img = document.createElement('img');

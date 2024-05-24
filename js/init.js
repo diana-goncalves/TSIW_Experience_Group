@@ -12,17 +12,41 @@ function initdata() {
                 y: "70vh",
                 name: "lanterna",
                 img: "../../media/img/ER-assets/Lanterna.png",
-                room: "sala 201",
+                room: "sala 202",
                 inInventory: true
             },
             {
-                x: "40vw",
-                y: "50vh",
+                x: "30vw",
+                y: "70vh",
                 name: "chave 202",
-                img: "../../media/img/ER-assets/Chave.png",
-                room: "sala 201",
+                img: "../../media/img/ER-assets/Chave 202.png",
+                room: "sala 202",
                 inInventory: false
             },
+            {
+                x: "45vw",
+                y: "80vh",
+                name: "chave 203",
+                img: "../../media/img/ER-assets/Chave 203.png",
+                room: "sala 202",
+                inInventory: false
+            },{
+                x: "80vw",
+                y: "15vh",
+                name: "chave 206",
+                img: "../../media/img/ER-assets/Chave 206.png",
+                room: "sala 202",
+                inInventory: false
+            },
+            {
+                x: "10vw",
+                y: "50vh",
+                name: "chave 207",
+                img: "../../media/img/ER-assets/Chave 207.png",
+                room: "sala 202",
+                inInventory: false
+            },
+
         ];
         items.forEach(item => {
             invItems.addItem(item.x, item.y, item.name, item.img, item.room, item.inInventory);
