@@ -38,6 +38,8 @@ if(estadoUser) {
 }
 
 
+// Função que carrega primeiro script ( users ) e chama função que carrega os restantes tabs
+
 function initDashboard() {
     // Selecionar os botões que mudam as tabs
     const tabButtons = document.querySelectorAll('[data-bs-toggle="pill"]');

@@ -203,6 +203,9 @@ label {
     color: var(--color-yellow);
     background-color: var(--color-black);
 }
+#cancelEditProject {
+    margin-left: 0.5rem;
+}
 /* Botões menu mobile */
 .nav-pills .nav-item {
     text-align: center;

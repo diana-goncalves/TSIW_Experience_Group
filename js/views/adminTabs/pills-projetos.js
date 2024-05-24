@@ -78,6 +78,8 @@ function submitProject(projectData) {
     }
 }
 
+// FALTA EDITAR IMAGEM
+
 function editProject(projectName) {
     
     const project = Project.getProjectByName(projectName);
@@ -90,9 +92,50 @@ function editProject(projectName) {
         document.querySelector("#formAuthorP").value = project.author;
         document.querySelector("#formMsgP").value = project.msgProjects;
 
+        // adicionar botão para cancelar edição
+
+        
+        const cancelEditP = document.querySelector("#cancelEditProject");
+        
+        // Prevenir colocar 2 botões
+        if (!cancelEditP) {
+            
+            const cancelButtonP = document.createElement("button");
+            
+            cancelButtonP.type = "button";
+            cancelButtonP.className = "btn btn-primary button_color btnGuardar";
+            cancelButtonP.id = "cancelEditProject";
+            cancelButtonP.textContent = "Cancelar";
+
+            document.querySelector("#addProjectsButtonsContainer").appendChild(cancelButtonP);
+
+            cancelButtonP.addEventListener("click",cancelEdit);
+
+        }
+        
     }
    
 }
+
+// Dar reset ao form
+
+function resetForm() {
+    document.querySelector("#formProjetos").reset();
+}
+
+function cancelEdit() {
+    
+    resetForm();
+
+    document.querySelector("#cancelEditProject").remove();
+
+    currentEditingProject = null;
+
+}
+
+
+
+
 
 // Form submit para editar e adicionar projetos
 
