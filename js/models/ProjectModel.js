@@ -37,9 +37,28 @@ export function getProjects() {
     return projects;
 }
 
-export function editProjects() {
+export function editProject(projectName, newProjectData) {
+    // find index retorna -1 quando não encontra
+    const projectIndex = projects.findIndex(project => project.name === projectName);
 
+    if (projectIndex !== -1) {
+        // Dar update das propriedades do projecto
+        projects[projectIndex] = {...projects[projectIndex], ...newProjectData};
+
+        // Dar update à local storage
+        localStorage.setItem("projects", JSON.stringify(projects));
+
+    } else {
+        // Caso não encontre um projeto com o mesmo nome na lista de projetos
+        throw new Error("Projeto não encontrado!");
+    }
 }
+
+export function getProjectByName(projectName) {
+    return projects.find(project => project.name === projectName);
+}
+
+
 export function postProjects() {
 
 }

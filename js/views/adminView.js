@@ -173,29 +173,99 @@ orderButtonUsers.addEventListener("click", () => {
 
 // GERIR PROJETOS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// adicionar novo Projeto
+// Form submit para editar e adicionar projetos
 
-function newProject() {
+// Variavel criada para distinguir entre editar e adicionar projeto
+let currentEditingProject = null;
+
+function submitForm() {
     document.querySelector("#formProjetos").addEventListener("submit",(event) => {
         event.preventDefault();
-        try {
-            Project.addProject(
-                document.querySelector("#formNomeP").value,
-                // document.querySelector("fileInputProjects").value//,
-                "teste",
-                document.querySelector("#formLinkP").value,
-                document.querySelector("#formAuthorP").value,
-                document.querySelector("#formMsgP").value
-            );
-            alert("Projeto adicionado com sucesso!");
-            renderTableProjects(Project.getProjects());
-        } catch (error) {
-            alert(error.message);
+
+        const imgPath = document.querySelector("#fileInputProjects").files[0];
+        
+        // Guardar valores dos inputs
+        const projectData = {
+            name: document.querySelector("#formNomeP").value,
+            link: document.querySelector("#formLinkP").value,
+            author: document.querySelector("#formAuthorP").value,
+            msgProjects: document.querySelector("#formMsgP").value,
         }
+        
+        if (imgPath) {
+            // Criar instancia do file reader que converte a imagem para string
+            const reader = new FileReader();
+
+            reader.addEventListener("load", function () {
+                // Adicionar imagem ao projectData
+                projectData.photo = reader.result;
+
+                submitProject(projectData);
+                
+            })
+
+            reader.readAsDataURL(imgPath);
+
+        } else {
+            // Se não tiver imagem
+            projectData.photo = null;
+
+            submitProject(projectData);
+        }
+        
     });
 }
 
-// adicionar novo Projeto
+function submitProject(projectData) {
+    try {
+        
+        if (currentEditingProject) {
+            // Editar projeto 
+
+            Project.editProject(currentEditingProject, projectData);
+            alert("Projeto editado com sucesso!");
+
+        } else {
+            // Adicionar projeto
+
+            Project.addProject(projectData.name, projectData.photo, projectData.link, projectData.author, projectData.msgProjects);
+            alert("Projeto adicionado com sucesso!");
+            location.reload();
+        }
+
+        // Atualizar tabela
+        renderTableProjects(Project.getProjects());
+
+        // limpar inputs
+        document.querySelector("#formProjetos").reset();
+
+        // limpar variavel que "avisa" se é para editar ou adicionar projeto
+        currentEditingProject = null;
+
+    } catch (error) {
+        alert(error.message);
+    }
+}
+
+function editProject(projectName) {
+    
+    const project = Project.getProjectByName(projectName);
+
+    if (project) {
+        currentEditingProject = projectName;
+        
+        document.querySelector("#formNomeP").value = project.name;
+        document.querySelector("#formLinkP").value = project.link;
+        document.querySelector("#formAuthorP").value = project.author;
+        document.querySelector("#formMsgP").value = project.msgProjects;
+
+    }
+   
+}
+
+
+
+// Form submit para editar e adicionar projetos
 
 function renderTableProjects(projects = []) {
     
@@ -222,8 +292,8 @@ function renderTableProjects(projects = []) {
                 <td>${project.author}</td>
                 <td>${project.name}</td>
                 <td>${project.msgProjects}</td>
-                <td>${project.link}</td>
-                <td>${project.photo}</td>
+                <td style="text-align: center;">${project.link ? 'Sim' : 'Não'}</td>
+                <td style="text-align: center;">${project.photo ? 'Sim' : 'Não'}</td>
                 <td>NÃO IMPLEMENTADO</td>
                 <td style="text-align: center;">
                     
@@ -267,8 +337,7 @@ function renderTableProjects(projects = []) {
     for (const button of btnsEditarP) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo editar o projeto?")) {
-                Project.editProject(button.id);
-                renderTableProjects(Project.getProjects());
+                editProject(button.id);
             }
         })
     }
@@ -299,8 +368,7 @@ function renderTableProjects(projects = []) {
         })
     }
 
-
-    newProject()
+    submitForm();
 
 }
 
