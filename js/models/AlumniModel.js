@@ -34,7 +34,7 @@ export function setCurrenTAlumni(id) {
 }
   
   // OBTER O ALUMNI ATUAL (TODO O OBJETO)
-export function getCurrentBand() {
+export function getCurrentAlumni() {
     return alumnis.find((alumni) => alumni.id == localStorage.getItem("alumni"));
 }
   
