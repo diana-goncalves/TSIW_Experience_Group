@@ -3,7 +3,7 @@
     margin-top: 8rem;
 }
 /* Linhas brancas (hr) */
-.my-2 {
+.custom_hr {
     color: var(--color-white);
     opacity: 0.99; 
     height: 1px;

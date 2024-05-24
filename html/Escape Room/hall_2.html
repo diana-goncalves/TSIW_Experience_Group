@@ -48,20 +48,36 @@
     </header>
     
     <section class="imgHero vh-100 w-100 mx-0">
-        <img usemap="#heroMap" class="img-fluid img-responsive d-block vh-100 w-100" src="../../media/img/ER-assets/hall2.png" alt="Corredor do Meio">
+        <img usemap="#heroMap" class="img-fluid img-responsive d-block vh-100 w-100" src="../../media/img/ER-assets/hall2.jpg" alt="Corredor do Meio">
         <map name="heroMap">
-            <area id="hall2Left" shape="rect" coords="3397,3986,3976,5598" title="Sala 206" alt="Sala 206" href="#">
-            <area id="hall2Right" shape="rect" coords="6949,4050,7727,5717" title="Sala 207" alt="Sala 207" href="#">
-            <area id="hall2hall" shape="rect" coords="5298,4309,5967,4853" title="Corredor Final" title="Corredor Final" alt="Corredor Final" href="hall_3.html">
+            <area id="hall2Left" shape="rect" coords="552,479,638,684" title="Sala 206" alt="Sala 206" href="#">
+            <area id="hall2Right" shape="rect" coords="1115,484,1227,685" title="Sala 207" alt="Sala 207" href="#">
+            <area id="hall2tohall3" shape="rect" coords="850,508,964,593" title="Corredor Final" title="Corredor Final" alt="Corredor Final" href="hall_3.html">
+            <area id="hall2hall1" shape="rect" coords="0,858,1917,1079" title="Corredor inicial" alt="Corredor inicial" href="hall_1.html">
         </map>
+        <img usemap="#heroMap" class="imgLeft img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall2-left.png" title="Sala 206" alt="para sala 206">
+        <img usemap="#heroMap" class="imgRight img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall2-right.png" title="Sala 207" alt="para sala 207">
+        <img usemap="#heroMap" class="imgFront img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall2-to-hall3.png" title="Corredor Final" alt="para corredor final">
+        <img usemap="#heroMap" class="imgBack img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall2-to-hall1.png" title="Corredir Inicial" alt="para corredor inicial">
     </section>
+
+    <!-- Botao Inventory -->
+    <button class="btn btn-primary inventaryBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#inventory" aria-controls="inventory">Inventory</button>
     
+    <!-- Inventory -->
+    <div class="InventoryZone"></div>
+    
+    <div class="ItemZone"></div>
+
+    <div id="flashlight"></div>
     
     
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <!-- Referências ao js -->
-    <script src="../../js/views/hallView.js"></script>
+    <script src="../../js/views/hall2View.js"></script>
+    <script type="module" src="../../js/views/inventoryView.js"></script>
+
 </body>
 </html>
