@@ -203,7 +203,7 @@ function renderTableProjects(projects = []) {
         })
     }
 
-    // Clicar no botão editar - NAO IMPLEMENTADO
+    // Clicar no botão editar 
 
     const btnsEditarP = document.getElementsByClassName("editarP");
 

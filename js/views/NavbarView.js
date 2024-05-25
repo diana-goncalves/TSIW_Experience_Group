@@ -10,6 +10,8 @@ const container = document.querySelector("body");
 
 container.style.marginTop = alturaNav + 'px'; // Para aumentar distancia adicionar por exemplo: (alturaNav + 64 + 'px') -> para adicionar 64px
 
+// Ajustar dinamicamente margem entre navbar e resto da página
+
 // ERRO PARA RESOLVER: RETIRAR ICON PARA FAZER LOGIN DA NAVBAR NA PÁGINA DE PERFIL E ADMIN
 
 document.addEventListener("DOMContentLoaded", function() {
