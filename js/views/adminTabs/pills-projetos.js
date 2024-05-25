@@ -101,23 +101,8 @@ function editProject(projectName) {
     // remover botão depois de dar reset
     cancelEditP.addEventListener("click", () => {
         cancelEditP.style.display = "none";
+        currentEditingProject = null;
     })
-
-}
-
-// Dar reset ao form
-
-function resetForm() {
-    document.querySelector("#formProjetos").reset();
-}
-
-function cancelEdit() {
-    
-    resetForm();
-
-    document.querySelector("#cancelEditProject").remove();
-
-    currentEditingProject = null;
 
 }
 
@@ -207,8 +192,7 @@ function renderTableProjects(projects = []) {
     for (const button of btnsPublicarP) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo publicar o projeto?")) {
-                Project.postProject(button.id);
-                renderTableProjects(Project.getProjects());
+                postProject(button.id);
             }
         })
     }
@@ -219,9 +203,8 @@ function renderTableProjects(projects = []) {
 
     for (const button of btnsOcultarP) {
         button.addEventListener("click", () => {
-            if(confirm("Queres mesmo publicar o projeto?")) {
-                Project.hideProject(button.id);
-                renderTableProjects(Project.getProjects());
+            if(confirm("Queres mesmo ocultar o projeto?")) {
+                hideProject(button.id);   
             }
         })
     }
@@ -233,8 +216,7 @@ function renderTableProjects(projects = []) {
      for (const button of btnsDestacarP) {
          button.addEventListener("click", () => {
              if(confirm("Queres mesmo destacar o projeto?")) {
-                 Project.highlightProject(button.id);
-                 renderTableProjects(Project.getProjects());
+                highlightProject(button.id);
              }
          })
      }
@@ -270,3 +252,51 @@ orderButtonProjects.addEventListener("click", () => {
     isSorted = !isSorted;
 
 })
+
+function postProject(projectName) {
+
+    editState(projectName,"Publicado");
+
+    alert("Projeto publicado com sucesso!");
+    
+    location.reload();
+
+}
+
+function hideProject(projectName) {
+    
+    editState(projectName,"Oculto");
+
+    alert("Projeto ocultado com sucesso!");
+
+    location.reload();
+
+}
+
+function highlightProject(projectName) {
+
+    editState(projectName,"Destacado");
+
+    alert("Projeto destacado com sucesso!");
+
+    location.reload();
+    
+}
+
+function editState(projectName, newState) {
+    const project = Project.getProjectByName(projectName);
+
+    if(project) {
+        // Alterar state na local storage para publicado
+
+        let projects = JSON.parse(localStorage.getItem("projects"));
+        
+        let ProjectIndex = projects.findIndex(project => project.name === projectName);
+
+        if (ProjectIndex !== -1) {
+            projects[ProjectIndex].state = newState;
+        }
+        
+        localStorage.setItem("projects", JSON.stringify(projects));
+    }
+}
