@@ -2,7 +2,7 @@ import * as Project from "../../models/ProjectModel.js"
 
 Project.init()
 
-// É PRECISO ADICIONAR BOTÃO PARA CANCELAR EDIÇÃO
+// Para o futuro: substituir locaction.reload(); e adicionar edição de imagens
 
 // Form submit para editar e adicionar projetos
 
@@ -13,7 +13,7 @@ function submitForm() {
     document.querySelector("#formProjetos").addEventListener("submit",(event) => {
         event.preventDefault();
 
-        const imgPath = document.querySelector("#fileInputProjects").files[0];
+        const imgData = document.querySelector("#fileInputProjects").files[0];
         
         // Guardar valores dos inputs
         const projectData = {
@@ -23,7 +23,7 @@ function submitForm() {
             msgProjects: document.querySelector("#formMsgP").value,
         }
         
-        if (imgPath) {
+        if (imgData) {
             // Criar instancia do file reader que converte a imagem para string
             const reader = new FileReader();
 
@@ -35,7 +35,7 @@ function submitForm() {
                 
             })
 
-            reader.readAsDataURL(imgPath);
+            reader.readAsDataURL(imgData);
 
         } else {
             // Se não tiver imagem
@@ -55,6 +55,7 @@ function submitProject(projectData) {
 
             Project.editProject(currentEditingProject, projectData);
             alert("Projeto editado com sucesso!");
+            location.reload();
 
         } else {
             // Adicionar projeto
@@ -64,17 +65,13 @@ function submitProject(projectData) {
             location.reload();
         }
 
-        // Atualizar tabela
-        renderTableProjects(Project.getProjects());
-
-        // limpar inputs
-        document.querySelector("#formProjetos").reset();
-
         // limpar variavel que "avisa" se é para editar ou adicionar projeto
         currentEditingProject = null;
 
     } catch (error) {
         alert(error.message);
+    
+        location.reload();
     }
 }
 
@@ -91,30 +88,15 @@ function editProject(projectName) {
         document.querySelector("#formLinkP").value = project.link;
         document.querySelector("#formAuthorP").value = project.author;
         document.querySelector("#formMsgP").value = project.msgProjects;
-
-        // adicionar botão para cancelar edição
-
-        
-        const cancelEditP = document.querySelector("#cancelEditProject");
-        
-        // Prevenir colocar 2 botões
-        if (!cancelEditP) {
-            
-            const cancelButtonP = document.createElement("button");
-            
-            cancelButtonP.type = "button";
-            cancelButtonP.className = "btn btn-primary button_color btnGuardar";
-            cancelButtonP.id = "cancelEditProject";
-            cancelButtonP.textContent = "Cancelar";
-
-            document.querySelector("#addProjectsButtonsContainer").appendChild(cancelButtonP);
-
-            cancelButtonP.addEventListener("click",cancelEdit);
-
-        }
         
     }
    
+    // adicionar botão para cancelar edição
+
+    const cancelEditP = document.querySelector("#cancelEditProject");
+    
+    cancelEditP.style.display = "block";
+
 }
 
 // Dar reset ao form
@@ -132,10 +114,6 @@ function cancelEdit() {
     currentEditingProject = null;
 
 }
-
-
-
-
 
 // Form submit para editar e adicionar projetos
 
@@ -158,6 +136,9 @@ function renderTableProjects(projects = []) {
     }
     
     projects.forEach(project => {
+        
+        let projectState = null;
+        
         tabelaProjects.innerHTML += 
         `
             <tr>
@@ -166,7 +147,7 @@ function renderTableProjects(projects = []) {
                 <td>${project.msgProjects}</td>
                 <td style="text-align: center;">${project.link ? 'Sim' : 'Não'}</td>
                 <td style="text-align: center;">${project.photo ? 'Sim' : 'Não'}</td>
-                <td>NÃO IMPLEMENTADO</td>
+                <td style="text-align: center;">${projectState ? 'Publicado' : 'Oculto' }</td>
                 <td style="text-align: center;">
                     
                     <div class="dropdown">
@@ -260,3 +241,28 @@ function renderTableProjects(projects = []) {
 
 // Iniciar
 renderTableProjects(Project.getProjects());
+
+// Procurar projeto pelo nome automatico
+const filterInputProjects = document.querySelector("#procuraProjetos");
+
+filterInputProjects.addEventListener("input", () => {
+    renderTableProjects(Project.getProjects(filterInputProjects.value));
+})
+
+// Clicar no botão organizar
+let isSorted = false;
+const orderButtonProjects = document.querySelector("#btnOrderProjetos");
+
+orderButtonProjects.addEventListener("click", () => {
+    
+    if(isSorted) {
+        // Caso já tenham clicado para organizar, tirar o sort
+        renderTableProjects(Project.getProjects(filterInputProjects.value));
+    } else {
+        // Organizar a lista de projetos filtrados, se não houver filtros organiza APENAS a tabela
+        renderTableProjects(Project.sortProjects(Project.getProjects(filterInputProjects.value)));
+    }
+    
+    isSorted = !isSorted;
+
+})

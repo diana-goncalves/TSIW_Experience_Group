@@ -1,7 +1,6 @@
 import * as User from "../../models/UserModel.js"
 
 // Iniciar
-console.log(User.getUsers());
 renderTableUsers(User.getUsers());
 
 function renderTableUsers(users = []) {
@@ -76,32 +75,39 @@ function renderTableUsers(users = []) {
 
 }
 
+// Procurar user pelo nome automatico
+const filterInputUsers = document.querySelector("#procuraUser");
+
+filterInputUsers.addEventListener("input", () => {
+    renderTableUsers(User.getUsers(filterInputUsers.value));
+})
+
+
 // Clicar no botão filtrar
 
 // guardar estado do botão
 let isFiltered = false;
 
-const filterInputUsers = document.querySelector("#procuraUser");
-const filterButtonUsers = document.querySelector("#btnFiltroUser");
+// const filterButtonUsers = document.querySelector("#btnFiltroUser");
 
-filterButtonUsers.addEventListener("click", () => {
+// filterButtonUsers.addEventListener("click", () => {
     
-    // Se já tiver filtrado, limpa o input e carrega a tabela outra vez com todos os users
-    if (isFiltered) {
-        filterInputUsers.value = "";
-        renderTableUsers(User.getUsers());
-        filterButtonUsers.textContent = "Filtrar";
-    } 
-    // Carregar tabela só com os users que correspondem ao filtro
-    else {
-        renderTableUsers(User.getUsers(filterInputUsers.value));
-        filterButtonUsers.textContent = "Limpar";
-    }
+//     // Se já tiver filtrado, limpa o input e carrega a tabela outra vez com todos os users
+//     if (isFiltered) {
+//         filterInputUsers.value = "";
+//         renderTableUsers(User.getUsers());
+//         filterButtonUsers.textContent = "Filtrar";
+//     } 
+//     // Carregar tabela só com os users que correspondem ao filtro
+//     else {
+//         renderTableUsers(User.getUsers(filterInputUsers.value));
+//         filterButtonUsers.textContent = "Limpar";
+//     }
 
-    // mudar estado do botão
-    isFiltered = !isFiltered;
+//     // mudar estado do botão
+//     isFiltered = !isFiltered;
 
-})
+// })
 
 // Clicar no botão organizar
 let isSorted = false;

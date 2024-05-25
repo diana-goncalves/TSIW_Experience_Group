@@ -26,15 +26,29 @@ export function addProject(name, photo, link, author, msgProjects) {
 export function removeProjects(name, author) {
     projects = projects.filter((project) => project.name !== name && project.author !== author);
     localStorage.setItem("projects", JSON.stringify(projects));
-  }
-
-// DEFINIR/OBTER PROJECT ATUAR
-// ORDENAR
-//// caso seja necessario
+}
 
 // OBTER TODOS OS PROJETOS
-export function getProjects() {
-    return projects;
+
+// export function getProjects() {
+//     return projects;
+// }
+
+export function getProjects(filterName = "", isSorted = false) {
+    // Criar nova array caso o admin queira procurar por um nome
+    let filteredProjects = projects.filter((project) => (project.name.toLowerCase().includes(filterName.toLowerCase()) || filterName === ""));
+  
+    filteredProjects = isSorted
+      ? filteredProjects.sort((a, b) => a.name.localeCompare(b.name))
+      : filteredProjects; 
+  
+    return filteredProjects;  
+}
+
+export function sortProjects(list) {
+    let sortedProjects = list.sort((a, b) => a.name.localeCompare(b.name));
+
+  return sortedProjects;
 }
 
 export function editProject(projectName, newProjectData) {
@@ -42,12 +56,16 @@ export function editProject(projectName, newProjectData) {
     const projectIndex = projects.findIndex(project => project.name === projectName);
 
     if (projectIndex !== -1) {
-        // Dar update das propriedades do projecto
-        projects[projectIndex] = {...projects[projectIndex], ...newProjectData};
+        
+        try {
+            addProject(newProjectData.name, newProjectData.photo, newProjectData.link, newProjectData.author, newProjectData.msgProjects);
 
-        // Dar update à local storage
-        localStorage.setItem("projects", JSON.stringify(projects));
+            removeProjects(projectName);
 
+        } catch (error) {
+            throw error;
+        } 
+        
     } else {
         // Caso não encontre um projeto com o mesmo nome na lista de projetos
         throw new Error("Projeto não encontrado!");
@@ -57,15 +75,6 @@ export function editProject(projectName, newProjectData) {
 export function getProjectByName(projectName) {
     return projects.find(project => project.name === projectName);
 }
-
-
-export function postProjects() {
-
-}
-export function hideProjects() {
-    
-}
-
 
 /**
  *  Classe que modela os Projetos
