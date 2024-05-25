@@ -95,7 +95,13 @@ function editProject(projectName) {
 
     const cancelEditP = document.querySelector("#cancelEditProject");
     
+    // adicionar botão para dar reset ao form
     cancelEditP.style.display = "block";
+
+    // remover botão depois de dar reset
+    cancelEditP.addEventListener("click", () => {
+        cancelEditP.style.display = "none";
+    })
 
 }
 
@@ -137,8 +143,6 @@ function renderTableProjects(projects = []) {
     
     projects.forEach(project => {
         
-        let projectState = null;
-        
         tabelaProjects.innerHTML += 
         `
             <tr>
@@ -147,7 +151,7 @@ function renderTableProjects(projects = []) {
                 <td>${project.msgProjects}</td>
                 <td style="text-align: center;">${project.link ? 'Sim' : 'Não'}</td>
                 <td style="text-align: center;">${project.photo ? 'Sim' : 'Não'}</td>
-                <td style="text-align: center;">${projectState ? 'Publicado' : 'Oculto' }</td>
+                <td style="text-align: center;">${project.state}</td>
                 <td style="text-align: center;">
                     
                     <div class="dropdown">

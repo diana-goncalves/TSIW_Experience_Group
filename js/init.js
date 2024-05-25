@@ -99,7 +99,7 @@ function initdata() {
                 photo: "../media/projetos/Beatriz Rodrigues.jpeg",
                 link: "nunca ouviu falar",
                 author: "Beatriz Lopes",
-                msgProjects: "Research on Design Tokens - Managing and Exporting"
+                msgProjects: "Research on Design Tokens - Managing and Exporting",
             },
             {
                 name: "CustoJusto Pro",
@@ -117,7 +117,7 @@ function initdata() {
             }
         ];
         projects.forEach((project) => {
-            Project.addProject(project.name, project.photo, project.link, project.author, project.msgProjects)
+            Project.addProject(project.name, project.photo, project.link, project.author, project.msgProjects, project.state)
         });
     }
 
