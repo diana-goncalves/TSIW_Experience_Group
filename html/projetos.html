@@ -13,7 +13,9 @@
 </head>
 <body>
   
-    <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
+    <header>
+      
+      <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
         <div class="container">
             <a class="navbar-brand" href="../index.html">
                 <img src="../media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
@@ -44,59 +46,85 @@
                 </ul>
             </div>
         </div>
-    </nav>
+      </nav>
 
-    <!-- container principal -->
-  <div class="container-fluid">
-    <!--  jumbotron  qu neste exemplo contém titulos, formulário e cards -->
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-3">Projetos</h1>
-        <p class="lead">Aqui vais encontrar alguns dos projetos feitos pelos alunos de TSIW</p>
-        <hr class="my-2 custom_hr" />
-        <!-- catálogo - formulário -->
-        <form class="form-inline">
-          <div class="row g-3">
-            <div class="col-sm-5">
-              <div class="form-group">
-                <select class="form-control m-2" name="" id="sltGenre">
-                  <option value="">Todos</option>
-                  <option value="Projetos">Projetos</option>
-                  <option value="Eventos">Eventos</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="form-group m-2">
-                <input id="txtBand" type="text" placeholder="band's name" class="form-control m-2" />
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <button id="btnFilter" type="button" class="btn btn-primary">
-                FILTER
-              </button>
-              <button id="btnSort" type="button" class="btn btn-primary m-2">
-                SORT
-              </button>
+    </header>
+    
+    <main id="projectsMain">
+            <!-- container principal -->
+        <div class="container-fluid">
+          <!--  jumbotron  qu neste exemplo contém titulos, formulário e cards -->
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container-fluid">
+              <h1 class="display-3">Projetos e eventos</h1>
+              <p class="lead">Aqui vais encontrar todos os eventos e alguns dos projetos feitos pelos alunos de TSIW.</p>
+              <hr class="my-2 custom_hr" />
+              <!-- catálogo - formulário -->
+              <form class="form-inline">
+                <div class="row g-3">
+                  <div class="col-sm-5 pl-0">
+                    
+                    <div class="form-floating text-truncate" id="projectNameInput">
+                                
+                      <input
+                          type="text"
+                          class="form-control"
+                          name="projectName"
+                          id="txtProject"
+                          placeholder=""
+                      />
+
+                      <label for="txtProject">Nome do projeto/evento</label>
+
+                    </div>
+          
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <select class="form-control" id="sltType">
+                        <option value="Todos">Projetos ou Eventos</option>
+                        <option value="Projetos">Projetos</option>
+                        <option value="Eventos">Eventos</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm-4">
+                    <button id="btnFilter" type="button" class="btn btn-primary button_color btnFiltro">
+                      <i class="fa-sharp fa-solid fa-filter"></i> Filtrar
+                    </button>
+                    <button id="btnSort" type="button" class="btn btn-primary button_color btnOrder">
+                      <i class="fa-solid fa-sort"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </form>
+
+              <hr class="my-2 custom_hr" />
+              
             </div>
           </div>
+          <!-- Junbotron -->
 
-        </form>
-        <!-- CATÁLOGO: EXIBIÇÃO DAS BANDAS (VAZIO INICIALMENTE) -->
-        <hr class="my-2" />
-        <p>
-        <div id="myCatalog" class="row row-cols-3">
-
+          <!-- CATÁLOGO: EXIBIÇÃO DOS PROJETOS (VAZIO INICIALMENTE) -->
+          
+          <div class="album">
+            <div class="container-fluid" id="myCatalog">
+                <div class="row" id="myCatalogRow">
+                  
+                </div>
+            </div>
+          </div>
+          
         </div>
-        </p>
-      </div>
-    </div>
-    <!-- Junbotron -->
-  </div>
+    </main>
+    
   <!--  Container principal -->
       
-
   <script type="module" src="../js/views/NavbarView.js"></script>
+
+  <script type="module" src="../js/views/projectsCatalogView.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

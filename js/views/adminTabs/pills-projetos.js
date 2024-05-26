@@ -4,11 +4,10 @@ Project.init()
 
 // Para o futuro: substituir locaction.reload(); e adicionar edição de imagens
 
-// Form submit para editar e adicionar projetos
-
 // Variavel criada para distinguir entre editar e adicionar projeto
 let currentEditingProject = null;
 
+// Form submit para editar e adicionar projetos
 function submitForm() {
     document.querySelector("#formProjetos").addEventListener("submit",(event) => {
         event.preventDefault();
@@ -45,6 +44,7 @@ function submitForm() {
         }
         
     });
+    
 }
 
 function submitProject(projectData) {
@@ -141,7 +141,7 @@ function renderTableProjects(projects = []) {
                     
                     <div class="dropdown">
                         
-                        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:var(--color-yellow);border:0;">
+                        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color:var(--color-yellow);border:0;">
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </button>
 
@@ -225,7 +225,6 @@ function renderTableProjects(projects = []) {
 
 }
 
-// Iniciar
 renderTableProjects(Project.getProjects());
 
 // Procurar projeto pelo nome automatico
@@ -280,7 +279,7 @@ function highlightProject(projectName) {
     alert("Projeto destacado com sucesso!");
 
     location.reload();
-    
+
 }
 
 function editState(projectName, newState) {

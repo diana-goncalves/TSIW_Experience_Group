@@ -97,21 +97,21 @@ function initdata() {
             {
                 name: "Design Tokens",
                 photo: "../media/projetos/Beatriz Rodrigues.jpeg",
-                link: "nunca ouviu falar",
+                link: null,
                 author: "Beatriz Lopes",
                 msgProjects: "Research on Design Tokens - Managing and Exporting",
             },
             {
                 name: "CustoJusto Pro",
                 photo: "../media/projetos/Maria Lima.jpg",
-                link: "nunca ouviu falar",
+                link: null,
                 author: "Maria Lima",
                 msgProjects: "Revitalização do Front-end do CustoJusto"
             },
             {
                 name: "Gestão de Portfólio de Projetos",
                 photo: "../media/projetos/BrunoRodrigues.jpg",
-                link: "nunca ouviu falar",
+                link: null,
                 author: "Bruno Rodrigues",
                 msgProjects: "Portfólio de Projetos da plataforma SCRAIM"
             }

@@ -276,9 +276,8 @@ label {
     background-color: var(--color-black);
 }
 /* Tabela */
-table {
-    /* margin: 1rem; */
-    
+.table-responsive .dropdown{
+    position: static;
 }
 .table>:not(caption)>*>* {
     background-color: transparent;
@@ -307,6 +306,7 @@ thead {
 .dropdown-item:hover{
     background-color: var(--color-yellow);
 }
+
 /* Tabela */
 
 

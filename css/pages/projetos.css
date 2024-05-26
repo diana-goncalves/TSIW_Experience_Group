@@ -1,10 +1,84 @@
 /* Header. Inclui titulos e form */
-.jumbotron {
-    margin-top: 8rem;
+
+
+
+#projectsMain .container-fluid {
+    padding: 1rem;
+    padding-bottom: 0;
+}
+#projectsMain .container-fluid .custom_hr {
+    margin-left: -2rem;
+    margin-right: -2rem;
 }
 /* Linhas brancas (hr) */
 .custom_hr {
     color: var(--color-white);
+    margin: 0;
+    padding: 0;
     opacity: 0.99; 
     height: 1px;
+}
+
+#myCatalog .card {
+    margin: 0;
+    padding-bottom: 0;
+}
+#myCatalog .card-body {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: var(--color-white);
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+#myCatalog .card-title {
+    color: var(--color-yellow);
+}
+#myCatalog .event-description { 
+  position: flex;
+  color: var(--color-white);
+  margin-top: 2rem;
+  font-weight: 500;
+  font-size: 1rem;
+  display: -webkit-box; /* Necessário para adicionar ellipsis ao texto */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Limite de linhas do texto */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#myCatalog .link { 
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: var(--color-yellow);
+    font-weight: 300;
+    font-size: 2rem;
+    text-decoration: none;
+    height: 1.3rem;
+    width: 1.3rem;
+    line-height: 1;
+}
+
+#projectNameInput {
+    padding-right: 0;
+}
+
+#sltType {
+    color: var(--color-white);
+    background-color: transparent;
+    height: calc(3.5rem + calc(var(--bs-border-width)* 2));
+    min-height: calc(3.5rem + calc(var(--bs-border-width)* 2));
+    line-height: 1.25;
+    border-radius: 0;
+}
+#sltType:focus {
+    box-shadow: none;
+    border-color: var(--color-yellow);
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+#sltType option {
+    border-radius: 0;
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
 }
