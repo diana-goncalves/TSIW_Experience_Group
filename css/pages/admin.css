@@ -306,7 +306,19 @@ thead {
 .dropdown-item:hover{
     background-color: var(--color-yellow);
 }
-
+.Publicado {
+    background-color: #228B22 !important;
+    color: var(--color-white) !important;
+    
+}
+.Destacado {
+    background-color: #0047AB !important;
+    color: var(--color-white) !important;
+}
+.Oculto {
+    background-color: #D22B2B !important;
+    color: var(--color-white) !important;
+}
 /* Tabela */
 
 

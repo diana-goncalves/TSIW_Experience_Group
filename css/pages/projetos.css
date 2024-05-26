@@ -1,9 +1,8 @@
 /* Header. Inclui titulos e form */
-
-
-
 #projectsMain .container-fluid {
     padding: 1rem;
+    padding-top: 0;
+    margin-top: 3.5rem;
     padding-bottom: 0;
 }
 #projectsMain .container-fluid .custom_hr {
@@ -18,7 +17,6 @@
     opacity: 0.99; 
     height: 1px;
 }
-
 #myCatalog .card {
     margin: 0;
     padding-bottom: 0;
@@ -58,11 +56,9 @@
     width: 1.3rem;
     line-height: 1;
 }
-
 #projectNameInput {
     padding-right: 0;
 }
-
 #sltType {
     color: var(--color-white);
     background-color: transparent;
@@ -81,4 +77,9 @@
     border-radius: 0;
     background-color: var(--color-white);
     color: var(--color-dark-gray);
+}
+#LoadingIndicator {
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 8rem;
 }

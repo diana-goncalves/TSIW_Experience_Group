@@ -128,6 +128,24 @@ function renderTableProjects(projects = []) {
     
     projects.forEach(project => {
         
+        let classState = null;
+        switch (project.state) {
+            case "Publicado":
+                classState = "Publicado";
+                break;
+        
+            case "Destacado":
+                classState = "Destacado";
+                break;
+            
+            default:
+                classState = "Oculto"
+                break;
+        }
+        
+        
+        
+        
         tabelaProjects.innerHTML += 
         `
             <tr>
@@ -136,7 +154,7 @@ function renderTableProjects(projects = []) {
                 <td>${project.msgProjects}</td>
                 <td style="text-align: center;">${project.link ? 'Sim' : 'Não'}</td>
                 <td style="text-align: center;">${project.photo ? 'Sim' : 'Não'}</td>
-                <td style="text-align: center;">${project.state}</td>
+                <td style="text-align: center;" class="${classState}">${project.state}</td>
                 <td style="text-align: center;">
                     
                     <div class="dropdown">
