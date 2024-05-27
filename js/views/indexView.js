@@ -1,3 +1,4 @@
+import { init, filtrarProjetosPorEstado, getProjects } from "../models/ProjectModel.js";
 
 // Scrollspy bootstrap
 document.addEventListener('DOMContentLoaded', function () {
@@ -58,3 +59,78 @@ document.addEventListener('DOMContentLoaded', function () {
     gauge4.animationSpeed = 100;
     gauge4.set(0);
 });
+
+
+// Carregar projetos
+init()
+
+function renderProjects() {
+    const projects = filtrarProjetosPorEstado("Destacado");
+    const allProjects = getProjects();
+
+    // Se não houver projetos para destacar, escolher 3 aleatorios
+    if (projects.length === 0) {
+        const randomProjects = randomProject(filtrarProjetosPorEstado("Publicado"), 3);
+
+        randomProjects.forEach(project => {
+            renderProject(project);
+        });
+
+    }
+  
+    // Renderizar projetos com state "Destacado"
+    projects.forEach(project => {
+        renderProject(project);
+    })
+
+}
+
+function renderProject(projectData) {
+    
+    // Remover caracteres especiais e espaço para não causar problemas
+    const projectId = projectData.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
+    
+    document.querySelector("#projectsContainer").innerHTML += 
+    `
+        <div class="col-md-4" id="${projectId}" style="height: 750px; padding-bottom: 32px;">
+            
+            <div class="card custom-border" style="height: 750px">
+                
+                <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" class="card-img-top" style="height: 500px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
+                
+                <div class="card-body">
+                    <h5 class="card-title">${projectData.name} - ${projectData.author}</h5>
+                    <p class="event-description">${projectData.msgProjects}
+                    ${projectData.link ? '<a href="${projectData.link}" class="link">+</a></p>' : ''}
+                </div>
+
+            </div>
+
+        </div>
+    `
+
+}
+
+function randomProject(projectsList, numberOfProjects) {
+    
+    const randomProjects = [];
+    
+    const retirarDuplicados = [];
+
+    while(retirarDuplicados.length < numberOfProjects && retirarDuplicados.length < projectsList.length) {
+        
+        const randomIndex = Math.floor(Math.random() * projectsList.length);
+
+        if(!randomProjects.includes(randomIndex)) {
+            // Guardar index do projeto selecionado
+            randomProjects.push(randomIndex);
+            // Guardar projeto
+            retirarDuplicados.push(projectsList[randomIndex]);
+        }
+    }
+      
+    return retirarDuplicados;
+}
+
+
+renderProjects();

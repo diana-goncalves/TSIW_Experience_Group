@@ -1,15 +1,11 @@
-import * as Project from "../models/ProjectModel.js";
+import { init, filtrarProjetosPorEstado,  } from "../models/ProjectModel.js";
 
 // Carregar projetos
-Project.init()
-
-function filtrarProjetosParaPublicar(state) {
-    return Project.getProjects().filter(project => project.state === state);
-}
+init()
 
 function renderProjects() {
     const myCatalog = document.querySelector("#myCatalogRow");
-    const projects = filtrarProjetosParaPublicar("Publicado");
+    const projects = filtrarProjetosPorEstado("Publicado");
 
     myCatalog.innerHTML = "";
 
@@ -62,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     filterInputProjects.addEventListener("input", () => {
     
-        let projects = filtrarProjetosParaPublicar("Publicado");
+        let projects = filtrarProjetosPorEstado("Publicado");
 
         let filterValue = filterInputProjects.value.toLowerCase();
 

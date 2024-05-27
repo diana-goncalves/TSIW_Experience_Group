@@ -51,6 +51,10 @@ export function sortProjects(list) {
   return sortedProjects;
 }
 
+export function filtrarProjetosPorEstado(state) {
+    return getProjects().filter(project => project.state === state);
+}
+
 export function editProject(projectName, newProjectData) {
     // find index retorna -1 quando não encontra
     const projectIndex = projects.findIndex(project => project.name === projectName);
