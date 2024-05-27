@@ -1,6 +1,6 @@
-import * as invItems from "./models/inventoryModel.js";
-import * as User from "./models/UserModel.js";
-import * as Project from "./models/ProjectModel.js";
+import {addItem} from "./models/inventoryModel.js";
+import {add} from "./models/UserModel.js";
+import {addProject} from "./models/ProjectModel.js";
 
 initdata();
 
@@ -49,7 +49,7 @@ function initdata() {
 
         ];
         items.forEach(item => {
-            invItems.addItem(item.x, item.y, item.name, item.img, item.room, item.inInventory);
+            addItem(item.x, item.y, item.name, item.img, item.room, item.inInventory);
         });
     }
 
@@ -88,7 +88,7 @@ function initdata() {
             }
         ];
         users.forEach((user) => {
-            User.add(user.username, user.password);
+            add(user.username, user.password);
         });
     }
 
@@ -117,7 +117,7 @@ function initdata() {
             }
         ];
         projects.forEach((project) => {
-            Project.addProject(project.name, project.photo, project.link, project.author, project.msgProjects, project.state)
+            addProject(project.name, project.photo, project.link, project.author, project.msgProjects, project.state)
         });
     }
 

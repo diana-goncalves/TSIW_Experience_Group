@@ -132,9 +132,9 @@
   border-radius: 0;
   color: var(--color-white);
 }
-/* .card-body {
-  padding: 0;
-} */
+#menuDesktop {
+  height: 100% !important;
+}
 
 /* Mudar cor da sombra e borda dos inputs quando estão selecionados */
 input:focus {
