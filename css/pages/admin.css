@@ -76,7 +76,7 @@
     /* -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--color-black); */
 }
-h2 {
+.headerAccount {
     color: var(--color-white);
     text-align: center;
     margin: 1rem;

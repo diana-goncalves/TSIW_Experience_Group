@@ -228,6 +228,12 @@ button:focus {
   margin: 0 auto;
   min-height: 500px;
 }
+#bodyIndex h2 {
+  margin-right: 20px;
+}
+#bodyIndex p {
+  margin-right: 20px;
+}
 
 /* //////////// FOOTER /////////// */
 .custom-footer {
