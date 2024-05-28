@@ -1,7 +1,11 @@
+import setItems from "../views/inventoryView.js"
+
+// função para por as imagens responsivas
 $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();
 });
-
+// Mete os items na sala
+setItems("hall 2");
 
 //--------------------------------------------------------------------
 // PORTA ESQUERDA
@@ -17,7 +21,7 @@ const hall2FrontArea = document.querySelector("#hall2tohall3");
 const imgFront = document.querySelector(".imgFront");
 
 // CORREDOR ATRAS
-const hall2BackArea = document.querySelector("#hall2hall1");
+const hall2BackArea = document.querySelector("#hall2tohall1");
 const imgBack = document.querySelector(".imgBack");
 
 

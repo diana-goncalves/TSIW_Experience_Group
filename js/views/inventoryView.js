@@ -3,13 +3,18 @@ import * as invItems from "../models/inventoryModel.js";
 let mouseX = 0;
 let mouseY = 0;
 
+//--------------------------------------------------------------------------------------------
+// CONSTRUÇÃO DO INVENTARIO
 let InventoryView = () =>{
-    document.querySelector(".InventoryZone").innerHTML +=`
+    invItems.init();
+
+
+    document.querySelector(".InventoryZone").innerHTML =`
     <div class="offcanvas offcanvas-bottom modal-background" tabindex="-1" id="inventory" aria-labelledby="inventoryTitle">
         <div class="offcanvas-header d-flex justify-content-between">
                 <h5 class="offcanvas-title mx-1 " id="inventoryTitle">Inventory</h5>
                 <h5 class="offcanvas-title mx-5 goto" data-bs-toggle="offcanvas" data-bs-target="#collectibles">Tropheus</h5>
-                <button type="button" class="btn-close-white btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close-white btn-close" id="Inventory-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <div class=" container-fluid text-center">
@@ -32,13 +37,6 @@ let InventoryView = () =>{
         </div>
     </div>`
     fillInventory();
-
-    let items = document.querySelectorAll(".ItemZone .item");
-    console.log(items);
-    items.forEach(element => {
-        element.addEventListener("click",setItemZone)
-    });
-
 }
 
 // RESET DOS INVENTORY
@@ -51,6 +49,7 @@ let resetInventory = ()=>{
 
 function fillInventory() {
     let InventaryItems = invItems.getInventory();
+    console.log(InventaryItems);
     let inventorySlot = document.querySelectorAll(".inventorySlot");
 
     InventaryItems.forEach(item => {        
@@ -74,7 +73,9 @@ function fillInventory() {
 function inventoryItemClick(event) {
     console.log( event.target.id.slice(0,3));
     if (event.target.id == "lanterna") {
-        turnpower()
+        document.querySelector('#Inventory-close').click();
+
+        turnpower();
     }
    
 }
@@ -88,34 +89,50 @@ function setItemZone(e) {
 }
 
 InventoryView();
+//--------------------------------------------------------------------------------------------
 
+// FUNÇÃO PARA COLOCAR OS ITEMS A SALA
+export default function setItems(sala) {
+    // Div para onde vais os items
+    let itemZone = document.querySelector(".ItemZone");
+    // Vai bucar os items desta sala
+    let roomItems = invItems.getItemsRoom(sala);
+    console.log(roomItems);
+    roomItems.forEach(element => {
+        // criar item
+        let img = document.createElement('img');
+        img.src = element.img;
+        img.alt = element.name;
+        img.id = element.name;
+        img.className = 'img-fluid item';
+        // posiçao do item na tela
+        img.style.position = 'absolute';
+        img.style.top = element.y;
+        img.style.left = element.x;
+        // colocação do item na tela
+        itemZone.appendChild(img);
 
+        img.addEventListener("click",setItemZone)
+    });
+}
 
-// este codigo tem que ir para a sala
-// ITEMS.forEach(item => {
-//     let inventorySlot = document.querySelectorAll(".inventorySlot");
-//     item.addEventListener("click",(e)=>{
-//         console.log("fdfsfd");
-//         e.preventDefault();
-//         for (const slot of inventorySlot) {
-//             if (slot.innerHTML == "") {
-//                 slot.appendChild(item);
-
-//                 item.addEventListener("click", inventoryItemClick)
-//                 return
-//             }
-//         }
-//     })
-// });
-
+//--------------------------------------------------------------------------------------------
+/// Lanterna
 function turnpower() {
+    let items = document.querySelectorAll(".ItemZone > .item");
+
     if (flashlight.style.display === "none" || flashlight.style.display === "") {
         flashlight.style.display = "block";
-         hidden.style.setProperty("--hidden","black")
-
+        //hidden.style.setProperty("--hidden","black")
+        items.forEach(element => {
+            element.style.display = "none";
+        });
     }else{
         flashlight.style.display = "none";
-        hidden.style.setProperty("--hidden","transparent")
+        //hidden.style.setProperty("--hidden","transparent")
+        items.forEach(element => {
+            element.style.display = "block";
+        });
     }
 }
 
@@ -131,4 +148,5 @@ function getMousePosition(e) {
 
 document.addEventListener("mousemove",getMousePosition);
 document.addEventListener("touchmove",getMousePosition);
+//--------------------------------------------------------------------------------------------
 

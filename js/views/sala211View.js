@@ -5,21 +5,21 @@ $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();
 });
 // Mete os items na sala
-setItems("sala 202");
+setItems("sala 211");
 //--------------------------------------------------------------------
 //map das portas
-const sala202ComputerArea = document.querySelector("#sala202Computer");
-const salaPortaArea = document.querySelector("#sala202Porta");
+const sala211ComputerArea = document.querySelector("#sala211Computer");
+const salaPortaArea = document.querySelector("#sala211Porta");
 const imgSaida = document.querySelector(".imgSaida");
 const imgComputador = document.querySelector(".imgComputador");
 
 // listener para criar o efeito de hover
-sala202ComputerArea.addEventListener("mouseenter", (e)=> {
+sala211ComputerArea.addEventListener("mouseenter", (e)=> {
     e.preventDefault();
     imgComputador.style.display = "block";
 });
 
-sala202ComputerArea.addEventListener("mouseleave",(e)=>{
+sala211ComputerArea.addEventListener("mouseleave",(e)=>{
     e.preventDefault();
     imgComputador.style.display = "none";
 });

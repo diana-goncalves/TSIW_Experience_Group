@@ -16,100 +16,71 @@
 </head>
 <body class="erBody">
     <!-- Navbar -->
-    <header style="background-color: var(--color-dark-gray);">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbarNav">
-            <div class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
+            <div class="container ">
                 <a class="navbar-brand" href="../../index.html">
-                    <img src="../../media/img/logo.png" alt="TSIW Logo" class="img-fluid h-25 mx-0 p-0 " style="max-height: 3rem;">
-                </a>   
+                    <img src="../../media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white home_page" href="#home">Home</a>
+                            <a class="nav-link home_page" href="../../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white projects_page" href="#projects">Projetos</a>
+                            <a class="nav-link projects_page" href="../../index.html#projects">Projetos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white about_page" href="#about">Sobre</a>
+                            <a class="nav-link about_page" href="../../index.html#about">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white er_page" href="#escapeRoom">Escape Room</a>
+                            <a class="nav-link er_page" href="../../index.html#escapeRoom">Escape Room</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav" id="LoginLogout_Container">
                         <li class="nav-item">
-                            <a class="nav-link text-white user_icon" href="#account"><i class="fas fa-user"></i></a>
+                            <a class="nav-link text-white user_icon" href="../../html/login.html"><i
+                                    class="fas fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- Corpo -->
+
+    <!--Contador-->
+    <div id="countdown-timer" class="fixed-top p-3 bg-dark text-white">30:00</div>
+
+
+    <!-- hero section -->
     <section class="imgHero vh-100 w-100 mx-0">
         <!-- Imagem Principal -->
-        <img usemap="#heroMap" class="img-fluid img-responsive d-block vh-100 w-100" src="../../media/img/ER-assets/hall1.jpg" alt="Hall 1">
+        <img usemap="#heroMap" class="img-fluid img-responsive d-block vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/hall1.jpg" alt="Hall 1">
         <map name="heroMap">
             <area id="hall1Left" shape="rect" coords="14,228,331,712" title="Sala 202" alt="Sala 202" href="./Sala202.html">
             <area id="hall1tohall2" shape="rect" coords="896,350,1108,482" title="Corredor Meio" alt="Corredor Meio" href="hall_2.html">
             <area id="hall1Right" shape="rect" coords="1420,270,1799,732" title="Sala 203" alt="Sala 203" href="#">
         </map>
         <!-- Imagens para interação -->
-        <img usemap="#heroMap" class="imgLeft img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-esquerda.png" title="Sala 202" alt="para sala 202">
-        <img usemap="#heroMap" class="imgRight img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-direita.png" title="Sala 203" alt="para sala 203">
-        <img usemap="#heroMap" class="imgFront img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/hall1-to-hall2.png" title="corredor do meio" alt="para corredor do meio">
+        <img usemap="#heroMap" class="imgLeft img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/hall1-esquerda.png" title="Sala 202" alt="para sala 202">
+        <img usemap="#heroMap" class="imgRight img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/hall1-direita.png" title="Sala 203" alt="para sala 203">
+        <img usemap="#heroMap" class="imgFront img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/hall1-to-hall2.png" title="corredor do meio" alt="para corredor do meio">
     </section>
     
 
     <div class="toast-container position-fixed bottom-0 end-0 p-2  ">
         <div id="liveToast" class="toast modal-background" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header modal-background">
-            <img src="..." class="rounded me-2" alt="...">
+            <img src="../../media/img/logo.png" class="rounded me-2" alt="...">
             <strong class="me-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
             Hello, world! This is a toast message.
-            </div>
-        </div>
-    </div>
-
-    <div class="toast-container position-static m-2" id="teste">
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <img src="source" class="rounded me-2" alt="Bootstrap" />
-                <strong class="me-auto">Bootstrap</strong>
-                <small class="text-muted">just now</small>
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="toast"
-                    aria-label="Close"
-                ></button>
-            </div>
-            <div class="toast-body">See? Just like this.</div>
-        </div>
-    
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <img
-                    src="source"
-                    class="rounded me-2"
-                    alt="Bootstrap 2"
-                />
-                <strong class="me-auto">Bootstrap 2</strong>
-                <small class="text-muted">just now</small>
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="toast"
-                    aria-label="Close"
-                ></button>
-            </div>
-            <div class="toast-body">
-                Heads up, toasts will stack automatically
             </div>
         </div>
     </div>
@@ -119,17 +90,24 @@
     
     <!-- Inventory -->
     <div class="InventoryZone"></div>
+
+    <!-- Collectibles -->
+    <div class="collectiblesZone"></div>
     
+    <!--Items na sala-->
     <div class="ItemZone"></div>
 
+    <!-- Lanterna-->
     <div id="flashlight"></div>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <!-- Referências ao js -->
-    <script src="../../js/views/hall1View.js"></script>
+    <script type="module" src="../../js/views/NavbarView.js"></script>
     <script type="module" src="../../js/views/inventoryView.js"></script>
-
+    <script type="module" src="../../js/views/collectiblesView.js"></script>
+    <script type="module" src="../../js/views/hall1View.js"></script>
+    <script type="module" src="../../js/views/GameStateView.js"></script>
 </body>
 </html>

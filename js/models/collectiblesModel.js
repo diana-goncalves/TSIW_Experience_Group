@@ -5,25 +5,25 @@ export function init(){
     if (localStorage.collectibles) {
         const tempcollectibles = JSON.parse(localStorage.collectibles);
         for (let collectible of tempcollectibles) {
-            items.push(new Collectibles(collectible.w,collectible.h,collectible.x,collectible.y,collectible.name,collectible.img,collectible.room,collectible.inInventory));
+            collectibles.push(new Collectibles(collectible.w,collectible.h,collectible.x,collectible.y,collectible.name,collectible.img,collectible.room,collectible.inInventory));
         }
     } else {
-        items = [];
+        collectibles = [];
     }
 }
 
 // ADICIONAR ITEM
-export function addCollectible(x,y,name,img,room,inInventory = false){
-    items.push(new Item(x,y,name,img,room,inInventory));
-    localStorage.setItem("items", JSON.stringify(items))
+export function addCollectible(w,h,x,y,name,img,room,inInventory = false){
+    items.push(new Item(w,h,x,y,name,img,room,inInventory));
+    localStorage.setItem("collectibles", JSON.stringify(collectibles))
 }
 
 // ADICIONAR ITEM AO INVENTARIO
 export function AddToInventory(item) {
-    let index = items.findIndex(element => element.name == item)
-    items[index].inInventory = true;
-    console.log(items);
-    localStorage.setItem("items", JSON.stringify(items))
+    let index = collectibles.findIndex(element => element.name == item)
+    collectibles[index].inInventory = true;
+    console.log(collectibles);
+    localStorage.setItem("collectibles", JSON.stringify(collectibles))
 }
 
 // OBTER ITEMS DA ROOM
@@ -34,12 +34,12 @@ export function getCollectiblesRoom(room) {
 
 // OBTER ITEMS
 export function getCollectibles() {
-    return items;
+    return collectibles;
 }
 
 // OBTER INVENTORY
 export function getInventoryCollectibles() {
-    let filterinventory = items.filter(element => element.inInventory === true)
+    let filterinventory = collectibles.filter(element => element.inInventory === true)
     return filterinventory;
 }
 
@@ -57,7 +57,9 @@ class Collectibles {
     room = "";
     inInventory = false;
 
-    constructor(x,y,name,img,room,inInventory){
+    constructor(w,h,x,y,name,img,room,inInventory){
+        this.w;
+        this.h;
         this.x = x;
         this.y = y;
         this.name = name;
