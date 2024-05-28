@@ -30,6 +30,12 @@
     left: 0;
 }
 
+.collectible{
+    display: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
 .item{
     position: absolute;
     top: 30rem;

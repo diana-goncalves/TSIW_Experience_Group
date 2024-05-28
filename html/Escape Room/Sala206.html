@@ -16,30 +16,36 @@
 </head>
 <body class="erBody">
     <!-- Navbar -->
-    <header style="background-color: var(--color-dark-gray);">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbarNav">
-            <div class="container">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
+            <div class="container ">
                 <a class="navbar-brand" href="../../index.html">
-                    <img src="../../media/img/logo.png" alt="TSIW Logo" class="img-fluid h-25 mx-0 p-0 " style="max-height: 3rem;">
-                </a>   
+                    <img src="./media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white home_page" href="#home">Home</a>
+                            <a class="nav-link home_page" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white projects_page" href="#projects">Projetos</a>
+                            <a class="nav-link projects_page" href="#projects">Projetos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white about_page" href="#about">Sobre</a>
+                            <a class="nav-link about_page" href="#about">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white er_page" href="#escapeRoom">Escape Room</a>
+                            <a class="nav-link er_page" href="#escapeRoom">Escape Room</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav" id="LoginLogout_Container">
                         <li class="nav-item">
-                            <a class="nav-link text-white user_icon" href="#account"><i class="fas fa-user"></i></a>
+                            <a class="nav-link text-white user_icon" href="./html/login.html"><i
+                                    class="fas fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -47,14 +53,15 @@
         </nav>
     </header>
 
+    <!-- hero section -->
     <section class="imgSala vh-100 w-100 mx-0">
-        <img usemap="#salaMap" class="img-fluid img-responsive d-block vh-100 w-100" src="../../media/img/ER-assets/Sala1.jpg" alt="Sala 202">
+        <img usemap="#salaMap" class="img-fluid img-responsive d-block vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala3.jpg" alt="Sala 206">
         <map name="salaMap">
-            <area id="sala201Computer" shape="rect" coords="170,597,388,768" alt="Computador" title="Computador" href="#" data-bs-toggle="modal" data-bs-target="#miniGame1" >
-            <area id="salaPorta" shape="rect" coords="1494,408,1823,804" title="Ractangle" alt="Saida" title="Saida" href="hall_1.html">>
+            <area id="sala206Computer" shape="rect" coords="1808,534,1655,657" alt="Computador" title="Computador" href="#" data-bs-toggle="modal" data-bs-target="#miniGame1" >
+            <area id="sala206Porta" shape="rect" coords="176,417,497,741" alt="Saida" title="Saida" href="hall_2.html">>
         </map>
-        <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/Sala1-computador.png" alt="Computador" title="Computador">
-        <img usemap="#salaMap" class="imgSaida img-fluid img-responsive vh-100 w-100 " src="../../media/img/ER-assets/Sala1-saida.png" alt="Saida" title="Saida">
+        <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala3-computador.png" alt="Computador" title="Computador">
+        <img usemap="#salaMap" class="imgSaida img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala3-saida.png" alt="Saida" title="Saida">
     </section>
 
     <!-- Modal MiniGame -->
@@ -127,47 +134,7 @@
     <div class="InventoryZone"></div>
 
     <!-- Collectibles -->
-    <div class="offcanvas offcanvas-bottom modal-background" tabindex="-1" id="collectibles" aria-labelledby="CollectiblesTitle">
-        <div class="offcanvas-header d-flex justify-content-between">
-            <h5 class="offcanvas-title mx-1 goto"  data-bs-toggle="offcanvas" data-bs-target="#inventory">Inventory</h5>
-            <h5 class="offcanvas-title mx-5 " id="CollectiblesTitle">Tropheus</h5>
-            <button type="button" class="btn-close-white btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class=" container-fluid text-center">
-                <div class="Collectibles row row-cols-4 justify-content-center">
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-
-                    <div class="w-100 d-block d-xl-none"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                    <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="collectiblesZone"></div>
 
     <div class="ItemZone"></div>
 
@@ -177,8 +144,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <!-- Referências ao js -->
-    <script type="module" src="../../js/views/sala202View.js"></script>
-    <script type="module" src="../../js/views/MiniGamesView.js"></script>
     <script type="module" src="../../js/views/inventoryView.js"></script>
+    <script type="module" src="../../js/views/collectiblesView.js"></script>
+    <script type="module" src="../../js/views/sala206View.js"></script>
+    <script src="../../js/views/MiniGamesView.js"></script>
+    <script type="module" src="../../js/views/NavbarView.js"></script>
+
 </body>
 </html>

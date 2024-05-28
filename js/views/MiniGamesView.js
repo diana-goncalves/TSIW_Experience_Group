@@ -89,6 +89,7 @@ function drag(e){
 function drop(e){
     e.preventDefault();
     let data=e.dataTransfer.getData("Text");
+    console.log(data);
     let elementDropped = document.querySelector(`#${data}`);
     let line= e.target.parentElement.parentElement.id;
     if (data.slice(4,6) <= 4) {
@@ -125,9 +126,10 @@ function dropSpan(e) {
 
 document.querySelector(".CompleteLevel").addEventListener("click",(e)=>{
     e.preventDefault();
+    let answers = [];
     let isAllCorrect = true;
     for (let i = 1; i <= 3; i++) {
-        let answers = document.querySelectorAll(`#exercise${i} .draggable`);
+        answers = document.querySelectorAll(`#exercise${i} .draggable`);
         if (answers.length<3) {
             alert("Tens que completar para puder seguir")
             return 0;
