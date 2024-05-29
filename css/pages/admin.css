@@ -161,6 +161,12 @@ label {
     height: 2.4375rem;
     margin-right: 0.5rem;
 }
+#imgPreview {
+    max-width: 50px;
+    max-height: inherit;
+    margin-right: 1rem;
+    display: none;
+}
 .fileInput {
     position: absolute;
     left: 0;

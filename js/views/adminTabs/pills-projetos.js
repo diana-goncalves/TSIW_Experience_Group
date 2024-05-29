@@ -9,11 +9,13 @@ let currentEditingProject = null;
 // Form submit para editar e adicionar projetos
 function submitForm() {
     const form = document.querySelector("#formProjetos");
+    const fileInput = document.querySelector("#fileInputProjects");
+    const previewImg = document.querySelector("#imgPreview");
     
     form.addEventListener("submit",(event) => {
         event.preventDefault();
 
-        const imgData = document.querySelector("#fileInputProjects").files[0];
+        const imgData = fileInput.files[0];
         
         // Guardar valores dos inputs
         const projectData = {
@@ -28,10 +30,6 @@ function submitForm() {
             const reader = new FileReader();
 
             reader.addEventListener("load", function () {
-                // Adicionar imagem ao projectData
-                // projectData.photo = reader.result;
-
-                // submitProject(projectData);
                 
                 resizeImage(reader.result, (resizedImg) => {
                     projectData.photo = resizedImg;
@@ -51,6 +49,33 @@ function submitForm() {
         }
         
     });
+
+    fileInput.addEventListener("change", (event) => {
+        const imgData = event.target.files[0];
+
+        if (imgData) {
+            // Adicionar pre-visualização da imagem quando há uma imagem selecionada
+            const reader = new FileReader();
+
+            reader.addEventListener("load", function () {
+                
+                resizeImage(reader.result, (resizedImg) => {
+                    previewImg.src = resizedImg;
+                    previewImg.style.display = "block";
+                }) 
+               
+            })
+
+            reader.readAsDataURL(imgData);
+
+        } else {
+            
+            previewImg.src = "";
+            previewImg.style.display = "none";
+        }
+
+    })
+
     
 }
 
@@ -73,17 +98,19 @@ function submitProject(projectData) {
         // limpar variavel que "avisa" se é para editar ou adicionar projeto
         currentEditingProject = null;
         // limpar inputs
-        // document.querySelector("#formProjetos").reset();
-        // // remover botão para cancelar edição
-        // document.querySelector("#cancelEditProject").style.display = "none";
+        document.querySelector("#formProjetos").reset();
+        // remover botão para cancelar edição
+        document.querySelector("#cancelEditProject").style.display = "none";
+
+        renderTableProjects(Project.getProjects());
 
     } catch (error) {
         alert(error.message);
     } 
-    finally {
-        location.reload();
+    // finally {
+    //     location.reload();
     
-    }
+    // }
 }
 
 // Esta função está encarregue de ir buscar os dados do projeto e colocar nos inputs e adicionar o botão para cancelar edição. 
@@ -99,7 +126,10 @@ function editProject(projectName) {
         document.querySelector("#formLinkP").value = project.link;
         document.querySelector("#formAuthorP").value = project.author;
         document.querySelector("#formMsgP").value = project.msgProjects;
-        
+
+        document.querySelector("#imgPreview").src = project.photo;
+        document.querySelector("#imgPreview").style.display = "block";
+
     }
    
     // adicionar botão para cancelar edição
@@ -312,9 +342,12 @@ function highlightProject(projectName) {
 
 function editState(projectName, newState) {
     // Alterar estado na local storage e atualizar tabela
-    let projects = JSON.parse(localStorage.getItem("projects"));
+
+    let projects = Project.getProjects();
+    
     const projectId = projectName.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
     
+    // Encontrar index no projects array
     let ProjectIndex = projects.findIndex(project => project.name === projectName);
 
     if (ProjectIndex !== -1) {
