@@ -141,7 +141,7 @@ function renderTableProjects(projects = []) {
                 break;
         }
         
-        const projectId = project.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
+        let projectId = project.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
         
         
         tabelaProjects.innerHTML += 
@@ -183,9 +183,11 @@ function renderTableProjects(projects = []) {
     for (const button of btnsRemoveP) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo remover o projeto?")) {
+                const projectId = button.id.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
+                
                 Project.removeProjects(button.id);
                 
-                const projectRow = document.querySelector(`#${button.id}`);
+                const projectRow = document.querySelector(`#${projectId}`);
 
                 tabelaProjects.removeChild(projectRow)
 

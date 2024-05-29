@@ -251,6 +251,14 @@ button:focus {
   left: 50%;
   transform: translateX(-50%);
 }
+/* Toast message */
+.toast-header {
+  background-color: var(--color-yellow);
+}
+.toast-body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
 
 /* //////////// MEDIA QUERIES /////////// */
 /* TABLETS */
