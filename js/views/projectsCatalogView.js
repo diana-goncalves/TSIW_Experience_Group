@@ -5,8 +5,13 @@ init()
 
 function renderProjects() {
     const myCatalog = document.querySelector("#myCatalogRow");
-    const projects = filtrarProjetosPorEstado("Publicado");
-
+    
+    let projectsPublicados = filtrarProjetosPorEstado("Publicado");
+    let projectsDestacados = filtrarProjetosPorEstado("Destacado");
+    
+    // Juntar array dos projetos publicados com a dos destacados
+    let projects = projectsPublicados.concat(projectsDestacados);
+    
     myCatalog.innerHTML = "";
 
     if (projects.length === 0) {
@@ -16,7 +21,6 @@ function renderProjects() {
   
     projects.forEach(project => {
         renderProject(project);
-
     })
 
 }

@@ -1,8 +1,6 @@
 import * as Project from "../../models/ProjectModel.js"
 
-Project.init()
-
-// Para o futuro: substituir locaction.reload(); e adicionar edição de imagens
+// Para o futuro: substituir locaction.reload();
 
 // Variavel criada para distinguir entre editar e adicionar projeto
 let currentEditingProject = null;
@@ -55,14 +53,12 @@ function submitProject(projectData) {
 
             Project.editProject(currentEditingProject, projectData);
             alert("Projeto editado com sucesso!");
-            location.reload();
 
         } else {
             // Adicionar projeto
 
             Project.addProject(projectData.name, projectData.photo, projectData.link, projectData.author, projectData.msgProjects);
-            alert("Projeto adicionado com sucesso!");
-            location.reload();
+            alert("Projeto adicionado com sucesso!")
         }
 
         // limpar variavel que "avisa" se é para editar ou adicionar projeto
@@ -70,12 +66,12 @@ function submitProject(projectData) {
 
     } catch (error) {
         alert(error.message);
-    
+    } finally {
         location.reload();
     }
 }
 
-// FALTA EDITAR IMAGEM
+// Esta função está encarregue de ir buscar os dados do projeto e colocar nos inputs e adicionar o botão para cancelar edição. 
 
 function editProject(projectName) {
     
@@ -128,7 +124,9 @@ function renderTableProjects(projects = []) {
     
     projects.forEach(project => {
         
+        // Sempre que se edita/adiciona um projeto ou caso não seja especificado, o estado é definido como Oculto.
         let classState = null;
+
         switch (project.state) {
             case "Publicado":
                 classState = "Publicado";
@@ -143,12 +141,12 @@ function renderTableProjects(projects = []) {
                 break;
         }
         
-        
+        const projectId = project.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
         
         
         tabelaProjects.innerHTML += 
         `
-            <tr>
+            <tr id="${projectId}">
                 <td>${project.author}</td>
                 <td>${project.name}</td>
                 <td>${project.msgProjects}</td>
@@ -186,7 +184,13 @@ function renderTableProjects(projects = []) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo remover o projeto?")) {
                 Project.removeProjects(button.id);
-                location.reload();
+                
+                const projectRow = document.querySelector(`#${button.id}`);
+
+                tabelaProjects.removeChild(projectRow)
+
+                customToast("Projeto removido com sucesso!")
+
             }
         })
     }
@@ -211,6 +215,7 @@ function renderTableProjects(projects = []) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo publicar o projeto?")) {
                 postProject(button.id);
+                customToast("Projeto publicado com sucesso!");
             }
         })
     }
@@ -222,7 +227,8 @@ function renderTableProjects(projects = []) {
     for (const button of btnsOcultarP) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo ocultar o projeto?")) {
-                hideProject(button.id);   
+                hideProject(button.id);  
+                customToast("Projeto ocultado com sucesso!"); 
             }
         })
     }
@@ -235,48 +241,43 @@ function renderTableProjects(projects = []) {
          button.addEventListener("click", () => {
              if(confirm("Queres mesmo destacar o projeto?")) {
                 highlightProject(button.id);
+                customToast("Projeto destacado com sucesso!");
              }
          })
      }
 
-    submitForm();
-
 }
 
-renderTableProjects(Project.getProjects());
+function filterSortEventListeners() {
+    // Procurar projeto pelo nome automatico
+    const filterInputProjects = document.querySelector("#procuraProjetos");
 
-// Procurar projeto pelo nome automatico
-const filterInputProjects = document.querySelector("#procuraProjetos");
-
-filterInputProjects.addEventListener("input", () => {
-    renderTableProjects(Project.getProjects(filterInputProjects.value));
-})
-
-// Clicar no botão organizar
-let isSorted = false;
-const orderButtonProjects = document.querySelector("#btnOrderProjetos");
-
-orderButtonProjects.addEventListener("click", () => {
-    
-    if(isSorted) {
-        // Caso já tenham clicado para organizar, tirar o sort
+    filterInputProjects.addEventListener("input", () => {
         renderTableProjects(Project.getProjects(filterInputProjects.value));
-    } else {
-        // Organizar a lista de projetos filtrados, se não houver filtros organiza APENAS a tabela
-        renderTableProjects(Project.sortProjects(Project.getProjects(filterInputProjects.value)));
-    }
-    
-    isSorted = !isSorted;
+    })
 
-})
+    // Clicar no botão organizar
+    let isSorted = false;
+    const orderButtonProjects = document.querySelector("#btnOrderProjetos");
+
+    orderButtonProjects.addEventListener("click", () => {
+        
+        if(isSorted) {
+            // Caso já tenham clicado para organizar, tirar o sort
+            renderTableProjects(Project.getProjects(filterInputProjects.value));
+        } else {
+            // Organizar a lista de projetos filtrados, se não houver filtros organiza APENAS a tabela
+            renderTableProjects(Project.sortProjects(Project.getProjects(filterInputProjects.value)));
+        }
+        
+        isSorted = !isSorted;
+
+    })
+}
 
 function postProject(projectName) {
 
     editState(projectName,"Publicado");
-
-    alert("Projeto publicado com sucesso!");
-    
-    location.reload();
 
 }
 
@@ -284,36 +285,56 @@ function hideProject(projectName) {
     
     editState(projectName,"Oculto");
 
-    alert("Projeto ocultado com sucesso!");
-
-    location.reload();
-
 }
 
 function highlightProject(projectName) {
 
     editState(projectName,"Destacado");
 
-    alert("Projeto destacado com sucesso!");
-
-    location.reload();
-
 }
 
 function editState(projectName, newState) {
-    const project = Project.getProjectByName(projectName);
+    // Alterar estado na local storage e atualizar tabela
+    let projects = JSON.parse(localStorage.getItem("projects"));
+    const projectId = projectName.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
+    
+    let ProjectIndex = projects.findIndex(project => project.name === projectName);
 
-    if(project) {
-        // Alterar state na local storage para publicado
-
-        let projects = JSON.parse(localStorage.getItem("projects"));
+    if (ProjectIndex !== -1) {
         
-        let ProjectIndex = projects.findIndex(project => project.name === projectName);
-
-        if (ProjectIndex !== -1) {
-            projects[ProjectIndex].state = newState;
-        }
+        // Mudar estado do projeto 
+        projects[ProjectIndex].state = newState;
         
+        // Atualizar local storage
         localStorage.setItem("projects", JSON.stringify(projects));
+        
+        // Atualizar estado na tabela
+        let projectRow = document.querySelector(`#${projectId}`);
+
+        const stateCol = projectRow.cells[5];
+
+        stateCol.textContent = newState;
+
+        stateCol.className = newState;
+
     }
+    
 }
+
+function customToast(message) {
+    
+    document.querySelector("#adminToast").textContent = message;
+
+    var toast = new bootstrap.Toast(document.querySelector("#alertToast"));
+
+    toast.show();
+}
+
+// INICIAR
+Project.init()
+
+renderTableProjects(Project.getProjects());
+
+submitForm();
+
+filterSortEventListeners();

@@ -100,20 +100,23 @@ function initdata() {
                 link: null,
                 author: "Beatriz Lopes",
                 msgProjects: "Research on Design Tokens - Managing and Exporting",
+                state: "Publicado"
             },
             {
                 name: "CustoJusto Pro",
                 photo: "../media/projetos/Maria Lima.jpg",
                 link: null,
                 author: "Maria Lima",
-                msgProjects: "Revitalização do Front-end do CustoJusto"
+                msgProjects: "Revitalização do Front-end do CustoJusto",
+                state: "Publicado"
             },
             {
                 name: "Gestão de Portfólio de Projetos",
                 photo: "../media/projetos/BrunoRodrigues.jpg",
                 link: null,
                 author: "Bruno Rodrigues",
-                msgProjects: "Portfólio de Projetos da plataforma SCRAIM"
+                msgProjects: "Portfólio de Projetos da plataforma SCRAIM",
+                state: "Publicado"
             }
         ];
         projects.forEach((project) => {

@@ -62,9 +62,10 @@ export function editProject(projectName, newProjectData) {
     if (projectIndex !== -1) {
         
         try {
-            addProject(newProjectData.name, newProjectData.photo, newProjectData.link, newProjectData.author, newProjectData.msgProjects);
-
+            
             removeProjects(projectName);
+
+            addProject(newProjectData.name, newProjectData.photo, newProjectData.link, newProjectData.author, newProjectData.msgProjects);
 
         } catch (error) {
             throw error;
