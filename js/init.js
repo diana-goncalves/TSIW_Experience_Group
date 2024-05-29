@@ -96,7 +96,7 @@ function initdata() {
         const projects = [
             {
                 name: "Design Tokens",
-                photo: "../media/projetos/Beatriz Rodrigues.jpeg",
+                photo: "../media/projetos/Beatriz Rodrigues.jpg",
                 link: null,
                 author: "Beatriz Lopes",
                 msgProjects: "Research on Design Tokens - Managing and Exporting",

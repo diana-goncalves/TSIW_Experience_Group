@@ -2,12 +2,15 @@ import * as Project from "../../models/ProjectModel.js"
 
 // Para o futuro: substituir locaction.reload();
 
+
 // Variavel criada para distinguir entre editar e adicionar projeto
 let currentEditingProject = null;
 
 // Form submit para editar e adicionar projetos
 function submitForm() {
-    document.querySelector("#formProjetos").addEventListener("submit",(event) => {
+    const form = document.querySelector("#formProjetos");
+    
+    form.addEventListener("submit",(event) => {
         event.preventDefault();
 
         const imgData = document.querySelector("#fileInputProjects").files[0];
@@ -26,9 +29,15 @@ function submitForm() {
 
             reader.addEventListener("load", function () {
                 // Adicionar imagem ao projectData
-                projectData.photo = reader.result;
+                // projectData.photo = reader.result;
 
-                submitProject(projectData);
+                // submitProject(projectData);
+                
+                resizeImage(reader.result, (resizedImg) => {
+                    projectData.photo = resizedImg;
+
+                    submitProject(projectData);
+                }) 
                 
             })
 
@@ -63,11 +72,17 @@ function submitProject(projectData) {
 
         // limpar variavel que "avisa" se é para editar ou adicionar projeto
         currentEditingProject = null;
+        // limpar inputs
+        // document.querySelector("#formProjetos").reset();
+        // // remover botão para cancelar edição
+        // document.querySelector("#cancelEditProject").style.display = "none";
 
     } catch (error) {
         alert(error.message);
-    } finally {
+    } 
+    finally {
         location.reload();
+    
     }
 }
 
@@ -215,10 +230,10 @@ function renderTableProjects(projects = []) {
 
     for (const button of btnsPublicarP) {
         button.addEventListener("click", () => {
-            if(confirm("Queres mesmo publicar o projeto?")) {
-                postProject(button.id);
-                customToast("Projeto publicado com sucesso!");
-            }
+            
+            postProject(button.id);
+            customToast("Projeto publicado com sucesso!");
+            
         })
     }
 
@@ -228,10 +243,10 @@ function renderTableProjects(projects = []) {
 
     for (const button of btnsOcultarP) {
         button.addEventListener("click", () => {
-            if(confirm("Queres mesmo ocultar o projeto?")) {
-                hideProject(button.id);  
-                customToast("Projeto ocultado com sucesso!"); 
-            }
+            
+            hideProject(button.id);  
+            customToast("Projeto ocultado com sucesso!"); 
+            
         })
     }
 
@@ -241,10 +256,10 @@ function renderTableProjects(projects = []) {
 
      for (const button of btnsDestacarP) {
          button.addEventListener("click", () => {
-             if(confirm("Queres mesmo destacar o projeto?")) {
-                highlightProject(button.id);
-                customToast("Projeto destacado com sucesso!");
-             }
+             
+            highlightProject(button.id);
+            customToast("Projeto destacado com sucesso!");
+             
          })
      }
 
@@ -331,6 +346,61 @@ function customToast(message) {
 
     toast.show();
 }
+
+function resizeImage(imgURL, callback) {
+    const img = new Image();
+
+    // Alterar tamanho apenas quando imagem acabar de carregar
+    img.addEventListener("load", () => {
+        
+        const maxWidth = 800;       // Ajustar estes valores para aumentar/diminuir tamanho das imagens
+        const maxHeight = 600;
+
+        let width = img.width;
+        let height = img.height;
+
+        //  Dar resize da imagem caso seja necessario, sem perder aspect ratio
+        if (width > maxWidth || height > maxHeight) {
+    
+            const aspectRatio = width/height;
+
+            if (width > maxWidth) {
+                
+                width = maxWidth;
+
+                height = width / aspectRatio;
+
+            } else {
+                
+                height = maxHeight;
+
+                width = height * aspectRatio;
+            }
+
+        }
+
+        const canvas = document.createElement("canvas");
+
+        const content = canvas.getContext("2d");
+
+        canvas.width = width;
+        canvas.height = height;
+
+        content.drawImage(img, 0, 0, width, height);
+
+        const newUrl = canvas.toDataURL("image/jpeg");
+
+        callback(newUrl);
+
+    })
+
+    // Adicionar src ao novo elemento img criado
+    img.src = imgURL;
+
+}
+
+
+
 
 // INICIAR
 Project.init()
