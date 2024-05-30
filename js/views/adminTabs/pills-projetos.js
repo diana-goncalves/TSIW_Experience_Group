@@ -1,8 +1,5 @@
 import * as Project from "../../models/ProjectModel.js"
 
-// Para o futuro: substituir locaction.reload();
-
-
 // Variavel criada para distinguir entre editar e adicionar projeto
 let currentEditingProject = null;
 
@@ -99,9 +96,7 @@ function submitProject(projectData) {
         currentEditingProject = null;
         // limpar inputs
         document.querySelector("#formProjetos").reset();
-        // remover botão para cancelar edição
-        document.querySelector("#cancelEditProject").style.display = "none";
-
+        // atualizar tabela
         renderTableProjects(Project.getProjects());
 
     } catch (error) {
@@ -127,22 +122,50 @@ function editProject(projectName) {
         document.querySelector("#formAuthorP").value = project.author;
         document.querySelector("#formMsgP").value = project.msgProjects;
 
-        document.querySelector("#imgPreview").src = project.photo;
+        document.querySelector("#imgPreview").src = project.photo ? project.photo : "../../../media/img/ImagePlaceholder.png";
         document.querySelector("#imgPreview").style.display = "block";
+
+        document.querySelector("#cancelEditProject").style.display = "block";
 
     }
    
-    // adicionar botão para cancelar edição
+}
 
-    const cancelEditP = document.querySelector("#cancelEditProject");
+function CancelButton() {
     
-    // adicionar botão para dar reset ao form
-    cancelEditP.style.display = "block";
+    const form = document.querySelector("#formProjetos");
+    const cancelEditP = document.querySelector("#cancelEditProject");
+    const img = document.querySelector("#imgPreview");
+    
+    
+    form.addEventListener("input", () => {
+        
+        const inputs = form.querySelectorAll("input[type='text']");
+        let verificarValores = false;
+
+        inputs.forEach(input => {
+            if(input.value.trim() !== "") {
+                verificarValores = true;
+            }
+        })
+        
+        
+        // adicionar/remover botão para dar reset ao form. Se os inputs tiverem algum valor, adiciona o botão, se estiverem vazios, remove.
+        cancelEditP.style.display = verificarValores ? "block" : "none";
+
+    })
 
     // remover botão depois de dar reset
     cancelEditP.addEventListener("click", () => {
         cancelEditP.style.display = "none";
+        // remover image preview
+        img.style.display = "none";
         currentEditingProject = null;
+    })
+
+    form.addEventListener("submit", () => {
+        cancelEditP.style.display = "none";
+        img.style.display = "none";
     })
 
 }
@@ -443,3 +466,6 @@ renderTableProjects(Project.getProjects());
 submitForm();
 
 filterSortEventListeners();
+
+CancelButton();
+
