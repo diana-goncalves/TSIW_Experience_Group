@@ -83,13 +83,13 @@ function submitProject(projectData) {
             // Editar projeto 
 
             Project.editProject(currentEditingProject, projectData);
-            alert("Projeto editado com sucesso!");
+            customToast("Projeto editado com sucesso!");
 
         } else {
             // Adicionar projeto
 
             Project.addProject(projectData.name, projectData.photo, projectData.link, projectData.author, projectData.msgProjects);
-            alert("Projeto adicionado com sucesso!")
+            customToast("Projeto adicionado com sucesso!")
         }
 
         // limpar variavel que "avisa" se é para editar ou adicionar projeto
@@ -100,12 +100,9 @@ function submitProject(projectData) {
         renderTableProjects(Project.getProjects());
 
     } catch (error) {
-        alert(error.message);
+        customToast(error.message);
     } 
-    // finally {
-    //     location.reload();
-    
-    // }
+
 }
 
 // Esta função está encarregue de ir buscar os dados do projeto e colocar nos inputs e adicionar o botão para cancelar edição. 
@@ -131,7 +128,7 @@ function editProject(projectName) {
    
 }
 
-function CancelButton() {
+function initCancelButton() {
     
     const form = document.querySelector("#formProjetos");
     const cancelEditP = document.querySelector("#cancelEditProject");
@@ -191,26 +188,8 @@ function renderTableProjects(projects = []) {
     }
     
     projects.forEach(project => {
-        
-        // Sempre que se edita/adiciona um projeto ou caso não seja especificado, o estado é definido como Oculto.
-        let classState = null;
-
-        switch (project.state) {
-            case "Publicado":
-                classState = "Publicado";
-                break;
-        
-            case "Destacado":
-                classState = "Destacado";
-                break;
-            
-            default:
-                classState = "Oculto"
-                break;
-        }
-        
+     
         let projectId = project.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
-        
         
         tabelaProjects.innerHTML += 
         `
@@ -220,7 +199,7 @@ function renderTableProjects(projects = []) {
                 <td>${project.msgProjects}</td>
                 <td style="text-align: center;">${project.link ? 'Sim' : 'Não'}</td>
                 <td style="text-align: center;">${project.photo ? 'Sim' : 'Não'}</td>
-                <td style="text-align: center;" class="${classState}">${project.state}</td>
+                <td style="text-align: center;" class="${project.state}">${project.state}</td>
                 <td style="text-align: center;">
                     
                     <div class="dropdown">
@@ -244,81 +223,12 @@ function renderTableProjects(projects = []) {
         `
     });
 
-    // Clicar no botão remover PROJETO
-
-    const btnsRemoveP = document.getElementsByClassName("removeP");
-
-    for (const button of btnsRemoveP) {
-        button.addEventListener("click", () => {
-            if(confirm("Queres mesmo remover o projeto?")) {
-                const projectId = button.id.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
-                
-                Project.removeProjects(button.id);
-                
-                const projectRow = document.querySelector(`#${projectId}`);
-
-                tabelaProjects.removeChild(projectRow)
-
-                customToast("Projeto removido com sucesso!")
-
-            }
-        })
-    }
-
-    // Clicar no botão editar 
-
-    const btnsEditarP = document.getElementsByClassName("editarP");
-
-    for (const button of btnsEditarP) {
-        button.addEventListener("click", () => {
-            if(confirm("Queres mesmo editar o projeto?")) {
-                editProject(button.id);
-            }
-        })
-    }
-
-    // Clicar no botão publicar - NAO IMPLEMENTADO
-
-    const btnsPublicarP = document.getElementsByClassName("publicarP");
-
-    for (const button of btnsPublicarP) {
-        button.addEventListener("click", () => {
-            
-            postProject(button.id);
-            customToast("Projeto publicado com sucesso!");
-            
-        })
-    }
-
-    // Clicar no botão ocultar - NAO IMPLEMENTADO
-
-    const btnsOcultarP = document.getElementsByClassName("ocultarP");
-
-    for (const button of btnsOcultarP) {
-        button.addEventListener("click", () => {
-            
-            hideProject(button.id);  
-            customToast("Projeto ocultado com sucesso!"); 
-            
-        })
-    }
-
-     // Clicar no botão destacar - NAO IMPLEMENTADO
-
-     const btnsDestacarP = document.getElementsByClassName("destacarP");
-
-     for (const button of btnsDestacarP) {
-         button.addEventListener("click", () => {
-             
-            highlightProject(button.id);
-            customToast("Projeto destacado com sucesso!");
-             
-         })
-     }
+    // Event listeners
+    tableEvents();
 
 }
 
-function filterSortEventListeners() {
+function filterByName() {
     // Procurar projeto pelo nome automatico
     const filterInputProjects = document.querySelector("#procuraProjetos");
 
@@ -326,23 +236,6 @@ function filterSortEventListeners() {
         renderTableProjects(Project.getProjects(filterInputProjects.value));
     })
 
-    // Clicar no botão organizar
-    let isSorted = false;
-    const orderButtonProjects = document.querySelector("#btnOrderProjetos");
-
-    orderButtonProjects.addEventListener("click", () => {
-        
-        if(isSorted) {
-            // Caso já tenham clicado para organizar, tirar o sort
-            renderTableProjects(Project.getProjects(filterInputProjects.value));
-        } else {
-            // Organizar a lista de projetos filtrados, se não houver filtros organiza APENAS a tabela
-            renderTableProjects(Project.sortProjects(Project.getProjects(filterInputProjects.value)));
-        }
-        
-        isSorted = !isSorted;
-
-    })
 }
 
 function postProject(projectName) {
@@ -368,8 +261,6 @@ function editState(projectName, newState) {
 
     let projects = Project.getProjects();
     
-    const projectId = projectName.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
-    
     // Encontrar index no projects array
     let ProjectIndex = projects.findIndex(project => project.name === projectName);
 
@@ -381,14 +272,8 @@ function editState(projectName, newState) {
         // Atualizar local storage
         localStorage.setItem("projects", JSON.stringify(projects));
         
-        // Atualizar estado na tabela
-        let projectRow = document.querySelector(`#${projectId}`);
-
-        const stateCol = projectRow.cells[5];
-
-        stateCol.textContent = newState;
-
-        stateCol.className = newState;
+        // Atualizar tabela
+        renderTableProjects(projects);
 
     }
     
@@ -455,6 +340,184 @@ function resizeImage(imgURL, callback) {
 
 }
 
+function tableEvents() {
+        
+    // Clicar no botão remover PROJETO
+    const btnsRemoveP = document.getElementsByClassName("removeP");
+
+    for (const button of btnsRemoveP) {
+        button.addEventListener("click", () => {
+            if(confirm("Queres mesmo remover o projeto?")) {
+                
+                Project.removeProjects(button.id);
+
+                renderTableProjects(Project.getProjects());
+                
+                customToast("Projeto removido com sucesso!");
+
+            }
+        })
+    }
+
+    // Clicar no botão editar 
+    const btnsEditarP = document.getElementsByClassName("editarP");
+
+    for (const button of btnsEditarP) {
+        button.addEventListener("click", () => {
+            if(confirm("Queres mesmo editar o projeto?")) {
+                editProject(button.id);
+            }
+        })
+    }
+
+    // Clicar no botão publicar
+    const btnsPublicarP = document.getElementsByClassName("publicarP");
+
+    for (const button of btnsPublicarP) {
+        button.addEventListener("click", () => {
+            
+            postProject(button.id);
+            customToast("Projeto publicado com sucesso!");
+            
+        })
+    }
+
+    // Clicar no botão ocultar
+    const btnsOcultarP = document.getElementsByClassName("ocultarP");
+
+    for (const button of btnsOcultarP) {
+        button.addEventListener("click", () => {
+            
+            hideProject(button.id);  
+            customToast("Projeto ocultado com sucesso!"); 
+            
+        })
+    }
+
+    // Clicar no botão destacar
+    const btnsDestacarP = document.getElementsByClassName("destacarP");
+
+    for (const button of btnsDestacarP) {
+         button.addEventListener("click", () => {
+             
+            highlightProject(button.id);
+            customToast("Projeto destacado com sucesso!");
+             
+         })
+    }
+
+    tableHeaders();
+
+}
+
+let headersEvents = false;
+function tableHeaders() {
+    
+    // Evitar colocar event listeners 2x
+    if (headersEvents) {
+        return;
+    } 
+
+    headersEvents = true;
+    
+    // Clicar nos headers da tabela para organizar linhas
+    let isSorted = false;
+    const tHeader = document.querySelector("#tableHeaderProjects");
+    const tHeaders = tHeader.querySelectorAll("th");
+    
+    tHeaders.forEach(header => {
+        const headerIndex = parseInt(header.getAttribute("id"));
+        
+        // Excluir coluna com botão para gerir projetos
+        if (headerIndex != 6) {
+            header.style.cursor = "pointer"; // Mudar cursor para indicar elemento "clicavel"
+        
+            header.addEventListener("click", () => {
+                isSorted = !isSorted;
+                sortTable(headerIndex, isSorted);
+            })
+        }
+
+    });    
+}
+
+let original = null;
+function sortTable(colIndex, isSorted) {
+
+    let projects = Project.getProjects();
+
+    if ( original === null) {
+        // Criar uma cópia dos projetos antes de organizar
+        original = projects.slice();
+    }
+
+    console.log(isSorted);
+    // Voltar à ordem original
+    if (!isSorted) {
+        renderTableProjects(original);
+        return;
+    }
+
+   projects.sort((a,b) => {
+    let aContent = null;
+    let bContent = null;
+
+    switch (colIndex) {
+        case 0:
+            // Coluna autor
+            aContent = a.author;
+            bContent = b.author;
+
+            break;
+        case 1:
+            // Coluna nome
+            aContent = a.name;
+            bContent = b.name;
+            
+            break;
+        case 2:
+            // Coluna mensagem
+            aContent = a.msgProjects;
+            bContent = b.msgProjects;
+            
+            break;
+        case 3:
+            // Coluna link
+            aContent = a.link ? "Sim" : "Não";
+            bContent = b.link ? "Sim" : "Não";
+            
+            break;
+        case 4:
+            // Coluna imagem
+            aContent = a.photo ? "Sim" : "Não";
+            bContent = b.photo ? "Sim" : "Não";
+            
+            break;
+        case 5:
+            // Coluna estado
+            aContent = a.state;
+            bContent = b.state;
+            
+            break;
+        default:
+            return 0;
+    }
+
+    if (aContent === bContent) {
+        return 0;
+    }
+
+    if (aContent > bContent) {
+        return 1;
+    } else {
+        return -1;
+    }
+
+   })
+
+   renderTableProjects(projects);
+
+}
 
 
 
@@ -465,7 +528,7 @@ renderTableProjects(Project.getProjects());
 
 submitForm();
 
-filterSortEventListeners();
+filterByName();
 
-CancelButton();
+initCancelButton();
 

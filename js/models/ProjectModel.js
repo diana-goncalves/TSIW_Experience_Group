@@ -28,12 +28,6 @@ export function removeProjects(name, author) {
     localStorage.setItem("projects", JSON.stringify(projects));
 }
 
-// OBTER TODOS OS PROJETOS
-
-// export function getProjects() {
-//     return projects;
-// }
-
 export function getProjects(filterName = "", isSorted = false) {
     // Criar nova array caso o admin queira procurar por um nome
     let filteredProjects = projects.filter((project) => (project.name.toLowerCase().includes(filterName.toLowerCase()) || filterName === ""));
@@ -46,9 +40,10 @@ export function getProjects(filterName = "", isSorted = false) {
 }
 
 export function sortProjects(list) {
+    
     let sortedProjects = list.sort((a, b) => a.name.localeCompare(b.name));
 
-  return sortedProjects;
+    return sortedProjects;
 }
 
 export function filtrarProjetosPorEstado(state) {

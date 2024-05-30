@@ -161,11 +161,20 @@ label {
     height: 2.4375rem;
     margin-right: 0.5rem;
 }
-#imgPreview {
+.imgsPreview {
     max-width: 50px;
     max-height: inherit;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     display: none;
+    border: 1px var(--color-yellow) solid;
+}
+.imgsPreview:hover {
+    position: static;
+    scale: 4;
+    z-index: 1100;
+    margin-right: 5rem;
+    margin-bottom: 6rem;
+    border: 0;
 }
 .fileInput {
     position: absolute;
