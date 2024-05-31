@@ -137,7 +137,7 @@ function randomProject(projectsList, numberOfProjects) {
 
 function renderEvents() {
     const events = filtrarEventoPorEstado("Destacado");
-
+    
     // Se não houver eventos para destacar, escolher 3 aleatorios
     if (events.length === 0) {
         const randomEvents = randomProject(filtrarEventoPorEstado("Publicado"), 3);
@@ -146,12 +146,12 @@ function renderEvents() {
             renderEvent(event, index);
         });
 
+    } else {
+        // Renderizar eventos com state "Destacado"
+        events.forEach((event, index) => {
+            renderEvent(event, index);
+        })
     }
-
-    // Renderizar eventos com state "Destacado"
-    events.forEach((event, index) => {
-        renderEvent(event, index);
-    })
 
 }
 

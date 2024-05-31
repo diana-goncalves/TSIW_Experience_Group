@@ -3,6 +3,7 @@ let events = [];
 // CARREGAR EVENTOS DA LOCALSTORAGE
 export function init() {
     if(localStorage.events) {
+        events = []; // limpar primeiro para evitar duplicar eventos
         const tempEvents = JSON.parse(localStorage.events);
         for(let event of tempEvents) {
             events.push(new Event(event.name, event.msgEvent, event.date, event.link, event.photo, event.state));
@@ -15,7 +16,7 @@ export function init() {
 // ADICIONAR EVENTOS
 export function addEvents(name, msgEvent, date, link, photo, state) {
     if (events.some((element) => element.name.toLowerCase() === name.toLowerCase() && element.date === date)) {
-        throw Error(`Projeto já Existe!`);
+        throw Error(`Evento já Existe!`);
     } else {
         events.push(new Event(name, msgEvent, date, link, photo, state));
         localStorage.setItem("events", JSON.stringify(events));
@@ -35,14 +36,14 @@ export function getEvents(filterName = "", isSorted = false) {
     filteredEvents = isSorted
       ? filteredEvents.sort((a, b) => a.name.localeCompare(b.name))
       : filteredEvents; 
-  
+    console.log(filteredEvents);
     return filteredEvents;  
 }
 
 export function sortEvents(list) {
     
     let sortedEvents = list.sort((a, b) => a.name.localeCompare(b.name));
-
+    
     return sortedEvents;
 }
 
@@ -67,7 +68,7 @@ export function editEvent(eventName, newEventData) {
         } 
         
     } else {
-        // Caso não encontre um projeto com o mesmo nome na lista de projetos
+        // Caso não encontre um evento com o mesmo nome na lista de eventos
         throw new Error("Evento não encontrado!");
     }
 }
