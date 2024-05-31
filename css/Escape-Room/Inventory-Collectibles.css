@@ -24,6 +24,16 @@
 
 .inventorySlot>.item{
     position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.collectibleSlot>.collectible{
+    position: relative;
+    display: block;
     height: 100%;
     width: 100%;
     top: 0;
@@ -32,6 +42,11 @@
 
 .collectible{
     display: none;
+    position: absolute;
+    top: 30rem;
+    left: 35rem;
+    height: 3.5rem;
+    width: 3.5rem;
     transition: all 0.5s;
     cursor: pointer;
 }
@@ -46,7 +61,7 @@
     cursor: pointer;
 }
 @media only screen and (max-width: 1024px) {
-    .inventorySlot{
+    .inventorySlot,.collectibleSlot{
         height: 8rem !important;
         width: 8rem !important;
     }

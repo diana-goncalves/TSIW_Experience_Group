@@ -66,30 +66,7 @@
         <img usemap="#heroMap" class="imgFront img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Entrada-to-hall1.png" title="corredor inicial" alt="para corredor inicial">
     </section>
 
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-            <div class="toast modal-background" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
-                <div class="toast-header modal-background">
-                    <img src="..." class="rounded me-2" alt="...">
-                    <strong class="me-auto">Supervisor</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body modal-background">
-                    See? Just like this.
-                </div>
-            </div>
-
-            <div class="toast toast2 modal-background" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
-                <div class="toast-header modal-background">
-                    <img src="..." class="rounded me-2" alt="...">
-                    <strong class="me-auto">Bootstrap</strong>
-                    <small class="text-body-secondary">just now</small>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body modal-background">
-                    See? Just like this.
-                </div>
-            </div>
-    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
 
     <!-- Modal Vista para Parque -->
     <div class="modal fade" id="modalParque" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalParqueLabel" aria-hidden="true">
@@ -106,23 +83,50 @@
     <!-- Modal Inicial -->
     <div class="modal fade" id="modalInicial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalInicialLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
-        <div class="modal-content modal-background">
-            <div class="border-1 border-black modal-header">
-                <h1 class="modal-title fs-5" id="modalInicialLabel">Escape Room</h1>
-                <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid text-center">
-                    <div class="row">
-                        <h1 class="col align-content-center d-flex justify-content-center title text-capitalize text-xxl-start text-white ">Bem-Vindo ao Escape Room Experience</h1>
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <h1 class="modal-title fs-5" id="modalInicialLabel">Escape Room</h1>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid text-center">
+                        <div class="row">
+                            <h1 class="col align-content-center d-flex justify-content-center title text-capitalize text-xxl-start">Bem-Vindo ao Escape Room Experience</h1>
+                        </div>
+                        <div class="row mt-4">
+                            <p class="col text-white">Nesta Experiência, é um técnico recém-formado e contratado pela ESMAD, onde ocorreu um erro e és o único disponível para resolver, vais andar de sala em sala para desbloquear computadores para resolver o problema em um tempo limitado para não atrapalhar os nossos estudantes! Achas que és capaz?</p>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <h5 class="text-white">Instruções:</h5>
+                                <ul class="text-white text-start d-inline-block">
+                                    <li>Ande de sala em sala da universidade.</li>
+                                    <li>Com o rato descobres zonas que podes aceder</li>
+                                    <li>Complete os minigames nos computadores para desbloquear novas áreas.</li>
+                                    <li>Resolva todos os desafios em 30 minutos.</li>
+                                    <li>Tens um Inventário para gerenciar os items</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-4 justify-content-center">
+                            <img class="img-fluid w-100 h-25" src="../../media/img/ER-assets/map.png" alt="Mapa">
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <h5 class="text-white">Tempo: <span id="time-remaining">30:00</span></h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="modal-footer border-black modal-background justify-content-center">
+                    <!-- <button type="button" class="btn btn-secondary text-center" data-bs-dismiss="modal">Start Experience</button> -->
+                
+                    <button type="button" class="buttonStart btn m-0 p-0" data-bs-dismiss="modal" >
+                        <span class="actual-text">&nbsp;Start Experience&nbsp;</span>
+                        <span aria-hidden="true" class="hover-text">&nbsp;Start Experience&nbsp;</span>
+                    </button>
+                </div>
             </div>
-            <div class="modal-footer border-black modal-background">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
         </div>
     </div>
 

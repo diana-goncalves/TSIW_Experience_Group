@@ -27,3 +27,38 @@
     bottom: 1rem;
     right: 1rem;
 }
+
+.buttonStart {
+    height: auto;
+    width: 16rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: 4rem;
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-light-gray);
+}
+
+.hover-text {
+    margin-left: 2px;
+    height: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    color: var(--color-yellow);
+    width: 0%;
+    inset: 0;
+    border-right: 6px solid var(--color-yellow);
+    overflow: hidden;
+    transition: 0.4s;
+    -webkit-text-stroke: 1px var(--color-yellow);
+}
+  /* hover */
+.buttonStart:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--color-yellow))
+}
+

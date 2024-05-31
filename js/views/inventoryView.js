@@ -49,7 +49,7 @@ let resetInventory = ()=>{
 
 function fillInventory() {
     let InventaryItems = invItems.getInventory();
-    console.log(InventaryItems);
+
     let inventorySlot = document.querySelectorAll(".inventorySlot");
 
     InventaryItems.forEach(item => {        
@@ -71,7 +71,7 @@ function fillInventory() {
 }
 
 function inventoryItemClick(event) {
-    console.log( event.target.id.slice(0,3));
+    //console.log( event.target.id.slice(0,3));
     if (event.target.id == "lanterna") {
         document.querySelector('#Inventory-close').click();
 
@@ -97,7 +97,7 @@ export default function setItems(sala) {
     let itemZone = document.querySelector(".ItemZone");
     // Vai bucar os items desta sala
     let roomItems = invItems.getItemsRoom(sala);
-    console.log(roomItems);
+    console.log("Items Room: "+roomItems);
     roomItems.forEach(element => {
         // criar item
         let img = document.createElement('img');
@@ -120,20 +120,25 @@ export default function setItems(sala) {
 /// Lanterna
 function turnpower() {
     let items = document.querySelectorAll(".ItemZone > .item");
-
+    let Collectibles = document.querySelectorAll(".collectiblesZone > .collectible")
     if (flashlight.style.display === "none" || flashlight.style.display === "") {
         flashlight.style.display = "block";
-        //hidden.style.setProperty("--hidden","black")
         items.forEach(element => {
             element.style.display = "none";
         });
+        Collectibles.forEach(element =>{
+            element.style.display = "block";
+        })
     }else{
         flashlight.style.display = "none";
-        //hidden.style.setProperty("--hidden","transparent")
         items.forEach(element => {
             element.style.display = "block";
         });
+        Collectibles.forEach(element =>{
+            element.style.display = "none";
+        })
     }
+    console.log(Collectibles);
 }
 
 

@@ -7,6 +7,8 @@ export function init() {
     } else {
         gameState = new GameStatus();
     }
+    console.log(gameState);
+
 }
 
 export function addgamesCompleted(game){
@@ -30,6 +32,11 @@ export function checkVisitedRooms(room) {
 
 export function checkGameCompleted(game) {
     return gameState.gamesCompleted.includes(game)  
+}
+
+export function NewGame() {
+    gameState = new GameStatus();
+    sessionStorage.setItem("gameStatus", JSON.stringify(gameState));
 }
 
 /**

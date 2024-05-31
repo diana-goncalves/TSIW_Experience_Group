@@ -10,25 +10,26 @@ export function init(){
     } else {
         collectibles = [];
     }
+    console.log(collectibles);
 }
 
 // ADICIONAR ITEM
 export function addCollectible(w,h,x,y,name,img,room,inInventory = false){
-    items.push(new Item(w,h,x,y,name,img,room,inInventory));
+    collectibles.push(new Collectibles(w,h,x,y,name,img,room,inInventory));
     localStorage.setItem("collectibles", JSON.stringify(collectibles))
 }
 
 // ADICIONAR ITEM AO INVENTARIO
 export function AddToInventory(item) {
-    let index = collectibles.findIndex(element => element.name == item)
+    let index = collectibles.findIndex(element => element.name == item);
     collectibles[index].inInventory = true;
     console.log(collectibles);
-    localStorage.setItem("collectibles", JSON.stringify(collectibles))
+    localStorage.setItem("collectibles", JSON.stringify(collectibles));
 }
 
 // OBTER ITEMS DA ROOM
 export function getCollectiblesRoom(room) {
-    let filterItems = items.filter(element => element.room.toLowerCase() == room.toLowerCase() && element.inInventory == false);
+    let filterItems = collectibles.filter(element => element.room.toLowerCase() == room.toLowerCase() && element.inInventory == false);
     return filterItems;
 }
 
@@ -39,8 +40,15 @@ export function getCollectibles() {
 
 // OBTER INVENTORY
 export function getInventoryCollectibles() {
-    let filterinventory = collectibles.filter(element => element.inInventory === true)
-    return filterinventory;
+    let filterCollectibles = collectibles.filter(element => element.inInventory == true)
+    return filterCollectibles;
+}
+
+export function resetCollectibles() {
+    collectibles.forEach(element => {
+        element.inInventory = false;
+    });
+    localStorage.setItem("collectibles", JSON.stringify(collectibles));
 }
 
 /**
@@ -48,18 +56,18 @@ export function getInventoryCollectibles() {
  */
 
 class Collectibles {
-    w = null;
-    h = null; 
-    x = null;
-    y = null;
+    w = "";
+    h = ""; 
+    x = "";
+    y = "";
     name = "";
     img = "";
     room = "";
     inInventory = false;
 
     constructor(w,h,x,y,name,img,room,inInventory){
-        this.w;
-        this.h;
+        this.w = w;
+        this.h = h;
         this.x = x;
         this.y = y;
         this.name = name;

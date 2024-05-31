@@ -6,7 +6,7 @@ let collectiblesView = () =>{
     collectibles.init();
 
 
-    document.querySelector(".collectiblesZone").innerHTML =`
+    document.querySelector(".InvCollectibleZone").innerHTML =`
     <div class="offcanvas offcanvas-bottom modal-background" tabindex="-1" id="collectibles" aria-labelledby="CollectiblesTitle">
         <div class="offcanvas-header d-flex justify-content-between">
             <h5 class="offcanvas-title mx-1 goto"  data-bs-toggle="offcanvas" data-bs-target="#inventory">Inventory</h5>
@@ -62,14 +62,12 @@ let resetCollectibles = ()=>{
 
 
 function fillCollectibles() {
-    let CollectedItems = collectibles.getCollectibles();
-    console.log(CollectedItems);
+    let CollectedItems = collectibles.getInventoryCollectibles();
+
     let collectibleSlot = document.querySelectorAll(".collectibleSlot");
 
     CollectedItems.forEach(item => {        
         let img = document.createElement('img');
-        img.width = item.w;
-        img.height = item.h;
         img.src = item.img;
         img.alt = item.name;
         img.id = item.name;
@@ -78,8 +76,6 @@ function fillCollectibles() {
         for (const slot of collectibleSlot) {
             if (slot.innerHTML == "") {
                 slot.appendChild(img);
-                // remove addeventlistener do click para o inventory
-                img.addEventListener("click", inventoryItemClick);
                 return;
             }
         }
@@ -88,11 +84,42 @@ function fillCollectibles() {
 
 function setcollectibleZone(e) {
     e.preventDefault();
-    collectibles.addCollectible(e.target.id)
+    console.log(e.target.id);
+    collectibles.AddToInventory(e.target.id)
     e.target.remove();
     resetCollectibles();
     fillCollectibles();
 }
 
-
 collectiblesView();
+
+//--------------------------------------------------------------------------------------------
+
+// FUNÇÃO PARA COLOCAR OS ITEMS A SALA
+export default function setCollectibles(sala) {
+    // Div para onde vais os items
+    let CollZone = document.querySelector(".collectiblesZone");
+    // Vai bucar os items desta sala
+    let roomColletibles = collectibles.getCollectiblesRoom(sala);
+    roomColletibles.forEach(element => {
+        // criar item
+        let img = document.createElement('img');
+        img.width = element.w;
+        img.height = element.h;
+        img.src = element.img;
+        img.alt = element.name;
+        img.id = element.name;
+        img.className = 'img-fluid collectible';
+        // posiçao do item na tela
+        img.style.position = 'absolute';
+        img.style.top = element.y;
+        img.style.left = element.x;
+        // colocação do item na tela
+        CollZone.appendChild(img);
+
+        img.addEventListener("click",setcollectibleZone)
+    });
+
+}
+
+//--------------------------------------------------------------------------------------------

@@ -1,11 +1,13 @@
-import {addItem} from "./models/inventoryModel.js";
-import {add} from "./models/UserModel.js";
-import {addProject} from "./models/ProjectModel.js";
 import { addEvents } from "./models/EventModel.js";
+import { addItem } from "./models/inventoryModel.js";
+import { add } from "./models/UserModel.js";
+import { addProject } from "./models/ProjectModel.js";
+import { addCollectible } from "./models/collectiblesModel.js"
 
 initdata();
 
 function initdata() {
+    //Items
     if (!localStorage.items) {
         const items = [
             {
@@ -51,6 +53,66 @@ function initdata() {
         ];
         items.forEach(item => {
             addItem(item.x, item.y, item.name, item.img, item.room, item.inInventory);
+        });
+    }
+
+    //Colletibles
+    if (!localStorage.collectibles) {
+        const collectibles = [
+            {
+                w:"2rem",
+                h:"2rem",
+                x: "60vw",
+                y: "70vh",
+                name: "bispo",
+                img: "../../media/img/ER-assets/bispo.png",
+                room: "sala 202",
+                inInventory: false
+            },
+            {
+                w:"1rem",
+                h:"1rem",
+                x: "2vw",
+                y: "5vh",
+                name: "Bola 8",
+                img: "../../media/img/ER-assets/bola-8.png",
+                room: "hall 1",
+                inInventory: false
+            },
+            {
+                w:"3rem",
+                h:"3rem",
+                x: "30vw",
+                y: "55vh",
+                name: "Cavalo",
+                img: "../../media/img/ER-assets/cavalo.png",
+                room: "hall 2",
+                inInventory: false
+            },
+            {
+                w:"1.5rem",
+                h:"1.5rem",
+                x: "35vw",
+                y: "75vh",
+                name: "Moedas",
+                img: "../../media/img/ER-assets/coins.png",
+                room: "hall 1",
+                inInventory: false
+            },
+            {
+                w:"2rem",
+                h:"2rem",
+                x: "75vw",
+                y: "65vh",
+                name: "controlo",
+                img: "../../media/img/ER-assets/controlo.png",
+                room: "sala 202",
+                inInventory: false
+            },
+
+        ];
+        collectibles.forEach(item => {
+            addCollectible(item.w,item.h,item.x, item.y, item.name, item.img, item.room, item.inInventory);
         });
     }
 

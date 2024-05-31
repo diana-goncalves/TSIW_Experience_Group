@@ -1,5 +1,6 @@
 import setItems from "../views/inventoryView.js"
-import GameStateView from "./GameStateView.js";
+import setCollectibles from "../views/collectiblesView.js"
+import GameStateView from "../views/GameStateView.js";
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
@@ -8,12 +9,11 @@ $(document).ready(function(e) {
 
 function hall1View() {
 
-    GameStateView("hall 1");
+    //GameStateView("hall 1");
     // Mete os items na sala
     setItems("hall 1");
+    setCollectibles("hall 1")
     //--------------------------------------------------------------------
-    
-    
     // PORTA ESQUERDA
     const hall1LeftArea = document.querySelector("#hall1Left");
     const imgLeft = document.querySelector(".imgLeft");

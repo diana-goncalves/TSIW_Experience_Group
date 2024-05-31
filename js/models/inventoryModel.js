@@ -10,6 +10,7 @@ export function init(){
     } else {
         items = [];
     }
+    console.log(items);
 }
 
 // ADICIONAR ITEM
@@ -43,13 +44,20 @@ export function getInventory() {
     return filterinventory;
 }
 
+export function resetInventory() {
+    items.forEach(element => {
+        element.inInventory = false;
+    });
+    localStorage.setItem("items", JSON.stringify(items))
+}
+
 /**
  *  CLASSE QUE MODELA OS ITEMS NO INVENTARIO
  */
 
 class Item {
-    x = null;
-    y = null;
+    x = "";
+    y = "";
     name = "";
     img = "";
     room = "";
