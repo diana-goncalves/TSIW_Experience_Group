@@ -1,6 +1,7 @@
 import {addItem} from "./models/inventoryModel.js";
 import {add} from "./models/UserModel.js";
 import {addProject} from "./models/ProjectModel.js";
+import { addEvents } from "./models/EventModel.js";
 
 initdata();
 
@@ -124,7 +125,38 @@ function initdata() {
         });
     }
 
-
+    if(!localStorage.events) {
+        const events = [
+            {
+                name: "ICPEC",
+                msgEvent: "A 5.ª edição da International Computer Programming Education Conference vai realizar-se nos dias 27 e 28 de junho de 2024.",
+                date: "2024-06-27",
+                link: "https://www.esmad.ipp.pt/noticias/5th-icpec-%20international-computer-programming-education-conference",
+                photo: null,
+                state: "Destacado"
+            },
+            {
+                name: "OPEN DAYS",
+                msgEvent: "Queres vir conhecer a ESMAD? Nos dias 17 e 24 de abril, a ESMAD abre portas a todos os estudantes do Ensino Secundário e Profissional que nos queiram visitar!",
+                date: "2024-04-17",
+                link: "https://www.esmad.ipp.pt/noticias/open-days",
+                photo: null,
+                state: "Destacado"
+            },
+            {
+                name: "MAD GAME JAM",
+                msgEvent: "Se gostas de criar jogos, ou queres entrar nesta aventura, então agarra esta oportunidade.",
+                date: "2024-02-23",
+                link: "https://madjam.esmad.ipp.pt/",
+                photo: null,
+                state: "Destacado"
+            },
+            
+        ];
+        events.forEach((event) => {
+            addEvents(event.name, event.msgEvent, event.date, event.link, event.photo, event.state)
+        });
+    }
 
 
 

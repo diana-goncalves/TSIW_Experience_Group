@@ -364,9 +364,9 @@ function tableEvents() {
 
     for (const button of btnsEditarP) {
         button.addEventListener("click", () => {
-            if(confirm("Queres mesmo editar o projeto?")) {
-                editProject(button.id);
-            }
+           
+            editProject(button.id);
+            
         })
     }
 
@@ -503,6 +503,11 @@ function sortTable(colIndex, isSorted) {
             return 0;
     }
 
+    if (typeof aContent === "string" || typeof bContent === "string") {
+        aContent = aContent.toLowerCase();
+        bContent = bContent.toLowerCase();
+    }
+    
     if (aContent === bContent) {
         return 0;
     }

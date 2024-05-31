@@ -560,7 +560,7 @@
                         <div class="tab-pane fade" id="pills-eventos" role="tabpanel" aria-labelledby="pills-eventos-tab" tabindex="0">
                             
                             <h4>Adicionar Eventos</h4>
-                            <form>
+                            <form id="formEventos">
 
                                 <div class="row justify-content-center  g-2 text-truncate">
                                 
@@ -604,7 +604,7 @@
                                                 class="form-control"
                                                 name="formData"
                                                 id="formDataE"
-                                                placeholder="dd/mm/aaaa"
+                                                placeholder="aaaa-mm-dd"
                                             />
                                         
                                         </div>
@@ -614,7 +614,7 @@
                                         <div class="form-floating mb-3 col">
                                         
                                             <input
-                                                type="url"
+                                                type="text"
                                                 class="form-control"
                                                 name="LinkE"
                                                 id="formLinkE"
@@ -631,6 +631,8 @@
                                     
                                         <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
                                         
+                                            <img src="" alt="Pré-visualização da imagem" class="imgsPreview" id="imgPreviewEvent">
+                                            
                                             <div class="imgInputContainer">
                                                 <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputEvents">
                                                 <label for="fileInputEvents" class="fileInputLabel">
@@ -641,6 +643,8 @@
                                             <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarEventos">
                                                 Guardar
                                             </button>
+
+                                            <input type="reset" value="Cancel" class="btn btn-primary button_color btnGuardar" id="cancelEditEvent">
 
                                         </div>
 
@@ -670,13 +674,13 @@
             
                                 <div class="form-floating mb-3 col text-end">
                                     
-                                    <button type="button" class="btn btn-primary button_color btnFiltro" id="btnFiltroEventos">
+                                    <!-- <button type="button" class="btn btn-primary button_color btnFiltro" id="btnFiltroEventos">
                                         <i class="fa-sharp fa-solid fa-filter"></i> Filtrar
                                     </button>
                                         
                                     <button type="button" class="btn btn-primary button_color btnOrder" id="btnOrderEventos">
                                         <i class="fa-solid fa-sort"></i>
-                                    </button>
+                                    </button> -->
                                     
                                 </div>
                                 
@@ -684,22 +688,23 @@
                                 
                                     <table class="table table-dark table-bordered">
                                         
-                                        <thead>
+                                        <thead id="tHeadEvents">
                                             
                                             <tr>
                                                 
-                                                <th scope="col">Nome</th>
-                                                <th scope="col">Mensagem</th>
-                                                <th scope="col">Data</th>
-                                                <th scope="col">Link</th>
-                                                <th scope="col">Estado</th>
-                                                <th scope="col">ID</th>
+                                                <th scope="col" id="0">Nome <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="1">Mensagem <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="2">Data <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="3">Link <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="4">Imagem <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="5">Estado <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" style="width: 16px;">GERIR</th>
             
                                             </tr>
             
                                         </thead>
             
-                                        <tbody>
+                                        <tbody id="tBodyEvents">
                                             
                                             <!-- Conteúdo vai ser adicionado dinamicamente -->
                                 

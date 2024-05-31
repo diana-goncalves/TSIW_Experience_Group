@@ -129,7 +129,7 @@ label {
     color: var(--color-yellow);
     background-color: var(--color-black);
 }
-#cancelEditProject {
+#cancelEditProject, #cancelEditEvent {
     display: none;
 }
 /* Remover background do label quando input está selecionado */
@@ -304,6 +304,8 @@ thead {
 }
 .table th {
     color: var(--color-dark-gray);
+    vertical-align: middle;
+    text-align: center;
 }
 .table td {
     vertical-align: middle;
