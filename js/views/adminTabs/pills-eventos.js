@@ -197,7 +197,7 @@ function renderTableEvents(events = []) {
             <tr id="${eventId}">
                 <td>${event.name}</td>
                 <td>${event.msgEvent}</td>
-                <td>${event.date}</td>
+                <td style="text-align: center;">${event.date}</td>
                 <td style="text-align: center;">${event.link ? 'Sim' : 'Não'}</td>
                 <td style="text-align: center;">${event.photo ? 'Sim' : 'Não'}</td>
                 <td style="text-align: center;" class="${event.state}">${event.state}</td>
