@@ -180,10 +180,11 @@ function filtrarPorTipo() {
 
 // Iniciar
 
-initProjects();
-initEvents();
-
 document.addEventListener("DOMContentLoaded", () => {
+    
+    initProjects();
+    
+    initEvents();
     
     renderAll();
 

@@ -10,7 +10,6 @@
   backdrop-filter: blur(20px);
   background-color: transparent;
   height: 270px;
-  width: fit-content;
 }
 
 #eventContainer {

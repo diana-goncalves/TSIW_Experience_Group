@@ -1,4 +1,5 @@
-import { init, filtrarProjetosPorEstado, getProjects } from "../models/ProjectModel.js";
+import { init as initProjetos, filtrarProjetosPorEstado } from "../models/ProjectModel.js";
+import { init as initEventos, filtrarEventoPorEstado} from "../models/EventModel.js";
 
 // Scrollspy bootstrap
 document.addEventListener('DOMContentLoaded', function () {
@@ -61,12 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Carregar projetos
-init()
-
+// Projetos
 function renderProjects() {
     const projects = filtrarProjetosPorEstado("Destacado");
-    const allProjects = getProjects();
 
     // Se não houver projetos para destacar, escolher 3 aleatorios
     if (projects.length === 0) {
@@ -111,6 +109,9 @@ function renderProject(projectData) {
 
 }
 
+// Projetos
+
+// Esta função devolve "numberOfProjects" de uma determinada lista ( eventos ou projetos ). randomProject(filtrarProjetosPorEstado("Publicado"), 3) devolve 3 projetos aleatorios ( neste caso, marcados com "Publicado" )
 function randomProject(projectsList, numberOfProjects) {
 
     const randomProjects = [];
@@ -132,5 +133,105 @@ function randomProject(projectsList, numberOfProjects) {
     return retirarDuplicados;
 }
 
+// Eventos
 
+function renderEvents() {
+    const events = filtrarEventoPorEstado("Destacado");
+
+    // Se não houver eventos para destacar, escolher 3 aleatorios
+    if (events.length === 0) {
+        const randomEvents = randomProject(filtrarEventoPorEstado("Publicado"), 3);
+
+        randomEvents.forEach((event, index) => {
+            renderEvent(event, index);
+        });
+
+    }
+
+    // Renderizar eventos com state "Destacado"
+    events.forEach((event, index) => {
+        renderEvent(event, index);
+    })
+
+}
+
+function renderEvent(eventData, index) {
+    
+    // Remover caracteres especiais e espaço para não causar problemas
+    const eventId = eventData.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
+
+    const EventCardsContainer = document.querySelector("#EventCardsContainer");
+    const eventsControls = document.querySelector("#eventsControls");
+
+    // Primeiro evento - separado para adicionar active class
+    if (index === 0) {
+
+        EventCardsContainer.innerHTML += 
+        `
+            <div class="carousel-item active" id="${eventId}">
+                
+                <div class="container text-justify" id="eventContainer">
+                    
+                    <div class="event-card d-flex ">
+                        
+                        <div class="card-interior" id="eventInterior">
+                            <h2 class="card-title event-title">${eventData.name}</h2>
+                            <p class="card-text event-description">
+                                ${eventData.msgEvent}
+                            </p>
+                        </div>
+                    
+                        <a href="${eventData.link}" target="_blank" class="event-link align-self-end">+</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        `
+
+        eventsControls.innerHTML += 
+        `
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"aria-current="true" aria-label="Slide 0"></button>
+        `
+
+    } else {
+        EventCardsContainer.innerHTML += 
+    `
+        <div class="carousel-item" id="${eventId}">
+            
+            <div class="container text-justify" id="eventContainer">
+                
+                <div class="event-card d-flex ">
+                    
+                    <div class="card-interior" id="eventInterior">
+                        <h2 class="card-title event-title">${eventData.name}</h2>
+                        <p class="card-text event-description">
+                            ${eventData.msgEvent}
+                        </p>
+                    </div>
+                
+                    <a href="${eventData.link}" target="_blank" class="event-link align-self-end">+</a>
+
+                </div>
+
+            </div>
+
+        </div>
+    `
+
+    eventsControls.innerHTML += 
+    `
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="${index}" aria-label="Slide ${index}"></button>
+    `
+    }
+
+}
+
+// Eventos
+
+// Iniciar
+initProjetos()
 renderProjects();
+initEventos();
+renderEvents();
