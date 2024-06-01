@@ -451,7 +451,6 @@ function sortTable(colIndex, isSorted) {
         original = projects.slice();
     }
 
-    console.log(isSorted);
     // Voltar à ordem original
     if (!isSorted) {
         renderTableProjects(original);

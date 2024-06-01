@@ -2,14 +2,14 @@ let alumnis = [];
 
 // CARREGAR TESTEMUNHOS DA LOCALSTORAGE
 export function init() {
-    if(localStorage.testemunhos) {
-         // limpar primeiro para evitar duplicar testemunhos
-        const tempTestemunhos = JSON.parse(localStorage.testemunhos);
+    if(localStorage.alumnis) {
+        
+        const tempTestemunhos = JSON.parse(localStorage.alumnis);
         for(let testemunho of tempTestemunhos) {
-            testemunhos.push(new Alumni(testemunho.name, testemunho.msgAlumni, testemunho.company, testemunho.awards, testemunho.occupation, testemunho.link, testemunho.photo, testemunho.state));
+            alumnis.push(new Alumni(testemunho.name, testemunho.msgAlumni, testemunho.company, testemunho.awards, testemunho.occupation, testemunho.link, testemunho.photo, testemunho.state));
         }
     } else {
-        testemunhos = [];
+        alumnis = [];
     }
 }
 
@@ -31,6 +31,7 @@ export function removerTestemunho(name, msgAlumni) {
 
 export function getAlumnis(filterName = "", isSorted = false) {
     // Criar nova array caso o admin queira procurar por um nome
+    
     let filteredAlumnis = alumnis.filter((testemunho) => (testemunho.name.toLowerCase().includes(filterName.toLowerCase()) || filterName === ""));
   
     filteredAlumnis = isSorted

@@ -199,7 +199,7 @@
                             
                             <h4>Adicionar Testemunhos</h4>
                             
-                            <form>
+                            <form id="formAlumni">
                                 
                                 <div class="row justify-content-center  g-2 text-truncate">
                                     
@@ -302,6 +302,8 @@
 
                                     <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
                                         
+                                        <img src="" alt="Pré-visualização da imagem" class="imgsPreview" id="imgPreviewAlumni">
+                                        
                                         <div class="imgInputContainer">
                                             <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputTestemunhos">
                                             <label for="fileInputTestemunhos" class="fileInputLabel">
@@ -312,6 +314,8 @@
                                         <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarTestemunhos">
                                             Guardar
                                         </button>
+
+                                        <input type="reset" value="Cancel" class="btn btn-primary button_color btnGuardar" id="cancelEditAlumni">
 
                                     </div>
 
@@ -357,15 +361,15 @@
                                             
                                             <tr>
                                                 
-                                                <th scope="col">Nome <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col">Mensagem <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col">Empresa <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col">Prémios <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col">Ocupação <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col">LinkedIn <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col">Imagem <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col">Estado <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" style="width:16px">GERIR</th>
+                                                <th scope="col" id="0">Nome <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="1">Mensagem <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="2">Empresa <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="3">Prémios <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="4">Ocupação <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="5">LinkedIn <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="6">Imagem <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="7">Estado <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="8" style="width:16px">GERIR</th>
             
                                             </tr>
             
@@ -702,7 +706,7 @@
                                                 <th scope="col" id="3">Link <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="4">Imagem <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="5">Estado <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" style="width: 16px;">GERIR</th>
+                                                <th scope="col" id="6" style="width: 16px;">GERIR</th>
             
                                             </tr>
             
