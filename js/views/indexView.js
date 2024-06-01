@@ -1,5 +1,6 @@
 import { init as initProjetos, filtrarProjetosPorEstado } from "../models/ProjectModel.js";
 import { init as initEventos, filtrarEventoPorEstado} from "../models/EventModel.js";
+import { init as initAlumni, filtrarTestemunhoPorEstado } from "../models/AlumniModel.js";
 
 // Scrollspy bootstrap
 document.addEventListener('DOMContentLoaded', function () {
@@ -230,8 +231,55 @@ function renderEvent(eventData, index) {
 
 // Eventos
 
+// Alumni
+
+function renderTestemunhos() {
+    const alumniDestacado = filtrarTestemunhoPorEstado("Destacado");
+    const alumniPublicado = filtrarTestemunhoPorEstado("Publicado");
+
+    // Se não houver testemunhos para destacar, escolher 3 aleatorios
+    if (alumniDestacado.length === 0) {
+        const randomAlumni = randomProject(alumniPublicado, 4);
+
+        randomAlumni.forEach((testemunho) => {
+            renderAlumni(testemunho);
+        });
+
+    } else {
+        // Renderizar testemunhos com state "Destacado"
+        alumniDestacado.forEach((testemunho) => {
+            renderAlumni(testemunho);
+        })
+    }
+
+}
+
+function renderAlumni(testemunho) {
+    
+    const testemunhosContainer = document.querySelector("#testemunhosContainer");
+
+    testemunhosContainer.innerHTML += 
+    `
+        <div class="alumniContainer" id="${testemunho.name}">
+            <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
+            <div class="alumniDescription">
+                <p class="alumniJob">${testemunho.occupation}</p>
+                <p class="alumniCompany">na ${testemunho.company}</p>
+                <p class="alumniName">${testemunho.name} <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#" style="padding:0;border:0;line-height:0.7;">+</button></p>
+            </div>
+        </div>
+    `
+}
+
+
+// Alumni
+
+
+
 // Iniciar
 initProjetos()
 renderProjects();
 initEventos();
 renderEvents();
+initAlumni();
+renderTestemunhos();

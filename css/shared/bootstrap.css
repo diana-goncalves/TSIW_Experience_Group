@@ -301,6 +301,35 @@ button:focus {
   color: var(--color-white);
 }
 
+/* Alumni section */
+
+.alumniContainer {
+  text-align: start;
+  border: 0;
+  margin: 0;
+}
+.alumniDescription {
+  margin-top: 2rem;
+}
+.alumniDescription p {
+  margin: 0 !important;
+}
+.imageAlumni {
+  width: 100%;
+}
+.alumniJob {
+
+}
+.alumniCompany {
+
+}
+.alumniName {
+}
+.alumniDescription .btn {
+  
+}
+/* Alumni section */
+
 /* //////////// MEDIA QUERIES /////////// */
 /* TABLETS */
 
@@ -324,6 +353,9 @@ button:focus {
     top: -60px; /* Ajusta a posição da seta  do footer */
     left: 50%;
     transform: translateX(-50%);
+  }
+  .card {
+    margin-right: 0;
   }
 }
 
