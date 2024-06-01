@@ -73,15 +73,6 @@ function hall2View() {
     hall2BackArea.addEventListener("mouseleave",(e)=>{
         e.preventDefault();
         imgBack.style.display="none";
-    });
-
-
-    let toastTrigger = document.getElementById('liveToastBtn');
-    let toastLiveExample = document.getElementById('liveToast');
-
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-    toastTrigger.addEventListener('click', () => {
-        toastBootstrap.show()
     });            
 }
 
