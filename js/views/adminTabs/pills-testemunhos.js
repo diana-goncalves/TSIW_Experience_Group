@@ -21,7 +21,8 @@ function submitForm() {
             company: document.querySelector("#formEmpresa").value,
             awards: document.querySelector("#formPremios").value,
             occupation: document.querySelector("#formOcupacao").value,
-            link: document.querySelector("#formLinkedIn").value, 
+            link: document.querySelector("#formLinkedIn").value,
+            photo: previewImg.src  
         }
         
         if (imgData) {
@@ -42,8 +43,6 @@ function submitForm() {
 
         } else {
             // Se não tiver imagem
-            alumniData.photo = null;
-
             submitAlumni(alumniData);
         }
         
@@ -84,7 +83,7 @@ function submitAlumni(alumniData) {
         if (currentEditingAlumni) {
             // Editar testemunho 
 
-            Alumni.editAlumni(currentEditingAlumni, alumniData);
+            Alumni.editTestemunho(currentEditingAlumni, alumniData);
             customToast("Testemunho editado com sucesso!");
 
         } else {

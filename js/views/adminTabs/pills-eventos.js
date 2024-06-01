@@ -20,6 +20,7 @@ function submitForm() {
             msgEvent: document.querySelector("#formMsgE").value,
             date: document.querySelector("#formDataE").value,
             link: document.querySelector("#formLinkE").value, 
+            photo: previewImg.src
         }
         
         if (imgData) {
@@ -40,8 +41,6 @@ function submitForm() {
 
         } else {
             // Se não tiver imagem
-            eventData.photo = null;
-
             submitEvent(eventData);
         }
         

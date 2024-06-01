@@ -20,6 +20,7 @@ function submitForm() {
             link: document.querySelector("#formLinkP").value,
             author: document.querySelector("#formAuthorP").value,
             msgProjects: document.querySelector("#formMsgP").value,
+            photo: previewImg.src
         }
         
         if (imgData) {
@@ -40,8 +41,6 @@ function submitForm() {
 
         } else {
             // Se não tiver imagem
-            projectData.photo = null;
-
             submitProject(projectData);
         }
         
