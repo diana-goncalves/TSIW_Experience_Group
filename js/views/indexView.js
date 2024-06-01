@@ -1,6 +1,6 @@
 import { init as initProjetos, filtrarProjetosPorEstado } from "../models/ProjectModel.js";
 import { init as initEventos, filtrarEventoPorEstado} from "../models/EventModel.js";
-import { init as initAlumni, filtrarTestemunhoPorEstado } from "../models/AlumniModel.js";
+import { init as initAlumni, filtrarTestemunhoPorEstado, getTestemunhoByName } from "../models/AlumniModel.js";
 
 // Scrollspy bootstrap
 document.addEventListener('DOMContentLoaded', function () {
@@ -260,17 +260,74 @@ function renderAlumni(testemunho) {
 
     testemunhosContainer.innerHTML += 
     `
-        <div class="alumniContainer" id="${testemunho.name}">
+        <div class="card alumniContainer" id="${testemunho.name}">
             <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
-            <div class="alumniDescription">
+            <div class="card-body alumniDescription">
                 <p class="alumniJob">${testemunho.occupation}</p>
                 <p class="alumniCompany">na ${testemunho.company}</p>
-                <p class="alumniName">${testemunho.name} <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#" style="padding:0;border:0;line-height:0.7;">+</button></p>
+                <p class="alumniName">${testemunho.name} <button type="button" class="btn seeMoreAlumni text-warning fs-1 float-end" data-toggle="modal" data-target="#alumniModal" id="${testemunho.name}" style="padding:0;border:0;line-height:0.7;">+</button></p>
             </div>
         </div>
     `
 }
 
+function showAlumniModal(testemunhoName) {
+    
+    const testemunho = getTestemunhoByName(testemunhoName);
+    let modalBody = document.querySelector("#modalAlumniBody");
+
+    modalBody.innerHTML = 
+    `
+        <div class="row">
+            
+            <div class="col-md-3">
+                <div class="card alumniContainer" id="${testemunho.name}">
+                    <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
+                    <div class="card-body alumniDescription">
+                        <p class="alumniJob">${testemunho.occupation}</p>
+                        <p class="alumniCompany">na ${testemunho.company}</p>
+                        <p class="alumniName">${testemunho.name}<a href="${testemunho.link}" target="_blank"><i class="fa-brands fa-linkedin-in float-end" id="linkedinIcon"></i></a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col d-flex">
+                <span id="msgModalAlumni">${testemunho.msgAlumni}</span>
+
+                ${testemunho.awards ? `<p id="awardsModalAlumni"><i class="fa-solid fa-medal" style="color:var(--color-yellow);"></i>${testemunho.awards}</p>` : ""}
+
+            </div>
+
+        </div>
+    
+
+    `
+    
+    $("#alumniModal").modal("show");
+
+    // Esconder modal ao clicar no -
+    document.querySelector("#seeLessAlumni").addEventListener("click", hideModal);
+
+}
+
+function hideModal() {
+    $("#alumniModal").modal("hide");
+}
+
+// Função que adiciona event listeneres ao botão para ver mais
+function seeMoreClick() {
+
+    const seeMoreBtns = document.getElementsByClassName("seeMoreAlumni");
+
+    for (const button of seeMoreBtns) {
+        // button.addEventListener("click",showAlumniModal(button.id));
+        button.addEventListener("click", () => {
+            showAlumniModal(button.id)
+        });
+
+    }
+
+}
 
 // Alumni
 
@@ -283,3 +340,4 @@ initEventos();
 renderEvents();
 initAlumni();
 renderTestemunhos();
+seeMoreClick();

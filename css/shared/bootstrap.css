@@ -303,30 +303,61 @@ button:focus {
 
 /* Alumni section */
 
+#testemunhosContainer {
+  display: flex;
+  justify-content: space-between;
+}
 .alumniContainer {
   text-align: start;
   border: 0;
-  margin: 0;
+  padding: 0;
+  max-width: 250px;
 }
 .alumniDescription {
   margin-top: 2rem;
+  padding: 0;
+  overflow: hidden;
 }
 .alumniDescription p {
   margin: 0 !important;
 }
 .imageAlumni {
+  border: 0.3rem solid;
+  border-image: var(--color-yellowToSolidGray-gradient);
+  box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
+  /* border-radius: 50%; */
   width: 100%;
 }
-.alumniJob {
-
+#modalAlumniContent {
+  border: 0.15rem solid;
+  border-image: var(--color-yellowToSolidGray-gradient);
+  box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
 }
-.alumniCompany {
-
+#modalAlumniBody {
+  margin: 2rem;
 }
-.alumniName {
+#msgModalAlumni {
+  line-height: 40px;
 }
-.alumniDescription .btn {
-  
+#awardsModalAlumni {
+  text-align: start;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: end;
+}
+#alumniModal .card {
+  margin-right: 0;
+}
+#seeLessAlumni {
+  position: absolute;
+  bottom: 0;
+  left: calc(100% - 2rem);
+}
+#linkedinIcon {
+  position: relative;
+  color: var(--color-yellow);
+  margin-top: 5px;
 }
 /* Alumni section */
 

@@ -43,7 +43,6 @@ function renderTableUsers(users = []) {
     for (const button of btnsRemove) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo remover o utilizador?")) {
-                console.log(button.id);
                 User.removeUser(button.id);
                 renderTableUsers(User.getUsers());
             }
