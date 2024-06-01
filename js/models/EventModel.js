@@ -36,7 +36,7 @@ export function getEvents(filterName = "", isSorted = false) {
     filteredEvents = isSorted
       ? filteredEvents.sort((a, b) => a.name.localeCompare(b.name))
       : filteredEvents; 
-    console.log(filteredEvents);
+
     return filteredEvents;  
 }
 
