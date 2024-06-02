@@ -133,7 +133,16 @@
 
               <label for="InputPasswordRegister" class="form-label">Palavra-passe</label>
 
-              <input type="password" class="form-control" id="InputPasswordRegister">
+              <input
+                type="password"
+                class="form-control"
+                name="registerPassword"
+                id="InputPasswordRegister"
+                placeholder=""
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                autocomplete="new-password"
+                title="A tua palavra-passe deve conter pelo menos 8 caracteres, 1 número, 1 letra maiúscula e 1 caracter especial"
+              />
 
             </div>
             
