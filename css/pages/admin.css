@@ -372,34 +372,6 @@ thead {
     padding-top: 0; 
     padding-bottom: 0;
 }
-.userEmail {
-    margin-left: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 0;
-    color: var(--color-yellow);
-}
-.emailText {
-    margin-left: 1rem;
-    margin-bottom: 0;
-    color: var(--color-white);
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-#enviarEmail {
-    margin-left: 1rem;
-    margin-top: 1rem;
-    width: inherit;
-    height: 2.4375rem;
-    flex-shrink: 0;
-    border: 0;
-    border-radius: 0;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
 .form-text {
     color: var(--color-white);
 }

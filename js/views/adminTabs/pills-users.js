@@ -15,18 +15,41 @@ function renderTableUsers(users = []) {
         tabelaUsers.innerHTML = 
         `
             <tr>
-                <td colspan="3" style="text-align:center;">Não foram encontrados utilizadores!</td>
+                <td colspan="8" style="text-align:center;">Não foram encontrados utilizadores!</td>
             </tr>
         `
         return;
     }
     
     users.forEach(user => {
+        
+        let gender = null;
+
+        switch (user.gender) {
+            case "M":
+                gender = "Masculino";
+                break;
+        
+            case "F":
+                gender = "Feminino";
+                break;
+            case "O":
+                gender = "Outro";
+                break;
+            default:
+                break;
+        }
+        
         tabelaUsers.innerHTML += 
         `
             <tr>
                 <td style="text-align:center;">${user.id}</td>
                 <td>${user.username}</td>
+                <td>${user.firstName ? user.firstName : "N/A"}</td>
+                <td>${user.lastName  ? user.lastName : "N/A"}</td>
+                <td>${user.location ? user.location : "N/A"}</td>
+                <td>${gender ? gender : "N/A"}</td>
+                <td>${user.birthdate ? user.birthdate : "N/A"}</td>
                 <td style="text-align: center;">      
                     <button class="btn remove" id="${user.username}" type="button" style="border-radius: 0;">
                         Remover

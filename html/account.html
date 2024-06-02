@@ -69,10 +69,6 @@
                         Password
                     </button>
 
-                    <button class="nav-link" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email-tab" aria-selected="false">
-                        Verificação de email
-                    </button>
-
                     <button class="logoutButton">Terminar sessão</button>
 
                 </div>
@@ -103,10 +99,6 @@
                         <button class="nav-item" id="pills-password-tab" data-bs-toggle="pill" data-bs-target="#pills-password" type="button" role="tab" aria-controls="pills-password-tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-blockquote-left" viewBox="0 0 16 16"><path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm.79-5.373q.168-.117.444-.275L3.524 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562Q2 7.587 2 7.969q0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282q.036-.305.123-.498a1.4 1.4 0 0 1 .252-.37 2 2 0 0 1 .346-.298zm2.167 0q.17-.117.445-.275L5.692 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562q-.165.31-.164.692 0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282a1.8 1.8 0 0 1 .118-.492q.087-.194.257-.375a2 2 0 0 1 .346-.3z"/></svg></button>
                     </li>
 
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-item" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email-tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-blockquote-left" viewBox="0 0 16 16"><path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm.79-5.373q.168-.117.444-.275L3.524 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562Q2 7.587 2 7.969q0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282q.036-.305.123-.498a1.4 1.4 0 0 1 .252-.37 2 2 0 0 1 .346-.298zm2.167 0q.17-.117.445-.275L5.692 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562q-.165.31-.164.692 0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282a1.8 1.8 0 0 1 .118-.492q.087-.194.257-.375a2 2 0 0 1 .346-.3z"/></svg></button>
-                    </li>
-
                 </ul>
 
             </div>
@@ -121,7 +113,7 @@
                     
                     <h4>Perfil</h4>
                         
-                    <form>
+                    <form id="formPerfil">
                         
                         <div class="row justify-content-center  g-2 text-truncate">
                             
@@ -160,42 +152,6 @@
                                 
                                 <div class="form-floating mb-3 col">
                                     
-                                    <!-- <label for="formDataNascimento">Data de nascimento</label> -->
-                                    <!-- <BR></BR> -->
-
-                                    <input
-                                        type="date"
-                                        class="form-control"
-                                        name="Data de Nascimento"
-                                        id="formDataNascimento"
-                                        placeholder=""
-                                    />
-
-                                </div>
-
-                                <br><br>
-                                <br><br>
-                                
-                                <div class="form-floating mb-3 col">
-                                    
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        name="Premios"
-                                        id="formAlcunha"
-                                        placeholder=""
-                                    />
-
-                                    <label for="formAlcunha">Alcunha</label>
-
-                                </div>
-
-                            </div>
-                            
-                            <div class="row justify-content-center align-items-center g-2">
-                                
-                                <div class="form-floating mb-3 col">
-                                    
                                     <input
                                         type="text"
                                         class="form-control"
@@ -211,7 +167,7 @@
                                 <div class="form-floating mb-3 col">
                                    
                                     <select class="form-select" id="formGenero" aria-label="Floating label select example">
-                                        <option disabled selected>Género</option>
+                                        <option disabled selected value="">Género</option>
                                         <option value="F">Feminino</option>
                                         <option value="M">Masculino</option>
                                         <option value="O">Outro</option>
@@ -220,7 +176,7 @@
                                 </div>
                                 
                             </div>
-
+                            
                             <div class="row justify-content-center align-items-center g-2">
                                 
                                 <div class="form-floating mb-3 col">
@@ -229,32 +185,19 @@
                                     <!-- <BR></BR> -->
 
                                     <input
-                                        type="text"
+                                        type="date"
                                         class="form-control"
-                                        name="email"
-                                        id="formEmailAtual"
+                                        name="Data de Nascimento"
+                                        id="formDataNascimento"
                                         placeholder=""
-                                        readonly
+                                        value=""
+                                        
                                     />
 
-                                    <label for="formEmailAtual">Email atual</label>
-
                                 </div>
-
-                                <br><br>
-                                <br><br>
                                 
                                 <div class="form-floating mb-3 col">
                                     
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        name="NovoEmail"
-                                        id="formNovoEmail"
-                                        placeholder=""
-                                    />
-
-                                    <label for="formAlcunha">Novo email</label>
 
                                 </div>
 
@@ -284,7 +227,7 @@
                     
                     <h4>Palavra-passe</h4>
                     
-                    <form>
+                    <form id="formPassword">
                         
                         <div class="row justify-content-center  g-2 text-truncate">
                             
@@ -297,6 +240,7 @@
                                     id="formNovaPass"
                                     placeholder=""
                                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    autocomplete="new-password"
                                     title="A tua palavra-passe deve conter pelo menos 8 caracteres, 1 número, 1 letra maiúscula e 1 caracter especial"
                                 />
                                 
@@ -314,6 +258,7 @@
                                     placeholder=""
                                     aria-describedby="passwordHelpInline"
                                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    autocomplete="new-password"
                                     title="A tua palavra-passe deve conter pelo menos 8 caracteres, 1 número, 1 letra maiúscula e 1 caracter especial"
                                 />
 
@@ -337,24 +282,7 @@
 
                     </form>
 
-                </div>   
-
-                <!-- Verificação de email -->
-
-                <div class="tab-pane fade" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab" tabindex="0">
-                    
-                    <h4>Verificação de email</h4>
-                    
-                    <p class="emailText">Para teres acesso a todas as funcionalidades, por favor confirma o teu endereço eletrónico clicando no link que enviamos para:</p>
-                    
-                    <!-- trocar por email do user -->
-                    <p class="userEmail text-start ">exemplo@gmail.com</p>
-
-                    <button type="submit" class="btn btn-primary button_color btnGuardar" id="enviarEmail">
-                        Reenviar email
-                    </button>
-
-                </div>  
+                </div>    
 
             </div>
 
@@ -362,6 +290,19 @@
 
     </div>
 
+    </div>
+
+    <!-- TOAST MESSAGE -->
+    <div class="toast-container position-fixed top-0 end-0">
+        <div id="perfilToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">TSIW X</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="perfilToastbody">
+            
+        </div>
+        </div>
     </div>
 
   <script type="module" src="../js/views/NavbarView.js"></script>
