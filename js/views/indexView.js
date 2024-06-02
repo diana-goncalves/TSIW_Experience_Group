@@ -276,11 +276,19 @@ function showAlumniModal(testemunhoName) {
     const testemunho = getTestemunhoByName(testemunhoName);
     let modalBody = document.querySelector("#modalAlumniBody");
 
+    let awards = testemunho.awards;
+
+    if (awards) {
+        awards = awards.split(";").map(award => `<li class="awardsItem"><i class="fa-solid fa-medal" style="color:var(--color-yellow);"></i>${award.trim()}</li>`).join("");
+    } else {
+        awards = "";
+    }
+
     modalBody.innerHTML = 
     `
         <div class="row">
             
-            <div class="col-md-3">
+            <div class="col-sm-3">
                 <div class="card alumniContainer" id="${testemunho.name}">
                     <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
                     <div class="card-body alumniDescription">
@@ -291,10 +299,10 @@ function showAlumniModal(testemunhoName) {
                 </div>
             </div>
             
-            <div class="col d-flex">
+            <div class="col d-flex flex-column">
                 <span id="msgModalAlumni">${testemunho.msgAlumni}</span>
 
-                ${testemunho.awards ? `<p id="awardsModalAlumni"><i class="fa-solid fa-medal" style="color:var(--color-yellow);"></i>${testemunho.awards}</p>` : ""}
+                ${testemunho.awards ? `<ul id="awardsModalAlumni" style="list-style-type:none;padding:0;"><li>${awards}</li></ul>` : ""}
 
             </div>
 

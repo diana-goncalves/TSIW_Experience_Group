@@ -312,10 +312,18 @@ button:focus {
   border: 0;
   padding: 0;
   max-width: 250px;
+  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,100%, 0.075), 0 0 10px rgba(0, 0, 0, 0.5);
+  /* box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  100%, 0.075),
+  0 0 0 1px hsla(55, 93%, 40%, 0.05),
+  0 0.3px 0.4px hsla(58, 97%, 47%, 0.02),
+  0 0.9px 1.5px hsla(52, 92%, 43%, 0.045),
+  0 3.5px 6px hsla(51, 95%, 16%, 0.09);       */
+  border-radius: 0 0 5px 5px;
 }
 .alumniDescription {
   margin-top: 2rem;
-  padding: 0;
+  padding: 1rem;
+  padding-top: 0;
   overflow: hidden;
 }
 .alumniDescription p {
@@ -324,8 +332,6 @@ button:focus {
 .imageAlumni {
   border: 0.3rem solid;
   border-image: var(--color-yellowToSolidGray-gradient);
-  box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
-  /* border-radius: 50%; */
   width: 100%;
 }
 #modalAlumniContent {
@@ -337,14 +343,28 @@ button:focus {
   margin: 2rem;
 }
 #msgModalAlumni {
-  line-height: 40px;
+  line-height: 150%;
 }
+/* lista de prémios */
 #awardsModalAlumni {
-  text-align: start;
+  position: absolute;
   margin: 0;
   width: 100%;
+  bottom: 0;
+  left: calc(100% - 16rem);
+  max-width: 260px;
+}
+/* medalha + texto prémio */
+.awardsItem {
   display: flex;
-  align-items: end;
+  align-items: start;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+/* medalhas */
+.awardsItem > svg {
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
 }
 #alumniModal .card {
   margin-right: 0;
@@ -388,6 +408,25 @@ button:focus {
   .card {
     margin-right: 0;
   }
+
+   /* Alumni */
+  
+  #msgModalAlumni {
+    line-height: normal;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* lista de prémios */
+  #awardsModalAlumni {
+    position: static;
+    right: 0;
+    top: 0;
+    
+  }
+
+  /* Alumni */
+
 }
 
 
@@ -401,4 +440,6 @@ button:focus {
     left: 50%;
     transform: translateX(-50%);
   }
+  
+ 
 }
