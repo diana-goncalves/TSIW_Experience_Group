@@ -18,10 +18,11 @@
     <!-- Navbar -->
     <header>
         <!-- Navbar -->
+    <header>
         <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
             <div class="container ">
                 <a class="navbar-brand" href="../../index.html">
-                    <img src="./media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
+                    <img src="../../media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
                 </a>
                 <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -30,21 +31,21 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link home_page" href="#home">Home</a>
+                            <a class="nav-link home_page" href="../../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link projects_page" href="#projects">Projetos</a>
+                            <a class="nav-link projects_page" href="../../index.html#projects">Projetos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link about_page" href="#about">Sobre</a>
+                            <a class="nav-link about_page" href="../../index.html#about">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link er_page" href="#escapeRoom">Escape Room</a>
+                            <a class="nav-link er_page" href="../../index.html#escapeRoom">Escape Room</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav" id="LoginLogout_Container">
                         <li class="nav-item">
-                            <a class="nav-link text-white user_icon" href="./html/login.html"><i
+                            <a class="nav-link text-white user_icon" href="../../html/login.html"><i
                                     class="fas fa-user"></i></a>
                         </li>
                     </ul>
@@ -57,7 +58,7 @@
     <section class="imgSala vh-100 w-100 mx-0">
         <img usemap="#salaMap" class="img-fluid img-responsive d-block vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala3.jpg" alt="Sala 206">
         <map name="salaMap">
-            <area id="sala206Computer" shape="rect" coords="1808,534,1655,657" alt="Computador" title="Computador" href="#" data-bs-toggle="modal" data-bs-target="#miniGame1" >
+            <area id="sala206Computer" shape="rect" coords="1808,534,1655,657" alt="Computador" title="Computador" href="#" data-bs-toggle="modal" data-bs-target="#miniGame2-level1" >
             <area id="sala206Porta" shape="rect" coords="176,417,497,741" alt="Saida" title="Saida" href="hall_2.html">>
         </map>
         <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala3-computador.png" alt="Computador" title="Computador">
@@ -65,7 +66,43 @@
     </section>
 
     <!-- Modal MiniGame -->
-    <div class="modal fade"  id="miniGame1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade"  id="miniGame2-level1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Descobre a Logo</h1>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">Será que és um craque no design?</h1>    
+                </div>
+                <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <p class="col text-white">Neste desafio, o jogador precisa demonstrar suas habilidades de conhecimento sobre logotipos. O objetivo é simples: o jogador verá quatro variações de um logotipo, mas apenas uma delas é a correta. Sua tarefa é escolher o logotipo certo dentre as opções apresentadas.</p>
+                </div>
+                <div class="row mt-4 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <div class="col">
+                        <h5 class="text-white">Instruções:</h5>
+                        <ul class="text-white text-start d-inline-block">
+                            <li>Observe atentamente as quatro variações do logotipo.</li>
+                            <li>Clique na variação que você acredita ser a correta.</li>
+                            <li>Se acertar, Avança para o próximo nível com um novo logotipo</li>
+                            <li>Se errar, Terá que recomeçar e tentar novamente até acertar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <p class="col text-capitalize text-white">Boa sorte e divirta-se!</p>
+                </div>
+                <div class="modal-footer border-black modal-background d-flex justify-content-center">
+                    <button type="button" class="buttonStart btn m-0 p-0" data-bs-dismiss="modal" >
+                        <span class="actual-text">&nbsp;Start Experience&nbsp;</span>
+                        <span aria-hidden="true" class="hover-text">&nbsp;Start Experience&nbsp;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade"  id="miniGame2-level2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
@@ -74,31 +111,22 @@
                 </div>
                 <div class=" modal-body">
                     <div class="container-fluid text-center">
-                        <div class="row justify-content-around align-items-center mx-auto my-2 ">
-                            <div class="col-4 m-1 d-flex flex-wrap p-2 " id="options1" ondrop="dropSpan(event)" ondragover="allowDrop(event)">
-
+                        <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                            <div class="col">
+                                <h1 class="col align-content-center d-flex justify-content-center title text-capitalize text-xxl-start">Bem-Vindo ao Escape Room Experience</h1>
                             </div>
-                            <div class="col-6 mx-1 p-2" id="exercise1">
-
+                            <div class="col container-fluid text-center align-items-center">
+                                <div class="up ">
+                                    <button class="card1">1</button>
+                                    <button class="card2">2</button>
+                                </div>
+                                <div class="down">
+                                    <button class="card3">3</button>
+                                    <button class="card4">4</button>
+                                </div>    
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row d-flex justify-content-around align-items-center mx-auto my-2">
-                            <div class="col-4 m-1 d-flex flex-wrap" id="options2" ondrop="dropSpan(event)" ondragover="allowDrop(event)">
-                                
-                            </div>
-                            <div class="col-6 mx-1" id="exercise2">
-                            
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row d-flex justify-content-around  align-items-center mx-auto my-2">
-                            <div class="col-4 m-1 d-flex flex-wrap" id="options3" ondrop="dropSpan(event)" ondragover="allowDrop(event)">
-                            
-                            </div>
-                            <div class="col-6 mx-1" id="exercise3">
-                            
-                            </div>
+                            <br>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -109,7 +137,7 @@
                     <div class=" mx-1 p-1 align-items-center">
                         <!--Botao Continue-->
                         <div class="btn-conteiner d-flex justify-content-center">
-                            <a href="#" class="btn-content d-flex align-items-center CompleteLevel">
+                            <a href="#" class="btn-content d-flex align-items-center CompleteLevel" data-bs-target="#miniGame2-level1" data-bs-toggle="modal">
                                 <span class="icon-arrow">
                                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 66 43" height="30px" width="30px">
                                         <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none" id="arrow">
@@ -126,6 +154,9 @@
             </div>
         </div>
     </div>
+
+    <!--History Lines-->
+    <div class="toast-container position-fixed bottom-0 end-0 p-2"></div>
 
     <!-- Contador -->
     <div id="countdown" class="fixed-bottom p-4 text-white text-center rounded-end-circle mb-5"></div>
@@ -153,7 +184,6 @@
     <script type="module" src="../../js/views/inventoryView.js"></script>
     <script type="module" src="../../js/views/collectiblesView.js"></script>
     <script type="module" src="../../js/views/sala206View.js"></script>
-    <script src="../../js/views/MiniGamesView.js"></script>
     <script type="module" src="../../js/views/NavbarView.js"></script>
     <script type="module" src="../../js/views/GameStateView.js"></script>
 

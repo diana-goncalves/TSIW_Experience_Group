@@ -1,19 +1,17 @@
 import * as gs from "../models/gameStateModel.js"
 
-let countdown;
-let time = 30;
-let countdownTime = time * 60; // 30 minutos
-
-const countdownElement = document.querySelector("#countdown")
-
 const historyLines = {
     "entrada": [
-        "Boas, ja chegaste? Ótimo, obrigado por responderes ao meu pedido",
+        "Ja chegaste? Ótimo, obrigado por responderes ao meu pedido",
         "Foste o único que pode vir aqui a um domingo, seja como for mãos à obra",
         "O sistema está cheio de erros, preciso então que vás aos computadores para me dares acesso remoto",
         "Assim poderei fazer um reboot ao sistema para amanhã os nossos alunos não terem problemas. Boa sorte!"
     ],
-    "hall 1":[],
+    "hall 1":[
+        "Boa, agora é que começa asserio!, Como é domingo a maior parte das salas devem estar fechadas",
+        "Se não me engano mais para o fundo do corredor, deves encontrar umas chaves no chão",
+        "Deixei-as cair ontem quando estava a fazer a revisão, por favor não digas nada á gerência"
+    ],
     "hall 2":[],
     "hall 3":[],
     "sala 202":[],
@@ -22,7 +20,18 @@ const historyLines = {
     "sala 207":[],
     "sala 210":[],
     "sala 211":[],
+    "parque":[
+        "Esse é o parque exterior, provavelmente deixaste ai o carro. Como és novo deixo a informação, para alem desse espaço todo ainda existe um parque interior para funcionarios e estudantes",
+        "Com tanto espaço é impossivel ficar sem lugar 😂"
+    ]
 }
+
+
+let countdown;
+let time = 30;
+let countdownTime = time * 60; // 30 minutos
+
+const countdownElement = document.querySelector("#countdown")
 
 let makeToast = (line) => {
     const tempDiv = document.createElement('div');
@@ -56,7 +65,7 @@ export default function GameStateView(room) {
                 toast.show();
             }, delay);
 
-            delay += 3000;
+            delay += 2000;
         });
     }
 

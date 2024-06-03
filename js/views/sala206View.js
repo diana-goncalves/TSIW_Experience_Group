@@ -9,7 +9,7 @@ $(document).ready(function(e) {
 
 function sala206View() {
     
-    //GameStateView("hall 1");
+    GameStateView("sala 206");
     // Mete os items na sala
     setItems("sala 206");
     setCollectibles("sala 206");
