@@ -91,7 +91,7 @@ function renderProject(projectData) {
 
     document.querySelector("#projectsContainer").innerHTML +=
     `
-        <div class="col-md-4" id="${projectId}" style="height: 750px;">
+        <div class="col-md-4" id="${projectId}" style="height: 750px;margin-bottom: 2rem;">
 
             <div class="card custom-border" style="height: 750px">
 
@@ -260,7 +260,7 @@ function renderAlumni(testemunho) {
 
     testemunhosContainer.innerHTML +=
     `
-        <div class="card alumniContainer" id="${testemunho.name}">
+        <div class="card alumniContainer" id="${testemunho.name}" style="margin-bottom:2rem;">
             <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
             <div class="card-body alumniDescription">
                 <p class="alumniJob">${testemunho.occupation}</p>
