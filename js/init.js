@@ -214,7 +214,7 @@ function initdata() {
                 photo: null,
                 state: "Destacado"
             },
-            
+
         ];
         events.forEach((event) => {
             addEvents(event.name, event.msgEvent, event.date, event.link, event.photo, event.state)
@@ -269,8 +269,128 @@ function initdata() {
         });
     }
 
+    if (!localStorage.curso) {
+        const curso = {
+            primeiroAno: [
+                {
+                    disciplina: "Algoritmia e Estruturas de Dados",
+                    detalhes: "Programação em Python"
+                },
+                {
+                    disciplina: "Fundamentos de Design",
+                    detalhes: "Execução de projetos de design<br>Software: Adobe Photoshop, Adobe Illustrator e Figma"
+                },
+                {
+                    disciplina: "Matemática I",
+                    detalhes: "Módulo 1: Lógica e Teoria de Conjuntos<br>Módulo 2: Cálculo Integral"
+                },
+                {
+                    disciplina: "Sistemas Computacionais",
+                    detalhes: "Módulo 1: Sistemas de Numeração<br>Módulo 2: Redes de Computadores<br>Módulo 3: Arduino e Sensores (programação em C)"
+                },
+                {
+                    disciplina: "Tecnologias Web",
+                    detalhes: "Módulo 1: World Wide Web<br>Módulo 2: HTML<br>Módulo 3: CSS<br>Módulo 4: Introdução a JS"
+                },
+                {
+                    disciplina: "Conceção e Produção Multimédia",
+                    detalhes: "A-Frame, Adobe Premiere, uso de Inteligência Artificial"
+                },
+                {
+                    disciplina: "Interfaces e Design para Aplicações",
+                    detalhes: "Wireframe e Protótipo"
+                },
+                {
+                    disciplina: "Matemática II",
+                    detalhes: "Módulo 1: Matrizes<br>Módulo 2: Geometria Descritiva"
+                },
+                {
+                    disciplina: "Programação Orientada a Objetos",
+                    detalhes: "DOM, Objetos e Arrays, Classes, Estruturação um projeto web"
+                },
+                {
+                    disciplina: "Projeto I",
+                    detalhes: "Criação de uma aplicação web através de um projeto Interdisciplinar"
+                }
+            ],
+            segundoAno: [
+                {
+                    disciplina: "Bases de Dados",
+                    detalhes: "Modelação de dados, SQL"
+                },
+                {
+                    disciplina: "Computação Gráfica",
+                    detalhes: "Introdução a OpenGL, Renderização"
+                },
+                {
+                    disciplina: "Engenharia de Software",
+                    detalhes: "Modelos de desenvolvimento, UML"
+                },
+                {
+                    disciplina: "Ergonomia Cognitiva e Design de Interação",
+                    detalhes: "Princípios de design centrado no usuário"
+                },
+                {
+                    disciplina: "Programação Web I",
+                    detalhes: "JavaScript avançado, React"
+                },
+                {
+                    disciplina: "Inteligência Artificial",
+                    detalhes: "Algoritmos de IA, Machine Learning"
+                },
+                {
+                    disciplina: "Programação Web II",
+                    detalhes: "Node.js, Express"
+                },
+                {
+                    disciplina: "Projeto II",
+                    detalhes: "Desenvolvimento de um projeto interdisciplinar"
+                },
+                {
+                    disciplina: "Testes e Performance Web",
+                    detalhes: "Otimização e testes de desempenho"
+                },
+                {
+                    disciplina: "Cadeira Opcional",
+                    detalhes: "Disciplina à escolha do aluno"
+                }
+            ],
+            terceiroAno: [
+                {
+                    disciplina: "Computação Móvel e Ubíqua",
+                    detalhes: "Desenvolvimento de apps móveis"
+                },
+                {
+                    disciplina: "Inovação e Empreendedorismo",
+                    detalhes: "Criação de startups, inovação tecnológica"
+                },
+                {
+                    disciplina: "Negócio Eletrónico e Segurança",
+                    detalhes: "Comércio eletrônico, segurança na web"
+                },
+                {
+                    disciplina: "Prototipagem Avançada em Plataformas Digitais",
+                    detalhes: "Ferramentas de prototipagem, design thinking"
+                },
+                {
+                    disciplina: "Serviços e Interfaces para a Cloud",
+                    detalhes: "Arquitetura de serviços na nuvem"
+                },
+                {
+                    disciplina: "Marketing Digital",
+                    detalhes: "Estratégias de marketing online"
+                },
+                {
+                    disciplina: "Projeto Final/Estágio",
+                    detalhes: "Desenvolvimento de um projeto final ou estágio"
+                },
+                {
+                    disciplina: "Usabilidade e User Experience",
+                    detalhes: "Testes de usabilidade, pesquisa com usuários"
+                }
+            ]
+        };
 
-
-
-    
+        localStorage.setItem('curso', JSON.stringify(curso));
+    }
 }

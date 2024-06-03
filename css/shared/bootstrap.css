@@ -410,19 +410,19 @@ button:focus {
   }
 
    /* Alumni */
-  
+
   #msgModalAlumni {
     line-height: normal;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   /* lista de prémios */
   #awardsModalAlumni {
     position: static;
     right: 0;
     top: 0;
-    
+
   }
 
   /* Alumni */
@@ -440,6 +440,6 @@ button:focus {
     left: 50%;
     transform: translateX(-50%);
   }
-  
- 
+
+
 }

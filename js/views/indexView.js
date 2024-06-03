@@ -138,7 +138,7 @@ function randomProject(projectsList, numberOfProjects) {
 
 function renderEvents() {
     const events = filtrarEventoPorEstado("Destacado");
-    
+
     // Se não houver eventos para destacar, escolher 3 aleatorios
     if (events.length === 0) {
         const randomEvents = randomProject(filtrarEventoPorEstado("Publicado"), 3);
@@ -157,7 +157,7 @@ function renderEvents() {
 }
 
 function renderEvent(eventData, index) {
-    
+
     // Remover caracteres especiais e espaço para não causar problemas
     const eventId = eventData.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
 
@@ -167,21 +167,21 @@ function renderEvent(eventData, index) {
     // Primeiro evento - separado para adicionar active class
     if (index === 0) {
 
-        EventCardsContainer.innerHTML += 
+        EventCardsContainer.innerHTML +=
         `
             <div class="carousel-item active" id="${eventId}">
-                
+
                 <div class="container text-justify" id="eventContainer">
-                    
+
                     <div class="event-card d-flex ">
-                        
+
                         <div class="card-interior" id="eventInterior">
                             <h2 class="card-title event-title">${eventData.name}</h2>
                             <p class="card-text event-description">
                                 ${eventData.msgEvent}
                             </p>
                         </div>
-                    
+
                         <a href="${eventData.link}" target="_blank" class="event-link align-self-end">+</a>
 
                     </div>
@@ -191,27 +191,27 @@ function renderEvent(eventData, index) {
             </div>
         `
 
-        eventsControls.innerHTML += 
+        eventsControls.innerHTML +=
         `
             <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"aria-current="true" aria-label="Slide 0"></button>
         `
 
     } else {
-        EventCardsContainer.innerHTML += 
+        EventCardsContainer.innerHTML +=
     `
         <div class="carousel-item" id="${eventId}">
-            
+
             <div class="container text-justify" id="eventContainer">
-                
+
                 <div class="event-card d-flex ">
-                    
+
                     <div class="card-interior" id="eventInterior">
                         <h2 class="card-title event-title">${eventData.name}</h2>
                         <p class="card-text event-description">
                             ${eventData.msgEvent}
                         </p>
                     </div>
-                
+
                     <a href="${eventData.link}" target="_blank" class="event-link align-self-end">+</a>
 
                 </div>
@@ -221,7 +221,7 @@ function renderEvent(eventData, index) {
         </div>
     `
 
-    eventsControls.innerHTML += 
+    eventsControls.innerHTML +=
     `
         <button type="button" data-bs-target="#carousel" data-bs-slide-to="${index}" aria-label="Slide ${index}"></button>
     `
@@ -255,10 +255,10 @@ function renderTestemunhos() {
 }
 
 function renderAlumni(testemunho) {
-    
+
     const testemunhosContainer = document.querySelector("#testemunhosContainer");
 
-    testemunhosContainer.innerHTML += 
+    testemunhosContainer.innerHTML +=
     `
         <div class="card alumniContainer" id="${testemunho.name}">
             <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
@@ -271,25 +271,36 @@ function renderAlumni(testemunho) {
     `
 }
 
-function showModal(objeto,tipo) {
-    
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector("#seeMoreFirstYear").addEventListener("click", function() {
+        showModal(null, "catalogo", 1);
+    });
+    document.querySelector("#seeMoreSecondYear").addEventListener("click", function() {
+        showModal(null, "catalogo", 2);
+    });
+    document.querySelector("#seeMoreThirdYear").addEventListener("click", function() {
+        showModal(null, "catalogo", 3);
+    });
+});
+
+function showModal(objeto, tipo, ano) {
     let modalBody = document.querySelector("#modalIndexBody");
     let html = null;
-    
+
     switch (tipo) {
         case "testemunho":
-            
+
             const testemunho = getTestemunhoByName(testemunhoName);
-        
+
             let awards = testemunho.awards;
-        
+
             if (awards) {
                 awards = awards.split(";").map(award => `<li class="awardsItem"><i class="fa-solid fa-medal" style="color:var(--color-yellow);"></i>${award.trim()}</li>`).join("");
             } else {
                 awards = "";
             }
 
-            html = 
+            html =
             `
             <div class="row">
                 <div class="col-sm-3">
@@ -302,7 +313,7 @@ function showModal(objeto,tipo) {
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="col d-flex flex-column">
                     <span id="msgModalAlumni">${testemunho.msgAlumni}</span>
 
@@ -311,17 +322,43 @@ function showModal(objeto,tipo) {
             </div>
             `
 
-            break;
         case "catalogo":
+            const curso = JSON.parse(localStorage.getItem('curso'));
+            let detalhesAno = null;
 
-            
+            switch (ano) {
+                case 1:
+                    detalhesAno = curso.primeiroAno;
+                    break;
+                case 2:
+                    detalhesAno = curso.segundoAno;
+                    break;
+                case 3:
+                    detalhesAno = curso.terceiroAno;
+                    break;
+            }
+
+            html = '<div class="row">';
+            for (let i = 0; i < detalhesAno.length; i += 1) {
+                if (i % 5 === 0 && i !== 0) {
+                    html += '</div><div class="row">';
+                }
+                html += `
+                <div class="col-6">
+                    <li style="color: var(--color-yellow);">${detalhesAno[i].disciplina}:</li>
+                    <p>${detalhesAno[i].detalhes}</p>
+                </div>`;
+            }
+            html += '</div>';
+
             break;
+
         default:
             break;
     }
 
     modalBody.innerHTML = `${html}`
-   
+
     $("#indexModal").modal("show");
 
     // Esconder modal ao clicar no -

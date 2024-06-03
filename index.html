@@ -30,7 +30,8 @@
         <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
             <div class="container ">
                 <a class="navbar-brand" href="./index.html">
-                    <img src="./media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;" loading="lazy">
+                    <img src="./media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;"
+                        loading="lazy">
                 </a>
                 <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -68,16 +69,16 @@
         <section id="home">
             <!-- Cartões para os eventos -->
             <div id="carousel" class="carousel slide">
-                
+
                 <div class="carousel-inner" id="EventCardsContainer">
-                    
+
 
                 </div>
 
                 <div class="carousel-indicators" id="eventsControls">
-                    
+
                 </div>
-                
+
             </div>
             <!-- Cartões para os eventos -->
         </section>
@@ -87,7 +88,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h2 class="text-center">UI</h2>
-                        <img src="./media/img/ui.avif" class="img-fluid border-image mx-auto" alt="UI Image" loading="lazy">
+                        <img src="./media/img/ui.avif" class="img-fluid border-image mx-auto" alt="UI Image"
+                            loading="lazy">
                         <div class="col-10 mx-auto mt-3">
                             <p>O UI ou User Interface é responsável pela <strong
                                     style="color: var(--color-yellow);">ideia</strong>, pelas <strong
@@ -104,7 +106,8 @@
                                 tornar a <strong style="color: var(--color-yellow);">interação do utilizador</strong> o
                                 mais eficiente e simples.</p>
                         </div>
-                        <img src="./media/img/ux.avif" class="img-fluid border-image mx-auto" alt="UX Image" loading="lazy">
+                        <img src="./media/img/ux.avif" class="img-fluid border-image mx-auto" alt="UX Image"
+                            loading="lazy">
                     </div>
                 </div>
                 <div class="row my-5">
@@ -115,7 +118,8 @@
                     </div>
                     <div class="col-md-6">
                         <h2 class="text-center">Apps móveis</h2>
-                        <img src="./media/img/Mobile App.avif" class="img-fluid border-image mx-auto" alt="Mobile Apps" loading="lazy">
+                        <img src="./media/img/Mobile App.avif" class="img-fluid border-image mx-auto" alt="Mobile Apps"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
@@ -125,8 +129,9 @@
         <section id="projects" class="py-5">
             <div class="container">
                 <h2 class="text-start mt-5 mb-2">Projetos</h2>
-                <p class="text-start mb-5" id="projectsHeader">Explora alguns dos projetos feitos pelos estudantes do nosso curso <a href="./html/projetos.html" class="link">+</a></p>
-                <div class="row"  id="projectsContainer">
+                <p class="text-start mb-5" id="projectsHeader">Explora alguns dos projetos feitos pelos estudantes do
+                    nosso curso <a href="./html/projetos.html" class="link">+</a></p>
+                <div class="row" id="projectsContainer">
 
                 </div>
             </div>
@@ -134,23 +139,27 @@
 
         <!-- Alumni section -->
         <section id="testemunhos" class="py-5">
-            
+
             <!-- Modal Testemunhos -->
-            <div class="modal fade" id="indexModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="alumniModal" aria-hidden="true">
+            <div class="modal fade" id="indexModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="alumniModal"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content modal-background" id="modalAlumniContent">
                         <div class="modal-body p-0" id="modalIndexBody">
-                            
+
                         </div>
-                        <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#alumniModal" id="seeLessAlumni" style="padding:0;border:0;line-height:0.7;">-</button>
+                        <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal"
+                            data-target="#alumniModal" id="seeLessAlumni"
+                            style="padding:0;border:0;line-height:0.7;">-</button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="container">
                 <h2 class="text-start mt-5 mb-2">Testemunhos</h2>
-                <p class="text-start mb-5" id="testemunhosHeader">Descobre a opinião dos alunos que já concluíram a licenciatura</p>
-                <div class="row"  id="testemunhosContainer">
+                <p class="text-start mb-5" id="testemunhosHeader">Descobre a opinião dos alunos que já concluíram a
+                    licenciatura</p>
+                <div class="row" id="testemunhosContainer">
 
                 </div>
             </div>
@@ -162,6 +171,7 @@
                 <h2 class="text-end mt-5 mb-2">Catálogo do Curso</h2>
                 <p class="text-end mb-5">Clica no + para entenderes melhor aquilo que estudamos</p>
                 <div class="row row-cols-1 row-cols-md-3 g-1">
+                    <!-- 1º Ano -->
                     <div class="col">
                         <div class="card h-100 custom-border w-75 vh-50 mx-auto">
                             <div class="card-body p-0">
@@ -178,10 +188,12 @@
                                     <li>Programação Orientada a Objetos</li>
                                     <li>Projeto I</li>
                                 </ul>
-                                <button class="btn text-warning fs-1 float-end">+</button>
+                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#catalogModal" id="seeMoreFirstYear">+</button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 2º Ano -->
                     <div class="col">
                         <div class="card h-100 custom-border w-75 vh-50 mx-auto">
                             <div class="card-body p-0">
@@ -198,10 +210,12 @@
                                     <li>Testes e Performance Web</li>
                                     <li>Cadeira Opcional</li>
                                 </ul>
-                                <button class="btn text-warning fs-1 float-end">+</button>
+                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#catalogModal" id="seeMoreSecondYear">+</button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 3º Ano -->
                     <div class="col">
                         <div class="card h-100 custom-border w-75 vh-50 mx-auto">
                             <div class="card-body p-0">
@@ -211,18 +225,33 @@
                                     <li>Inovação e Empreendedorismo</li>
                                     <li>Negócio Eletrónico e Segurança</li>
                                     <li>Prototipagem Avançada em Plataformas Digitais</li>
-                                    <li>Serviços e Interfaces para a <br>Cloud</li>
+                                    <li>Serviços e Interfaces para a Cloud</li>
                                     <li>Marketing Digital</li>
                                     <li>Projeto Final/Estágio</li>
                                     <li>Usabilidade e User Experience</li><br>
                                 </ul>
-                                <button class="btn text-warning fs-1 float-end">+</button>
+                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#catalogModal" id="seeMoreThirdYear">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Modal para Catálogo -->
+        <div class="modal fade" id="indexModal" tabindex="-1" aria-labelledby="catalogModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="catalogModalLabel">Detalhes do Ano</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="modalIndexBody">
+                        <!-- Conteúdo preenchido pelo JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Profissional Exits and Access Forms section -->
         <section class="py-5">
@@ -272,8 +301,8 @@
                                         para estudantes internacionais.</li>
                                 </ul>
                                 <div class="text-end mt-2 m-lg-3">
-                                    <a href="https://www.dges.gov.pt/guias/detcursopi.asp?codc=L071&code=3331" target="_blank"
-                                    class="text-muted text-decoration-none dges-link">DGES</a>
+                                    <a href="https://www.dges.gov.pt/guias/detcursopi.asp?codc=L071&code=3331"
+                                        target="_blank" class="text-muted text-decoration-none dges-link">DGES</a>
                                 </div>
                             </div>
                         </div>
@@ -323,7 +352,8 @@
                 <div class="container escape-container">
                     <div class="title">TSIW EXPERIENCE</div>
                     <div class="subtitle">ESCAPE ROOM</div>
-                    <a href="./html/Escape Room/entrada.html"><button class="btn btn-custom">START EXPERIENCE</button></a>
+                    <a href="./html/Escape Room/entrada.html"><button class="btn btn-custom">START
+                            EXPERIENCE</button></a>
                 </div>
             </div>
         </section>
@@ -339,9 +369,11 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div>
                 <ul class="list-unstyled text-sm">
-                    <li><p class="mb-1">TSIW Experience © 2024</p>
+                    <li>
+                        <p class="mb-1">TSIW Experience © 2024</p>
                     <li><a href="https://www.esmad.ipp.pt/sitemap" class="mb-1" id="footer-links">Mapa</a></li>
-                    <li><a href="https://www.esmad.ipp.pt/accessibility-info" class="mb-1" id="footer-links">Acessibilidade</a></li>
+                    <li><a href="https://www.esmad.ipp.pt/accessibility-info" class="mb-1"
+                            id="footer-links">Acessibilidade</a></li>
                 </ul>
             </div>
             <div class="text-center">
