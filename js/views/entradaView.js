@@ -6,6 +6,13 @@ import { init as collectiblesInit, resetCollectibles } from "../models/collectib
 
 let ModalInicial =  new bootstrap.Modal(document.querySelector("#modalInicial"))
 let buttonStart = document.querySelector(".buttonStart");
+const parqueModal = document.querySelector("#modalParque")
+// Porta Frente
+const entradaFrontArea = document.querySelector("#entradatohall1");
+const imgFront = document.querySelector(".imgFront");
+// Area Direita
+const entradaRightArea = document.querySelector("#entradaParque");
+const imgRight = document.querySelector(".imgRight"); 
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
@@ -16,14 +23,6 @@ function entradaView() {
     gameStateInit();
     inventoryInit();
     collectiblesInit();
-    // Porta Frente
-    const entradaFrontArea = document.querySelector("#entradatohall1");
-    const imgFront = document.querySelector(".imgFront");
-
-    // Area Direita
-    const entradaRightArea = document.querySelector("#entradaParque");
-    const imgRight = document.querySelector(".imgRight"); 
-
     //--------------------------------------------------------------------
     entradaFrontArea.addEventListener("mouseenter", (e)=> {
         e.preventDefault();
@@ -45,6 +44,11 @@ function entradaView() {
         e.preventDefault();
         imgRight.style.display="none";
     });
+
+    parqueModal.addEventListener("shown.bs.modal",(e)=>{
+        GameStateView("parque")
+    })
+
     //--------------------------------------------------------------------
 
 
