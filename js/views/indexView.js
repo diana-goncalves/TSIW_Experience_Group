@@ -340,16 +340,27 @@ function showModal(objeto, tipo, ano) {
             }
 
             html = '<div class="row">';
-            for (let i = 0; i < detalhesAno.length; i += 1) {
-                if (i % 5 === 0 && i !== 0) {
-                    html += '</div><div class="row">';
-                }
-                html += `
-                <div class="col-6">
-                    <li style="color: var(--color-yellow);">${detalhesAno[i].disciplina}:</li>
+            html += '<div class="col-6"><ul>';
+            for (let i = 0; i < 5; i++) {
+                if (detalhesAno[i]) {
+                    html += `
+                    <li style="color: var(--color-yellow);"><strong>${detalhesAno[i].disciplina}:</strong></li>
                     <p>${detalhesAno[i].detalhes}</p>
-                </div>`;
+                    `;
+                }
             }
+            html += '</ul></div>';
+
+            html += '<div class="col-6"><ul>';
+            for (let i = 5; i < detalhesAno.length; i++) {
+                if (detalhesAno[i]) {
+                    html += `
+                    <li style="color: var(--color-yellow);"><strong>${detalhesAno[i].disciplina}:</strong></li>
+                    <p>${detalhesAno[i].detalhes}</p>
+                    `;
+                }
+            }
+            html += '</ul></div>';
             html += '</div>';
 
             break;

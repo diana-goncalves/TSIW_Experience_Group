@@ -282,15 +282,15 @@ function initdata() {
                 },
                 {
                     disciplina: "Matemática I",
-                    detalhes: "Módulo 1: Lógica e Teoria de Conjuntos<br>Módulo 2: Cálculo Integral"
+                    detalhes: "Lógica e Teoria de Conjuntos, Cálculo Integral"
                 },
                 {
                     disciplina: "Sistemas Computacionais",
-                    detalhes: "Módulo 1: Sistemas de Numeração<br>Módulo 2: Redes de Computadores<br>Módulo 3: Arduino e Sensores (programação em C)"
+                    detalhes: "Sistemas de Numeração, Redes de Computadores, Arduino e Sensores (programação em C)"
                 },
                 {
                     disciplina: "Tecnologias Web",
-                    detalhes: "Módulo 1: World Wide Web<br>Módulo 2: HTML<br>Módulo 3: CSS<br>Módulo 4: Introdução a JS"
+                    detalhes: "World Wide Web, HTML, CSS, Introdução a JS"
                 },
                 {
                     disciplina: "Conceção e Produção Multimédia",
@@ -302,15 +302,15 @@ function initdata() {
                 },
                 {
                     disciplina: "Matemática II",
-                    detalhes: "Módulo 1: Matrizes<br>Módulo 2: Geometria Descritiva"
+                    detalhes: "Álgebra Linear, Geometria Descritiva"
                 },
                 {
                     disciplina: "Programação Orientada a Objetos",
-                    detalhes: "DOM, Objetos e Arrays, Classes, Estruturação um projeto web"
+                    detalhes: "Fundamentos de Javascript, DOM, Objetos e Arrays, Classes, Estruturação um projeto web"
                 },
                 {
                     disciplina: "Projeto I",
-                    detalhes: "Criação de uma aplicação web através de um projeto Interdisciplinar"
+                    detalhes: "Execução de um projeto Interdisciplinar"
                 }
             ],
             segundoAno: [
@@ -320,27 +320,27 @@ function initdata() {
                 },
                 {
                     disciplina: "Computação Gráfica",
-                    detalhes: "Introdução a OpenGL, Renderização"
+                    detalhes: "Animação Gráfica, Canvas, SVG, Animações e Transições no CSS, Biblioteca Three.js"
                 },
                 {
                     disciplina: "Engenharia de Software",
-                    detalhes: "Modelos de desenvolvimento, UML"
+                    detalhes: "Modelos de desenvolvimento de Sof"
                 },
                 {
                     disciplina: "Ergonomia Cognitiva e Design de Interação",
-                    detalhes: "Princípios de design centrado no usuário"
+                    detalhes: "Ergonomia Cognitiva, UI e UX, Desenho e avaliação de interfaces"
                 },
                 {
                     disciplina: "Programação Web I",
-                    detalhes: "JavaScript avançado, React"
+                    detalhes: "Framework Vue, Routing, Gestão de estado, API, Teste"
                 },
                 {
                     disciplina: "Inteligência Artificial",
-                    detalhes: "Algoritmos de IA, Machine Learning"
+                    detalhes: "Introdução à AI , Python em IA, Machine Learning, Assistentes Virtuais"
                 },
                 {
                     disciplina: "Programação Web II",
-                    detalhes: "Node.js, Express"
+                    detalhes: "MVC, Serviços Web, Servidor Web, ExpressJS, NodeJS, Web segura e dinâmica, Aplicações Web Cliente-Servidor"
                 },
                 {
                     disciplina: "Projeto II",
@@ -348,7 +348,7 @@ function initdata() {
                 },
                 {
                     disciplina: "Testes e Performance Web",
-                    detalhes: "Otimização e testes de desempenho"
+                    detalhes: "Métricas de Performance, Optimização de recursos e de código, Testes de UI e UX"
                 },
                 {
                     disciplina: "Cadeira Opcional",
@@ -358,35 +358,35 @@ function initdata() {
             terceiroAno: [
                 {
                     disciplina: "Computação Móvel e Ubíqua",
-                    detalhes: "Desenvolvimento de apps móveis"
+                    detalhes: "Desenvolvimento web em React, Desenvolvimento móvel híbrido em React Native"
                 },
                 {
                     disciplina: "Inovação e Empreendedorismo",
-                    detalhes: "Criação de startups, inovação tecnológica"
+                    detalhes: "Conceitos de empreendedorismo, Criatividade e inovação, Modelo e plano de negócios"
                 },
                 {
                     disciplina: "Negócio Eletrónico e Segurança",
-                    detalhes: "Comércio eletrônico, segurança na web"
+                    detalhes: "Modelos de negócio eletrónico, Segurança dos Sistemas e da Informação, Estudo de casos de boas práticas de negócio eletrónico"
                 },
                 {
                     disciplina: "Prototipagem Avançada em Plataformas Digitais",
-                    detalhes: "Ferramentas de prototipagem, design thinking"
+                    detalhes: "Design e prototipagem, UI Motion Design, Desenvolvimente de Projetos"
                 },
                 {
                     disciplina: "Serviços e Interfaces para a Cloud",
-                    detalhes: "Arquitetura de serviços na nuvem"
+                    detalhes: "Sistemas Distribuídos, REST, Serviços web REST, Serviços web GraphQL, Deploy de Serviços e Aplicações, Protocolo MQTT"
                 },
                 {
                     disciplina: "Marketing Digital",
-                    detalhes: "Estratégias de marketing online"
+                    detalhes: "Planeamento de Marketing Digital, Marketing de Conteúdo, Canais de Marketing Digital, Web Analytics e Performance"
                 },
                 {
                     disciplina: "Projeto Final/Estágio",
-                    detalhes: "Desenvolvimento de um projeto final ou estágio"
+                    detalhes: "Desenvolvimento de um projeto final"
                 },
                 {
                     disciplina: "Usabilidade e User Experience",
-                    detalhes: "Testes de usabilidade, pesquisa com usuários"
+                    detalhes: "Usabilidade e UX, Metodologias e User Research, Documentação UX"
                 }
             ]
         };
