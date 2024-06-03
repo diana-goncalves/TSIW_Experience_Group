@@ -271,47 +271,58 @@ function renderAlumni(testemunho) {
     `
 }
 
-function showAlumniModal(testemunhoName) {
+function showModal(objeto,tipo) {
     
-    const testemunho = getTestemunhoByName(testemunhoName);
-    let modalBody = document.querySelector("#modalAlumniBody");
-
-    let awards = testemunho.awards;
-
-    if (awards) {
-        awards = awards.split(";").map(award => `<li class="awardsItem"><i class="fa-solid fa-medal" style="color:var(--color-yellow);"></i>${award.trim()}</li>`).join("");
-    } else {
-        awards = "";
-    }
-
-    modalBody.innerHTML = 
-    `
-        <div class="row">
+    let modalBody = document.querySelector("#modalIndexBody");
+    let html = null;
+    
+    switch (tipo) {
+        case "testemunho":
             
-            <div class="col-sm-3">
-                <div class="card alumniContainer" id="${testemunho.name}">
-                    <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
-                    <div class="card-body alumniDescription">
-                        <p class="alumniJob">${testemunho.occupation}</p>
-                        <p class="alumniCompany">na ${testemunho.company}</p>
-                        <p class="alumniName">${testemunho.name}<a href="${testemunho.link}" target="_blank"><i class="fa-brands fa-linkedin-in float-end" id="linkedinIcon"></i></a></p>
+            const testemunho = getTestemunhoByName(testemunhoName);
+        
+            let awards = testemunho.awards;
+        
+            if (awards) {
+                awards = awards.split(";").map(award => `<li class="awardsItem"><i class="fa-solid fa-medal" style="color:var(--color-yellow);"></i>${award.trim()}</li>`).join("");
+            } else {
+                awards = "";
+            }
+
+            html = 
+            `
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card alumniContainer" id="${testemunho.name}">
+                        <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
+                        <div class="card-body alumniDescription">
+                            <p class="alumniJob">${testemunho.occupation}</p>
+                            <p class="alumniCompany">na ${testemunho.company}</p>
+                            <p class="alumniName">${testemunho.name}<a href="${testemunho.link}" target="_blank"><i class="fa-brands fa-linkedin-in float-end" id="linkedinIcon"></i></a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
             
-            <div class="col d-flex flex-column">
-                <span id="msgModalAlumni">${testemunho.msgAlumni}</span>
+                <div class="col d-flex flex-column">
+                    <span id="msgModalAlumni">${testemunho.msgAlumni}</span>
 
-                ${testemunho.awards ? `<ul id="awardsModalAlumni" style="list-style-type:none;padding:0;"><li>${awards}</li></ul>` : ""}
-
+                    ${testemunho.awards ? `<ul id="awardsModalAlumni" style="list-style-type:none;padding:0;"><li>${awards}</li></ul>` : ""}
+                </div>
             </div>
+            `
 
-        </div>
-    
+            break;
+        case "catalogo":
 
-    `
-    
-    $("#alumniModal").modal("show");
+            
+            break;
+        default:
+            break;
+    }
+
+    modalBody.innerHTML = `${html}`
+   
+    $("#indexModal").modal("show");
 
     // Esconder modal ao clicar no -
     document.querySelector("#seeLessAlumni").addEventListener("click", hideModal);
@@ -319,7 +330,7 @@ function showAlumniModal(testemunhoName) {
 }
 
 function hideModal() {
-    $("#alumniModal").modal("hide");
+    $("#indexModal").modal("hide");
 }
 
 // Função que adiciona event listeneres ao botão para ver mais
@@ -330,7 +341,7 @@ function seeMoreClick() {
     for (const button of seeMoreBtns) {
         // button.addEventListener("click",showAlumniModal(button.id));
         button.addEventListener("click", () => {
-            showAlumniModal(button.id)
+            showModal(button.id,"testemunho");
         });
 
     }
