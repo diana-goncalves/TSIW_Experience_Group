@@ -265,7 +265,7 @@ function renderAlumni(testemunho) {
             <div class="card-body alumniDescription">
                 <p class="alumniJob">${testemunho.occupation}</p>
                 <p class="alumniCompany">na ${testemunho.company}</p>
-                <p class="alumniName">${testemunho.name} <button type="button" class="btn seeMoreAlumni text-warning fs-1 float-end" data-toggle="modal" data-target="#alumniModal" id="${testemunho.name}" style="padding:0;border:0;line-height:0.7;">+</button></p>
+                <p class="alumniName">${testemunho.name} <button type="button" class="btn seeMoreAlumni text-warning fs-1 float-end" data-toggle="modal" data-target="#indexModal" id="${testemunho.name}" style="padding:0;border:0;line-height:0.7;">+</button></p>
             </div>
         </div>
     `
@@ -290,7 +290,7 @@ function showModal(objeto, tipo, ano) {
     switch (tipo) {
         case "testemunho":
 
-            const testemunho = getTestemunhoByName(testemunhoName);
+            const testemunho = getTestemunhoByName(objeto);
 
             let awards = testemunho.awards;
 
@@ -321,6 +321,7 @@ function showModal(objeto, tipo, ano) {
                 </div>
             </div>
             `
+            break;
 
         case "catalogo":
             const curso = JSON.parse(localStorage.getItem('curso'));
@@ -378,7 +379,7 @@ function seeMoreClick() {
     for (const button of seeMoreBtns) {
         // button.addEventListener("click",showAlumniModal(button.id));
         button.addEventListener("click", () => {
-            showModal(button.id,"testemunho");
+            showModal(button.id,"testemunho",null);
         });
 
     }
