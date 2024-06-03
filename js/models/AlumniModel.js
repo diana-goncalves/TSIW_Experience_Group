@@ -1,71 +1,105 @@
 let alumnis = [];
 
-// CARREGAR ALUMNI DA LOCALSTORAGE
+// CARREGAR TESTEMUNHOS DA LOCALSTORAGE
 export function init() {
     if(localStorage.alumnis) {
-        const tempAlumnis = JSON.parse(localStorage.alumnis);
-        for(let alumni of tempAlumnis) {
-            alumnis.push(new Alumni(alumni.name, alumni.role, alumni.enterprise, alumni.photo, alumni.testimony, alumni.awards));
+        
+        const tempTestemunhos = JSON.parse(localStorage.alumnis);
+        for(let testemunho of tempTestemunhos) {
+            alumnis.push(new Alumni(testemunho.name, testemunho.msgAlumni, testemunho.company, testemunho.awards, testemunho.occupation, testemunho.link, testemunho.photo, testemunho.state));
         }
-    }else {
-      alumnis = [];
-    }
-}
-
-// ADICIONAR Alumni
-export function addAlumni(name, role, enterprise, photo, testimony, awards) {
-    if (alumnis.some((alumni) => alumni.name === name)) {
-      throw Error(`Alumni "${name}" Ja existe!`);
     } else {
-      alumnis.push(new Alumni(name, role, enterprise, photo, testimony, awards));
-      localStorage.setItem("alumnis", JSON.stringify(bands));
+        alumnis = [];
     }
 }
 
-// REMOVER ALUMNI
-export function removeAlumni(id) {
-    alumnis = alumnis.filter((alumni) => alumni.id !== id);
+// ADICIONAR TESTEMUNHOS
+export function addTestemunho(name, msgAlumni, company, awards, occupation, link, photo, state) {
+    if (alumnis.some((element) => element.name.toLowerCase() === name.toLowerCase() && element.msgAlumni === msgAlumni)) {
+        throw Error(`Testemunho já Existe!`);
+    } else {
+        alumnis.push(new Alumni(name, msgAlumni, company, awards, occupation, link, photo, state));
+        localStorage.setItem("alumnis", JSON.stringify(alumnis));
+    }
+}
+
+// REMOVER
+export function removerTestemunho(name, msgAlumni) {
+    alumnis = alumnis.filter((testemunho) => testemunho.name !== name && testemunho.msgAlumni !== msgAlumni);
     localStorage.setItem("alumnis", JSON.stringify(alumnis));
 }
 
-// DEFINIR A ALUMNI ATUAL (AQUELA QUE SERÁ VISTA NO DETALHE AO CLICKAR)
-export function setCurrenTAlumni(id) {
-    localStorage.setItem("alumni", id);
-}
+export function getAlumnis(filterName = "", isSorted = false) {
+    // Criar nova array caso o admin queira procurar por um nome
+    
+    let filteredAlumnis = alumnis.filter((testemunho) => (testemunho.name.toLowerCase().includes(filterName.toLowerCase()) || filterName === ""));
   
-  // OBTER O ALUMNI ATUAL (TODO O OBJETO)
-export function getCurrentAlumni() {
-    return alumnis.find((alumni) => alumni.id == localStorage.getItem("alumni"));
+    filteredAlumnis = isSorted
+      ? filteredAlumnis.sort((a, b) => a.name.localeCompare(b.name))
+      : filteredAlumnis; 
+    
+    return filteredAlumnis;  
 }
-  
-export function getAlumnis() {
-    return alumnis;
-  }
 
-function getNextId() {
-    return alumnis.length > 0 ? alumnis.length + 1 : 1;
+export function sortAlumnis(list) {
+    
+    let sortedAlumnis = list.sort((a, b) => a.name.localeCompare(b.name));
+    
+    return sortedAlumnis;
+}
+
+export function filtrarTestemunhoPorEstado(state) {
+    return getAlumnis().filter(testemunho => testemunho.state === state);
+}
+
+export function editTestemunho(testemunhoName, newAlumniData) {
+    // find index retorna -1 quando não encontra
+    const testemunhoIndex = alumnis.findIndex(testemunho => testemunho.name === testemunhoName);
+
+    if (testemunhoIndex !== -1) {
+        
+        try {
+            
+            removerTestemunho(testemunhoName);
+
+            addTestemunho(newAlumniData.name, newAlumniData.msgAlumni, newAlumniData.company, newAlumniData.awards, newAlumniData.occupation, newAlumniData.link, newAlumniData.photo, newAlumniData.state);
+
+        } catch (error) {
+            throw error;
+        } 
+        
+    } else {
+        // Caso não encontre um testemunho com o mesmo nome na lista de testemunhos
+        throw new Error("Alumni não encontrado!");
+    }
+}
+
+export function getTestemunhoByName(testemunhoName) {
+    return alumnis.find(testemunho => testemunho.name === testemunhoName);
 }
 
 /**
- * Classe que modela os Alumni
+ *  Classe que modela os testemunhos
  */
-class Alumni{
-    name = "";
-    role = "";
-    enterprise = "";
-    photo = "";
-    testimony = "";
-    awards = "";
-    id = null;
+class Alumni {
+    name;
+    msgAlumni;
+    company;
+    awards;
+    occupation;
+    link;
+    photo;
+    state;
 
-    constructor(name, role, enterprise, photo, testimony, awards){
+    constructor(name, msgAlumni, company, awards, occupation, link, photo, state = "Oculto"){
         this.name = name;
-        this.role = role;
-        this.enterprise = enterprise;
-        this.photo = photo;
-        this.testimony = testimony;
+        this.msgAlumni = msgAlumni;
+        this.company = company;
         this.awards = awards;
-        this.id = getNextId();
-
+        this.occupation = occupation;
+        this.link = link;
+        this.photo = photo;
+        this.state = state;
     }
 }
+

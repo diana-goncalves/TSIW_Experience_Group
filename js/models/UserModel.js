@@ -5,7 +5,7 @@ export function init() {
   if (localStorage.users) {
     const tempUsers = JSON.parse(localStorage.users);
     for(let user of tempUsers) {
-      users.push(new User(user.username, user.password));
+      users.push(new User(user.username, user.password, user.firstName, user.lastName, user.birthdate, user.location, user.gender));
     }
   } else {
     users = [];
@@ -22,6 +22,27 @@ export function add(username, password) {
   }
 }
 
+export function editUser(username, userData) {
+  const user = users.find((user) => user.username === username);
+
+  if (user) {
+    // Passar propriedades do userData para o user;
+    Object.assign(user, userData);
+    // Atualizar local storage
+    localStorage.setItem("users", JSON.stringify(users));
+
+    // Trocar dados na sessions storage para atualizar logo os forms no perfil
+    const loggedUser = getUserLogged();
+    if (loggedUser.username === username) {
+      sessionStorage.setItem("loggedUser", JSON.stringify(user));
+    }
+
+  } else {
+    throw Error("Utilizador não encontrado!");
+  }
+
+}
+
 // LOGIN DO UTILIZADOR
 export function login(username, password, keep=false) {
   const user = users.find((user) => user.username === username && user.password === password);
@@ -34,7 +55,7 @@ export function login(username, password, keep=false) {
       return true;
     }
   } else {
-    throw Error("Invalid login!");
+    throw Error("Palavra-passe ou nome de utilizador incorreto");
   }
 }
 
@@ -106,12 +127,21 @@ class User {
   id = null;
   username = "";
   password = "";
+  firstName = null;
+  lastName = null;
+  birthdate = null;
+  location = null;
+  gender = null;
 
-  constructor(username, password) {
+
+  constructor(username, password, firstName=null, lastName=null, birthdate=null, location=null, gender=null) {
     this.id = getNextId();
     this.username = username;
     this.password = password;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.birthdate = birthdate;
+    this.location = location;
+    this.gender = gender;
   }
 }
-
-// export {users};

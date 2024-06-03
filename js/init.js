@@ -3,6 +3,7 @@ import { addItem } from "./models/inventoryModel.js";
 import { add } from "./models/UserModel.js";
 import { addProject } from "./models/ProjectModel.js";
 import { addCollectible } from "./models/collectiblesModel.js"
+import { addTestemunho } from "./models/AlumniModel.js";
 
 initdata();
 
@@ -220,16 +221,56 @@ function initdata() {
         });
     }
 
+    if(!localStorage.alumnis) {
+        const alumnis = [
+            {
+                name: "Nuno Sousa",
+                msgAlumni: "Não posso deixar de referir que até ingressar na ESMAD não sabia nada de programação, nem de design. Pelo que, não retirando mérito ao meu esforço, tenho que referir que o excelente acompanhamento dos professores e a sua experiência, tanto ao nível do ensino, como ao nível profissional, foi sem dúvida o impulsionador disto tudo.",
+                company: "Carbmee",
+                awards: "Website Of The Day - NunoPS; UX/UI Design Award; Innovation Design Award; Awwwards Mobile Excellence",
+                occupation: "Front-end developer",
+                link: "https://www.linkedin.com/in/nunops/?original_referer=https%3A%2F%2Fnunops.com%2F",
+                photo: "../media/alumnis/NunoSousa.png",
+                state: "Publicado",
+            },
+            {
+                name: "Nuno Costa",
+                msgAlumni: "Os diferentes projetos de grupo e o foco nas tecnologias mais recentes proporcionaram-me uma base sólida de conhecimentos e habilidades práticas, como o trabalho de equipa e resolução de problemas.",
+                company: "MOG Technologies",
+                awards: "1º lugar no concurso internacional de programação Juezlti Contest of EU Code Week",
+                occupation: "Full-Stack Developer",
+                link: "https://pt.linkedin.com/in/nunof-castro",
+                photo: "../media/alumnis/NUNO_COSTA 1.png",
+                state: "Publicado",
+            },
+            {
+                name: "Diogo Fernandes",
+                msgAlumni: "“Comecei com o objetivo de seguir uma carreira em programação front-end, mas graças à vasta oferta que o curso nos dá, descobri tudo o que se passava para além do código. Com isto, descobri então o mundo de User Experience e nunca mais olhei para trás",
+                company: "Blip",
+                awards: null,
+                occupation: "Product Designer",
+                link: "https://www.linkedin.com/in/diogo-fernandes98/",
+                photo: "../media/alumnis/DiogoFernandes.png",
+                state: "Publicado",
+            },
+            {
+                name: "Inês Sofia Reis",
+                msgAlumni: "Inicialmente sem rumo, descobri a minha paixão: o Design da Experiência do Utilizador e de Interfaces, apenas no segundo ano. A licenciatura, elogiada por muitos conhecidos pelas suas competências abrangentes, proporcionou-me não apenas formação profissional, mas também experiências académicas que nunca vou esquecer",
+                company: "Kendir Studios",
+                awards: "Criadora de recursos educativos digitais premiados pela Direção-Geral de Educação",
+                occupation: "UX Designer",
+                link: "https://pt.linkedin.com/in/inesofiareis",
+                photo: "../media/alumnis/InesReis.png",
+                state: "Publicado",
+            },
+        ];
+        alumnis.forEach((testemunho) => {
+            addTestemunho(testemunho.name, testemunho.msgAlumni, testemunho.company, testemunho.awards, testemunho.occupation, testemunho.link, testemunho.photo, testemunho.state);
+        });
+    }
 
 
 
 
-
-
-
-
-
-
-
-
+    
 }

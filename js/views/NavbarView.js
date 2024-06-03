@@ -45,16 +45,17 @@ document.addEventListener("DOMContentLoaded", function() {
         } 
         // user
         else {
-    
+            
             document.querySelector(".user_icon").href = "../../html/account.html"
             document.querySelector(".user_icon").innerHTML = ` ${estadoUser.username}`
             document.querySelector("#LoginLogout_Container").innerHTML += 
             `
             <li class="nav-item">
-                <button class="logoutButton" id="logoutIndex"><i class="fas fa-sign-out" style="color: var(--color-yellow) !important;"></i></button>    
+                <button class="logoutButton" id="logoutIndex"><i class="fas fa-sign-out" style="color: var(--color-yellow);"></i></button>    
             </li>
             
             `
+
         }
 
         // logout
