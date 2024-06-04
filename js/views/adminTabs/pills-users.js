@@ -98,10 +98,16 @@ function updatePage() {
     if (currentPage === 1 && currentPage !== totalPages) {
         prevBtn.disabled = true;
         nextBtn.disabled = false;
+        
+        nextBtn.style.backgroundColor = "var(--color-yellow)";
+        prevBtn.style.backgroundColor = "var(--color-black)";
     }
     if (currentPage === totalPages && currentPage !== 1) {
         prevBtn.disabled = false;
         nextBtn.disabled = true;
+
+        nextBtn.style.backgroundColor = "var(--color-black)";
+        prevBtn.style.backgroundColor = "var(--color-yellow)";
     }
 
     pageNumber.textContent = `${currentPage} de ${totalPages}`;
