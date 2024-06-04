@@ -181,7 +181,7 @@ function tableHeaders() {
 
 let original = null;
 function sortTable(colIndex, isSorted) {
-
+    currentPage = 1;
     let users = User.getUsers();
 
     if ( original === null) {

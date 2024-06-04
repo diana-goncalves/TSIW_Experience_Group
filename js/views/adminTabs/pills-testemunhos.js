@@ -513,7 +513,7 @@ function tableHeaders() {
 
 let original = null;
 function sortTable(colIndex, isSorted) {
-
+    currentPage = 1;
     let alumnis = Alumni.getAlumnis();
 
     if ( original === null) {

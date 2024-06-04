@@ -507,7 +507,7 @@ function tableHeaders() {
 
 let original = null;
 function sortTable(colIndex, isSorted) {
-
+    currentPage = 1;
     let events = Event.getEvents();
 
     if ( original === null) {
