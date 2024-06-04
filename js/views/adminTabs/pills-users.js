@@ -109,6 +109,13 @@ function updatePage() {
         nextBtn.style.backgroundColor = "var(--color-black)";
         prevBtn.style.backgroundColor = "var(--color-yellow)";
     }
+    if (currentPage === 1 && totalPages === 1) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+
+        prevBtn.style.backgroundColor = "var(--color-black)";
+        nextBtn.style.backgroundColor = "var(--color-black)";
+    }
 
     pageNumber.textContent = `${currentPage} de ${totalPages}`;
 

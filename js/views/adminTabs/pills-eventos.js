@@ -2,6 +2,10 @@ import * as Event from "../../models/EventModel.js"
 
 // Variavel criada para distinguir entre editar e adicionar evento
 let currentEditingEvent = null;
+// Variaveis que gerem páginas das tabelas
+const tableRows = 5;
+let currentPage = 1;
+let totalPages = 1;
 
 // Form submit para editar e adicionar eventos
 function submitForm() {
@@ -169,7 +173,7 @@ function initCancelButton() {
 
 // Form submit para editar e adicionar eventos
 
-function renderTableEvents(events = []) {
+function renderTableEvents(events = [], page = 1) {
     
     const tabelaEvents = document.querySelector("#tBodyEvents");
     
@@ -186,8 +190,17 @@ function renderTableEvents(events = []) {
         `
         return;
     }
+
+    // Descobrir numero de paginas necessarias
+    totalPages = Math.ceil(events.length / tableRows);
     
-    events.forEach(event => {
+    const firstIndex = (page - 1) * tableRows;
+
+    const lastIndex = firstIndex + tableRows;
+
+    const toRender = events.slice(firstIndex, lastIndex);
+    
+    toRender.forEach(event => {
      
         let eventId = event.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
         
@@ -225,15 +238,65 @@ function renderTableEvents(events = []) {
 
     // Event listeners
     tableEvents();
+    updatePage();
 
 }
 
-function filterByName() {
-    // Procurar evento pelo nome automatico
-    const filterInputEvents = document.querySelector("#procuraEventos");
+// Controls das páginas
+function updatePage() {
 
+    const prevBtn = document.querySelector("#prevPageEvents");
+    const nextBtn = document.querySelector("#nextPageEvents");
+    const pageNumber = document.querySelector("#pageNumberEvents");
+
+    pageNumber.textContent = `${currentPage} de ${totalPages}`;
+
+    if (currentPage === 1 && currentPage !== totalPages) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = false;
+        
+        nextBtn.style.backgroundColor = "var(--color-yellow)";
+        prevBtn.style.backgroundColor = "var(--color-black)";
+    }
+    if (currentPage === totalPages && currentPage !== 1) {
+        prevBtn.disabled = false;
+        nextBtn.disabled = true;
+
+        nextBtn.style.backgroundColor = "var(--color-black)";
+        prevBtn.style.backgroundColor = "var(--color-yellow)";
+    }
+    if (currentPage === 1 && totalPages === 1) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+
+        prevBtn.style.backgroundColor = "var(--color-black)";
+        nextBtn.style.backgroundColor = "var(--color-black)";
+    }
+
+}
+
+document.querySelector("#prevPageEvents").addEventListener("click", () => {
+    if (currentPage > 1) {
+        currentPage = currentPage - 1;
+
+        renderTableEvents(Event.getEvents(filterInputEvents.value), currentPage);
+    }
+})
+
+document.querySelector("#nextPageEvents").addEventListener("click", () => {
+    if (currentPage < totalPages) {
+        currentPage = currentPage + 1;
+
+        renderTableEvents(Event.getEvents(filterInputEvents.value), currentPage);
+    }
+})
+
+// Procurar evento pelo nome automatico
+const filterInputEvents = document.querySelector("#procuraEventos");
+function filterByName() {
+    
     filterInputEvents.addEventListener("input", () => {
-        renderTableEvents(Event.getEvents(filterInputEvents.value));
+        renderTableEvents(Event.getEvents(filterInputEvents.value), currentPage);
     })
 
 }
@@ -273,7 +336,7 @@ function editState(eventName, newState) {
         localStorage.setItem("events", JSON.stringify(events));
         
         // Atualizar tabela
-        renderTableEvents(events);
+        renderTableEvents(events, currentPage);
 
     }
     
@@ -351,7 +414,7 @@ function tableEvents() {
                 
                 Event.removeEvents(button.id);
 
-                renderTableEvents(Event.getEvents());
+                renderTableEvents(Event.getEvents(), currentPage);
                 
                 customToast("Evento removido com sucesso!");
 
@@ -454,7 +517,7 @@ function sortTable(colIndex, isSorted) {
 
     // Voltar à ordem original
     if (!isSorted) {
-        renderTableEvents(original);
+        renderTableEvents(original, currentPage);
         return;
     }
 
@@ -520,7 +583,7 @@ function sortTable(colIndex, isSorted) {
 
    })
 
-   renderTableEvents(events);
+   renderTableEvents(events, currentPage);
 
 }
 
@@ -529,7 +592,7 @@ function sortTable(colIndex, isSorted) {
 // // INICIAR
 Event.init()
 
-renderTableEvents(Event.getEvents());
+renderTableEvents(Event.getEvents(), currentPage);
 
 submitForm();
 
