@@ -2,6 +2,10 @@ import * as Project from "../../models/ProjectModel.js"
 
 // Variavel criada para distinguir entre editar e adicionar projeto
 let currentEditingProject = null;
+// Variaveis que gerem páginas das tabelas
+const tableRows = 5;
+let currentPage = 1;
+let totalPages = 1;
 
 // Form submit para editar e adicionar projetos
 function submitForm() {
@@ -96,7 +100,7 @@ function submitProject(projectData) {
         // limpar inputs
         document.querySelector("#formProjetos").reset();
         // atualizar tabela
-        renderTableProjects(Project.getProjects());
+        renderTableProjects(Project.getProjects(), currentPage);
 
     } catch (error) {
         customToast(error.message);
@@ -168,7 +172,7 @@ function initCancelButton() {
 
 // Form submit para editar e adicionar projetos
 
-function renderTableProjects(projects = []) {
+function renderTableProjects(projects = [], page = 1) {
     
     const tabelaProjects = document.querySelector("#table-projetos");
     
@@ -185,8 +189,17 @@ function renderTableProjects(projects = []) {
         `
         return;
     }
+
+    // Descobrir numero de paginas necessarias
+    totalPages = Math.ceil(projects.length / tableRows);
     
-    projects.forEach(project => {
+    const firstIndex = (page - 1) * tableRows;
+
+    const lastIndex = firstIndex + tableRows;
+
+    const toRender = projects.slice(firstIndex, lastIndex);
+    
+    toRender.forEach(project => {
      
         let projectId = project.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
         
@@ -224,18 +237,68 @@ function renderTableProjects(projects = []) {
 
     // Event listeners
     tableEvents();
+    updatePage();
 
 }
 
+// Controls das páginas
+function updatePage() {
+
+    const prevBtn = document.querySelector("#prevPageProjects");
+    const nextBtn = document.querySelector("#nextPageProjects");
+    const pageNumber = document.querySelector("#pageNumberProjects");
+
+    pageNumber.textContent = `${currentPage} de ${totalPages}`;
+
+    if (currentPage === 1 && currentPage !== totalPages) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = false;
+        
+        nextBtn.style.backgroundColor = "var(--color-yellow)";
+        prevBtn.style.backgroundColor = "var(--color-black)";
+    }
+    if (currentPage === totalPages && currentPage !== 1) {
+        prevBtn.disabled = false;
+        nextBtn.disabled = true;
+
+        nextBtn.style.backgroundColor = "var(--color-black)";
+        prevBtn.style.backgroundColor = "var(--color-yellow)";
+    }
+    if (currentPage === 1 && totalPages === 1) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+
+        prevBtn.style.backgroundColor = "var(--color-black)";
+        nextBtn.style.backgroundColor = "var(--color-black)";
+    }
+
+}
+
+// Procurar projeto pelo nome automatico
+const filterInputProjects = document.querySelector("#procuraProjetos");
 function filterByName() {
-    // Procurar projeto pelo nome automatico
-    const filterInputProjects = document.querySelector("#procuraProjetos");
 
     filterInputProjects.addEventListener("input", () => {
-        renderTableProjects(Project.getProjects(filterInputProjects.value));
+        renderTableProjects(Project.getProjects(filterInputProjects.value), currentPage);
     })
 
 }
+
+document.querySelector("#prevPageProjects").addEventListener("click", () => {
+    if (currentPage > 1) {
+        currentPage = currentPage - 1;
+
+        renderTableProjects(Project.getProjects(filterInputProjects.value), currentPage);
+    }
+})
+
+document.querySelector("#nextPageProjects").addEventListener("click", () => {
+    if (currentPage < totalPages) {
+        currentPage = currentPage + 1;
+
+        renderTableProjects(Project.getProjects(filterInputProjects.value), currentPage);
+    }
+})
 
 function postProject(projectName) {
 
@@ -272,7 +335,7 @@ function editState(projectName, newState) {
         localStorage.setItem("projects", JSON.stringify(projects));
         
         // Atualizar tabela
-        renderTableProjects(projects);
+        renderTableProjects(projects, currentPage);
 
     }
     
@@ -350,7 +413,7 @@ function tableEvents() {
                 
                 Project.removeProjects(button.id);
 
-                renderTableProjects(Project.getProjects());
+                renderTableProjects(Project.getProjects(), currentPage);
                 
                 customToast("Projeto removido com sucesso!");
 
@@ -452,7 +515,7 @@ function sortTable(colIndex, isSorted) {
 
     // Voltar à ordem original
     if (!isSorted) {
-        renderTableProjects(original);
+        renderTableProjects(original, currentPage);
         return;
     }
 
@@ -518,7 +581,7 @@ function sortTable(colIndex, isSorted) {
 
    })
 
-   renderTableProjects(projects);
+   renderTableProjects(projects, currentPage);
 
 }
 
@@ -527,7 +590,7 @@ function sortTable(colIndex, isSorted) {
 // INICIAR
 Project.init()
 
-renderTableProjects(Project.getProjects());
+renderTableProjects(Project.getProjects(), currentPage);
 
 submitForm();
 

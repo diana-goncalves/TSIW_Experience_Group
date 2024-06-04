@@ -2,6 +2,10 @@ import * as Alumni from "../../models/AlumniModel.js"
 
 // Variavel criada para distinguir entre editar e adicionar testemunho
 let currentEditingAlumni = null;
+// Variaveis que gerem páginas das tabelas
+const tableRows = 3;
+let currentPage = 1;
+let totalPages = 1;
 
 // Form submit para editar e adicionar testemunhos
 function submitForm() {
@@ -98,7 +102,7 @@ function submitAlumni(alumniData) {
         // limpar inputs
         document.querySelector("#formAlumni").reset();
         // atualizar tabela
-        renderTableAlumni(Alumni.getAlumnis());
+        renderTableAlumni(Alumni.getAlumnis(), currentPage);
 
     } catch (error) {
         customToast(error.message);
@@ -173,14 +177,14 @@ function initCancelButton() {
 
 // Form submit para editar e adicionar testemunhos
 
-function renderTableAlumni(alumni = []) {
+function renderTableAlumni(alumni = [], page = 1) {
     
     const tabelaAlumni = document.querySelector("#tBodyTestemunhos");
     
     // Limpar tabela primeiro
     tabelaAlumni.innerHTML = "";
     
-    // Caso não encontre users ( filtro não encontra nenhum nome igual )
+    // Caso não encontre alumni ( filtro não encontra nenhum nome igual )
     if (alumni.length === 0) {
         tabelaAlumni.innerHTML = 
         `
@@ -191,7 +195,16 @@ function renderTableAlumni(alumni = []) {
         return;
     }
     
-    alumni.forEach(testemunho => {
+    // Descobrir numero de paginas necessarias
+    totalPages = Math.ceil(alumni.length / tableRows);
+    
+    const firstIndex = (page - 1) * tableRows;
+
+    const lastIndex = firstIndex + tableRows;
+
+    const toRender = alumni.slice(firstIndex, lastIndex);
+    
+    toRender.forEach(testemunho => {
      
         let alumniId = testemunho.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
         
@@ -231,18 +244,68 @@ function renderTableAlumni(alumni = []) {
 
     // Event listeners
     tableEvents();
+    updatePage();
 
 }
 
+// Controls das páginas
+function updatePage() {
+
+    const prevBtn = document.querySelector("#prevPageAlumni");
+    const nextBtn = document.querySelector("#nextPageAlumni");
+    const pageNumber = document.querySelector("#pageNumberAlumni");
+
+    pageNumber.textContent = `${currentPage} de ${totalPages}`;
+
+    if (currentPage === 1 && currentPage !== totalPages) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = false;
+        
+        nextBtn.style.backgroundColor = "var(--color-yellow)";
+        prevBtn.style.backgroundColor = "var(--color-black)";
+    }
+    if (currentPage === totalPages && currentPage !== 1) {
+        prevBtn.disabled = false;
+        nextBtn.disabled = true;
+
+        nextBtn.style.backgroundColor = "var(--color-black)";
+        prevBtn.style.backgroundColor = "var(--color-yellow)";
+    }
+    if (currentPage === 1 && totalPages === 1) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+
+        prevBtn.style.backgroundColor = "var(--color-black)";
+        nextBtn.style.backgroundColor = "var(--color-black)";
+    }
+
+}
+
+// Procurar alumni pelo nome automatico
+const filterInputAlumni = document.querySelector("#procuraTestemunhos");
 function filterByName() {
-    // Procurar alumni pelo nome automatico
-    const filterInputAlumni = document.querySelector("#procuraTestemunhos");
 
     filterInputAlumni.addEventListener("input", () => {
-        renderTableAlumni(Alumni.getAlumnis(filterInputAlumni.value));
+        renderTableAlumni(Alumni.getAlumnis(filterInputAlumni.value), currentPage);
     })
 
 }
+
+document.querySelector("#prevPageAlumni").addEventListener("click", () => {
+    if (currentPage > 1) {
+        currentPage = currentPage - 1;
+
+        renderTableAlumni(Alumni.getAlumnis(filterInputAlumni.value), currentPage);
+    }
+})
+
+document.querySelector("#nextPageAlumni").addEventListener("click", () => {
+    if (currentPage < totalPages) {
+        currentPage = currentPage + 1;
+
+        renderTableAlumni(Alumni.getAlumnis(filterInputAlumni.value), currentPage);
+    }
+})
 
 function postAlumni(alumniName) {
 
@@ -279,7 +342,7 @@ function editState(alumniName, newState) {
         localStorage.setItem("alumnis", JSON.stringify(alumnis));
         
         // Atualizar tabela
-        renderTableAlumni(alumnis);
+        renderTableAlumni(alumnis, currentPage);
 
     }
     
@@ -357,7 +420,7 @@ function tableEvents() {
                 
                 Alumni.removerTestemunho(button.id);
 
-                renderTableAlumni(Alumni.getAlumnis());
+                renderTableAlumni(Alumni.getAlumnis(), currentPage);
                 
                 customToast("Testemunho removido com sucesso!");
 
@@ -440,7 +503,7 @@ function tableHeaders() {
         
             header.addEventListener("click", () => {
                 isSorted = !isSorted;
-                console.log(isSorted);
+                
                 sortTable(headerIndex, isSorted);
             })
         }
@@ -453,8 +516,6 @@ function sortTable(colIndex, isSorted) {
 
     let alumnis = Alumni.getAlumnis();
 
-    console.log(alumnis);
-
     if ( original === null) {
         // Criar uma cópia dos alumnis antes de organizar
         original = alumnis.slice();
@@ -462,7 +523,7 @@ function sortTable(colIndex, isSorted) {
 
     // Voltar à ordem original
     if (!isSorted) {
-        renderTableAlumni(original);
+        renderTableAlumni(original, currentPage);
         return;
     }
 
@@ -541,7 +602,7 @@ function sortTable(colIndex, isSorted) {
 
    })
 
-   renderTableAlumni(alumnis);
+   renderTableAlumni(alumnis, currentPage);
 
 }
 
@@ -550,7 +611,7 @@ function sortTable(colIndex, isSorted) {
 // // INICIAR
 Alumni.init();
 
-renderTableAlumni(Alumni.getAlumnis());
+renderTableAlumni(Alumni.getAlumnis(), currentPage);
 
 submitForm();
 
