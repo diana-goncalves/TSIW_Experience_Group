@@ -1,6 +1,11 @@
 import * as User from "../../models/UserModel.js"
 
-function renderTableUsers(users = []) {
+// Variaveis que gerem páginas das tabelas
+const tableRows = 5;
+let currentPage = 1;
+let totalPages = 1;
+
+function renderTableUsers(users = [], page = 1) {
     
     const tabelaUsers = document.querySelector("#table-Users");
     
@@ -17,8 +22,18 @@ function renderTableUsers(users = []) {
         `
         return;
     }
+
+    // Descobrir numero de paginas necessarias
+    totalPages = Math.ceil(users.length / tableRows);
     
-    users.forEach(user => {
+    const firstIndex = (page - 1) * tableRows;
+
+    const lastIndex = firstIndex + tableRows;
+
+    const toRender = users.slice(firstIndex, lastIndex);
+
+    
+    toRender.forEach(user => {
         
         let gender = null;
 
@@ -64,22 +79,60 @@ function renderTableUsers(users = []) {
         button.addEventListener("click", () => {
             if(confirm("Queres mesmo remover o utilizador?")) {
                 User.removeUser(button.id);
-                renderTableUsers(User.getUsers());
+                renderTableUsers(User.getUsers(),currentPage);
             }
         })
     }
 
     tableHeaders();
+    updatePage();
 
 }
+
+// Controls das páginas
+function updatePage() {
+    const prevBtn = document.querySelector("#prevPage");
+    const nextBtn = document.querySelector("#nextPage");
+    const pageNumber = document.querySelector("#pageNumber");
+
+    if (currentPage === 1 && currentPage !== totalPages) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = false;
+    }
+    if (currentPage === totalPages && currentPage !== 1) {
+        prevBtn.disabled = false;
+        nextBtn.disabled = true;
+    }
+
+    pageNumber.textContent = `${currentPage} de ${totalPages}`;
+
+}
+
+document.querySelector("#prevPage").addEventListener("click", () => {
+    if (currentPage > 1) {
+        currentPage = currentPage - 1;
+
+        renderTableUsers(User.getUsers(filterInputUsers.value), currentPage);
+    }
+})
+
+document.querySelector("#nextPage").addEventListener("click", () => {
+    if (currentPage < totalPages) {
+        currentPage = currentPage + 1;
+
+        renderTableUsers(User.getUsers(filterInputUsers.value), currentPage);
+    }
+})
+
+
 
 // Procurar user pelo nome automatico
 const filterInputUsers = document.querySelector("#procuraUser");
 
 filterInputUsers.addEventListener("input", () => {
-    renderTableUsers(User.getUsers(filterInputUsers.value));
+    currentPage = 1;
+    renderTableUsers(User.getUsers(filterInputUsers.value),currentPage);
 })
-
 
 // Organizar colunas da tabela
 let headersEvents = false;
@@ -125,7 +178,7 @@ function sortTable(colIndex, isSorted) {
 
     // Voltar à ordem original
     if (!isSorted) {
-        renderTableUsers(original);
+        renderTableUsers(original, currentPage);
         return;
     }
 
@@ -191,10 +244,10 @@ function sortTable(colIndex, isSorted) {
 
    })
 
-   renderTableUsers(users);
+   renderTableUsers(users, currentPage);
 
 }
 
 
 // Iniciar
-renderTableUsers(User.getUsers());
+renderTableUsers(User.getUsers(), currentPage);
