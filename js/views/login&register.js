@@ -53,7 +53,7 @@ registerForm.addEventListener("submit", (event) => {
     const valorPasseRegister = document.querySelector("#InputPasswordRegister").value;
 
     User.add(valorNomeRegister, valorPasseRegister);
-    alert("Registado com sucesso")
+    customToast("Conta criada com sucesso, não te esqueças de fazer login!")
     MudarParaLogin();
 })
 
@@ -67,13 +67,54 @@ loginForm.addEventListener("submit", event => {
     try {
         
         User.login(valorNomeLogin,valorPasseLogin,lembrar)
-    
+        
+        customToast("Agora já podes entrar na nossa escape room!")
+
+        showModal();
+
+        // Caso não clique em nenhuma opção levar para o index
         setTimeout(() => {
             location.href = "../../index.html";
-        }, 500);
+        }, 5000);
     } 
      catch (error) {
-        alert("Não foi possivel iniciar sessão!")
+        customToast("Não foi possivel iniciar sessão!")
     }
     
 })
+
+function customToast(message) {
+    
+    document.querySelector("#loginToast").textContent = message;
+
+    var toast = new bootstrap.Toast(document.querySelector("#alertToast"));
+
+    toast.show();
+}
+
+function showModal() {
+    let modalBody = document.querySelector("#modalLoginBody");
+    let html = null;
+
+    html =
+    `
+        <div class="row custom-border" style="padding:2rem;">
+            <div class="row">
+                <h1>Agora que já tens conta tens duas opções</h1>
+                <span>Podes ir diretamente para à nossa Escape Room ou ir ao teu perfil para completares as tuas informações pessoais e ganhares uma recompensa.</span>
+            </div>
+            <div class="row">
+                <div class="col-12 d-flex justify-content-around align-items-center" style="height: 100px;">
+                    <a href="../../html/Escape Room/entrada.html" class="btnGuardar" id="modalLoginER" style="width:10rem;text-decoration:none;text-align:center;">Escape Room</a>
+                    <a href="../../html/account.html" class="btnGuardar" id="modalLoginPerfil" style="width:10rem;text-decoration:none;text-align:center;">Perfil</a>
+                </div>
+            </div>
+        </div>
+        
+    `
+    
+    modalBody.innerHTML = `${html}`
+
+    $("#loginModal").modal("show");
+
+}
