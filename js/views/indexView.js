@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
     gauge4.setMinValue();
     gauge4.animationSpeed = 100;
     gauge4.set(0);
+
 });
 
 
@@ -261,7 +262,8 @@ function renderAlumni(testemunho) {
     testemunhosContainer.innerHTML +=
     `
         <div class="card alumniContainer" id="${testemunho.name}" style="margin-bottom:2rem;">
-            <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
+            <img class="img-fluid card-img-top imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
+            <span class="img-fluid" id="hiddenText">${testemunho.msgAlumni}</span>
             <div class="card-body alumniDescription">
                 <p class="alumniJob">${testemunho.occupation}</p>
                 <p class="alumniCompany">na ${testemunho.company}</p>
@@ -409,3 +411,39 @@ renderEvents();
 initAlumni();
 renderTestemunhos();
 seeMoreClick();
+
+
+// Animations
+
+document.addEventListener("DOMContentLoaded", function() {
+    // O observer faz com que o código só seja executado quando o container está todo dentro da vh;
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                const container = entry.target;
+                const img = container.querySelector(".imageAlumni");
+                const text = container.querySelector("#hiddenText");
+
+                img.style.opacity = 0;
+                text.style.display = "block";
+
+                
+            } else { 
+                // Este else volta a colocar a imagem quando o container sai do vh;
+                const container = entry.target;
+                const img = container.querySelector(".imageAlumni");
+                const text = container.querySelector("#hiddenText");
+
+                img.style.opacity = 1;
+                text.style.display = "none";
+            }
+        })
+    }, {threshold: 1.0 })
+
+    document.querySelectorAll(".alumniContainer").forEach(container => {
+        observer.observe(container);
+    })
+
+})
+

@@ -139,6 +139,17 @@
   border: 0.3rem solid;
   border-image: var(--color-yellowToSolidGray-gradient);
   width: 100%;
+  transition: opacity 0.5s;
+}
+
+#hiddenText {
+    /* display: none; */
+    position: absolute;
+    padding: 1rem;
+    text-decoration: wavy;
+    text-align: center;
+    font-size: 13px;
+    font-style: italic;
 }
 #modalAlumniContent {
   border: 0.15rem solid;
@@ -150,6 +161,7 @@
 }
 #msgModalAlumni {
   line-height: 150%;
+  font-style: italic;
 }
 /* lista de prémios */
 #awardsModalAlumni {
@@ -185,6 +197,7 @@
   color: var(--color-yellow);
   margin-top: 5px;
 }
+
 /* Alumni section */
 
 /* //////////// MEDIA QUERIES /////////// */
