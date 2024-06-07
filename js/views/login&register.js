@@ -100,7 +100,7 @@ function showModal() {
     `
         <div class="row custom-border" style="padding:2rem;">
             <div class="row">
-                <h1>Agora que já tens conta tens duas opções</h1>
+                <h1>Agora que já iniciaste sessão...</h1>
                 <span>Podes ir diretamente para à nossa Escape Room ou ir ao teu perfil para completares as tuas informações pessoais e ganhares uma recompensa.</span>
             </div>
             <div class="row">

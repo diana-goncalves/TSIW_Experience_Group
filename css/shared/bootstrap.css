@@ -1,96 +1,10 @@
 /* //////////// HOME /////////// */
-/* Cartão */
-.event-card {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  margin-top: 8rem;
-  border: 0.3rem solid;
-  border-image: var(--color-yellowToSolidGray-gradient);
-  box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(20px);
-  background-color: transparent;
-  height: 270px;
-}
-
-#eventContainer {
-  background-color: var(--color-dark-gray);
-  padding: 0;
-}
-
-#eventInterior {
-  padding-left: 1.5rem;
-  max-height: fit-content;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Titulo do cartão */
-.event-title {
-  color: var(--color-white);
-  text-decoration: underline;
-  font-weight: 700;
-  font-size: 2rem;
-  display: -webkit-box;
-  -webkit-box-orient: vertical; /* Necessário para adicionar ellipsis ao texto */
-  -webkit-line-clamp: 1; /* Limite de linhas do titulo */
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/*  Texto do cartão  */
-.event-description {
-  color: var(--color-white);
-  margin-top: 2rem;
-  font-weight: 500;
-  font-size: 1rem;
-  display: -webkit-box; /* Necessário para adicionar ellipsis ao texto */
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Limite de linhas do texto */
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* + icon, anchor para site do evento */
-.event-link {
-  display: flex;
-  align-items: center;
-  color: var(--color-yellow);
-  font-weight: 300;
-  font-size: 2rem;
-  text-decoration: none;
-  height: 1.3rem;
-  line-height: 1;
-  margin-right: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-#projectsHeader .link {
-  position: relative;
-  color: var(--color-yellow);
-  font-weight: 300;
-  font-size: 1.5rem;
-  text-decoration: none;
-  top: 0.25rem;
-}
-
-#projectsContainer .link {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  color: var(--color-yellow);
-  font-weight: 300;
-  font-size: 2rem;
-  text-decoration: none;
-  height: 1.3rem;
-  width: 1.3rem;
-  line-height: 1;
-}
-
 /* div do carrossel */
 #carousel {
   margin: 2rem;
   max-width: 31.25rem;
-  position: relative;  /* Posiciona o carrossel sobre o fundo */
-  z-index: 1;  /* Garante que o carrossel esteja acima do fundo */
+  position: relative; /* Posiciona o carrossel sobre o fundo */
+  z-index: 1; /* Garante que o carrossel esteja acima do fundo */
 }
 
 /* elementos do carrossel (neste caso é o cartão)*/
@@ -107,7 +21,10 @@
   width: inherit;
   margin: 0;
 }
-
+.carousel-indicators button:active,
+.carousel-indicators button:focus {
+  box-shadow: none !important;
+}
 /* mudar a cor do traço (indicador) ativo */
 .carousel-indicators .active {
   background-color: var(--color-yellow);
@@ -125,7 +42,6 @@
   border-image: var(--color-yellowToSolidGray-gradient);
   box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
 }
-
 .card {
   border-color: var(--color-light-gray);
   background-color: var(--color-dark-gray);
@@ -135,42 +51,16 @@
   border-radius: 0;
   color: var(--color-white);
 }
-
 #menuDesktop {
   height: 100% !important;
 }
-
 .dges-link {
   color: white !important;
   font-weight: bold;
 }
+/* Cards do Catálogo do Curso */
 
-/* Gauge */
-.gauge-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: auto;
-}
-
-.gauge-percentage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.2em;
-  font-weight: bold;
-  color: white;
-}
-
-.gauge-container canvas {
-  transition: transform 0.2s ease-in-out;
-}
-
-.gauge-container canvas:hover {
-  transform: scale(1.1);
-}
-
+/* //////////// INPUTS ADMIN E LOGIN /////////// */
 /* Mudar cor da sombra e borda dos inputs quando estão selecionados */
 input:focus {
   border-color: var(--color-light-yellow) !important;
@@ -180,17 +70,15 @@ input:focus {
 button:focus {
   box-shadow: 0 0 5px var(--color-black) !important;
 }
-.carousel-indicators button:active, .carousel-indicators button:focus {
-  box-shadow: none !important;
-}
 
 /* //////////// NAVBAR /////////// */
-.navbar{
+.navbar {
   max-height: 60px;
   background-color: #333533;
   border-bottom: 1px solid var(--color-white);
 }
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
   text-decoration: underline;
   text-decoration-color: var(--color-light-yellow);
   text-decoration-thickness: 3px;
@@ -205,7 +93,8 @@ button:focus {
   color: var(--color-white);
   height: 4rem;
 }
-.logoutButton:hover, .logoutButton:focus {
+.logoutButton:hover,
+.logoutButton:focus {
   background: red;
   border-left: 0.25rem solid var(--color-white);
 }
@@ -214,7 +103,8 @@ button:focus {
   padding: 8px;
   height: auto;
 }
-#logoutIndex:hover, #logoutIndex:focus {
+#logoutIndex:hover,
+#logoutIndex:focus {
   background: none;
   border-left: 0;
   border: 0;
@@ -224,7 +114,7 @@ button:focus {
 .title {
   font-size: 3rem;
   font-weight: bold;
-  color: #FFD700;
+  color: #ffd700;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.7);
   text-align: center;
   margin-bottom: 1.5rem;
@@ -300,86 +190,6 @@ button:focus {
   color: var(--color-white);
 }
 
-/* Alumni section */
-
-#testemunhosContainer {
-  display: flex;
-  justify-content: space-between;
-}
-.alumniContainer {
-  text-align: start;
-  border: 0;
-  padding: 0;
-  max-width: 250px;
-  box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,100%, 0.075), 0 0 10px rgba(0, 0, 0, 0.5);
-  /* box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  100%, 0.075),
-  0 0 0 1px hsla(55, 93%, 40%, 0.05),
-  0 0.3px 0.4px hsla(58, 97%, 47%, 0.02),
-  0 0.9px 1.5px hsla(52, 92%, 43%, 0.045),
-  0 3.5px 6px hsla(51, 95%, 16%, 0.09);       */
-  border-radius: 0 0 5px 5px;
-}
-.alumniDescription {
-  margin-top: 2rem;
-  padding: 1rem;
-  padding-top: 0;
-  overflow: hidden;
-}
-.alumniDescription p {
-  margin: 0 !important;
-}
-.imageAlumni {
-  border: 0.3rem solid;
-  border-image: var(--color-yellowToSolidGray-gradient);
-  width: 100%;
-}
-#modalAlumniContent {
-  border: 0.15rem solid;
-  border-image: var(--color-yellowToSolidGray-gradient);
-  box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
-}
-#modalIndexBody {
-  margin: 2rem;
-}
-#msgModalAlumni {
-  line-height: 150%;
-}
-/* lista de prémios */
-#awardsModalAlumni {
-  position: absolute;
-  margin: 0;
-  width: 100%;
-  bottom: 0;
-  left: calc(100% - 16rem);
-  max-width: 260px;
-}
-/* medalha + texto prémio */
-.awardsItem {
-  display: flex;
-  align-items: start;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-}
-/* medalhas */
-.awardsItem > svg {
-  margin-top: 0.4rem;
-  margin-right: 0.5rem;
-}
-#alumniModal .card {
-  margin-right: 0;
-}
-#seeLessAlumni {
-  position: absolute;
-  bottom: 0;
-  left: calc(100% - 2rem);
-}
-#linkedinIcon {
-  position: relative;
-  color: var(--color-yellow);
-  margin-top: 5px;
-}
-/* Alumni section */
-
 /* //////////// MEDIA QUERIES /////////// */
 /* TABLETS */
 
@@ -388,16 +198,6 @@ button:focus {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
-  .event-card {
-    height: 132.5px;
-  }
-  .event-description {
-    color: var(--color-white);
-    margin-top: 0.5rem;
-    font-weight: 500;
-    font-size: 1rem;
-  }
-
   .custom-footer .text-center {
     position: absolute;
     top: -60px; /* Ajusta a posição da seta  do footer */
@@ -407,37 +207,9 @@ button:focus {
   .card {
     margin-right: 0;
   }
-
-   /* Alumni */
-
-   #testemunhosContainer {
-    justify-content: center;
-  }
-   #msgModalAlumni {
-    line-height: normal;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  /* lista de prémios */
-  #awardsModalAlumni {
-    position: static;
-    right: 0;
-    top: 0;
-
-  }
-  .alumniContainer {
-    margin-right: 2rem;
-  }
-
-  /* Alumni */
-
 }
 
-
-
 /* MOBILE */
-
 @media only screen and (max-width: 1023px) {
   .custom-footer .text-center {
     position: absolute;
@@ -445,6 +217,4 @@ button:focus {
     left: 50%;
     transform: translateX(-50%);
   }
-
-
 }
