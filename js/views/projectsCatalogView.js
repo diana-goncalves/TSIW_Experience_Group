@@ -36,7 +36,7 @@ function renderProject(projectData) {
         `
             <div class="col-md-4 projetos" id="${projectId}" style="height: 750px; padding-bottom: 32px;">
                 
-                <div class="card custom-border" style="height: 750px">
+                <div class="card custom-border" style="height: 750px;box-shadow: var(--custom-shadow);">
                     
                     <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" loading="lazy" class="card-img-top" style="height: 500px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
                     
@@ -52,14 +52,13 @@ function renderProject(projectData) {
         `
     }
     
-    
     // Eventos
     if (projectData.date) {
         document.querySelector("#myCatalogRow").innerHTML += 
         `
             <div class="col-md-4 eventos" id="${projectId}" style="height: 750px; padding-bottom: 32px;">
                 
-                <div class="card custom-border" style="height: 750px">
+                <div class="card custom-border" style="height: 750px;">
                     
                     <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" loading="lazy" class="card-img-top" style="height: 500px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
                     
@@ -201,4 +200,31 @@ window.addEventListener("storage", event => {
         location.reload();
     }
 })
+
+// Lazy load
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    function onIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {            
+
+                var card = entry.target;
+                card.style.opacity = 1;
+
+                // Prevenir iniciar duas vezes
+                observer.unobserve(entry.target);
+
+            }
+                
+        })
+    }
+
+    var observer = new IntersectionObserver(onIntersection, {threshold: 0.5});
+
+    document.querySelectorAll(".card").forEach(card => {
+        observer.observe(card);
+    })
+
+});
 

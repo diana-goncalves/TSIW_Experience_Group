@@ -14,7 +14,7 @@
     /* margin-top: auto;   Distância entre navbar e o resto do site */
     margin-left: 1px;   /* 1px para ver a borda do botão */
 }
-.row {
+#adminBody .row {
     background-color: var(--color-dark-gray);
     padding-left: 0;
 }

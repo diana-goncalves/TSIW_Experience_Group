@@ -135,22 +135,22 @@
 .alumniDescription p {
   margin: 0 !important;
 }
+/* Trocar imagem por mensagem alumni */
 .imageAlumni {
   border: 0.3rem solid;
   border-image: var(--color-yellowToSolidGray-gradient);
   width: 100%;
-  transition: opacity 0.5s;
+  transition: opacity 1s ease-in-out; 
 }
-
 #hiddenText {
-    /* display: none; */
-    position: absolute;
-    padding: 1rem;
-    text-decoration: wavy;
-    text-align: center;
-    font-size: 13px;
-    font-style: italic;
+  position: absolute;
+  padding: 1rem;
+  text-decoration: wavy;
+  text-align: center;
+  font-size: 13px;
+  font-style: italic;
 }
+/* Trocar imagem por mensagem alumni */
 #modalAlumniContent {
   border: 0.15rem solid;
   border-image: var(--color-yellowToSolidGray-gradient);

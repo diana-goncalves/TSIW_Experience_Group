@@ -369,12 +369,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (entry.isIntersecting) {
                 const container = entry.target;
-                const img = container.querySelector(".imageAlumni");
-                const text = container.querySelector("#hiddenText");
+                
+                setTimeout(() => {
+                    const img = container.querySelector(".imageAlumni");
+                    const text = container.querySelector("#hiddenText");
 
-                img.style.opacity = 0;
-                text.style.display = "block";
-
+                    img.style.opacity = 0;
+                    text.style.display = "block";
+                }, 1000);
                 
             } else { 
                 // Este else volta a colocar a imagem quando o container sai do vh;
@@ -451,7 +453,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    var observer = new IntersectionObserver(onIntersection, {threshold: 0.5});
+    var observer = new IntersectionObserver(onIntersection, {threshold: 1});
 
     document.querySelectorAll(".gauge").forEach(gauge => {
         observer.observe(gauge);

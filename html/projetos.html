@@ -54,59 +54,54 @@
             <!-- container principal -->
         <div class="container-fluid">
           <!--  jumbotron  qu neste exemplo contém titulos, formulário e cards -->
-          <div class="jumbotron jumbotron-fluid">
+          <div class="jumbotron jumbotron-fluid" id="jumbotronProjects">
             <div class="container-fluid">
               <h1 class="display-3">Projetos e eventos</h1>
               <p class="lead">Aqui vais encontrar todos os eventos e alguns dos projetos feitos pelos alunos de TSIW.</p>
-              <hr class="my-2 custom_hr" />
-              <!-- catálogo - formulário -->
-              <form class="form-inline">
-                <div class="row g-3">
-                  <div class="col-sm-5 pl-0">
-                    
-                    <div class="form-floating text-truncate" id="projectNameInput">
-                                
-                      <input
-                          type="text"
-                          class="form-control"
-                          name="projectName"
-                          id="txtProject"
-                          placeholder=""
-                      />
-
-                      <label for="txtProject">Nome do projeto/evento</label>
-
-                    </div>
-          
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                      <select class="form-control" id="sltType">
-                        <option value="todos">Projetos ou Eventos</option>
-                        <option value="projetos">Projetos</option>
-                        <option value="eventos">Eventos</option>
-                      </select>
-                    </div>
-                  </div>
-                  
-                  <!-- <div class="col-sm-4">
-                     <button id="btnFilter" type="button" class="btn btn-primary button_color btnFiltro">
-                      <i class="fa-sharp fa-solid fa-filter"></i> Filtrar
-                    </button>
-                    <button id="btnSort" type="button" class="btn btn-primary button_color btnOrder">
-                      <i class="fa-solid fa-sort"></i>
-                    </button> 
-                  </div> -->
-                  
-                </div>
-
-              </form>
-
-              <hr class="my-2 custom_hr" />
-              
             </div>
           </div>
           <!-- Junbotron -->
+
+          <!-- <hr class="my-2 custom_hr" /> -->
+
+          <!-- catálogo - formulário -->
+          <form class="form-inline">
+            <div class="row g-3 d-flex align-items-center" id="projectsButtonsContainer">
+              <div class="col-md-5 pl-0">
+   
+                  <input
+                      type="text"
+                      name="projectName"
+                      id="txtProject"
+                      placeholder="Nome do projeto..."
+                  />
+
+              </div>
+              
+              <div class="col-md-3">
+                
+                  <select id="sltType">
+                    <option value="todos">Projetos ou Eventos</option>
+                    <option value="projetos">Projetos</option>
+                    <option value="eventos">Eventos</option>
+                  </select>
+           
+              </div>
+              
+              <!-- <div class="col-sm-4">
+                 <button id="btnFilter" type="button" class="btn btn-primary button_color btnFiltro">
+                  <i class="fa-sharp fa-solid fa-filter"></i> Filtrar
+                </button>
+                <button id="btnSort" type="button" class="btn btn-primary button_color btnOrder">
+                  <i class="fa-solid fa-sort"></i>
+                </button> 
+              </div> -->
+              
+            </div>
+
+          </form>
+
+          <!-- <hr class="my-2 custom_hr" /> -->
 
           <!-- CATÁLOGO: EXIBIÇÃO DOS PROJETOS (VAZIO INICIALMENTE) -->
           
