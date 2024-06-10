@@ -3,6 +3,10 @@ import * as User from "../models/UserModel.js"
 let estadoUser = User.getUserLogged();
 let username = estadoUser.username;
 
+if (estadoUser.username === "admin") {
+    location.href = "../../html/admin.html";
+}
+
 if(estadoUser) {
     
     // Mudar username

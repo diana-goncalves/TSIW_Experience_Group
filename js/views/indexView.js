@@ -210,7 +210,7 @@ function renderAlumni(testemunho) {
     `
         <div class="card alumniContainer" id="${testemunho.name}" style="margin-bottom:2rem;">
             <img class="img-fluid card-img-top imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
-            <span class="img-fluid" id="hiddenText">${testemunho.msgAlumni}</span>
+            <span id="hiddenText">${testemunho.msgAlumni}</span>
             <div class="card-body alumniDescription">
                 <p class="alumniJob">${testemunho.occupation}</p>
                 <p class="alumniCompany">na ${testemunho.company}</p>
@@ -420,10 +420,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function initGauge(id, value) {
         var target = document.getElementById(id);
         var gauge = new Donut(target).setOptions(opts);
-        gauge.maxValue = 100;
-        gauge.setMinValue(0);
-        gauge.animationSpeed = 500;
-        gauge.set(value);
+        
+        if (value == 0) {
+            gauge.maxValue = 0;   
+        } else {
+            gauge.maxValue = 100;
+            gauge.setMinValue(0);
+            gauge.animationSpeed = 500;
+            gauge.set(value);
+        }
+        
     }
 
     function onIntersection(entries, observer) {

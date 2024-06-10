@@ -3,7 +3,7 @@ import * as User from "../models/UserModel.js";
 // script para o botão remember me
 let lembrar = false;
 
- document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const rememberMeButton = document.querySelector('#lembrarBTN')
     const customCheckbox = document.getElementById('checkbox')
 
@@ -73,9 +73,9 @@ loginForm.addEventListener("submit", event => {
         showModal();
 
         // Caso não clique em nenhuma opção levar para o index
-        setTimeout(() => {
-            location.href = "../../index.html";
-        }, 5000);
+        // setTimeout(() => {
+        //     location.href = "../../index.html";
+        // }, 5000);
     } 
      catch (error) {
         customToast("Não foi possivel iniciar sessão!")
@@ -98,7 +98,7 @@ function showModal() {
 
     html =
     `
-        <div class="row custom-border" style="padding:2rem;">
+        <div class="row custom-border m-0" style="padding:2rem;">
             <div class="row">
                 <h1>Agora que já iniciaste sessão...</h1>
                 <span>Podes ir diretamente para à nossa Escape Room ou ir ao teu perfil para completares as tuas informações pessoais e ganhares uma recompensa.</span>

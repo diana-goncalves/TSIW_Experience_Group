@@ -11,7 +11,32 @@
 .carousel-item {
   padding: 0;
 }
-
+/* Classe dos botões */
+.btnGuardar {
+  width: 7.625rem;
+  height: 2.4375rem;
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-yellow);
+  color: var(--color-dark-gray);
+  border: 0;
+  border-radius: 0;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 500ms;
+}
+.btnGuardar:hover, .btnGuardar:focus {
+  border: 0;
+  color: var(--color-yellow);
+  background-color: var(--color-black);
+  transform: translateY(-.5rem);
+}
+/* Classe dos botões */
 /* traços que controlam carrossel */
 .carousel-indicators {
   position: absolute;
@@ -58,6 +83,9 @@
 .dges-link {
   color: white !important;
   font-weight: bold;
+}
+.modal-content {
+  display: block;
 }
 /* Cards do Catálogo do Curso */
 
