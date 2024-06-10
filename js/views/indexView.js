@@ -1,12 +1,23 @@
 import { init as initProjetos, filtrarProjetosPorEstado } from "../models/ProjectModel.js";
 import { init as initEventos, filtrarEventoPorEstado} from "../models/EventModel.js";
 import { init as initAlumni, filtrarTestemunhoPorEstado, getTestemunhoByName } from "../models/AlumniModel.js";
+import { isLogged, getUserLogged } from "../models/UserModel.js";
 
 // Scrollspy bootstrap
 document.addEventListener('DOMContentLoaded', function () {
     var scrollSpy = new bootstrap.ScrollSpy(document.body, {
         target: '#navbarNav',
         offset: 100  // Ajustar este valor conforme a altura da navbar
+    });
+
+    // Event listener for the start experience button
+    const startExperienceButton = document.querySelector('#startExperienceButton');
+    startExperienceButton.addEventListener('click', function () {
+        if (isLogged()) {
+            window.location.href = "./html/Escape Room/entrada.html";
+        } else {
+            $('#loginPromptModal').modal('show');
+        }
     });
 
 })
@@ -369,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (entry.isIntersecting) {
                 const container = entry.target;
-                
+
                 setTimeout(() => {
                     const img = container.querySelector(".imageAlumni");
                     const text = container.querySelector("#hiddenText");
@@ -377,8 +388,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     img.style.opacity = 0;
                     text.style.display = "block";
                 }, 1000);
-                
-            } else { 
+
+            } else {
                 // Este else volta a colocar a imagem quando o container sai do vh;
                 const container = entry.target;
                 const img = container.querySelector(".imageAlumni");
@@ -420,23 +431,23 @@ document.addEventListener('DOMContentLoaded', function () {
     function initGauge(id, value) {
         var target = document.getElementById(id);
         var gauge = new Donut(target).setOptions(opts);
-        
+
         if (value == 0) {
-            gauge.maxValue = 0;   
+            gauge.maxValue = 0;
         } else {
             gauge.maxValue = 100;
             gauge.setMinValue(0);
             gauge.animationSpeed = 500;
             gauge.set(value);
         }
-        
+
     }
 
     function onIntersection(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 var gaugeId = entry.target.id;
-            
+
 
                 switch (gaugeId) {
                     case ('gauge1'):
@@ -455,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Prevenir iniciar duas vezes
                 observer.unobserve(entry.target);
             }
-                
+
         })
     }
 
@@ -466,4 +477,3 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 });
-

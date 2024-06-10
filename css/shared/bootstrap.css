@@ -63,7 +63,7 @@
 /* //////////// ABOUT /////////// */
 /* Cards do Catálogo do Curso */
 .custom-border {
-  border: 0.3rem solid; 
+  border: 0.3rem solid;
   border-image: var(--color-yellowToSolidGray-gradient);
   box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
 }
@@ -183,6 +183,55 @@ button:focus {
   margin: 0 auto;
   min-height: 600px;
 }
+
+/* Estilos para o modal personalizado */
+.custom-modal .modal-content {
+  border: 0.3rem solid;
+  border-image: var(--color-yellowToSolidGray-gradient);
+  box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+}
+
+.custom-modal .modal-header {
+  border-bottom: 0;
+}
+
+.custom-modal .modal-title {
+  color: var(--color-yellow);
+  font-weight: bold;
+}
+
+.custom-modal .btn-close {
+  color: var(--color-white);
+}
+
+.custom-modal .modal-footer {
+  border-top: 0;
+}
+
+.custom-modal .btn {
+  background-color: var(--color-yellow);
+  color: var(--color-dark-gray);
+  border: none;
+  box-shadow: 0rem 0.3rem 1.5rem -0.063rem rgba(0, 0, 0, 0.2);
+}
+
+.custom-modal .btn:hover {
+  background-color: var(--color-light-yellow);
+  color: var(--color-dark-gray);
+}
+
+.custom-modal .btn-secondary {
+  background-color: var(--color-gray);
+  color: var(--color-dark-gray);
+}
+
+.custom-modal .btn-secondary:hover {
+  background-color: var(--color-light-gray);
+  color: var(--color-dark-gray);
+}
+
 
 /* //////////// FOOTER /////////// */
 .custom-footer {

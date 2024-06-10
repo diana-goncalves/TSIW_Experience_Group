@@ -129,7 +129,8 @@
         <section id="projects" class="py-5">
             <div class="container">
                 <h2 class="text-start mt-5 mb-2">Projetos</h2>
-                <p class="text-start mb-5" id="projectsHeader">Explora alguns dos projetos feitos pelos estudantes do nosso curso</p>
+                <p class="text-start mb-5" id="projectsHeader">Explora alguns dos projetos feitos pelos estudantes do
+                    nosso curso</p>
                 <div class="row" id="projectsContainer">
 
                 </div>
@@ -188,7 +189,8 @@
                                     <li>Programação Orientada a Objetos</li>
                                     <li>Projeto I</li>
                                 </ul>
-                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#catalogModal" id="seeMoreFirstYear">+</button>
+                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal"
+                                    data-target="#catalogModal" id="seeMoreFirstYear">+</button>
                             </div>
                         </div>
                     </div>
@@ -210,7 +212,8 @@
                                     <li>Testes e Performance Web</li>
                                     <li>Cadeira Opcional</li>
                                 </ul>
-                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#catalogModal" id="seeMoreSecondYear">+</button>
+                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal"
+                                    data-target="#catalogModal" id="seeMoreSecondYear">+</button>
                             </div>
                         </div>
                     </div>
@@ -230,7 +233,8 @@
                                     <li>Projeto Final/Estágio</li>
                                     <li>Usabilidade e User Experience</li><br>
                                 </ul>
-                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal" data-target="#catalogModal" id="seeMoreThirdYear">+</button>
+                                <button type="button" class="btn text-warning fs-1 float-end" data-toggle="modal"
+                                    data-target="#catalogModal" id="seeMoreThirdYear">+</button>
                             </div>
                         </div>
                     </div>
@@ -342,6 +346,7 @@
         </section>
 
 
+
         <!-- Escape Room section -->
         <section id="escapeRoom" class="py-5">
             <div class="container">
@@ -352,11 +357,30 @@
                 <div class="container escape-container">
                     <div class="title">TSIW EXPERIENCE</div>
                     <div class="subtitle">ESCAPE ROOM</div>
-                    <a href="./html/Escape Room/entrada.html"><button class="btn btn-custom">START
-                            EXPERIENCE</button></a>
+                    <button class="btn btn-custom" id="startExperienceButton">START EXPERIENCE</button>
                 </div>
             </div>
         </section>
+
+        <!-- Modal para login primeiro no escape room -->
+        <div class="modal fade custom-modal" id="loginPromptModal" tabindex="-1" aria-labelledby="loginPromptModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginPromptModalLabel">Inicia sessão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Inicia sessão primeiro para iniciares a tua experiência.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <a href="./html/login.html" class="btn btn-primary">Iniciar sessão</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Account section -->
         <section id="account">
