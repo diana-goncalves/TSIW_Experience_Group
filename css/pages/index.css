@@ -120,6 +120,13 @@
   display: flex;
   justify-content: space-between;
 }
+/* Retirar margem do cartão dentro do modal */
+#modalCardContainer {
+  padding-right: 0;
+}
+#indexModal .alumniContainer{
+  margin-right: 0;
+}
 .alumniContainer {
   text-align: start;
   border: 0;
@@ -166,6 +173,7 @@
 #msgModalAlumni {
   line-height: 150%;
   font-style: italic;
+  word-break: break-word;
 }
 /* lista de prémios */
 #awardsModalAlumni {

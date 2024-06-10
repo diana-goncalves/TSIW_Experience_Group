@@ -263,7 +263,7 @@ function showModal(objeto, tipo, ano) {
             html =
             `
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-3" id="modalCardContainer">
                     <div class="card alumniContainer" id="${testemunho.name}">
                         <img class="img-fluid imageAlumni" alt="Foto de ${testemunho.name}" src="${testemunho.photo}">
                         <div class="card-body alumniDescription">

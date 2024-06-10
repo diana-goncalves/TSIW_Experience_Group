@@ -237,6 +237,7 @@ button:focus {
 .custom-footer {
   background-color: var(--color-black);
   min-height: 300px;
+  border-top: 1px solid var(--color-white);
 }
 
 .custom-footer .container {
@@ -257,6 +258,14 @@ button:focus {
 
 #logoPPorto {
   max-height: 40px;
+}
+.circle {
+  display: inline-block;
+  background-color: var(--color-black);
+  border-radius: 50%;
+  text-align: center;
+  padding: 0.7rem;
+  line-height: 1;
 }
 
 /* Toast message */
