@@ -373,6 +373,7 @@ seeMoreClick();
 
 // Animations
 
+// Mudar imagem para mensagem do alumni
 document.addEventListener("DOMContentLoaded", function() {
     // O observer faz com que o código só seja executado quando o container está todo dentro da vh;
     const observer = new IntersectionObserver(entries => {
@@ -387,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     img.style.opacity = 0;
                     text.style.display = "block";
-                }, 1000);
+                }, 500);
 
             } else {
                 // Este else volta a colocar a imagem quando o container sai do vh;

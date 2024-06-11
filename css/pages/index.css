@@ -212,6 +212,13 @@
 
 /* Alumni section */
 
+/* Ajustar botão ver mais no catalogo do 3 ano */
+#seeMoreThirdYear {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 /* //////////// MEDIA QUERIES /////////// */
 /* TABLETS */
 
@@ -244,10 +251,13 @@
   .alumniContainer {
     margin-right: 2rem;
   }
+  
   /* Alumni */
 }
 
 /* MOBILE */
-@media only screen and (max-width: 1023px) {
-  
+@media only screen and (max-width: 516px) {
+  .alumniContainer {
+    margin-right: 0rem;
+  }
 }
