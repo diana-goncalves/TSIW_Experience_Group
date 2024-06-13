@@ -357,9 +357,20 @@
                 </p>
 
                 <div class="container escape-container">
+                    
+                    <svg id="tvStatic">
+                        <defs>
+                          <filter id="turbulence">
+                            <feTurbulence baseFrequency="0.568,0.681" numOctaves="5" seed="246" type="turbulence" />
+                          </filter>
+                        </defs>
+                        <rect height="100%" width="100%" filter="url(#turbulence)" />
+                    </svg> 
+
                     <div class="title">TSIW EXPERIENCE</div>
                     <div class="subtitle">ESCAPE ROOM</div>
                     <button class="btn btn-custom" id="startExperienceButton">START EXPERIENCE</button>
+
                 </div>
             </div>
         </section>

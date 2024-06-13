@@ -156,6 +156,10 @@ button:focus {
   margin-bottom: 2.5rem;
 }
 .btn-custom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
   background-color: var(--color-yellow);
   font-weight: bold;
   border: none;
@@ -176,12 +180,14 @@ button:focus {
 }
 .escape-container {
   background: var(--color-light-gray);
+  filter: opacity(99);
   border-radius: 10px;
   padding: 60px 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   max-width: 1140px;
   margin: 0 auto;
   min-height: 600px;
+  z-index: 1;
 }
 
 /* Estilos para o modal personalizado */

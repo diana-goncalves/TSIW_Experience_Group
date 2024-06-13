@@ -59,7 +59,7 @@ function renderProject(projectData) {
                 <div class="card-body">
                     <h5 class="card-title">${projectData.name} - ${projectData.author}</h5>
                     <p class="event-description">${projectData.msgProjects}
-                    ${projectData.link ? '<a href="${projectData.link}" class="link">+</a></p>' : ''}
+                    ${projectData.link ? `<a href="${projectData.link}" class="link" target="_blank">+</a></p>` : ''}
                 </div>
 
             </div>

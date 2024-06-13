@@ -161,7 +161,7 @@ function initdata() {
             {
                 name: "Design Tokens",
                 photo: "../media/projetos/Beatriz Rodrigues.jpg",
-                link: null,
+                link: "https://www.youtube.com/watch?v=hOpRyUDhx1k&list=PLzQP-1i75vgBcFCXmArvRuTyHX1aFazBk&index=21&ab_channel=EscolaSuperiordeMediaArteseDesign",
                 author: "Beatriz Lopes",
                 msgProjects: "Research on Design Tokens - Managing and Exporting",
                 state: "Publicado"
@@ -169,7 +169,7 @@ function initdata() {
             {
                 name: "CustoJusto Pro",
                 photo: "../media/projetos/Maria Lima.jpg",
-                link: null,
+                link: "https://youtu.be/MYfA2XtiCks?si=e07wxpr2Q6hDnKfy",
                 author: "Maria Lima",
                 msgProjects: "Revitalização do Front-end do CustoJusto",
                 state: "Publicado"
@@ -177,7 +177,7 @@ function initdata() {
             {
                 name: "Gestão de Portfólio de Projetos",
                 photo: "../media/projetos/BrunoRodrigues.jpg",
-                link: null,
+                link: "https://youtu.be/QgzTLxErSHg?si=QQ3GOBkbr-QndHop",
                 author: "Bruno Rodrigues",
                 msgProjects: "Portfólio de Projetos da plataforma SCRAIM",
                 state: "Publicado"
