@@ -315,4 +315,7 @@ button:focus {
     left: 50%;
     transform: translateX(-50%);
   }
+  #logoPPorto {
+    max-height: 20px;
+  }
 }
