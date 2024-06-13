@@ -58,13 +58,50 @@
     <section class="imgSala vh-100 w-100 mx-0">
         <img usemap="#salaMap" class="img-fluid img-responsive d-block vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala1.jpg" alt="Sala 202">
         <map name="salaMap">
-            <area id="sala202Computer" shape="rect" coords="170,597,388,768" alt="Computador" title="Computador" href="#" data-bs-toggle="modal" data-bs-target="#miniGame1" >
-            <area id="sala202Porta" shape="rect" coords="1494,408,1823,804" alt="Saida" title="Saida" href="hall_1.html">>
+            <area id="sala202Computer" shape="rect" coords="170,597,388,768" alt="Computador" title="Computador" href="#">
+            <area id="sala202Porta" shape="rect" coords="1494,408,1823,804" alt="Saida" title="Saida" href="hall_1.html">
         </map>
         <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala1-computador.png" alt="Computador" title="Computador">
         <img usemap="#salaMap" class="imgSaida img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala1-saida.png" alt="Saida" title="Saida">
     </section>
 
+    <!-- Modal MiniGame -->
+    <div class="modal fade"  id="intro1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Completa as Frases</h1>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">Vamos por os teus conhecimentos á prova!</h1>    
+                </div>
+                <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <p class="col text-white">Neste desafio, o jogador precisa demonstrar suas habilidades de conhecimento sobre algumas de tecnologias que são utilizadas neste curso e area.</p>
+                </div>
+                <div class="row mt-4 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <div class="col">
+                        <h5 class="text-white">Instruções:</h5>
+                        <ul class="text-white text-start d-inline-block">
+                            <li>Observe atentamente as opções</li>
+                            <li>Arrastar as opções para os espaços vazios da respetiva frase</li>
+                            <li>Quandto tiver tudo preenchido é so clicar no botão no canto inferior direito para avançar</li>
+                            <li>Ao clicar no botão, as erradas vão aparecer com o fundo vermelho e as certas com o fundo verde</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <p class="col text-capitalize text-white">Boa sorte e divirta-se!</p>
+                </div>
+                <div class="modal-footer border-black modal-background d-flex justify-content-center">
+                    <button type="button" class="buttonStart btn m-0 p-0" data-bs-toggle="modal" data-bs-target="#miniGame1">
+                        <span class="actual-text">&nbsp;Start Experience&nbsp;</span>
+                        <span aria-hidden="true" class="hover-text">&nbsp;Start Experience&nbsp;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Modal MiniGame -->
     <div class="modal fade"  id="miniGame1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
@@ -74,38 +111,13 @@
                     <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class=" modal-body">
-                    <div class="container-fluid text-center">
-                        <div class="row justify-content-around align-items-center mx-auto my-2 ">
-                            <div class="col-4 m-1 d-flex flex-wrap p-2 " id="options1" ondrop="dropSpan(event)" ondragover="allowDrop(event)">
-
-                            </div>
-                            <div class="col-6 mx-1 p-2" id="exercise1">
-
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row d-flex justify-content-around align-items-center mx-auto my-2">
-                            <div class="col-4 m-1 d-flex flex-wrap" id="options2" ondrop="dropSpan(event)" ondragover="allowDrop(event)">
-                                
-                            </div>
-                            <div class="col-6 mx-1" id="exercise2">
-                            
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row d-flex justify-content-around  align-items-center mx-auto my-2">
-                            <div class="col-4 m-1 d-flex flex-wrap" id="options3" ondrop="dropSpan(event)" ondragover="allowDrop(event)">
-                            
-                            </div>
-                            <div class="col-6 mx-1" id="exercise3">
-                            
-                            </div>
-                        </div>
+                    <div class="container-fluid text-center gameBoard">
+                        
                     </div>
                 </div>
                 <div class="modal-footer border-black modal-background d-flex justify-content-between">
-                    <div class="progress w-25 " role="progressbar" aria-label="Warning striped example" aria-valuenow="33.33" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 33.33%"></div>
+                    <div class="progress w-25" role="progressbar" aria-label="Warning striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 0%"></div>
                     </div>
                     <div class=" mx-1 p-1 align-items-center">
                         <!--Botao Continue-->
@@ -127,6 +139,45 @@
             </div>
         </div>
     </div>
+
+
+    <!--Modal PARA QUANDO COMPLETAR O JOGO-->
+    <div class="modal fade"  id="victoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">Vitoria!</h1>    
+                    </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Completaste todas as etapas com sucesso! ja podes seguir em frente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal PARA QUANDO O JOGO JA ESTÁ FEITO-->
+    <div class="modal fade"  id="gameDone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">JA GANHASTE ESTE JOGO!</h1>    
+                    </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Agora procura nas outras salas por mais jogos ou Items</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <!--History Lines-->
     <div class="toast-container position-fixed bottom-0 end-0 p-2"></div>
@@ -157,7 +208,7 @@
     <script type="module" src="../../js/views/inventoryView.js"></script>
     <script type="module" src="../../js/views/collectiblesView.js"></script>
     <script type="module" src="../../js/views/sala202View.js"></script>
-    <script src="../../js/views/MiniGame1View.js"></script>
+    <script type="module" src="../../js/views/MiniGame1View.js"></script>
     <script type="module" src="../../js/views/NavbarView.js"></script>
     <script type="module" src="../../js/views/GameStateView.js"></script>
 

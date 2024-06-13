@@ -58,7 +58,7 @@
     <section class="imgSala vh-100 w-100 mx-0">
         <img usemap="#salaMap" class="img-fluid img-responsive d-block vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala3.jpg" alt="Sala 206">
         <map name="salaMap">
-            <area id="sala206Computer" shape="rect" coords="1808,534,1655,657" alt="Computador" title="Computador" href="#" data-bs-toggle="modal" data-bs-target="#intro2" >
+            <area id="sala206Computer" shape="rect" coords="1808,534,1655,657" alt="Computador" title="Computador" href="#">
             <area id="sala206Porta" shape="rect" coords="176,417,497,741" alt="Saida" title="Saida" href="hall_2.html">>
         </map>
         <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top" src="../../media/img/ER-assets/Sala3-computador.png" alt="Computador" title="Computador">
@@ -106,16 +106,16 @@
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
-                    <div class="progress w-25 " role="progressbar" aria-label="Warning striped example" aria-valuenow="33.33" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 33.33%"></div>
+                    <div class="progress w-25 " role="progressbar" aria-label="Warning striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 0%"></div>
                     </div>
-                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class=" modal-body">
                     <div class="container-fluid text-center">
                         <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
                             <div class="col">
-                                <h1 class="col align-content-center d-flex justify-content-center title text-capitalize text-xxl-start">Bem-Vindo ao Escape Room Experience</h1>
+                                <h1 class="col align-content-center d-flex justify-content-center title text-capitalize text-xxl-start logoName"></h1>
                             </div>
                             <div class="col container-fluid text-center align-items-center">
                                 <div class="up ">
@@ -130,6 +130,44 @@
                             <br>
                             <br>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal PARA QUANDO COMPLETAR O JOGO-->
+    <div class="modal fade"  id="victoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">Vitoria!</h1>    
+                    </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Completaste todas as etapas com sucesso! ja podes seguir em frente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal PARA QUANDO O JOGO JA ESTÁ FEITO-->
+    <div class="modal fade"  id="gameDone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">JA GANHASTE ESTE JOGO!</h1>    
+                    </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Agora procura nas outras salas por mais jogos ou Items</p>
                     </div>
                 </div>
             </div>
@@ -167,7 +205,7 @@
     <script type="module" src="../../js/views/sala206View.js"></script>
     <script type="module" src="../../js/views/NavbarView.js"></script>
     <script type="module" src="../../js/views/GameStateView.js"></script>
-    <script src="../../js/views/MiniGame2View.js"></script>
+    <script type="module" src="../../js/views/MiniGame2View.js"></script>
 
 </body>
 </html>

@@ -55,6 +55,9 @@ function entradaView() {
     document.addEventListener("DOMContentLoaded", (e)=>{
         e.preventDefault();    
         ModalInicial.show();
+        if (sessionStorage.countdown) {
+            sessionStorage.removeItem("countdown")
+        }
         buttonStart.addEventListener("click",(e)=>{
             e.preventDefault();
             GameStateView("entrada");

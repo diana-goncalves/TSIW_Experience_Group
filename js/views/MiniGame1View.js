@@ -1,44 +1,74 @@
+import {init,addgamesCompleted,checkGameCompleted} from "../models/gameStateModel.js"
+
+
 let grabAndDrops = [
     {
         text: `Estudar <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> permite criar estruturas e estilos para páginas <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
-        choices: ['CSS', 'Web', 'HTML', 'JavaScript','Matematica'],
-        result: ['HTML','CSS','Web']
+        choices: ['CSS', 'web', 'HTML', 'JavaScript','matematica'],
+        result: ['HTML','CSS','web']
     },
     {
         text: `A Linguagem de programação <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é conhecida por sua sintaxe simple e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> diversas`,
-        choices: ['JavaScript', 'Aplicações', 'Páginas', 'Python', 'Versatilidade'],
-        result: ['Python','Versatilidade','Aplicações']
+        choices: ['javaScript', 'aplicações', 'páginas', 'python', 'versatilidade'],
+        result: ['python','versatilidade','aplicações']
     },
     {
         text: `<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> permite adicionar <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e dinamismo aos <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> online`,
-        choices: ['CSS', 'JavaScript', 'Projetos', 'Responsabiblidade', 'Iteratividade'],
-        result: ['JavaScript','Iteratividade','Projetos']
+        choices: ['CSS', 'JavaScript', 'projetos', 'responsabiblidade', 'iteratividade'],
+        result: ['JavaScript','iteratividade','projetos']
     },
     {
-        text: `A Tag <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usada para exibir <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> dentro de uma página <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
-        choices: ['<img>', '<asset>', 'Imagens', 'HTML', 'CSS'],
-        result: ['<img>','Imagens','HTML']
+        text: `A Tag <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usada para inserir <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> dentro de uma página <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
+        choices: ['<img>', '<asset>', 'imagens', 'HTML', 'CSS'],
+        result: ['<img>','imagens','HTML']
     },
     {
         text: `Utilize <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> para ajustar o  <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> entre elementos em uma página Web`,
         choices: ['margin', 'padding', 'border', 'espaçamento', 'font-size'],
         result: ['margin','padding','espaçamento']
     },
+    {
+        text: `<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> define a <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> dos elementos na <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
+        choices: ['CSS', 'padding', 'página', 'aparência', 'Font'],
+        result: ['CSS','aparência','página']
+    },
+    {
+        text: `A Tag <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usado para criar um <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
+        choices: ['CSS', '<h1>', 'HTML', 'aparência', 'cabeçalho'],
+        result: ['<h1>','HTML','cabeçalho']
+    },
+    {
+        text: `A propiedade <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usada para definir a <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> do texto`,
+        choices: ['CSS', 'color', 'HTML', 'cor', 'cabeçalho'],
+        result: ['color','CSS','cor']
+    },
 ];
 
+init();
+let progress = 1;
 let Exercise = [];
+let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame1"));
+let modalIntro =  new bootstrap.Modal(document.querySelector("#intro1"));
+let gameDone =  new bootstrap.Modal(document.querySelector("#gameDone"));
+let vitoria = new bootstrap.Modal(document.querySelector("#victoryModal"));
+
+let gameBoard = document.querySelector(".gameBoard");
 
 let startGame = () =>{  
     let id = 0;
-    for (let i = 1; i <= 3; i++) {
+    makeBoard(progress);
+    for (let i = 1; i <= progress; i++) {
         let index = Math.floor(Math.random() * grabAndDrops.length);//nao pode ter o mesmo index
-        if (Exercise.some(element => element.text == grabAndDrops[index].text && element.choices == grabAndDrops[index].choices && element.result == grabAndDrops[index].result)) {
-            i-=1;
+        console.log(index);
+        console.log(grabAndDrops[index]);
+        console.log(Exercise);
+        if (Exercise.some(element => element.text == grabAndDrops[index].text)) {
+            i--;
         }else{
             Exercise.push(grabAndDrops[index]);
 
             //Make the Options 
-            Exercise[i-1].choices.forEach(element => {
+            grabAndDrops[index].choices.forEach(element => {
                 let span = document.createElement("span");
                 span.draggable="true";
                 span.ondragstart = drag ;
@@ -50,46 +80,32 @@ let startGame = () =>{
             });
             let line = document.createElement("p");
             line.classList.add("line");
-            line.innerHTML = Exercise[i-1].text;
+            line.innerHTML = grabAndDrops[index].text;
+            line.id = Exercise.length-1
+            console.log(line);
             document.querySelector(`#exercise${i}`).appendChild(line);   
         }
     }        
 }
 
 let resetGame = ()=>{
-    for (let i = 1; i <= 3; i++) {
-        document.querySelector(`#options${i}`).innerHTML = "";
-        document.querySelector(`#exercise${i}`).innerHTML = "";
-    }
-    Exercise = [];
+    gameBoard.innerHTML = "";
 }
-
-const minigameModal = document.getElementById('miniGame1');
-
-minigameModal.addEventListener('shown.bs.modal', () => {
-    startGame();
-
-})
-
-minigameModal.addEventListener('hidden.bs.modal', () => {
-    resetGame();
-});
-
 
 function allowDrop(e){
     e.preventDefault();
 }
 
 function drag(e){
-    e.target.style.cursor = 'grab'
+    e.target.style.cursor = 'grab';
     e.dataTransfer.setData("Text",e.target.id);
     e.target.classList.remove("certo");
     e.target.classList.remove("errado");
 }
 function drop(e){
     e.preventDefault();
+    let CorrectLine = "";
     let data=e.dataTransfer.getData("Text");
-    console.log(data);
     let elementDropped = document.querySelector(`#${data}`);
     let line= e.target.parentElement.parentElement.id;
     if (data.slice(4,6) <= 4) {
@@ -128,14 +144,16 @@ document.querySelector(".CompleteLevel").addEventListener("click",(e)=>{
     e.preventDefault();
     let answers = [];
     let isAllCorrect = true;
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= progress; i++) {
         answers = document.querySelectorAll(`#exercise${i} .draggable`);
         if (answers.length<3) {
             alert("Tens que completar para puder seguir")
             return 0;
         } else {
+            let line = document.querySelector(`#exercise${i} .line`).id;
+            console.log(line);
             answers.forEach((element,index) => {
-                if (element.textContent  == Exercise[i-1].result[index]) {
+                if (element.textContent  == Exercise[line].result[index]) {
                     element.classList.add("certo");
                 } else {
                     element.classList.add("errado");
@@ -145,8 +163,76 @@ document.querySelector(".CompleteLevel").addEventListener("click",(e)=>{
         }
     }
     if (answers != [] && isAllCorrect) {
-        alert("GAME OVER");
+        if (progress==3) {
+            modalGame.hide();
+            vitoria.show();
+        } else {
+            progress++;
+            modalGame.hide();
+            setTimeout(() => {
+                modalGame.show();
+            }, 500);
+        }
+    }
+});
+
+function makeBoard(rep) {
+    for (let i = 1 ; i <= rep; i++) {
+        gameBoard.innerHTML +=`
+        <div class="row justify-content-around align-items-center mx-auto my-2 ">
+            <div class="col-4 m-1 d-flex flex-wrap p-2 " id="options${i}" ondrop="dropSpan(event)" ondragover="allowDrop(event)"></div>
+            <div class="col-6 mx-1 p-2" id="exercise${i}"></div>
+        </div>
+        <hr>
+        `
+    }
+    switch (progress) {
+        case 1:
+            document.querySelector(".progress-bar").style.width = `0%`;
+            break;
+        case 2:
+            document.querySelector(".progress-bar").style.width = `33%`;
+            break;
+        case 3:
+            document.querySelector(".progress-bar").style.width = `66%`;
+            break;
+    
+        default:
+            document.querySelector(".progress-bar").style.width = `0%`;
+            break;
+    }
+}
+
+
+document.querySelector("#miniGame1").addEventListener('shown.bs.modal', () => {
+    startGame();
+
+})
+
+document.querySelector("#miniGame1").addEventListener('hidden.bs.modal', () => {
+    resetGame();
+});
+
+
+document.querySelector("#sala202Computer").addEventListener("click", ()=>{
+    if (!checkGameCompleted("game1")) {
+        modalIntro.show();
+    } else {
+        gameDone.show();
     }
 })
 
+document.querySelector(".closeGame").addEventListener("click",() =>{
+    modalGame.hide();
+    progress = 1;
+    Exercise=[];
+})
 
+
+
+
+// Exposing functions to global scope
+window.allowDrop = allowDrop;
+window.drag = drag;
+window.drop = drop;
+window.dropSpan = dropSpan;
