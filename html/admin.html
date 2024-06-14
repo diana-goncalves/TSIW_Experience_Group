@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ADMIN DASHBOARD</title>
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <link rel="stylesheet" href="../css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN DASHBOARD</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Icon Image Browser Tab -->
+    <link rel="shortcut icon" type="image/x-icon" href="../media/img/logo.png" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body id="adminBody">
 
     <header>
-        <!-- NAV -->
         <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
-            <div class="container">
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
+            <div class="container ">
+                <a class="navbar-brand" href="../../index.html">
+                    <img src="../../media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
                 </a>
                 <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -28,61 +32,71 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-white home_page" href="#home">Home</a>
+                            <a class="nav-link home_page" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white projects_page" href="#projects">Projetos</a>
+                            <a class="nav-link projects_page" href="../index.html#projects">Projetos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white about_page" href="#about">Sobre</a>
+                            <a class="nav-link about_page" href="../index.html#about">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white er_page" href="escapeRoom">Escape Room</a>
+                            <a class="nav-link er_page" href="../index.html#escapeRoom">Escape Room</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav" id="LoginLogout_Container">
                         <li class="nav-item">
-                            <a class="nav-link text-white user_icon" href="./html/login.html"><i class="fas fa-user"></i></a>
+                            <a class="nav-link text-white user_icon" href="../../html/login.html"><i
+                                    class="fas fa-user"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
-    
+      </header>
+
     <main>
-        
+
         <!-- MAIN -->
         <div class="row w-100 nowrap" id="wrapperContainer">
-            
-            <div class="col-md d-none d-md-block" id="menu_container">
-                
-                <!-- Menu Desktop --> 
 
-                <div class="card" id="menuDesktop"> 
-                    
+            <div class="col-md d-none d-md-block" id="menu_container">
+
+                <!-- Menu Desktop -->
+
+                <div class="card" id="menuDesktop">
+
                     <h2 class="headerAccount">Dashboard</h2>
 
                     <div class="card-body" id="btnsDesktop">
-                        
+
                         <div class="nav flex-column nav-pills gap-1 nav_account" id="buttons">
-                            
-                            <button class="nav-link active" id="pills-users-tab" data-bs-toggle="pill" data-bs-target="#pills-users" type="button" role="tab" aria-controls="pills-users-tab" aria-selected="true">
+
+                            <button class="nav-link active" id="pills-users-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-users" type="button" role="tab" aria-controls="pills-users-tab"
+                                aria-selected="true">
                                 Gerir Utilizadores
                             </button>
-                            <button class="nav-link" id="pills-testemunhos-tab" data-bs-toggle="pill" data-bs-target="#pills-testemunhos" type="button" role="tab" aria-controls="pills-testemunhos-tab" aria-selected="false">
+                            <button class="nav-link" id="pills-testemunhos-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-testemunhos" type="button" role="tab"
+                                aria-controls="pills-testemunhos-tab" aria-selected="false">
                                 Gerir Testemunhos
                             </button>
-                            <button class="nav-link " id="pills-projetos-tab" data-bs-toggle="pill" data-bs-target="#pills-projetos" type="button" role="tab" aria-controls="pills-projetos-tab" aria-selected="false">
+                            <button class="nav-link " id="pills-projetos-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-projetos" type="button" role="tab"
+                                aria-controls="pills-projetos-tab" aria-selected="false">
                                 Gerir Projetos
                             </button>
-                            <button class="nav-link" id="pills-eventos-tab" data-bs-toggle="pill" data-bs-target="#pills-eventos" type="button" role="tab" aria-controls="pills-eventos-tab" aria-selected="false">
+                            <button class="nav-link" id="pills-eventos-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-eventos" type="button" role="tab"
+                                aria-controls="pills-eventos-tab" aria-selected="false">
                                 Gerir Eventos
                             </button>
-                            <button class="nav-link" id="pills-er-tab" data-bs-toggle="pill" data-bs-target="#pills-er" type="button" role="tab" aria-controls="pills-er-tab" aria-selected="false">
+                            <button class="nav-link" id="pills-er-tab" data-bs-toggle="pill" data-bs-target="#pills-er"
+                                type="button" role="tab" aria-controls="pills-er-tab" aria-selected="false">
                                 Configurar Escape Room
                             </button>
-                            
+
                             <button class="logoutButton">Terminar sessão</button>
 
                         </div>
@@ -90,153 +104,181 @@
                     </div>
 
                 </div>
-                
-                <!-- Menu Desktop --> 
+
+                <!-- Menu Desktop -->
 
             </div>
-            
+
             <div class="col-md" id="content">
-                
+
                 <div class="cardContent">
-                    
+
                     <!-- Menu Mobile -->
 
                     <div class="card-header border-bottom mb-3 d-flex d-md-none" id="menu_mobile">
-                    
+
                         <ul class="nav nav-pills card-header-pills " role="tablist">
-                            
+
                             <li class="nav-item" role="presentation">
-                                <button class="nav-item active" id="pills-users-tab" data-bs-toggle="pill" data-bs-target="#pills-users" type="button" role="tab" aria-controls="pills-users-tab" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></button>
+                                <button class="nav-item active" id="pills-users-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-users" type="button" role="tab"
+                                    aria-controls="pills-users-tab" aria-selected="true"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-user mr-2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg></button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-item" id="pills-testemunhos-tab" data-bs-toggle="pill" data-bs-target="#pills-testemunhos" type="button" role="tab" aria-controls="pills-testemunhos-tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-blockquote-left" viewBox="0 0 16 16"><path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm.79-5.373q.168-.117.444-.275L3.524 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562Q2 7.587 2 7.969q0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282q.036-.305.123-.498a1.4 1.4 0 0 1 .252-.37 2 2 0 0 1 .346-.298zm2.167 0q.17-.117.445-.275L5.692 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562q-.165.31-.164.692 0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282a1.8 1.8 0 0 1 .118-.492q.087-.194.257-.375a2 2 0 0 1 .346-.3z"/></svg></button>
+                                <button class="nav-item" id="pills-testemunhos-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-testemunhos" type="button" role="tab"
+                                    aria-controls="pills-testemunhos-tab" aria-selected="false"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        class="bi bi-blockquote-left" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1zm.79-5.373q.168-.117.444-.275L3.524 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562Q2 7.587 2 7.969q0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282q.036-.305.123-.498a1.4 1.4 0 0 1 .252-.37 2 2 0 0 1 .346-.298zm2.167 0q.17-.117.445-.275L5.692 6q-.183.111-.452.287-.27.176-.51.428a2.4 2.4 0 0 0-.398.562q-.165.31-.164.692 0 .54.217.873.217.328.72.328.322 0 .504-.211a.7.7 0 0 0 .188-.463q0-.345-.211-.521-.205-.182-.568-.182h-.282a1.8 1.8 0 0 1 .118-.492q.087-.194.257-.375a2 2 0 0 1 .346-.3z" />
+                                    </svg></button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-item" id="pills-projetos-tab" data-bs-toggle="pill" data-bs-target="#pills-projetos" type="button" role="tab" aria-controls="pills-projetos-tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16"><path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1"/></svg></button>
+                                <button class="nav-item" id="pills-projetos-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-projetos" type="button" role="tab"
+                                    aria-controls="pills-projetos-tab" aria-selected="false"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        class="bi bi-lightbulb" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1" />
+                                    </svg></button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-item" id="pills-eventos-tab" data-bs-toggle="pill" data-bs-target="#pills-eventos" type="button" role="tab" aria-controls="pills-eventos-tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16"><path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/></svg></button>
+                                <button class="nav-item" id="pills-eventos-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-eventos" type="button" role="tab"
+                                    aria-controls="pills-eventos-tab" aria-selected="false"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                        class="bi bi-calendar-event" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                        <path
+                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                    </svg></button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-item" id="pills-er-tab" data-bs-toggle="pill" data-bs-target="#pills-er" type="button" role="tab" aria-controls="pills-er-tab" aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16"><path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/><path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z"/></svg></button>
+                                <button class="nav-item" id="pills-er-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-er" type="button" role="tab" aria-controls="pills-er-tab"
+                                    aria-selected="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+                                        <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
+                                        <path
+                                            d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z" />
+                                    </svg></button>
                             </li>
 
                         </ul>
                     </div>
-                    
+
                     <!-- Menu Mobile -->
 
-                    <div class="card-bodyContent tab-content" id="pills-tabContent" >
-                    
+                    <div class="card-bodyContent tab-content" id="pills-tabContent">
+
                         <!-- Gerir utilizadores -->
 
-                        <div class="tab-pane fade show active" id="pills-users" role="tabpanel" aria-labelledby="pills-users-tab" tabindex="0">
-                            
-                            <h4>Utilizadores</h4>
-                                
-                            <div class="row justify-content-center align-items-center g-2 ">
-                                
-                                <div class="form-floating mb-3 col">
-                                    
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        name="Ocupacao"
-                                        id="procuraUser"
-                                        placeholder="Nome do utilizador"
-                                    />
+                        <div class="tab-pane fade show active" id="pills-users" role="tabpanel"
+                            aria-labelledby="pills-users-tab" tabindex="0">
 
-                                    <label for="procuraUser" class="text-truncate"><i class="fa-sharp fa fa-magnifying-glass"></i> Procurar</label>
+                            <h4>Utilizadores</h4>
+
+                            <div class="row justify-content-center align-items-center g-2 ">
+
+                                <div class="form-floating mb-3 col">
+
+                                    <input type="text" class="form-control" name="Ocupacao" id="procuraUser"
+                                        placeholder="Nome do utilizador" />
+
+                                    <label for="procuraUser" class="text-truncate"><i
+                                            class="fa-sharp fa fa-magnifying-glass"></i> Procurar</label>
 
                                 </div>
 
                                 <div class="form-floating mb-3 col text-end">
-                                    
+
                                     <!-- <button type="button" class="btn btn-primary button_color btnFiltro" id="btnFiltroUser">
                                         <i class="fa-sharp fa-solid fa-filter"></i> Filtrar
                                     </button> -->
-                                        
+
                                     <!-- <button type="button" class="btn btn-primary button_color btnOrder" id="btnOrderUser">
                                         <i class="fa-solid fa-sort"></i>
                                     </button> -->
-                                    
+
                                 </div>
 
                                 <div class="table-responsive">
-                                    
+
                                     <table class="table table-dark table-bordered">
-                                        
+
                                         <thead id="tHeadUsers">
-                                            
+
                                             <tr>
-                                                <th scope="col" style="width: 8px;text-align: center;" id="0">ID Membro</th>
+                                                <th scope="col" style="width: 8px;text-align: center;" id="0">ID Membro
+                                                </th>
                                                 <th scope="col" id="1">Username <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="2">Nome <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="3">Apelido <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="4">Localidade <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="5">Género <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" id="6">Data de Nascimento <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" id="7" style="width: 16px;text-align: center;">GERIR</th>
+                                                <th scope="col" id="6">Data de Nascimento <i
+                                                        class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="7" style="width: 16px;text-align: center;">GERIR
+                                                </th>
 
                                             </tr>
 
                                         </thead>
 
                                         <tbody id="table-Users">
-                                            
+
                                             <!-- Conteúdo é adicionado dinamicamente -->
-                                
+
                                         </tbody>
 
                                     </table>
 
                                     <div id="pages-controls" class="d-flex align-items-center justify-content-center">
-                                        <button class="pagesBtn" id="prevPage"><</button>
-                                        <span id="pageNumber"></span>
-                                        <button class="pagesBtn" id="nextPage">></button>
+                                        <button class="pagesBtn" id="prevPage">
+                                            << /button>
+                                                <span id="pageNumber"></span>
+                                                <button class="pagesBtn" id="nextPage">></button>
                                     </div>
 
                                 </div>
 
                             </div>
-                        
+
                         </div>
-                        
+
                         <!-- Gerir testemunhos -->
 
-                        <div class="tab-pane fade" id="pills-testemunhos" role="tabpanel" aria-labelledby="pills-testemunhos-tab" tabindex="0">
-                            
+                        <div class="tab-pane fade" id="pills-testemunhos" role="tabpanel"
+                            aria-labelledby="pills-testemunhos-tab" tabindex="0">
+
                             <h4>Adicionar Testemunhos</h4>
-                            
+
                             <form id="formAlumni">
-                                
+
                                 <div class="row justify-content-center  g-2 text-truncate">
-                                    
+
                                     <div class="form-floating mb-3 col text-truncate">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Nome"
-                                            id="formNomeT"
-                                            placeholder=""
-                                            required
-                                        />
-                                        
+
+                                        <input type="text" class="form-control" name="Nome" id="formNomeT"
+                                            placeholder="" required />
+
                                         <label for="formNomeT">Nome</label>
 
                                     </div>
 
                                     <div class="form-floating mb-3 col">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Mensagem"
-                                            id="formMsgT"
-                                            placeholder=""
-                                            required
-                                        />
+
+                                        <input type="text" class="form-control" name="Mensagem" id="formMsgT"
+                                            placeholder="" required />
 
                                         <label for="formMsgT">Mensagem</label>
 
@@ -246,65 +288,44 @@
                                     <br>
 
                                     <div class="row justify-content-center align-items-center g-2">
-                                        
+
                                         <div class="form-floating mb-3 col">
-                                            
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                name="Empresa"
-                                                id="formEmpresa"
-                                                placeholder=""
-                                            />
+
+                                            <input type="text" class="form-control" name="Empresa" id="formEmpresa"
+                                                placeholder="" />
 
                                             <label for="formEmpresa">Empresa</label>
 
                                         </div>
 
                                         <br><br><br><br>
-                                        
+
                                         <div class="form-floating mb-3 col">
-                                            
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                name="Premios"
-                                                id="formPremios"
-                                                placeholder=""
-                                            />
+
+                                            <input type="text" class="form-control" name="Premios" id="formPremios"
+                                                placeholder="" />
 
                                             <label for="formPremios">Prémios</label>
 
                                         </div>
 
                                     </div>
-                                    
+
                                     <div class="row justify-content-center align-items-center g-2">
-                                        
+
                                         <div class="form-floating mb-3 col">
-                                            
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                name="Ocupacao"
-                                                id="formOcupacao"
-                                                placeholder=""
-                                                required
-                                            />
+
+                                            <input type="text" class="form-control" name="Ocupacao" id="formOcupacao"
+                                                placeholder="" required />
 
                                             <label for="formOcupacao">Ocupação</label>
 
                                         </div>
 
                                         <div class="form-floating mb-3 col">
-                                        
-                                            <input
-                                                type="url"
-                                                class="form-control"
-                                                name="LinkedIn"
-                                                id="formLinkedIn"
-                                                placeholder=""
-                                            />
+
+                                            <input type="url" class="form-control" name="LinkedIn" id="formLinkedIn"
+                                                placeholder="" />
 
                                             <label for="formLinkedIn">LinkedIn url</label>
 
@@ -313,66 +334,66 @@
                                     </div>
 
                                     <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
-                                        
-                                        <img src="" alt="Pré-visualização da imagem" class="imgsPreview" id="imgPreviewAlumni">
-                                        
+
+                                        <img src="" alt="Pré-visualização da imagem" class="imgsPreview"
+                                            id="imgPreviewAlumni">
+
                                         <div class="imgInputContainer">
-                                            <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputTestemunhos">
+                                            <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg"
+                                                id="fileInputTestemunhos">
                                             <label for="fileInputTestemunhos" class="fileInputLabel">
                                                 <i class="fa-regular fa-file-image"></i>
                                             </label>
                                         </div>
-                                        
-                                        <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarTestemunhos">
+
+                                        <button type="submit" class="btn btn-primary button_color btnGuardar"
+                                            id="btnGuardarTestemunhos">
                                             Guardar
                                         </button>
 
-                                        <input type="reset" value="Cancel" class="btn btn-primary button_color btnGuardar" id="cancelEditAlumni">
+                                        <input type="reset" value="Cancel"
+                                            class="btn btn-primary button_color btnGuardar" id="cancelEditAlumni">
 
                                     </div>
 
                                 </div>
 
                             </form>
-                            
+
                             <h4>Editar Testemunhos</h4>
-                            
+
                             <div class="row justify-content-center  g-2">
-                                
+
                                 <div class="form-floating mb-3 col">
-                                    
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        name="Ocupacao"
-                                        id="procuraTestemunhos"
-                                        placeholder=""
-                                    />
-            
-                                    <label for="procuraTestemunhos" class="text-truncate"><i class="fa-sharp fa fa-magnifying-glass"></i>Procurar</label>
-            
+
+                                    <input type="text" class="form-control" name="Ocupacao" id="procuraTestemunhos"
+                                        placeholder="" />
+
+                                    <label for="procuraTestemunhos" class="text-truncate"><i
+                                            class="fa-sharp fa fa-magnifying-glass"></i>Procurar</label>
+
                                 </div>
-            
+
                                 <div class="form-floating mb-3 col text-end">
-                                    
+
                                     <!-- <button type="button" class="btn btn-primary button_color btnFiltro" id="btnFiltroTestemunhos">
                                         <i class="fa-sharp fa-solid fa-filter"></i> Filtrar
                                     </button>
-                                        
+
                                     <button type="button" class="btn btn-primary button_color btnOrder" id="btnOrderTestemunhos">
                                         <i class="fa-solid fa-sort"></i>
                                     </button> -->
-                                    
+
                                 </div>
-                                
+
                                 <div class="table-responsive" id="table-testemunhos">
-                                    
+
                                     <table class="table table-dark table-bordered">
-                                        
+
                                         <thead id="tHeadTestemunhos">
-                                            
+
                                             <tr>
-                                                
+
                                                 <th scope="col" id="0">Nome <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="1">Mensagem <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="2">Empresa <i class="fa-solid fa-sort"></i></th>
@@ -382,23 +403,24 @@
                                                 <th scope="col" id="6">Imagem <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="7">Estado <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="8" style="width:16px">GERIR</th>
-            
+
                                             </tr>
-            
+
                                         </thead>
-            
+
                                         <tbody id="tBodyTestemunhos">
-                                            
+
                                             <!-- Conteúdo vai ser adicionado dinamicamente -->
-                                
+
                                         </tbody>
-                                        
+
                                     </table>
-                                
+
                                     <div id="pages-controls" class="d-flex align-items-center justify-content-center">
-                                        <button class="pagesBtn" id="prevPageAlumni"><</button>
-                                        <span id="pageNumberAlumni">1 de 1</span>
-                                        <button class="pagesBtn" id="nextPageAlumni">></button>
+                                        <button class="pagesBtn" id="prevPageAlumni">
+                                            << /button>
+                                                <span id="pageNumberAlumni">1 de 1</span>
+                                                <button class="pagesBtn" id="nextPageAlumni">></button>
                                     </div>
 
                                 </div>
@@ -406,42 +428,31 @@
                             </div>
 
                         </div>
-                        
+
                         <!-- Gerir projetos -->
 
-                        <div class="tab-pane fade" id="pills-projetos" role="tabpanel" aria-labelledby="pills-projetos-tab" tabindex="0">
-                            
+                        <div class="tab-pane fade" id="pills-projetos" role="tabpanel"
+                            aria-labelledby="pills-projetos-tab" tabindex="0">
+
                             <h4>Adicionar Projetos</h4>
-                            
+
                             <form id="formProjetos">
-                                
+
                                 <div class="row justify-content-center  g-2 text-truncate">
-                                    
+
                                     <div class="form-floating mb-3 col text-truncate">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Nome"
-                                            id="formNomeP"
-                                            placeholder=""
-                                            required
-                                        />
+
+                                        <input type="text" class="form-control" name="Nome" id="formNomeP"
+                                            placeholder="" required />
 
                                         <label for="formNomeP">Nome</label>
 
                                     </div>
 
                                     <div class="form-floating mb-3 col">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Mensagem"
-                                            id="formMsgP"
-                                            placeholder=""
-                                            required
-                                        />
+
+                                        <input type="text" class="form-control" name="Mensagem" id="formMsgP"
+                                            placeholder="" required />
 
                                         <label for="formMsgP">Mensagem</label>
 
@@ -451,58 +462,52 @@
                                     <br>
 
                                     <div class="row justify-content-center align-items-center g-2">
-                                        
+
                                         <div class="form-floating mb-3 col">
-                                            
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                name="formAuthor"
-                                                id="formAuthorP"
-                                                placeholder=""
-                                                required
-                                            />
+
+                                            <input type="text" class="form-control" name="formAuthor" id="formAuthorP"
+                                                placeholder="" required />
 
                                             <label for="formAuthorP">Autor</label>
-                                            
+
                                         </div>
 
                                         <br><br><br><br>
 
                                         <div class="form-floating mb-3 col">
-                                            
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                name="LinkP"
-                                                id="formLinkP"
-                                                placeholder=""
-                                            />
+
+                                            <input type="text" class="form-control" name="LinkP" id="formLinkP"
+                                                placeholder="" />
 
                                             <label for="formLinkP">Link do Projeto</label>
 
                                         </div>
 
                                     </div>
-                                    
+
                                     <div class="row justify-content-center align-items-center g-2">
-                                    
-                                        <div class="form-floating mb-3 col d-flex justify-content-end align-items-center" id="addProjectsButtonsContainer">
-                                        
-                                            <img src="" alt="Pré-visualização da imagem" class="imgsPreview" id="imgPreview">
+
+                                        <div class="form-floating mb-3 col d-flex justify-content-end align-items-center"
+                                            id="addProjectsButtonsContainer">
+
+                                            <img src="" alt="Pré-visualização da imagem" class="imgsPreview"
+                                                id="imgPreview">
 
                                             <div class="imgInputContainer">
-                                                <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputProjects">
+                                                <input type="file" name="file" class="fileInput"
+                                                    accept=".png, .jpg, .jpeg" id="fileInputProjects">
                                                 <label for="fileInputProjects" class="fileInputLabel">
                                                     <i class="fa-regular fa-file-image"></i>
                                                 </label>
                                             </div>
-                                            
-                                            <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarProjetos">
+
+                                            <button type="submit" class="btn btn-primary button_color btnGuardar"
+                                                id="btnGuardarProjetos">
                                                 Guardar
                                             </button>
 
-                                            <input type="reset" value="Cancel" class="btn btn-primary button_color btnGuardar" id="cancelEditProject">
+                                            <input type="reset" value="Cancel"
+                                                class="btn btn-primary button_color btnGuardar" id="cancelEditProject">
 
                                         </div>
 
@@ -515,108 +520,99 @@
                             <h4>Editar Projetos</h4>
 
                             <div class="row justify-content-center g-2">
-                                
+
                                 <div class="form-floating mb-3 col">
-                                    
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        name="Ocupacao"
-                                        id="procuraProjetos"
-                                        placeholder=""
-                                    />
-            
-                                    <label for="procuraProjetos" class="text-truncate"><i class="fa-sharp fa fa-magnifying-glass" style="margin-right: 0.5rem;"></i>Procurar</label>
-            
+
+                                    <input type="text" class="form-control" name="Ocupacao" id="procuraProjetos"
+                                        placeholder="" />
+
+                                    <label for="procuraProjetos" class="text-truncate"><i
+                                            class="fa-sharp fa fa-magnifying-glass"
+                                            style="margin-right: 0.5rem;"></i>Procurar</label>
+
                                 </div>
-            
+
                                 <div class="form-floating mb-3 col text-end">
-                                    
+
                                     <!-- <button type="button" class="btn btn-primary button_color btnFiltro" id="btnFiltroProjetos">
                                         <i class="fa-sharp fa-solid fa-filter"></i> Filtrar
                                     </button> -->
-                                        
+
                                     <!-- <button type="button" class="btn btn-primary button_color d-none btnOrder" id="btnOrderProjetos">
                                         <i class="fa-solid fa-sort"></i>
                                     </button> -->
-                                    
+
                                 </div>
-                                
+
                                 <div class="table-responsive">
-                                
+
                                     <table class="table table-dark table-bordered">
-                                        
+
                                         <thead id="tableHeaderProjects">
-                                            
+
                                             <tr>
-                                                
+
                                                 <th scope="col" id="0">Autor <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="1">Nome <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="2">Mensagem <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" id="3" style="text-align:center;">Link <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" id="4" style="text-align:center;">Imagem <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" id="5" style="text-align:center;">Estado <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" id="6" style="width: 16px;text-align: center;">GERIR</th>
-            
+                                                <th scope="col" id="3" style="text-align:center;">Link <i
+                                                        class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="4" style="text-align:center;">Imagem <i
+                                                        class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="5" style="text-align:center;">Estado <i
+                                                        class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="6" style="width: 16px;text-align: center;">GERIR
+                                                </th>
+
                                             </tr>
-            
+
                                         </thead>
-            
+
                                         <tbody id="table-projetos">
-                                            
+
                                             <!-- Conteúdo vai ser adicionado dinamicamente -->
-                                
+
                                         </tbody>
-                                        
+
                                     </table>
-                                
+
                                     <div id="pages-controls" class="d-flex align-items-center justify-content-center">
-                                        <button class="pagesBtn" id="prevPageProjects"><</button>
-                                        <span id="pageNumberProjects">1 de 1</span>
-                                        <button class="pagesBtn" id="nextPageProjects">></button>
+                                        <button class="pagesBtn" id="prevPageProjects">
+                                            << /button>
+                                                <span id="pageNumberProjects">1 de 1</span>
+                                                <button class="pagesBtn" id="nextPageProjects">></button>
                                     </div>
 
                                 </div>
-            
-                                
+
+
                             </div>
-                            
+
                         </div>
-                        
+
                         <!-- Gerir eventos -->
-                        
-                        <div class="tab-pane fade" id="pills-eventos" role="tabpanel" aria-labelledby="pills-eventos-tab" tabindex="0">
-                            
+
+                        <div class="tab-pane fade" id="pills-eventos" role="tabpanel"
+                            aria-labelledby="pills-eventos-tab" tabindex="0">
+
                             <h4>Adicionar Eventos</h4>
                             <form id="formEventos">
 
                                 <div class="row justify-content-center  g-2 text-truncate">
-                                
+
                                     <div class="form-floating mb-3 col text-truncate">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Nome"
-                                            id="formNomeE"
-                                            placeholder=""
-                                            required
-                                        />
+
+                                        <input type="text" class="form-control" name="Nome" id="formNomeE"
+                                            placeholder="" required />
 
                                         <label for="formNomeE">Nome</label>
 
                                     </div>
 
                                     <div class="form-floating mb-3 col">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Mensagem"
-                                            id="formMsgE"
-                                            placeholder=""
-                                            required
-                                        />
+
+                                        <input type="text" class="form-control" name="Mensagem" id="formMsgE"
+                                            placeholder="" required />
 
                                         <label for="formMsgE">Mensagem</label>
 
@@ -626,56 +622,50 @@
                                     <br>
 
                                     <div class="row justify-content-center align-items-center g-2">
-                                        
+
                                         <div class="form-floating mb-3 col">
-                                            
-                                            <input
-                                                type="date"
-                                                class="form-control"
-                                                name="formData"
-                                                id="formDataE"
-                                                placeholder=""
-                                                required
-                                            />
-                                        
+
+                                            <input type="date" class="form-control" name="formData" id="formDataE"
+                                                placeholder="" required />
+
                                         </div>
 
                                         <br><br><br><br>
 
                                         <div class="form-floating mb-3 col">
-                                        
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                name="LinkE"
-                                                id="formLinkE"
-                                                placeholder=""
-                                            />
+
+                                            <input type="text" class="form-control" name="LinkE" id="formLinkE"
+                                                placeholder="" />
 
                                             <label for="formLinkE">Link do Evento</label>
 
                                         </div>
 
                                     </div>
-                                    
+
                                     <div class="row justify-content-center align-items-center g-2">
-                                    
-                                        <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
-                                        
-                                            <img src="" alt="Pré-visualização da imagem" class="imgsPreview" id="imgPreviewEvent">
-                                            
+
+                                        <div
+                                            class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+
+                                            <img src="" alt="Pré-visualização da imagem" class="imgsPreview"
+                                                id="imgPreviewEvent">
+
                                             <div class="imgInputContainer">
-                                                <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputEvents">
+                                                <input type="file" name="file" class="fileInput"
+                                                    accept=".png, .jpg, .jpeg" id="fileInputEvents">
                                                 <label for="fileInputEvents" class="fileInputLabel">
                                                     <i class="fa-regular fa-file-image"></i>
                                                 </label>
                                             </div>
-                                            
-                                            <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarEventos">
+
+                                            <button type="submit" class="btn btn-primary button_color btnGuardar"
+                                                id="btnGuardarEventos">
                                                 Guardar
                                             </button>
 
-                                            <input type="reset" value="Cancel" class="btn btn-primary button_color btnGuardar" id="cancelEditEvent">
+                                            <input type="reset" value="Cancel"
+                                                class="btn btn-primary button_color btnGuardar" id="cancelEditEvent">
 
                                         </div>
 
@@ -688,154 +678,140 @@
                             <h4>Editar Eventos</h4>
 
                             <div class="row justify-content-center  g-2">
-                                
+
                                 <div class="form-floating mb-3 col">
-                                    
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        name="Ocupacao"
-                                        id="procuraEventos"
-                                        placeholder=""
-                                        
-                                    />
-            
-                                    <label for="procuraEventos" class="text-truncate"><i class="fa-sharp fa fa-magnifying-glass"></i>Procurar</label>
-            
+
+                                    <input type="text" class="form-control" name="Ocupacao" id="procuraEventos"
+                                        placeholder="" />
+
+                                    <label for="procuraEventos" class="text-truncate"><i
+                                            class="fa-sharp fa fa-magnifying-glass"></i>Procurar</label>
+
                                 </div>
-            
+
                                 <div class="form-floating mb-3 col text-end">
-                                    
+
                                     <!-- <button type="button" class="btn btn-primary button_color btnFiltro" id="btnFiltroEventos">
                                         <i class="fa-sharp fa-solid fa-filter"></i> Filtrar
                                     </button>
-                                        
+
                                     <button type="button" class="btn btn-primary button_color btnOrder" id="btnOrderEventos">
                                         <i class="fa-solid fa-sort"></i>
                                     </button> -->
-                                    
+
                                 </div>
-                                
+
                                 <div class="table-responsive" id="table-eventos">
-                                
+
                                     <table class="table table-dark table-bordered">
-                                        
+
                                         <thead id="tHeadEvents">
-                                            
+
                                             <tr>
-                                                
+
                                                 <th scope="col" id="0">Nome <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="1">Mensagem <i class="fa-solid fa-sort"></i></th>
-                                                <th scope="col" id="2" style="width: 128px;">Data <i class="fa-solid fa-sort"></i></th>
+                                                <th scope="col" id="2" style="width: 128px;">Data <i
+                                                        class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="3">Link <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="4">Imagem <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="5">Estado <i class="fa-solid fa-sort"></i></th>
                                                 <th scope="col" id="6" style="width: 16px;">GERIR</th>
-            
+
                                             </tr>
-            
+
                                         </thead>
-            
+
                                         <tbody id="tBodyEvents">
-                                            
+
                                             <!-- Conteúdo vai ser adicionado dinamicamente -->
-                                
+
                                         </tbody>
-                                        
+
                                     </table>
 
                                     <div id="pages-controls" class="d-flex align-items-center justify-content-center">
-                                        <button class="pagesBtn" id="prevPageEvents"><</button>
-                                        <span id="pageNumberEvents">1 de 1</span>
-                                        <button class="pagesBtn" id="nextPageEvents">></button>
+                                        <button class="pagesBtn" id="prevPageEvents">
+                                            << /button>
+                                                <span id="pageNumberEvents">1 de 1</span>
+                                                <button class="pagesBtn" id="nextPageEvents">></button>
                                     </div>
-                                
+
                                 </div>
-                                
+
                             </div>
 
                         </div>
-                        
+
                         <!-- Configurar escape room -->
 
-                        <div class="tab-pane fade" id="pills-er" role="tabpanel" aria-labelledby="pills-er-tab" tabindex="0">
-                            
+                        <div class="tab-pane fade" id="pills-er" role="tabpanel" aria-labelledby="pills-er-tab"
+                            tabindex="0">
+
                             <h4>Perguntas</h4>
-                            
+
                             <form>
-                                
+
                                 <div class="row justify-content-center  g-2 text-truncate">
-                                    
+
                                     <div class="form-floating mb-3 col text-truncate">
-                                    
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Nome"
-                                            id="formNomeE"
-                                            placeholder=""
-                                        />
+
+                                        <input type="text" class="form-control" name="Nome" id="formNomeE"
+                                            placeholder="" />
 
                                         <label for="formNomeE">Nome</label>
 
                                     </div>
 
                                     <div class="form-floating mb-3 col">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Mensagem"
-                                            id="formMsgE"
-                                            placeholder="" 
-                                        />
+
+                                        <input type="text" class="form-control" name="Mensagem" id="formMsgE"
+                                            placeholder="" />
 
                                         <label for="formMsgE">Mensagem</label>
-                                        
+
                                     </div>
 
                                     <br>
                                     <br>
 
                                     <div class="row justify-content-center g-2">
-                                        
+
                                         <div class="form-floating mb-3 col">
-                                            
-                                            <input
-                                                type="date"
-                                                class="form-control align-items-center"
-                                                name="formData"
-                                                id="formDataE"
-                                                placeholder=""
-                                            />
+
+                                            <input type="date" class="form-control align-items-center" name="formData"
+                                                id="formDataE" placeholder="" />
 
                                         </div>
 
                                         <div class="form-floating mb-3 col">
-                                        <!-- div criado para melhorar responsividade -->
+                                            <!-- div criado para melhorar responsividade -->
                                         </div>
-                                    
+
                                     </div>
 
                                     <div class="row justify-content-center align-items-center g-2">
-                                    
-                                        <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
-                                        
+
+                                        <div
+                                            class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+
                                             <div class="imgInputContainer">
-                                                <input type="file" name="file" class="fileInput"  accept=".png, .jpg, .jpeg" id="fileInputPerguntas">
+                                                <input type="file" name="file" class="fileInput"
+                                                    accept=".png, .jpg, .jpeg" id="fileInputPerguntas">
                                                 <label for="fileInputPerguntas" class="fileInputLabel">
                                                     <i class="fa-regular fa-file-image"></i>
                                                 </label>
                                             </div>
-                                            
-                                            <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarPerguntas">
+
+                                            <button type="submit" class="btn btn-primary button_color btnGuardar"
+                                                id="btnGuardarPerguntas">
                                                 Guardar
                                             </button>
 
                                         </div>
 
                                     </div>
-                                    
+
                                 </div>
 
                             </form>
@@ -843,32 +819,22 @@
                             <h4>Colecionáveis</h4>
 
                             <form>
-                            
+
                                 <div class="row justify-content-center align-items-center g-2">
-                                    
+
                                     <div class="form-floating mb-3 col text-truncate">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Nome"
-                                            id="formNomeCol"
-                                            placeholder=""
-                                        />
+
+                                        <input type="text" class="form-control" name="Nome" id="formNomeCol"
+                                            placeholder="" />
 
                                         <label for="formNomeCol">Nome</label>
 
                                     </div>
 
                                     <div class="form-floating mb-3 col">
-                                        
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            name="Mensagem"
-                                            id="formMsgCol"
-                                            placeholder=""
-                                        />
+
+                                        <input type="text" class="form-control" name="Mensagem" id="formMsgCol"
+                                            placeholder="" />
 
                                         <label for="formMsgCol">Mensagem</label>
 
@@ -877,19 +843,21 @@
                                 </div>
 
                                 <div class="row justify-content-center align-items-center g-2">
-                                    
+
                                     <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
-                                    
-                                        
+
+
 
                                         <div class="imgInputContainer">
-                                            <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg" id="fileInputColecionaveis">
+                                            <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg"
+                                                id="fileInputColecionaveis">
                                             <label for="fileInputColecionaveis" class="fileInputLabel">
                                                 <i class="fa-regular fa-file-image"></i>
                                             </label>
                                         </div>
-                                        
-                                        <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarColecionaveis">
+
+                                        <button type="submit" class="btn btn-primary button_color btnGuardar"
+                                            id="btnGuardarColecionaveis">
                                             Guardar
                                         </button>
 
@@ -899,7 +867,7 @@
 
                             </form>
 
-                        </div>    
+                        </div>
 
                     </div>
 
@@ -912,18 +880,18 @@
         <!-- TOAST MESSAGE -->
         <div class="toast-container position-fixed top-0 end-0">
             <div id="alertToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <strong class="me-auto">TSIW X</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body" id="adminToast">
-                
-            </div>
+                <div class="toast-header">
+                    <strong class="me-auto">TSIW X</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="adminToast">
+
+                </div>
             </div>
         </div>
 
     </main>
-      
+
     <script type="module" src="../js/views/adminView.js"></script>
 
     <script type="module" src="../js/views/NavbarView.js"></script>
@@ -938,4 +906,5 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>
