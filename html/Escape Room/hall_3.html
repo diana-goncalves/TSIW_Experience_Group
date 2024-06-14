@@ -64,7 +64,7 @@
         <map name="heroMap">
             <area id="hall3Left" shape="rect" coords="296,403,465,777" title="Sala 210" alt="Sala 210" href="#">
             <area id="hall3Right" shape="rect" coords="1421,442,1574,811" title="Sala 211" alt="Sala 211"
-                href="Sala211.html">
+                href="#">
             <area id="hall3tohall2" shape="rect" coords="0,858,1917,1079" title="Corredor Final" title="Corredor Final"
                 alt="Corredor Final" href="hall_2.html">
         </map>
@@ -75,6 +75,25 @@
         <img usemap="#heroMap" class="imgBack img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
             src="../../media/img/ER-assets/hall3-to-hall2.png" title="Corredor Meio" alt="para corredor Meio">
     </section>
+
+    <!--Modal PARA QUANDO NÃO TEM A CHAVES-->
+    <div class="modal fade"  id="noKeyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 m-0 modal-header">
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">NÃO TENS AS CHAVES DESTA PORTA!</h1>    
+                    </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Procura em outras salas por mais jogos ou Items</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--History Lines-->
     <div class="toast-container position-fixed bottom-0 end-0 p-2"></div>
@@ -98,6 +117,9 @@
 
     <!-- Lanterna-->
     <div id="flashlight"></div>
+
+    <!--Pause-->
+    <div class="pauseZone"></div>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -44,6 +44,17 @@ export function getInventory() {
     return filterinventory;
 }
 
+// VER SE O ITEM TA NO IVENTARIO
+export function checkItemInventory(item) {
+    let filterinventory = items.filter(element => element.inInventory === true)
+    console.log(filterinventory);
+    if (filterinventory.some(element => element.name == item)) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
 export function resetInventory() {
     items.forEach(element => {
         element.inInventory = false;
