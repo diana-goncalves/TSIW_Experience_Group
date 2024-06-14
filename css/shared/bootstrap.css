@@ -159,7 +159,7 @@ button:focus {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%); 
+  transform: translate(-50%,-50%);
   background-color: var(--color-yellow);
   font-weight: bold;
   border: none;
@@ -286,6 +286,8 @@ button:focus {
 /* parcerias */
 .partner-logo {
   max-width: 100%;
+  width: 100px; /* Define a largura uniforme */
+  height: auto; /* Mantém a proporção */
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
@@ -293,6 +295,14 @@ button:focus {
 .partner-logo:hover {
   filter: grayscale(0%);
 }
+
+.partner-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
 
 /* //////////// MEDIA QUERIES /////////// */
 /* TABLETS */
