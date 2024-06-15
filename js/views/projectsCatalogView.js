@@ -76,6 +76,12 @@ function renderProject(projectData) {
     
 }
 
+// Adicionar função para organizar por data ( eventos )
+
+
+
+// Adicionar função para organizar por data ( eventos )
+
 function filtrarPorNome() {
     // Procurar projeto pelo nome automatico
     const filterInputProjects = document.querySelector("#txtProject");
@@ -220,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    var observer = new IntersectionObserver(onIntersection, {threshold: 0.5});
+    var observer = new IntersectionObserver(onIntersection, {threshold: 0.3});
 
     document.querySelectorAll(".card").forEach(card => {
         observer.observe(card);
