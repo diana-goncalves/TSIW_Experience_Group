@@ -1,17 +1,22 @@
 import * as User from "../models/UserModel.js"
-import {init, getInventoryCollectibles, getCollectibles} from "../models/collectiblesModel.js";
+import {init as initColectibles, getCollectibles} from "../models/collectiblesModel.js";
 
-let estadoUser = User.getUserLogged();
-let username = estadoUser.username;
+let user = User.getUserLogged();
+let username = user.username;
 
-if (estadoUser.username === "admin") {
+if (user.username === "admin") {
     location.href = "../../html/admin.html";
 }
 
-if(estadoUser) {
+if(user) {
     
     // Mudar username
-    document.querySelector(".headerAccount").innerHTML = `${estadoUser.username}`;
+    document.querySelector(".headerAccount").innerHTML = 
+    `
+        ${user.username} 
+        ${user.victory ? `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>` : "" }
+        
+    `;
 
     // Logout
     document.querySelector(".logoutButton").addEventListener("click", event => {
@@ -121,6 +126,40 @@ function editPassword() {
 
 // form
 
+// Collectibles
+initColectibles();
+let collectibles = getCollectibles();
+const totalCollectibles = collectibles.length;
+let userCollectibles = user.collectibles;
+
+document.querySelector("#colecionaveisHeader").innerHTML += `  ${userCollectibles.length}/${totalCollectibles}`;
+
+function renderCollectibles() {
+    const catalog = document.querySelector("#colecionaveisCatalog");
+
+    collectibles.forEach(item => {        
+        let img = document.createElement('img');
+        const path = item.img.replace("../", "");
+        img.src = path;
+        img.width = 100;
+        img.height = 100;
+        img.alt = item.name;
+        img.id = item.name;
+        
+        // Caso o utilizador não tenha encontrado o colecionavel aplicar filtro preto e branco
+        if (userCollectibles.includes(item.name)) {
+            img.className = 'perfilCollectibleUnlocked';
+        } else {
+            img.className = 'perfilCollectibleLocked';
+        }
+
+        catalog.appendChild(img);
+       
+    })
+}
+
+// Collectibles
+
 function customToast(message) {
     
     document.querySelector("#perfilToastbody").textContent = message;
@@ -136,4 +175,6 @@ User.init()
 submitForm();
 userData(User.getUserLogged());
 editPassword();
+renderCollectibles();
+
 

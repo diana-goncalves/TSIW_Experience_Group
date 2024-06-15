@@ -24,16 +24,16 @@ document.addEventListener("DOMContentLoaded", function() {
     let navPAI = document.querySelector(".navbar");
     
     
-    let estadoUser = getUserLogged();
+    let user = getUserLogged();
 
     // Mudar navbar caso user ou admin estiverem logados  
     
-    if (estadoUser) {
+    if (user) {
         // admin
-        if (estadoUser.id === 1) {
+        if (user.id === 1) {
         
             document.querySelector(".user_icon").href = "../../html/admin.html"
-            document.querySelector(".user_icon").innerHTML = ` ${estadoUser.username}`
+            document.querySelector(".user_icon").innerHTML = ` ${user.username}`
             document.querySelector("#LoginLogout_Container").innerHTML += 
             `
             <li class="nav-item">
@@ -47,10 +47,13 @@ document.addEventListener("DOMContentLoaded", function() {
         else {
             
             document.querySelector(".user_icon").href = "../../html/account.html"
-            document.querySelector(".user_icon").innerHTML = ` ${estadoUser.username}`
+            document.querySelector(".user_icon").innerHTML = `
+                ${user.victory ? `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>` : "" } 
+                ${user.username}
+             `
             document.querySelector("#LoginLogout_Container").innerHTML += 
             `
-            <li class="nav-item">
+            <li class="nav-item d-flex align-items-center">
                 <button class="logoutButton" id="logoutIndex"><i class="fas fa-sign-out" style="color: var(--color-yellow);"></i></button>    
             </li>
             
@@ -63,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("#logoutIndex").addEventListener("click", event => {
             event.preventDefault()
 
-            
             if (confirm("Queres mesmo terminar sessão?")) {
                 
                 logout()

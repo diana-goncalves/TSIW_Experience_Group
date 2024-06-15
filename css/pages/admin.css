@@ -378,4 +378,13 @@ thead {
 .form-text {
     color: var(--color-white);
 }
+#colecionaveisCatalog {
+    margin-top: 2rem;
+}
+.perfilCollectibleLocked {
+    filter: saturate(0);
+}
+.perfilCollectibleUnlocked {
+    filter: saturate(1);
+}
 /* Definições da conta  */

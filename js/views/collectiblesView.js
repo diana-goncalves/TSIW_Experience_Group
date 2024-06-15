@@ -75,6 +75,7 @@ function fillCollectibles() {
         img.src = item.img;
         img.alt = item.name;
         img.id = item.name;
+        
         img.className = 'img-fluid collectible';
         
         for (const slot of collectibleSlot) {
