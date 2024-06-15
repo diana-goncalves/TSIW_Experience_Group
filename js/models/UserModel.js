@@ -5,7 +5,7 @@ export function init() {
   if (localStorage.users) {
     const tempUsers = JSON.parse(localStorage.users);
     for(let user of tempUsers) {
-      users.push(new User(user.username, user.password, user.firstName, user.lastName, user.birthdate, user.location, user.gender));
+      users.push(new User(user.username, user.password, user.victory, user.collectibles, user.firstName, user.lastName, user.birthdate, user.location, user.gender));
     }
   } else {
     users = [];
@@ -13,11 +13,11 @@ export function init() {
 }
 
 // ADICIONAR UTILIZADOR
-export function add(username, password) {
+export function add(username, password, victory, collectibles) {
   if (users.some((user) => user.username === username)) {
     throw Error(`O Username:"${username}" ja está a ser utilizado!`);
   } else {
-    users.push(new User(username, password));
+    users.push(new User(username, password, victory, collectibles));
     localStorage.setItem("users", JSON.stringify(users));
   }
 }
@@ -127,17 +127,20 @@ class User {
   id = null;
   username = "";
   password = "";
+  victory = null;
+  collectibles = [];
   firstName = null;
   lastName = null;
   birthdate = null;
   location = null;
   gender = null;
 
-
-  constructor(username, password, firstName=null, lastName=null, birthdate=null, location=null, gender=null) {
+  constructor(username, password, victory=false, collectibles=[], firstName=null, lastName=null, birthdate=null, location=null, gender=null) {
     this.id = getNextId();
     this.username = username;
     this.password = password;
+    this.victory = victory;
+    this.collectibles = collectibles;
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthdate = birthdate;

@@ -2,7 +2,7 @@ import { addEvents } from "./models/EventModel.js";
 import { addItem } from "./models/inventoryModel.js";
 import { add } from "./models/UserModel.js";
 import { addProject } from "./models/ProjectModel.js";
-import { addCollectible } from "./models/collectiblesModel.js"
+import { addCollectible } from "./models/collectiblesModel.js";
 import { addTestemunho } from "./models/AlumniModel.js";
 
 initdata();
@@ -123,36 +123,42 @@ function initdata() {
             {
                 id: 1,
                 username: "admin",
-                password: "admin"
+                password: "admin",
+                victory: true,
             },
             {
                 id: 2,
                 username: "Auser",
                 password: "Apass",
+                victory: true,
             },
             {
                 id: 3,
                 username: "user1",
                 password: "pass1",
+                victory: true,
             },
             {
                 id: 4,
                 username: "user2",
                 password: "pass2",
+                victory: false,
             },
             {
                 id: 5,
                 username: "Zuser",
                 password: "Zpass",
+                victory: false,
             },
             {
                 id: 6,
                 username: "userB",
                 password: "passB",
+                victory: false,
             }
         ];
         users.forEach((user) => {
-            add(user.username, user.password);
+            add(user.username, user.password, user.victory);
         });
     }
 

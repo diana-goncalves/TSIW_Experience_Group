@@ -1,20 +1,20 @@
 import * as collectibles from "../models/collectiblesModel.js";
+import { editUser } from "../models/UserModel.js";
 
 //--------------------------------------------------------------------------------------------
 // CONSTRUÇÃO DO INVENTARIO
 let collectiblesView = () =>{
     collectibles.init();
 
-
     document.querySelector(".InvCollectibleZone").innerHTML =`
     <div class="offcanvas offcanvas-bottom modal-background" tabindex="-1" id="collectibles" aria-labelledby="CollectiblesTitle">
         <div class="offcanvas-header d-flex justify-content-between">
             <h5 class="offcanvas-title mx-1 goto"  data-bs-toggle="offcanvas" data-bs-target="#inventory">Inventory</h5>
-            <h5 class="offcanvas-title mx-5 " id="CollectiblesTitle">Tropheus</h5>
+            <h5 class="offcanvas-title mx-5" id="CollectiblesTitle">Tropheus</h5>
             <button type="button" class="btn-close-white btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div class=" container-fluid text-center">
+            <div class="container-fluid text-center">
                 <div class="Collectibles row row-cols-4 justify-content-center">
                     <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
                     <div class="col collectibleSlot rounded-1 mx-1 mt-3 mt-lg-1"></div>
@@ -60,9 +60,13 @@ let resetCollectibles = ()=>{
     }    
 }
 
+// Atualizar colecionaveis
+let userCollectibles = [];
 
 function fillCollectibles() {
     let CollectedItems = collectibles.getInventoryCollectibles();
+
+    userCollectibles.push(CollectedItems);
 
     let collectibleSlot = document.querySelectorAll(".collectibleSlot");
 

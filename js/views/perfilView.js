@@ -1,4 +1,5 @@
 import * as User from "../models/UserModel.js"
+import {init, getInventoryCollectibles, getCollectibles} from "../models/collectiblesModel.js";
 
 let estadoUser = User.getUserLogged();
 let username = estadoUser.username;
