@@ -1,11 +1,14 @@
 import setItems from "../views/inventoryView.js";
 import setCollectibles from "../views/collectiblesView.js";
 import GameStateView from "./GameStateView.js";
+import {checkItemInventory} from "../models/inventoryModel.js"
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();
 });
+
+let noKey =  new bootstrap.Modal(document.querySelector("#noKeyModal"));
 
 function hall3View() {
 
@@ -58,7 +61,23 @@ function hall3View() {
     hall3BackArea.addEventListener("mouseleave",(e)=>{
         e.preventDefault();
         imgBack.style.display="none";
-    });    
+    });  
+    
+    hall3LeftArea.addEventListener("click", (e)=>{
+        if (checkItemInventory("chave 210")) {
+            location.href="./Sala210.html"
+        } else {
+            noKey.show();
+        }
+    })
+
+    hall3RightArea.addEventListener("click", (e)=>{
+        if (checkItemInventory("chave 211")) {
+            location.href="./Sala211.html"
+        } else {
+            noKey.show();
+        }
+    })
 }
 hall3View();
 

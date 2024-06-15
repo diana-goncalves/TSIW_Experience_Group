@@ -1,18 +1,22 @@
-import setItems from "../views/inventoryView.js"
-import setCollectibles from "../views/collectiblesView.js"
+import setItems from "../views/inventoryView.js";
+import setCollectibles from "../views/collectiblesView.js";
 import GameStateView from "../views/GameStateView.js";
+import {checkItemInventory} from "../models/inventoryModel.js"
+import {checkGameCompleted} from "../models/gameStateModel.js"
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();
 });
-
+let noKey =  new bootstrap.Modal(document.querySelector("#noKeyModal"));
 function hall1View() {
 
     GameStateView("hall 1");
     // Mete os items na sala
-    setItems("hall 1");
-    setCollectibles("hall 1")
+    if (checkGameCompleted == "") {   
+        setItems("hall 1");
+        setCollectibles("hall 1")   
+    }
     //--------------------------------------------------------------------
     // PORTA ESQUERDA
     const hall1LeftArea = document.querySelector("#hall1Left");
@@ -55,6 +59,22 @@ function hall1View() {
         e.preventDefault();
         imgFront.style.display="none"
     });            
+
+    hall1LeftArea.addEventListener("click", (e)=>{
+        if (checkItemInventory("chave 202")) {
+            location.href="./Sala202.html"
+        } else {
+            noKey.show();
+        }
+    })
+
+    hall1RightArea.addEventListener("click", (e)=>{
+        if (checkItemInventory("chave 203")) {
+            location.href="./Sala203.html"
+        } else {
+            noKey.show();
+        }
+    })
 }
 
 hall1View();
