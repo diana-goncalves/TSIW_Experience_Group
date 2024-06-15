@@ -1,12 +1,14 @@
 let users = [];
+let blockedUsers = [];
 
 // CARREGAR UTILIZADORES DA LOCALSTORAGE
 export function init() {
   if (localStorage.users) {
     const tempUsers = JSON.parse(localStorage.users);
     for(let user of tempUsers) {
-      users.push(new User(user.username, user.password, user.victory, user.collectibles, user.firstName, user.lastName, user.birthdate, user.location, user.gender));
+      users.push(new User(user.username, user.password, user.victory, user.collectibles, user.blocked, user.firstName, user.lastName, user.birthdate, user.location, user.gender));
     }
+    blockedUsers = users.filter(user => user.blocked).map(user => user.username);
   } else {
     users = [];
   }
@@ -46,7 +48,9 @@ export function editUser(username, userData) {
 // LOGIN DO UTILIZADOR
 export function login(username, password, keep=false) {
   const user = users.find((user) => user.username === username && user.password === password);
-  if (user) {
+  const bloqueado = user.blocked;
+
+  if (user && !bloqueado) {
     if (keep) {
       localStorage.setItem("loggedUser", JSON.stringify(user));
       return true;  
@@ -54,8 +58,14 @@ export function login(username, password, keep=false) {
       sessionStorage.setItem("loggedUser", JSON.stringify(user));
       return true;
     }
-  } else {
-    throw Error("Palavra-passe ou nome de utilizador incorreto");
+  } else { 
+    
+    if (bloqueado) {
+      throw Error("Conta bloqueada!");
+    } else {
+      throw Error("Palavra-passe ou nome de utilizador incorreto");
+    }   
+    
   }
 }
 
@@ -72,7 +82,31 @@ export function logout() {
 // REMOVER USER ( ADMIN )
 export function removeUser(username) {
   users = users.filter((user) => user.username !== username);
+  blockedUsers = blockedUsers.filter((user) => user !== username);
   localStorage.setItem("users", JSON.stringify(users));
+}
+
+// BLOQUEAR/DESBLOQUEAR USER ( ADMIN )
+export function blockUser(username) {
+  const user = users.find((user) => user.username === username);
+
+  if (user) {
+    user.blocked = !user.blocked;
+
+    if (user.blocked) {
+      if (!blockedUsers.includes(username)) {
+        blockedUsers.push(username);
+      }
+    } else {
+      blockedUsers = blockedUsers.filter((user) => user !== username);
+    }
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+  } else {
+    throw Error("Utilizador não encontrado!");
+  }
+  
 }
 
 // VERIFICA EXISTÊNCIA DE ALGUÉM AUTENTICADO
@@ -93,9 +127,8 @@ export function getUserLogged() {
   }
 }
 
-export function findUser(userId) {
-  console.log(users, userId);
-  return users.find((user) => user.id == userId);
+export function findUser(username) {
+  return users.find((user) => user.username === username);
 }
 
 function getNextId() {
@@ -129,18 +162,20 @@ class User {
   password = "";
   victory = null;
   collectibles = [];
+  blocked = false;
   firstName = null;
   lastName = null;
   birthdate = null;
   location = null;
   gender = null;
 
-  constructor(username, password, victory=false, collectibles=[], firstName=null, lastName=null, birthdate=null, location=null, gender=null) {
+  constructor(username, password, victory=false, collectibles=[], blocked=false, firstName=null, lastName=null, birthdate=null, location=null, gender=null) {
     this.id = getNextId();
     this.username = username;
     this.password = password;
     this.victory = victory;
     this.collectibles = collectibles;
+    this.blocked = blocked;
     this.firstName = firstName;
     this.lastName = lastName;
     this.birthdate = birthdate;

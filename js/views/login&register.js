@@ -78,7 +78,7 @@ loginForm.addEventListener("submit", event => {
         // }, 5000);
     } 
      catch (error) {
-        customToast("Não foi possivel iniciar sessão!")
+        customToast(error)
     }
     
 })

@@ -67,6 +67,11 @@ function renderTableUsers(users = [], page = 1) {
                         Remover
                     </button>
                 </td>
+                <td style="text-align: center;">
+                    <button class="btn bloquear" id="${user.username}" type="button" style="border-radius: 0;">
+                        ${user.blocked ? "Desbloquear" : "Bloquear"}
+                    </button>
+                </td>
             </tr>
         `
     });
@@ -80,9 +85,32 @@ function renderTableUsers(users = [], page = 1) {
             if(confirm("Queres mesmo remover o utilizador?")) {
                 User.removeUser(button.id);
                 renderTableUsers(User.getUsers(),currentPage);
+                customToast("Utilizador removido com sucesso!")   
             }
         })
     }
+
+     // Clicar no botão bloquear USER
+
+     const btnsBlock = document.getElementsByClassName("bloquear");
+
+     for (const button of btnsBlock) {
+         button.addEventListener("click", () => {
+             if(confirm("Queres mesmo bloquear o utilizador?")) {
+                User.blockUser(button.id);
+                renderTableUsers(User.getUsers(),currentPage);
+                
+                const user = User.findUser(button.id)
+
+                if (!user.blocked) {
+                    customToast("Utilizador desbloqueado com sucesso!");
+                } else {
+                    customToast("Utilizador bloqueado com sucesso!");
+                }
+
+             }
+         })
+     }
 
     tableHeaders();
     updatePage();
@@ -259,6 +287,15 @@ function sortTable(colIndex, isSorted) {
 
    renderTableUsers(users, currentPage);
 
+}
+
+function customToast(message) {
+    
+    document.querySelector("#adminToast").textContent = message;
+
+    var toast = new bootstrap.Toast(document.querySelector("#alertToast"));
+
+    toast.show();
 }
 
 
