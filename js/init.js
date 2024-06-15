@@ -201,7 +201,7 @@ function initdata() {
                 msgEvent: "A 5.ª edição da International Computer Programming Education Conference vai realizar-se nos dias 27 e 28 de junho de 2024.",
                 date: "2024-06-27",
                 link: "https://www.esmad.ipp.pt/noticias/5th-icpec-%20international-computer-programming-education-conference",
-                photo: null,
+                photo: "../media/projetos/ICPEC.jpg",
                 state: "Destacado"
             },
             {
@@ -209,7 +209,7 @@ function initdata() {
                 msgEvent: "Queres vir conhecer a ESMAD? Nos dias 17 e 24 de abril, a ESMAD abre portas a todos os estudantes do Ensino Secundário e Profissional que nos queiram visitar!",
                 date: "2024-04-17",
                 link: "https://www.esmad.ipp.pt/noticias/open-days",
-                photo: null,
+                photo: "../media/projetos/OPENDAYS.jpg",
                 state: "Destacado"
             },
             {
@@ -217,7 +217,7 @@ function initdata() {
                 msgEvent: "Se gostas de criar jogos, ou queres entrar nesta aventura, então agarra esta oportunidade.",
                 date: "2024-02-23",
                 link: "https://madjam.esmad.ipp.pt/",
-                photo: null,
+                photo: "../media/projetos/MADJAM.jpg",
                 state: "Destacado"
             },
 

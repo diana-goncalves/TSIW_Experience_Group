@@ -96,19 +96,18 @@ function renderTableUsers(users = [], page = 1) {
 
      for (const button of btnsBlock) {
          button.addEventListener("click", () => {
-             if(confirm("Queres mesmo bloquear o utilizador?")) {
-                User.blockUser(button.id);
-                renderTableUsers(User.getUsers(),currentPage);
-                
-                const user = User.findUser(button.id)
+             
+            User.blockUser(button.id);
+            renderTableUsers(User.getUsers(),currentPage);
+            
+            const user = User.findUser(button.id)
 
-                if (!user.blocked) {
-                    customToast("Utilizador desbloqueado com sucesso!");
-                } else {
-                    customToast("Utilizador bloqueado com sucesso!");
-                }
+            if (!user.blocked) {
+                customToast("Utilizador desbloqueado com sucesso!");
+            } else {
+                customToast("Utilizador bloqueado com sucesso!");
+            }
 
-             }
          })
      }
 
