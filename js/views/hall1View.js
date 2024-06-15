@@ -2,7 +2,6 @@ import setItems from "../views/inventoryView.js";
 import setCollectibles from "../views/collectiblesView.js";
 import GameStateView from "../views/GameStateView.js";
 import {checkItemInventory} from "../models/inventoryModel.js"
-import {checkGameCompleted} from "../models/gameStateModel.js"
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
@@ -13,10 +12,9 @@ function hall1View() {
 
     GameStateView("hall 1");
     // Mete os items na sala
-    if (checkGameCompleted == "") {   
-        setItems("hall 1");
-        setCollectibles("hall 1")   
-    }
+    setItems("hall 1");
+    setCollectibles("hall 1")   
+    
     //--------------------------------------------------------------------
     // PORTA ESQUERDA
     const hall1LeftArea = document.querySelector("#hall1Left");

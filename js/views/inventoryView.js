@@ -49,7 +49,7 @@ let resetInventory = ()=>{
 
 function fillInventory() {
     let InventaryItems = invItems.getInventory();
-
+    console.log(InventaryItems);
     let inventorySlot = document.querySelectorAll(".inventorySlot");
 
     InventaryItems.forEach(item => {        

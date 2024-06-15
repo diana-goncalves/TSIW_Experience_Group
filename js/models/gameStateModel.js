@@ -1,21 +1,22 @@
  let gameState
 
 export function init() {
+    console.log("tenso");
     if(sessionStorage.gameStatus) {
         let temp = JSON.parse(sessionStorage.gameStatus);
-        gameState = new GameStatus(temp.visitedRooms,temp.GameStatus);
+        console.log("temp:");
+        console.log(temp);
+        gameState = new GameStatus(temp.visitedRooms,temp.gamesCompleted);
     } else {
         gameState = new GameStatus();
     }
     console.log(gameState);
-
 }
 
 export function addgamesCompleted(game){
     if (!gameState.gamesCompleted.includes(game)) {
         gameState.gamesCompleted.push(game);
         sessionStorage.setItem("gameStatus", JSON.stringify(gameState));
-
     }
 }
 

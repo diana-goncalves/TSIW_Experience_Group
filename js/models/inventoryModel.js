@@ -10,7 +10,6 @@ export function init(){
     } else {
         items = [];
     }
-    console.log(items);
 }
 
 // ADICIONAR ITEM
@@ -47,7 +46,6 @@ export function getInventory() {
 // VER SE O ITEM TA NO IVENTARIO
 export function checkItemInventory(item) {
     let filterinventory = items.filter(element => element.inInventory === true)
-    console.log(filterinventory);
     if (filterinventory.some(element => element.name == item)) {
         return true;
     }else{

@@ -2,6 +2,7 @@ import setItems from "../views/inventoryView.js";
 import setCollectibles from "../views/collectiblesView.js";
 import GameStateView from "./GameStateView.js";
 import {checkItemInventory} from "../models/inventoryModel.js"
+import { updateUserCollectibles } from "../models/UserModel.js";
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
@@ -11,7 +12,7 @@ $(document).ready(function(e) {
 let noKey =  new bootstrap.Modal(document.querySelector("#noKeyModal"));
 
 function hall3View() {
-
+    updateUserCollectibles();
     GameStateView("hall 3");
     // Mete os items na sala
     setItems("hall 3");

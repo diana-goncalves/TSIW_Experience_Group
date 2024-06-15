@@ -60,10 +60,11 @@ function entradaView() {
         }
         buttonStart.addEventListener("click",(e)=>{
             e.preventDefault();
-            GameStateView("entrada");
             NewGame();
             resetInventory();
             resetCollectibles();
+            
+            GameStateView("entrada");
         })
 
     })

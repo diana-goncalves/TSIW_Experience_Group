@@ -10,7 +10,6 @@ export function init(){
     } else {
         collectibles = [];
     }
-    console.log(collectibles);
 }
 
 // ADICIONAR ITEM

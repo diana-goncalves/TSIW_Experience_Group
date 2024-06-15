@@ -1,6 +1,8 @@
 import setItems from "../views/inventoryView.js"
 import setCollectibles from "../views/collectiblesView.js"
 import GameStateView from "../views/GameStateView.js";
+import {checkGameCompleted} from "../models/gameStateModel.js"
+
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
@@ -11,9 +13,10 @@ function sala202View() {
     
     GameStateView("sala 202");
     // Mete os items na sala
-    
-    setItems("sala 202");
-    setCollectibles("sala 202")
+    // if (checkGameCompleted("minigame1")) {   
+        setItems("sala 202");
+        setCollectibles("sala 202")
+    // }
     //--------------------------------------------------------------------
     //map das portas
     const sala202ComputerArea = document.querySelector("#sala202Computer");

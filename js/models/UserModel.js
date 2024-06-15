@@ -1,3 +1,5 @@
+import {init as collInit,getInventoryCollectibles} from "../models/collectiblesModel.js"
+
 let users = [];
 let blockedUsers = [];
 
@@ -124,6 +126,35 @@ export function getUserLogged() {
     return JSON.parse(localStorage.getItem("loggedUser"));
   }else{
     return JSON.parse(sessionStorage.getItem("loggedUser"));
+  }
+}
+
+export function updateUserCollectibles() {
+  //collInit();
+  init();
+  let userLogged //USER Logged
+  let userCollectibles = getInventoryCollectibles(); // Collectibles 
+
+  if (localStorage.loggedUser) {// vai buscar o user Logged
+    userLogged = JSON.parse(localStorage.getItem("loggedUser"));
+  }else{
+    userLogged = JSON.parse(sessionStorage.getItem("loggedUser"));
+  }
+  // Vai buscar o index no array
+  let index = users.findIndex(element => element.username == userLogged.username)
+
+
+  userCollectibles.forEach(element => {
+    if (!users[index].collectibles.includes(element.name)) {
+      users[index].collectibles.push(element.name);
+    }
+  });
+  // Guardar no storage
+  localStorage.setItem("users", JSON.stringify(users));
+  if (localStorage.loggedUser) {
+    localStorage.setItem("loggedUser", JSON.stringify(users[index]));
+  } else {
+    sessionStorage.setItem("loggedUser", JSON.stringify(users[index]));
   }
 }
 
