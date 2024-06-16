@@ -3,64 +3,58 @@ import {init,addgamesCompleted,checkGameCompleted} from "../models/gameStateMode
 
 let options = [
     {
-        nome: "CSS",
-        certo: `../../media/img/ER-assets/mini-game1/css1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/css1.png`,`../../media/img/ER-assets/mini-game1/css2.png`,`../../media/img/ER-assets/mini-game1/css3.png`,`../../media/img/ER-assets/mini-game1/css4.png`]
+        pergunta: "Qual é o valor decimal do número binário 1010?",
+        certo: `10`,
+        opt: [`8`,`9`,`10`,`12`,]
+    },{
+        pergunta: "Qual é o valor decimal do número binário 0111?",
+        certo: `7`,
+        opt: [`5`,`9`,`4`,`7`,]
+    },{
+        pergunta: "Qual é o valor binario do número binário 9?",
+        certo: `1001`,
+        opt: [`0101`,`0111`,`1001`,`0001`,]
+    },{
+        pergunta: "Qual é o valor binario do número binário 2?",
+        certo: `0010`,
+        opt: [`0010`,`1111`,`0001`,`1000`,]
+    },{
+        pergunta: `Como você imprime "Hello, World!" em Python?`,
+        certo: `print("Hello, World!")`,
+        opt: [`console.log("Hello Word")`,`print("Hello, World!")`,`printf("Hello, World!")`,`System.out.println("Hello, World!")`,]
+    },{
+        pergunta: `Qual tag HTML é usada para criar um parágrafo`,
+        certo: `<p>`,
+        opt: [`<p>`,`<span>`,`<h1>`,`<div>`,]
     },
-    {
-        nome: "HTML",
-        certo: `../../media/img/ER-assets/mini-game1/html1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/html2.png`,`../../media/img/ER-assets/mini-game1/html3.png`,`../../media/img/ER-assets/mini-game1/html4.png`,`../../media/img/ER-assets/mini-game1/html1.png`]
-    },
-    {
-        nome: "vscode",
-        certo: `../../media/img/ER-assets/mini-game1/vscode1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/vscode1.png`,`../../media/img/ER-assets/mini-game1/vscode2.png`,`../../media/img/ER-assets/mini-game1/vscode3.png`,`../../media/img/ER-assets/mini-game1/vscode4.png`]
-    },
-    {
-        nome: "Arduino",
-        certo: `../../media/img/ER-assets/mini-game1/arduino1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/arduino2.png`,`../../media/img/ER-assets/mini-game1/arduino3.png`,`../../media/img/ER-assets/mini-game1/arduino1.png`,`../../media/img/ER-assets/mini-game1/arduino4.png`]
-    },
-    {
-        nome: "Bootstrap",
-        certo: `../../media/img/ER-assets/mini-game1/bootstrap1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/bootstrap2.png`,`../../media/img/ER-assets/mini-game1/bootstrap3.png`,`../../media/img/ER-assets/mini-game1/bootstrap4.png`,`../../media/img/ER-assets/mini-game1/bootstrap1.png`]
-    },
-    {
-        nome: "Python",
-        certo: `../../media/img/ER-assets/mini-game1/python1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/python1.png`,`../../media/img/ER-assets/mini-game1/python2.png`,`../../media/img/ER-assets/mini-game1/python3.png`,`../../media/img/ER-assets/mini-game1/python4.png`]
-    }
+    
 ];
 init();
 let Exercise = [];
 let progress = 1;
-let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame2"));
-let modalIntro =  new bootstrap.Modal(document.querySelector("#intro2"));
+let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame3"));
+let modalIntro =  new bootstrap.Modal(document.querySelector("#intro3"));
 let gameDone =  new bootstrap.Modal(document.querySelector("#gameDone"));
 let vitoria = new bootstrap.Modal(document.querySelector("#victoryModal"));
 
 
 let startGame = () =>{  
     let index = Math.floor(Math.random() * options.length);//nao pode ter o mesmo index
-    console.log(index);
     if (Exercise.some(element => element.certo == options[index].certo)) {
         startGame();
-        console.log("dfdfs");
     }else{
         Exercise.push(options[index]); 
-        document.querySelector(".logoName").textContent = options[index].nome;
+        document.querySelector(".Question").textContent = options[index].pergunta;
         options[index].opt.forEach((element,i) => {
-            let img = document.createElement("img");
-            img.classList.add("w-50", "h-50", "logo");
-            img.src = element;
+            let p = document.createElement("p");
+            p.classList.add("textminigame3", "text-black", "text-center" ,"p-1", "m-1");
+            p.innerHTML = element;
             if (element == options[index].certo) {
-                img.addEventListener("click", optionRight)
+                p.addEventListener("click", optionRight)
             }else{
-                img.addEventListener("click",gameOver)
+                p.addEventListener("click",gameOver)
             }
-            document.querySelector(`.card${i+1}`).appendChild(img)
+            document.querySelector(`.card${i+1}`).appendChild(p)
         });
     }
 }
@@ -71,7 +65,7 @@ function optionRight(e) {
     if (progress == 100) {
         modalGame.hide();
         vitoria.show();
-        addgamesCompleted("game2");
+        addgamesCompleted("minigame3");
         return;
     }
     let bar = document.querySelector(".progress-bar");
@@ -100,8 +94,8 @@ let resetGame = ()=>{
 }
 
 
-document.querySelector("#sala206Computer").addEventListener("click", ()=>{
-    if (!checkGameCompleted("game2")) {
+document.querySelector("#sala211Computer").addEventListener("click", ()=>{
+    if (!checkGameCompleted("minigame3")) {
         modalIntro.show();
     } else {
         gameDone.show();
@@ -109,12 +103,12 @@ document.querySelector("#sala206Computer").addEventListener("click", ()=>{
 })
 
 
-document.querySelector("#miniGame2").addEventListener('shown.bs.modal', () => {
+document.querySelector("#miniGame3").addEventListener('shown.bs.modal', () => {
     startGame();
 
 })
 
-document.querySelector("#miniGame2").addEventListener('hidden.bs.modal', () => {
+document.querySelector("#miniGame3").addEventListener('hidden.bs.modal', () => {
     resetGame();
 });
 

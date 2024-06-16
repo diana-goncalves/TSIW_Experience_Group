@@ -164,7 +164,7 @@ document.querySelector(".CompleteLevel").addEventListener("click",(e)=>{
         if (progress==3) {
             modalGame.hide();
             vitoria.show();
-            addgamesCompleted("minigame1");
+            addgamesCompleted("minigame2");
         } else {
             progress++;
             modalGame.hide();

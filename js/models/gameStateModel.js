@@ -35,6 +35,10 @@ export function checkGameCompleted(game) {
     return gameState.gamesCompleted.includes(game)  
 }
 
+export function checkWinEr() {
+    gameState.gamesCompleted.lenght == 4 ? true : false;
+}
+
 export function NewGame() {
     gameState = new GameStatus();
     sessionStorage.setItem("gameStatus", JSON.stringify(gameState));
