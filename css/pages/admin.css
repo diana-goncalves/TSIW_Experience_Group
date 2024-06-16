@@ -380,11 +380,12 @@ thead {
 }
 #colecionaveisCatalog {
     margin-top: 2rem;
+    padding: 0;
 }
 .perfilCollectibleLocked {
     filter: saturate(0);
 }
 .perfilCollectibleUnlocked {
-    filter: saturate(1);
+    
 }
 /* Definições da conta  */
