@@ -85,14 +85,6 @@ function hall2View() {
             noKey.show();
         }
     })
-
-    hall2RightArea.addEventListener("click", (e)=>{
-        if (checkItemInventory("chave 207")) {
-            location.href="./Sala207.html"
-        } else {
-            noKey.show();
-        }
-    })
 }
 
 hall2View();

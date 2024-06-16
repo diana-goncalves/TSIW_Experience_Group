@@ -77,9 +77,15 @@
 
 /*----------------------------------------*/
 
-.inventorySlot, .collectibleSlot{
+.inventorySlot{
     height: 6rem !important;
     width: 6rem !important;
+    background-color: var(--color-black);
+}
+
+.collectibleSlot{
+    height: 5rem !important;
+    width: 6.5rem !important;
     background-color: var(--color-black);
 }
 

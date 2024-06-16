@@ -20,7 +20,11 @@ function sala203View() {
     //map das portas
     const sala203QuadroArea = document.querySelector("#sala203Quadro");
     const salaPortaArea = document.querySelector("#sala203Porta");
+    const salaPcArea = document.querySelector("#sala203Pc1");
+    const salaPc2Area = document.querySelector("#sala203Pc2");
     const imgSaida = document.querySelector(".imgSaida");
+    const imgLeft = document.querySelector(".imgLeft");
+    const imgRight = document.querySelector(".imgRight");
     const imgComputador = document.querySelector(".imgComputador");
 
     // listener para criar o efeito de hover
@@ -42,6 +46,26 @@ function sala203View() {
     salaPortaArea.addEventListener("mouseleave",(e)=>{
         e.preventDefault();
         imgSaida.style.display="none"
+    });
+
+    salaPcArea.addEventListener("mouseenter",(e)=>{
+        e.preventDefault();
+        imgLeft.style.display="block"
+    });
+
+    salaPcArea.addEventListener("mouseleave",(e)=>{
+        e.preventDefault();
+        imgLeft.style.display="none"
+    });
+    
+    salaPc2Area.addEventListener("mouseenter",(e)=>{
+        e.preventDefault();
+        imgRight.style.display="block"
+    });
+
+    salaPc2Area.addEventListener("mouseleave",(e)=>{
+        e.preventDefault();
+        imgRight.style.display="none"
     });
 }
 
