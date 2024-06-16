@@ -183,6 +183,13 @@ function filtrarPorTipo() {
     })
 }
 
+
+document.querySelector("#btnSort").addEventListener("click", () => {
+
+
+
+})
+
 // Iniciar
 
 document.addEventListener("DOMContentLoaded", () => {
