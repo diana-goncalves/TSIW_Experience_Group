@@ -21,6 +21,10 @@ function makePauseMenu() {
                                 <span class="actual-text">&nbsp;Resume&nbsp;</span>
                                 <span aria-hidden="true" class="hover-text">&nbsp;Resume&nbsp;</span>
                             </button>
+                             <button type="button" class="fullscreenButton buttonStart btn m-0 p-0" id="fullscreenBtn">
+                                <span class="actual-text">&nbsp;Fullscreen&nbsp;</span>
+                                <span aria-hidden="true" class="hover-text">&nbsp;Fullscreen&nbsp;</span>
+                            </button> 
                         </div>
                     </div>
                 </div>
@@ -52,7 +56,7 @@ function makeGameOverMenu() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
                 <div class="modal-footer border-black modal-background justify-content-center">
                     <button type="button" class="buttonStart btn m-0 p-0" onclick='location.href="./entrada.html"' >
                         <span class="actual-text">&nbsp;Try Again&nbsp;</span>
@@ -156,10 +160,33 @@ function saveCountdown() {
     sessionStorage.setItem("countdown",countdownTime)
 }
 
+// Manipulador de eventos para a tecla F
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'f') {
+        fullscreen();
+    }
+});
+
+let fullscreenPointer = false;
+function fullscreen() {
+
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+    
+}
+
 window.addEventListener('load', () => {
     updateCountdown();
     startCountdown();
     makePauseMenu();
+
+    document.querySelector("#fullscreenBtn").addEventListener("click", () => {
+        fullscreen();
+    })
+
 });
 
 window.addEventListener("pagehide",()=>{
