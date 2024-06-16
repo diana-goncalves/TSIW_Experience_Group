@@ -27,8 +27,6 @@ function renderAll() {
     const btnSortAsc = document.querySelector("#btnSortAsc");
     if (btnSortAsc) {
         btnSortAsc.addEventListener("click", sortEventsByDate);
-    } else {
-        console.error("Button with ID 'btnSortAsc' not found in the DOM.");
     }
 }
 
