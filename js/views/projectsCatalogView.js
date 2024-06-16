@@ -28,6 +28,12 @@ function renderAll() {
     if (btnSortAsc) {
         btnSortAsc.addEventListener("click", sortEventsByDate);
     }
+
+    // Adicionar listener para ordenar eventos por data descendente
+    const btnSortDesc = document.querySelector("#btnSortDesc");
+    if (btnSortDesc) {
+        btnSortDesc.addEventListener("click", sortEventsByDateDesc);
+    }
 }
 
 function renderProject(projectData) {
@@ -75,6 +81,23 @@ function sortEventsByDate() {
         const dateA = new Date(a.querySelector(".card-title").textContent.split(" - ")[1]);
         const dateB = new Date(b.querySelector(".card-title").textContent.split(" - ")[1]);
         return dateA - dateB;
+    });
+
+    myCatalogRow.innerHTML = "";
+
+    sortedEventCards.forEach(card => {
+        myCatalogRow.appendChild(card);
+    });
+}
+
+function sortEventsByDateDesc() {
+    const myCatalogRow = document.querySelector("#myCatalogRow");
+    const allEventCards = myCatalogRow.querySelectorAll(".eventos");
+
+    const sortedEventCards = Array.from(allEventCards).sort((a, b) => {
+        const dateA = new Date(a.querySelector(".card-title").textContent.split(" - ")[1]);
+        const dateB = new Date(b.querySelector(".card-title").textContent.split(" - ")[1]);
+        return dateB - dateA;
     });
 
     myCatalogRow.innerHTML = "";

@@ -70,31 +70,24 @@
       <form class="form-inline">
         <div class="row g-3 d-flex align-items-center" id="projectsButtonsContainer">
           <div class="col-md-5 pl-0">
-
-            <input type="text" name="projectName" id="txtProject" placeholder="Nome do projeto..." />
-
+            <input type="text" name="projectName" id="txtProject" class="form-control" placeholder="Nome do projeto..." />
           </div>
-
           <div class="col-md-3">
-
-            <select id="sltType">
+            <select id="sltType" class="form-control">
               <option value="todos">Projetos e Eventos</option>
               <option value="projetos">Projetos</option>
               <option value="eventos">Eventos</option>
             </select>
-
           </div>
-
-          <div class="col-sm-4">
-
-            <button id="btnSortAsc" type="button" class="btn btn-primary button_color btnOrder">
+          <div class="col-md-4 d-flex justify-content">
+            <button id="btnSortAsc" type="button" class="btn btn-primary button_color btnOrder mx-1">
               <i class="fa-solid fa-arrow-down-1-9"></i>
             </button>
-
+            <button id="btnSortDesc" type="button" class="btn btn-primary button_color btnOrder mx-1">
+              <i class="fa-solid fa-arrow-up-1-9"></i>
+            </button>
           </div>
-
         </div>
-
       </form>
 
       <!-- CATÁLOGO: EXIBIÇÃO DOS PROJETOS (VAZIO INICIALMENTE) -->
