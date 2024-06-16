@@ -24,7 +24,7 @@ function initdata() {
                 y: "70vh",
                 name: "chave 202",
                 img: "../../media/img/ER-assets/Chave 202.png",
-                room: "sala 202",
+                room: "hall 3",
                 inInventory: false
             },
             {
@@ -101,16 +101,125 @@ function initdata() {
                 inInventory: false
             },
             {
+                w:"1.7rem",
+                h:".7rem",
+                x: "30vw",
+                y: "65vh",
+                name: "Dama",
+                img: "../../media/img/ER-assets/dama.png",
+                room: "sala 211",
+                inInventory: false
+            },
+            {
+                w:"3rem",
+                h:"3rem",
+                x: "7vw",
+                y: "18vh",
+                name: "Espada",
+                img: "../../media/img/ER-assets/espada.png",
+                room: "sala 206",
+                inInventory: false
+            },
+            {
+                w:"0.7rem",
+                h:"0.7rem",
+                x: "20vw",
+                y: "85vh",
+                name: "controlo",
+                img: "../../media/img/ER-assets/controlo.png",
+                room: "sala 211",
+                inInventory: false
+            },
+            {
                 w:"2rem",
                 h:"2rem",
                 x: "75vw",
                 y: "65vh",
-                name: "controlo",
-                img: "../../media/img/ER-assets/controlo.png",
+                name: "f1 Azul",
+                img: "../../media/img/ER-assets/f1-azul.png",
+                room: "sala 203",
+                inInventory: false
+            },
+            {
+                w:"2rem",
+                h:"2rem",
+                x: "15vw",
+                y: "25vh",
+                name: "f1 Vermelho",
+                img: "../../media/img/ER-assets/f1-vermelho.png",
+                room: "sala 206",
+                inInventory: false
+            },
+            {
+                w:"2.3rem",
+                h:"2.3rem",
+                x: "75vw",
+                y: "25vh",
+                name: "keyboard",
+                img: "../../media/img/ER-assets/keyboard.png",
+                room: "hall 2",
+                inInventory: false
+            },
+            {
+                w:"1rem",
+                h:"1rem",
+                x: "65vw",
+                y: "65vh",
+                name: "pc",
+                img: "../../media/img/ER-assets/pc.png",
+                room: "hall 3",
+                inInventory: false
+            },
+            {
+                w:"2rem",
+                h:"2rem",
+                x: "35vw",
+                y: "55vh",
+                name: "peao",
+                img: "../../media/img/ER-assets/peao.png",
+                room: "sala 207",
+                inInventory: false
+            },
+            {
+                w:"2rem",
+                h:"2rem",
+                x: "95vw",
+                y: "90vh",
+                name: "rei",
+                img: "../../media/img/ER-assets/rei.png",
+                room: "sala 203",
+                inInventory: false
+            },
+            {
+                w:"2.5rem",
+                h:"2.5rem",
+                x: "75vw",
+                y: "15vh",
+                name: "save",
+                img: "../../media/img/ER-assets/save.png",
+                room: "sala 206",
+                inInventory: false
+            },
+            {
+                w:"1rem",
+                h:"1rem",
+                x: "35vw",
+                y: "95vh",
+                name: "stopwatch",
+                img: "../../media/img/ER-assets/stopwatch.png",
                 room: "sala 202",
                 inInventory: false
             },
-
+            {
+                w:"3rem",
+                h:"3rem",
+                x: "30vw",
+                y: "78vh",
+                name: "torre",
+                img: "../../media/img/ER-assets/torre.png",
+                room: "sala 207",
+                inInventory: false
+            }
         ];
         collectibles.forEach(item => {
             addCollectible(item.w,item.h,item.x, item.y, item.name, item.img, item.room, item.inInventory);
