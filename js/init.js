@@ -290,7 +290,7 @@ function initdata() {
                 state: "Publicado"
             },
             {
-                name: "Gestão de Portfólio de Projetos",
+                name: "Gestão de Portefólio de Projetos",
                 photo: "../media/projetos/BrunoRodrigues.jpg",
                 link: null,
                 author: "Bruno Rodrigues",
