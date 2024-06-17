@@ -12,7 +12,6 @@ $(document).ready(function(e) {
 let noKey =  new bootstrap.Modal(document.querySelector("#noKeyModal"));
 
 function hall3View() {
-    updateUserCollectibles();
     GameStateView("hall 3");
     // Mete os items na sala
     setItems("hall 3");

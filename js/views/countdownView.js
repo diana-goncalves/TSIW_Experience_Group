@@ -1,5 +1,5 @@
 let countdown;
-let time = 10;
+let time = 100;
 let countdownTime = time * 60; // 30 minutos
 let isPaused = false;
 let havePause = false;
@@ -84,6 +84,11 @@ function makeVictoryMenu() {
                         </div>
                         <div class="row mt-4">
                             <p class="col text-white">Conseguiste completar todos os desafios, salvas-te todos os alunos da ESMAD!!!, mas será o fim? será que apanhas-te todos os colecionaveis? será que consegues melhorar o teu tempo?</p>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <img class="img-fluid img-responsive d-block vh-25 w-25" src="../../media/img/ER-assets/trofeu.jpg" alt="Trofeu">
+                            </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">

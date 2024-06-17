@@ -66,13 +66,6 @@ function hall1View() {
         }
     })
 
-    hall1RightArea.addEventListener("click", (e)=>{
-        if (checkItemInventory("chave 203")) {
-            location.href="./Sala203.html"
-        } else {
-            noKey.show();
-        }
-    })
 }
 
 hall1View();

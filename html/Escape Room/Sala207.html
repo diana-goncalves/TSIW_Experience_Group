@@ -57,90 +57,63 @@
         </nav>
     </header>
 
-    <!-- hero section -->
+        <!-- hero section -->
     <section class="imgSala vh-100 w-100 mx-0">
         <img usemap="#salaMap" class="img-fluid img-responsive d-block vh-100 w-100 z-0 fixed-top"
-            src="../../media/img/ER-assets/Sala3.jpg" alt="Sala 206">
+            src="../../media/img/ER-assets/Sala1.jpg" alt="Sala 202">
         <map name="salaMap">
-            <area id="sala206Computer" shape="rect" coords="1808,534,1655,657" alt="Computador" title="Computador"
-                href="#">
-            <area id="sala206Porta" shape="rect" coords="176,417,497,741" alt="Saida" title="Saida"
-                href="hall_2.html">>
+            <area id="sala203Quadro" shape="rect" coords="479,367,1251,614" alt="quadro" title="Quadro"
+                href="#" data-bs-toggle="modal" data-bs-target="#ajudaModal">
+            <area id="sala203Pc1" shape="rect" coords="443,704,882,853" alt="pc" title="pc"
+                href="#" data-bs-toggle="modal" data-bs-target="#modalPc1">
+            <area id="sala203Pc2" shape="rect" coords="1767,630,1877,722" alt="pc" title="pc"
+                href="#" data-bs-toggle="modal" data-bs-target="#modalPc2">
+            <area id="sala203Porta" shape="rect" coords="1494,408,1823,804" alt="Saida" title="Saida"
+                href="hall_1.html">
         </map>
         <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
-            src="../../media/img/ER-assets/Sala3-computador.png" alt="Computador" title="Computador">
+            src="../../media/img/ER-assets/Sala1-quadro.png" alt="quadro" title="quadro">
+        <img usemap="#salaMap" class="imgLeft img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
+            src="../../media/img/ER-assets/Sala1-pc1.png" alt="Pc" title="PC">
+        <img usemap="#salaMap" class="imgRight img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
+            src="../../media/img/ER-assets/Sala1-pc2.png" alt="Pc" title="PC">
         <img usemap="#salaMap" class="imgSaida img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
-            src="../../media/img/ER-assets/Sala3-saida.png" alt="Saida" title="Saida">
+            src="../../media/img/ER-assets/Sala1-saida.png" alt="Saida" title="Saida">
     </section>
 
-    <!-- Modal MiniGame -->
-    <div class="modal fade"  id="intro2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+    <div class="modal fade"  id="ajudaModal"tabindex="-1" aria-labelledby="ajudaTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xxl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
-                <div class="border-1 border-black modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Completa as frases</h1>
-                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <h1 class="col mt-3 align-content-center title text-capitalize">Vamos pôr os teus conhecimentos à prova!</h1>    
-                </div>
-                <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
-                    <p class="col text-white">Neste desafio o jogador precisa de demonstrar o seu conhecimento sobre algumas tecnologias que são utilizadas na área de programação para a web.</p>
-                </div>
-                <div class="row mt-4 text-center justify-content-center d-flex flex-column mx-auto p-0">
-                    <div class="col">
-                        <h5 class="text-white">Instruções:</h5>
-                        <ul class="text-white text-start d-inline-block">
-                            <li>Observa atentamente as opções</li>
-                            <li>Arrastar as opções para os espaços vazios da respetiva frase</li>
-                            <li>Quando tiveres tudo preenchido, clica na seta para avançar</li>
-                            <li>Ao clicar no botão, as erradas vão aparecer com o fundo vermelho e as certas com o fundo verde</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
-                    <p class="col text-capitalize text-white">Boa sorte e divirte-te!</p>
-                </div>
-                <div class="modal-footer border-black modal-background d-flex justify-content-center">
-                    <button type="button" class="buttonStart btn m-0 p-0" data-bs-toggle="modal" data-bs-target="#miniGame2">
-                        <span class="actual-text">&nbsp;Start Experience&nbsp;</span>
-                        <span aria-hidden="true" class="hover-text">&nbsp;Start Experience&nbsp;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal MiniGame -->
-    <div class="modal fade"  id="miniGame2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
-            <div class="modal-content modal-background">
-                <div class="border-1 border-black modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Completa as Frases</h1>
-                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class=" modal-body">
-                    <div class="container-fluid text-center gameBoard">
-                        
-                    </div>
-                </div>
-                <div class="modal-footer border-black modal-background d-flex justify-content-between">
-                    <div class="progress w-25" role="progressbar" aria-label="Warning striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width: 0%"></div>
-                    </div>
-                    <div class=" mx-1 p-1 align-items-center">
-                        <!--Botao Continue-->
-                        <div class="btn-conteiner d-flex justify-content-center">
-                            <a href="#" class="btn-content d-flex align-items-center CompleteLevel">
-                                <span class="icon-arrow">
-                                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 66 43" height="30px" width="30px">
-                                        <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none" id="arrow">
-                                            <path fill="#FFD100" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" id="arrow-icon-one"></path>
-                                            <path fill="#FFD100" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" id="arrow-icon-two"></path>
-                                            <path fill="#FFD100" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" id="arrow-icon-three"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                            </a>
+                <div class="modal-content modal-background">
+                    <div class=" modal-body">
+                        <div class="border-1 border-black modal-header">
+                            <h1 class="modal-title fs-5" id="ajudaTitle">Quadro Branco</h1>
+                            <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                            <h1 class="col mt-3 align-content-center title text-capitalize">Decimal / Binario</h1>    
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col text-center justify-content-center">
+                                
+                                    <h3>1        -        0001</h3>
+                                    <h3>2        -        0010</h3>
+                                    <h3>3        -        0011</h3>
+                                    <h3>4        -        0100</h3>
+                                    <h3>5        -        0101</h3>
+                                    <h3>6        -        0110</h3>
+                                    <h3>7        -        0111</h3>
+                                    <h3>8        -        1000</h3>
+                                    <h3>9        -        1001</h3>
+                                    <h3>10        -        1010</h3>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer border-black modal-background d-flex justify-content-center">
+                            <button type="button" class="resumeButton buttonStart btn m-0 p-0" data-bs-dismiss="modal" aria-label="Close">
+                                <span class="actual-text">&nbsp;Resume&nbsp;</span>
+                                <span aria-hidden="true" class="hover-text">&nbsp;Resume&nbsp;</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -148,43 +121,40 @@
         </div>
     </div>
 
-    <!--Modal PARA QUANDO COMPLETAR O JOGO-->
-    <div class="modal fade"  id="victoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+    <!-- Modal PC1 -->
+    <div class="modal fade" id="modalPc1" tabindex="-1" aria-labelledby="Pc1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xxl modal-xl">
             <div class="modal-content modal-background">
-                <div class="border-1 border-black modal-header">
-                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class=" modal-body">
-                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <h1 class="col mt-3 align-content-center title text-capitalize">Vitória!</h1>    
+                <div class="modal-body p-0">
+                    <div class="border-1 border-black modal-header">
+                        <h1 class="modal-title fs-5" id="Pc1">Computador</h1>
+                        <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <p class="col text-white">Completaste todas as etapas com sucesso! Já podes seguir em frente</p>
-                    </div>
+                    <img class="img-fluid img-responsive d-block vh-75 w-100"
+                        src="../../media/img/ER-assets/pc1.png" alt="pc com informações">
                 </div>
             </div>
         </div>
     </div>
-    
-    <!--Modal PARA QUANDO O JOGO JA ESTÁ FEITO-->
-    <div class="modal fade"  id="gameDone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+
+    <!-- Modal PC2 -->
+    <div class="modal fade" id="modalPc2" tabindex="-1" aria-labelledby="Pc1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xxl modal-xl">
             <div class="modal-content modal-background">
-                <div class="border-1 border-black modal-header">
-                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class=" modal-body">
-                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <h1 class="col mt-3 align-content-center title text-capitalize">JA GANHASTE ESTE JOGO!</h1>    
+                <div class="modal-body p-0">
+                    <div class="border-1 border-black modal-header">
+                        <h1 class="modal-title fs-5" id="Pc1">Computador</h1>
+                        <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <p class="col text-white">Agora procura nas outras salas por mais jogos ou Itens</p>
-                    </div>
+                    <img class="img-fluid img-responsive d-block vh-75 w-100"
+                        src="../../media/img/ER-assets/pc3.png" alt="pc com informações">
                 </div>
             </div>
         </div>
     </div>
+
     
     <!--History Lines-->
     <div class="toast-container position-fixed bottom-0 end-0 p-2"></div>
@@ -194,7 +164,7 @@
 
     <!-- Botao Inventory -->
     <button class="btn inventaryBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#inventory"
-            aria-controls="inventory">Inventory</button>
+        aria-controls="inventory">Inventory</button>
 
     <!-- Inventory -->
     <div class="InventoryZone"></div>
@@ -212,7 +182,7 @@
     <!--Pause-->
     <div class="pauseZone"></div>
 
-        <!-- Bootstrap JavaScript Libraries -->
+    <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -222,10 +192,9 @@
     <!-- Referências ao js -->
     <script type="module" src="../../js/views/inventoryView.js"></script>
     <script type="module" src="../../js/views/collectiblesView.js"></script>
-    <script type="module" src="../../js/views/sala206View.js"></script>
+    <script type="module" src="../../js/views/sala203View.js"></script>
     <script type="module" src="../../js/views/NavbarView.js"></script>
     <script type="module" src="../../js/views/GameStateView.js"></script>
-    <script type="module" src="../../js/views/MiniGame2View.js"></script>
     <script type="module" src="../../js/views/countdownView.js"></script>
 </body>
 

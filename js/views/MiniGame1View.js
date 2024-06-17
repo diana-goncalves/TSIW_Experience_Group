@@ -54,9 +54,9 @@ let startGame = () =>{
             img.classList.add("w-50", "h-50", "logo");
             img.src = element;
             if (element == options[index].certo) {
-                img.addEventListener("click", optionRight)
+                document.querySelector(`.card${i+1}`).addEventListener("click", optionRight)
             }else{
-                img.addEventListener("click",gameOver)
+                document.querySelector(`.card${i+1}`).addEventListener("click",gameOver)
             }
             document.querySelector(`.card${i+1}`).appendChild(img)
         });
@@ -91,10 +91,16 @@ function gameOver(e) {
 
 
 let resetGame = ()=>{
-    for (let i = 1; i <= 4; i++) {
-        document.querySelector(`.card${i}`).innerHTML = "";
-    }
-    Exercise = [];
+    document.querySelector(".gameBoard").innerHTML =`
+        <div class="up ">
+            <button class="card1 m-2 "></button>
+            <button class="card2 m-2 "></button>
+        </div>
+        <div class="down">
+            <button class="card3 m-2 "></button>
+            <button class="card4 m-2 "></button>
+        </div>   
+    `
 }
 
 
