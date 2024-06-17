@@ -63,7 +63,7 @@
             src="../../media/img/ER-assets/Sala2.jpg" alt="Sala 211">
         <map name="salaMap">
             <area id="sala211Computer" shape="rect" coords="1589,510,1771,666" alt="Computador" title="Computador"
-                href="#" data-bs-toggle="modal" data-bs-target="#miniGame1">
+                href="#" data-bs-toggle="modal" data-bs-target="#miniGame4">
             <area id="sala211Porta" shape="rect" coords="3,185,251,1076" alt="Saida" title="Saida" href="hall_3.html">
         </map>
         <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
@@ -73,7 +73,7 @@
     </section>
 
     <!-- Modal MiniGame -->
-    <div class="modal fade" id="miniGame1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="miniGame4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
@@ -83,36 +83,27 @@
                         aria-label="Close"></button>
                 </div>
                 <div class=" modal-body">
-                    <div class="container-fluid text-center">
-                        <div class="row justify-content-around align-items-center mx-auto my-2 ">
-                            <div class="col-4 m-1 d-flex flex-wrap p-2 " id="options1" ondrop="dropSpan(event)"
-                                ondragover="allowDrop(event)">
-
-                            </div>
-                            <div class="col-6 mx-1 p-2" id="exercise1">
-
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row d-flex justify-content-around align-items-center mx-auto my-2">
-                            <div class="col-4 m-1 d-flex flex-wrap" id="options2" ondrop="dropSpan(event)"
-                                ondragover="allowDrop(event)">
-
-                            </div>
-                            <div class="col-6 mx-1" id="exercise2">
-
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row d-flex justify-content-around  align-items-center mx-auto my-2">
-                            <div class="col-4 m-1 d-flex flex-wrap" id="options3" ondrop="dropSpan(event)"
-                                ondragover="allowDrop(event)">
-
-                            </div>
-                            <div class="col-6 mx-1" id="exercise3">
-
-                            </div>
-                        </div>
+                    <div class="container-fluid text-center gameBoard">
+                        <div class="password input-group justify-content-start">
+                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
+                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
+                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
+                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
+                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
+                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
+                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
+                            <p class="m-3 text-white "> = </p>
+                            <input maxlength="3" min="0" max="128" class="input BinaryResult" name="binary" type="number" />
+                        </div> 
+                        <div class="password input-group justify-content-start helpBinary">
+                            <input maxlength="2" min="0" max="64" value="64" class="input help" name="binary" type="text" disabled/>
+                            <input maxlength="2" min="0" max="64" value="32" class="input help" name="binary" type="text" disabled/>
+                            <input maxlength="2" min="0" max="64" value="16" class="input help" name="binary" type="text" disabled/>
+                            <input maxlength="2" min="0" max="64" value="8" class="input help" name="binary" type="text" disabled/>
+                            <input maxlength="2" min="0" max="64" value="4" class="input help" name="binary" type="text" disabled/>
+                            <input maxlength="2" min="0" max="64" value="2" class="input help" name="binary" type="text" disabled/>
+                            <input maxlength="2" min="0" max="64" value="1" class="input help" name="binary" type="text" disabled/>
+                        </div> 
                     </div>
                 </div>
                 <div class="modal-footer border-black modal-background d-flex justify-content-between">
@@ -186,7 +177,7 @@
     <script type="module" src="../../js/views/inventoryView.js"></script>
     <script type="module" src="../../js/views/collectiblesView.js"></script>
     <script type="module" src="../../js/views/sala211View.js"></script>
-    <script src="../../js/views/MiniGamesView.js"></script>
+    <script src="../../js/views/MiniGames4View.js"></script>
     <script type="module" src="../../js/views/NavbarView.js"></script>
     <script type="module" src="../../js/views/GameStateView.js"></script>
     <script type="module" src="../../js/views/countdownView.js"></script>22
