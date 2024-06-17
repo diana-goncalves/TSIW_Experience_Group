@@ -1,5 +1,4 @@
 import * as collectibles from "../models/collectiblesModel.js";
-import { editUser } from "../models/UserModel.js";
 
 //--------------------------------------------------------------------------------------------
 // CONSTRUÇÃO DO INVENTARIO
@@ -48,7 +47,7 @@ let collectiblesView = () =>{
             </div>
         </div>
     </div>`
-    
+
     fillCollectibles();
 }
 
@@ -57,7 +56,7 @@ let resetCollectibles = ()=>{
     let CollectibleSlot = document.querySelectorAll(".collectibleSlot");
     for (const slot of CollectibleSlot) {
         slot.innerHTML = ""
-    }    
+    }
 }
 
 // Atualizar colecionaveis
@@ -70,14 +69,14 @@ function fillCollectibles() {
 
     let collectibleSlot = document.querySelectorAll(".collectibleSlot");
 
-    CollectedItems.forEach(item => {        
+    CollectedItems.forEach(item => {
         let img = document.createElement('img');
         img.src = item.img;
         img.alt = item.name;
         img.id = item.name;
-        
+
         img.className = 'img-fluid collectible';
-        
+
         for (const slot of collectibleSlot) {
             if (slot.innerHTML == "") {
                 slot.appendChild(img);
