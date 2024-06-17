@@ -9,6 +9,7 @@ $(document).ready(function(e) {
 });
 
 let noKey =  new bootstrap.Modal(document.querySelector("#noKeyModal"));
+let cofreModal = new bootstrap.Modal(document.querySelector("#cofreModal"));
 
 function hall3View() {
     GameStateView("hall 3");
@@ -27,6 +28,9 @@ function hall3View() {
     // CORREDOR ATRAS
     const hall3BackArea = document.querySelector("#hall3tohall2");
     const imgBack = document.querySelector(".imgBack");
+
+    // COFRE
+    const cofre = document.querySelector("#cofre");
 
 
     // PARA APARECER O RELEVO NA PORTA ESQUERDA
@@ -77,6 +81,12 @@ function hall3View() {
             noKey.show();
         }
     })
+
+    cofre.addEventListener("click", (e) => {
+        e.preventDefault();
+        cofreModal.show();
+    })
+
 }
 hall3View();
 

@@ -66,8 +66,9 @@
             <area id="hall3Left" shape="rect" coords="296,403,465,777" title="Sala 210" alt="Sala 210" href="#">
             <area id="hall3Right" shape="rect" coords="1421,442,1574,811" title="Sala 211" alt="Sala 211"
                 href="#">
-            <area id="hall3tohall2" shape="rect" coords="0,858,1917,1079" title="Corredor Final" title="Corredor Final"
+            <area id="hall3tohall2" shape="rect" coords="0,858,1917,1079" title="Corredor Final"
                 alt="Corredor Final" href="hall_2.html">
+            <area id="cofre" shape="rect" coords="496,528,672,701" title="Ractangle" href="#" alt="Cofre">
         </map>
         <img usemap="#heroMap" class="imgLeft img-fluid img-responsive vh-100 w-100 z-0 fixed-top "
             src="../../media/img/ER-assets/hall3-left.png" title="Sala 210" alt="para sala 210">
@@ -91,6 +92,50 @@
                     <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
                         <p class="col text-white">Procura em outras salas por mais jogos ou Items</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal COFRE-->
+    <div class="modal fade"  id="cofreModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 m-0 modal-header">
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">Introduz o código</h1>    
+                    </div>
+                    
+                    <div class="row d-flex align-items-center justify-content-center gap-4 mx-2 codigo">
+                        <div class="col d-flex align-items-center justify-content-center flex-column gap-5 rectangle" id="rectangle1">
+                            <button class="arrow"><i class="fas fa-arrow-up"></i></button>
+                            <span class="code" id="code1">0</span>
+                            <button class="arrow"><i class="fas fa-arrow-down"></i></button>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center flex-column gap-5 rectangle" id="rectangle2">
+                            <button class="arrow"><i class="fas fa-arrow-up"></i></button>
+                            <span class="code" id="code2">0</span>
+                            <button class="arrow"><i class="fas fa-arrow-down"></i></button>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center flex-column gap-5 rectangle" id="rectangle3">
+                            <button class="arrow"><i class="fas fa-arrow-up"></i></button>
+                            <span class="code" id="code3">0</span>
+                            <button class="arrow"><i class="fas fa-arrow-down"></i></button>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center flex-column gap-5 rectangle" id="rectangle4">
+                            <button class="arrow"><i class="fas fa-arrow-up"></i></button>
+                            <span class="code" id="code4">0</span>
+                            <button class="arrow"><i class="fas fa-arrow-down"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="row d-flex justify-content-center p-0"></div>
+                        <p class="text-white">DICA: Tens que completar todos os mini-jogos primeiro</p>
+                    </div>
+
                 </div>
             </div>
         </div>

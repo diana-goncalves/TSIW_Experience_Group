@@ -61,4 +61,25 @@
     width: 100%;
     filter: drop-shadow(0 0 23px var(--color-yellow))
 }
-
+/* row que contém o código */
+.codigo {
+    margin-bottom: 2rem;
+}
+/* div que contém setas e numero */
+.rectangle {
+    background-color: black;
+    width: 25px;
+    height: 250px;
+}
+.arrow {
+    background-color: black;
+    color: var(--color-white);
+    border: 0;
+}
+.arrow:hover {
+    color: var(--color-yellow);
+}
+/* NUMEROS DO CODIGO */
+.code {
+    color: var(--color-yellow);
+}
