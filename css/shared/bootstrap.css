@@ -334,6 +334,10 @@ button:focus {
   #logoPPorto {
     max-height: 20px;
   }
+  .card-title {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
 }
 
 @media only screen and (max-width: 360px) {
