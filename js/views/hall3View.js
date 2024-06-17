@@ -2,7 +2,6 @@ import setItems from "../views/inventoryView.js";
 import setCollectibles from "../views/collectiblesView.js";
 import GameStateView from "./GameStateView.js";
 import {checkItemInventory} from "../models/inventoryModel.js"
-import { updateUserCollectibles } from "../models/UserModel.js";
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
@@ -23,7 +22,7 @@ function hall3View() {
 
     // PORTA DIREITA
     const hall3RightArea = document.querySelector("#hall3Right");
-    const imgRight = document.querySelector(".imgRight"); 
+    const imgRight = document.querySelector(".imgRight");
 
     // CORREDOR ATRAS
     const hall3BackArea = document.querySelector("#hall3tohall2");
@@ -61,8 +60,8 @@ function hall3View() {
     hall3BackArea.addEventListener("mouseleave",(e)=>{
         e.preventDefault();
         imgBack.style.display="none";
-    });  
-    
+    });
+
     hall3LeftArea.addEventListener("click", (e)=>{
         if (checkItemInventory("chave 210")) {
             location.href="./Sala210.html"
