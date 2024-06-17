@@ -30,24 +30,24 @@ function initdata() {
             {
                 x: "45vw",
                 y: "80vh",
-                name: "chave 203",
-                img: "../../media/img/ER-assets/Chave 203.png",
+                name: "chave 206",
+                img: "../../media/img/ER-assets/Chave 206.png",
                 room: "sala 202",
                 inInventory: false
             },{
                 x: "80vw",
-                y: "15vh",
-                name: "chave 206",
-                img: "../../media/img/ER-assets/Chave 206.png",
-                room: "sala 202",
+                y: "85vh",
+                name: "chave 210",
+                img: "../../media/img/ER-assets/Chave 210.png",
+                room: "sala 211",
                 inInventory: false
             },
             {
                 x: "10vw",
                 y: "50vh",
-                name: "chave 207",
-                img: "../../media/img/ER-assets/Chave 207.png",
-                room: "sala 202",
+                name: "chave 211",
+                img: "../../media/img/ER-assets/Chave 211.png",
+                room: "sala 206",
                 inInventory: false
             },
 
