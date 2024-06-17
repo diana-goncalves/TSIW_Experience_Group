@@ -88,7 +88,6 @@ function fillCollectibles() {
 
 function setcollectibleZone(e) {
     e.preventDefault();
-    console.log(e.target.id);
     collectibles.AddToInventory(e.target.id)
     e.target.remove();
     resetCollectibles();

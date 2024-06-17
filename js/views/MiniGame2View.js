@@ -57,9 +57,6 @@ let startGame = () =>{
     makeBoard(progress);
     for (let i = 1; i <= progress; i++) {
         let index = Math.floor(Math.random() * grabAndDrops.length);//nao pode ter o mesmo index
-        console.log(index);
-        console.log(grabAndDrops[index]);
-        console.log(Exercise);
         if (Exercise.some(element => element.text == grabAndDrops[index].text)) {
             i--;
         }else{
@@ -80,7 +77,6 @@ let startGame = () =>{
             line.classList.add("line");
             line.innerHTML = grabAndDrops[index].text;
             line.id = Exercise.length-1
-            console.log(line);
             document.querySelector(`#exercise${i}`).appendChild(line);   
         }
     }        
@@ -149,7 +145,6 @@ document.querySelector(".CompleteLevel").addEventListener("click",(e)=>{
             return 0;
         } else {
             let line = document.querySelector(`#exercise${i} .line`).id;
-            console.log(line);
             answers.forEach((element,index) => {
                 if (element.textContent  == Exercise[line].result[index]) {
                     element.classList.add("certo");

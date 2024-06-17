@@ -22,7 +22,6 @@ export function addItem(x,y,name,img,room,inInventory = false){
 export function AddToInventory(item) {
     let index = items.findIndex(element => element.name == item)
     items[index].inInventory = true;
-    console.log(items);
     localStorage.setItem("items", JSON.stringify(items))
 }
 

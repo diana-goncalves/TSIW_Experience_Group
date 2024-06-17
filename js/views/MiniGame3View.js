@@ -39,19 +39,15 @@ let vitoria = new bootstrap.Modal(document.querySelector("#victoryModal"));
 
 let startGame = () =>{  
     let index = Math.floor(Math.random() * options.length);//nao pode ter o mesmo index
-    console.log(index);
-    console.log(Exercise);
     if (Exercise.some(element => element.certo == options[index].certo)) {
         startGame();
     }else{
         Exercise.push(options[index]); 
         document.querySelector(".Question").textContent = options[index].pergunta;
-        console.log(options[index]);
         options[index].opt.forEach((element,i) => {
             let p = document.createElement("p");
             p.classList.add("textminigame3", "text-black", "text-center" ,"p-1", "m-1");
             p.innerHTML = element;
-            console.log(element);
             if (element == options[index].certo) {
                 document.querySelector(`.card${i+1}`).addEventListener("click", optionRight)
             }else{

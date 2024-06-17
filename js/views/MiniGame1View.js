@@ -1,4 +1,4 @@
-import {init,addgamesCompleted,checkGameCompleted} from "../models/gameStateModel.js"
+import {addgamesCompleted,checkGameCompleted,} from "../models/gameStateModel.js"
 
 
 let options = [
@@ -43,7 +43,6 @@ let vitoria = new bootstrap.Modal(document.querySelector("#victoryModal"));
 
 let startGame = () =>{  
     let index = Math.floor(Math.random() * options.length);//nao pode ter o mesmo index
-    console.log(index);
     if (Exercise.some(element => element.certo == options[index].certo)) {
         startGame();
     }else{
@@ -105,8 +104,6 @@ let resetGame = ()=>{
 
 
 document.querySelector("#sala202Computer").addEventListener("click", ()=>{
-    console.log("fdfdfdfdffsd");
-    console.log(checkGameCompleted("minigame1"));
     if (!checkGameCompleted("minigame1")) {
         modalIntro.show();
     } else {
@@ -117,7 +114,6 @@ document.querySelector("#sala202Computer").addEventListener("click", ()=>{
 
 document.querySelector("#miniGame1").addEventListener('shown.bs.modal', () => {
     startGame();
-
 })
 
 document.querySelector("#miniGame1").addEventListener('hidden.bs.modal', () => {
@@ -130,3 +126,12 @@ document.querySelector(".closeGame").addEventListener("click",() =>{
     document.querySelector(".progress-bar").style.width = `${progress}%`;
     Exercise=[];
 })
+
+document.querySelector(".gameDone").addEventListener('shown.bs.modal', () => {
+    let codes = document.querySelectorAll(".code input")
+
+})
+
+document.querySelector(".gameDone").addEventListener('hidden.bs.modal', () => {
+    
+});

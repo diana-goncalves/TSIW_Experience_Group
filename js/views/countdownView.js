@@ -145,7 +145,6 @@ document.addEventListener('keydown', (e) => {
 
     if (e.key === 'Escape' || e.key === 'Esc') {
         isPaused = !isPaused; //actualiza a variavel
-        console.log(isPaused);
         if (isPaused) {
             pause.show();
             document.querySelector(".resumeButton").addEventListener("click",(e)=>{
@@ -155,7 +154,6 @@ document.addEventListener('keydown', (e) => {
             })
         }
         else{
-            console.log("dsdsadsadsasadsasadsadsaaaaa");
             pause.hide();
         }
     }

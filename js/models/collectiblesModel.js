@@ -22,7 +22,6 @@ export function addCollectible(w,h,x,y,name,img,room,inInventory = false){
 export function AddToInventory(item) {
     let index = collectibles.findIndex(element => element.name == item);
     collectibles[index].inInventory = true;
-    console.log(collectibles);
     localStorage.setItem("collectibles", JSON.stringify(collectibles));
 }
 

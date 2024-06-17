@@ -49,7 +49,6 @@ let resetInventory = ()=>{
 
 function fillInventory() {
     let InventaryItems = invItems.getInventory();
-    console.log(InventaryItems);
     let inventorySlot = document.querySelectorAll(".inventorySlot");
 
     InventaryItems.forEach(item => {        
@@ -71,7 +70,6 @@ function fillInventory() {
 }
 
 function inventoryItemClick(event) {
-    //console.log( event.target.id.slice(0,3));
     if (event.target.id == "lanterna") {
         document.querySelector('#Inventory-close').click();
 
@@ -97,7 +95,6 @@ export default function setItems(sala) {
     let itemZone = document.querySelector(".ItemZone");
     // Vai bucar os items desta sala
     let roomItems = invItems.getItemsRoom(sala);
-    console.log("Items Room: "+roomItems);
     roomItems.forEach(element => {
         // criar item
         let img = document.createElement('img');
@@ -138,7 +135,6 @@ function turnpower() {
             element.style.display = "none";
         })
     }
-    console.log(Collectibles);
 }
 
 

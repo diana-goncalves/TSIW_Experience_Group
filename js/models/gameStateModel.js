@@ -36,7 +36,7 @@ export function NewGame() {
     sessionStorage.setItem("gameStatus", JSON.stringify(gameState));
 }
 
-export function indexCode(n) {
+export function getCodeByIndex(n) {
     return gameState.code[n];
 }
 

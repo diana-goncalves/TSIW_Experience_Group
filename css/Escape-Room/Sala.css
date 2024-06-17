@@ -225,7 +225,7 @@
     border: 0 !important;
 }
 
-.password input {
+.password input, .code input {
     width: 4rem;
     height: 5rem;
     text-align: center;
@@ -239,7 +239,7 @@
 }
 
 .BinaryResult{
-    width: 9rem !important;
+    width: 8rem !important;
 }
 
 .help{
@@ -250,3 +250,20 @@
     border: 1px solid var(--color-dark-gray) !important;
 }
   
+
+@media only screen and (max-width: 1024px) {
+    .password .BinaryResult {
+        width: 5.5rem !important;
+        font-size: 3rem !important;
+        font-weight: bold !important;
+    }
+    .password input, .code input{
+        width: 4rem !important;
+        height: 3rem !important;
+        font-size: 3rem !important;
+    }
+    .help{
+        font-size: 2rem !important;
+    }
+
+  }

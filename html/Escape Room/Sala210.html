@@ -60,11 +60,11 @@
     <!-- hero section -->
     <section class="imgSala vh-100 w-100 mx-0">
         <img usemap="#salaMap" class="img-fluid img-responsive d-block vh-100 w-100 z-0 fixed-top"
-            src="../../media/img/ER-assets/Sala2.jpg" alt="Sala 211">
+            src="../../media/img/ER-assets/Sala2.jpg" alt="Sala 210">
         <map name="salaMap">
-            <area id="sala211Computer" shape="rect" coords="1589,510,1771,666" alt="Computador" title="Computador"
+            <area id="sala210Computer" shape="rect" coords="1589,510,1771,666" alt="Computador" title="Computador"
                 href="#" data-bs-toggle="modal" data-bs-target="#miniGame4">
-            <area id="sala211Porta" shape="rect" coords="3,185,251,1076" alt="Saida" title="Saida" href="hall_3.html">
+            <area id="sala210Porta" shape="rect" coords="3,185,251,1076" alt="Saida" title="Saida" href="hall_3.html">
         </map>
         <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
             src="../../media/img/ER-assets/Sala2-computador.png" alt="Computador" title="Computador">
@@ -73,18 +73,55 @@
     </section>
 
     <!-- Modal MiniGame -->
-    <div class="modal fade" id="miniGame4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade"  id="intro4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel"> Drag em Drop</h1>
-                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal"
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Descobre a Logo</h1>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">Será que és um craque no design?</h1>    
+                </div>
+                <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <p class="col text-white">Neste desafio, o jogador precisa demonstrar as suas habilidades de conhecimento sobre logótipos. O objetivo é simples: o jogador verá quatro variações de um logotipo, mas apenas uma delas é a correta. Sua tarefa é escolher o logotipo certo dentre as opções apresentadas.</p>
+                </div>
+                <div class="row mt-4 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <div class="col">
+                        <h5 class="text-white">Instruções:</h5>
+                        <ul class="text-white text-start d-inline-block">
+                            <li>Observa atentamente as quatro variações do logótipo.</li>
+                            <li>Clica na variação que acreditas ser a correta.</li>
+                            <li>Se acertares, avanças para o próximo nível com um novo logótipo</li>
+                            <li>Se falhares, terás que recomeçar e tentar novamente até acertar</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                    <p class="col text-capitalize text-white">Boa sorte e divirte-te!</p>
+                </div>
+                <div class="modal-footer border-black modal-background d-flex justify-content-center">
+                    <button type="button" class="buttonStart btn m-0 p-0" data-bs-toggle="modal" data-bs-target="#miniGame4">
+                        <span class="actual-text">&nbsp;Start Experience&nbsp;</span>
+                        <span aria-hidden="true" class="hover-text">&nbsp;Start Experience&nbsp;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal MiniGame -->
+    <div class="modal fade" id="miniGame4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="miniGame4Text" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <h1 class="modal-title fs-5" id="miniGame4Text"> Binary Game </h1>
+                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class=" modal-body">
-                    <div class="container-fluid text-center gameBoard">
-                        <div class="password input-group justify-content-start">
+                    <div class="container-fluid text-center align-content-center gameBoard">
+                        <!-- <div class="password input-group justify-content-start">
                             <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
                             <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
                             <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
@@ -103,7 +140,7 @@
                             <input maxlength="2" min="0" max="64" value="4" class="input help" name="binary" type="text" disabled/>
                             <input maxlength="2" min="0" max="64" value="2" class="input help" name="binary" type="text" disabled/>
                             <input maxlength="2" min="0" max="64" value="1" class="input help" name="binary" type="text" disabled/>
-                        </div> 
+                        </div>  -->
                     </div>
                 </div>
                 <div class="modal-footer border-black modal-background d-flex justify-content-between">
@@ -134,6 +171,44 @@
                                 </span>
                             </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal PARA QUANDO COMPLETAR O JOGO-->
+    <div class="modal fade"  id="victoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">Vitória!</h1>    
+                    </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Completaste todas as etapas com sucesso! Já podes seguir em frente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal PARA QUANDO O JOGO JA ESTÁ FEITO-->
+    <div class="modal fade"  id="gameDone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
+            <div class="modal-content modal-background">
+                <div class="border-1 border-black modal-header">
+                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class=" modal-body">
+                    <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <h1 class="col mt-3 align-content-center title text-capitalize">JA GANHASTE ESTE JOGO!</h1>    
+                    </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Agora procura nas outras salas por mais jogos ou Itens</p>
                     </div>
                 </div>
             </div>
@@ -176,12 +251,11 @@
     <!-- Referências ao js -->
     <script type="module" src="../../js/views/inventoryView.js"></script>
     <script type="module" src="../../js/views/collectiblesView.js"></script>
-    <script type="module" src="../../js/views/sala211View.js"></script>
-    <script src="../../js/views/MiniGames4View.js"></script>
+    <script type="module" src="../../js/views/sala210View.js"></script>
+    <script type="module" src="../../js/views/MiniGame4View.js"></script>
     <script type="module" src="../../js/views/NavbarView.js"></script>
     <script type="module" src="../../js/views/GameStateView.js"></script>
-    <script type="module" src="../../js/views/countdownView.js"></script>22
-
+    <script type="module" src="../../js/views/countdownView.js"></script>
 </body>
 
 </html>
