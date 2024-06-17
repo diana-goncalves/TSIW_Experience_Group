@@ -1,14 +1,12 @@
  let gameState
 
 export function init() {
-    console.log("tenso");
     if(sessionStorage.gameStatus) {
         let temp = JSON.parse(sessionStorage.gameStatus);
-        gameState = new GameStatus(temp.visitedRooms,temp.gamesCompleted);
+        gameState = new GameStatus(temp.visitedRooms,temp.gamesCompleted, temp.code);
     } else {
         gameState = new GameStatus();
     }
-    console.log(gameState);
 }
 
 export function addgamesCompleted(game){
@@ -38,6 +36,10 @@ export function NewGame() {
     sessionStorage.setItem("gameStatus", JSON.stringify(gameState));
 }
 
+export function indexCode(n) {
+    return gameState.code[n];
+}
+
 function getCode() {
     let code = []
     for (let i = 0; i < 4; i++) {
@@ -55,9 +57,9 @@ class GameStatus {
     gamesCompleted = [];
     code = null;
 
-    constructor(visitedRooms = [],gamesCompleted = []){
+    constructor(visitedRooms = [],gamesCompleted = [], code=getCode()){
         this.visitedRooms = visitedRooms;
         this.gamesCompleted = gamesCompleted;
-        this.code = getCode();
+        this.code = code;
     }
 }
