@@ -17,57 +17,49 @@ let code1 = parseInt(document.querySelector("#code1").textContent);
 document.querySelector("#code1UP").addEventListener("click", () => {
     code1===10 ? code1 : code1++;
     document.querySelector("#code1").textContent = `${code1}`;
-
 })
 document.querySelector("#code1DOWN").addEventListener("click", () => {
     code1===0 ? code1 : code1--;
     document.querySelector("#code1").textContent = `${code1}`;
-
 })
 
 let code2 = parseInt(document.querySelector("#code2").textContent);
 document.querySelector("#code2UP").addEventListener("click", () => {
     code2===10 ? code2 : code2++;
     document.querySelector("#code2").textContent = `${code2}`;
-
 })
 document.querySelector("#code2DOWN").addEventListener("click", () => {
     code2===0 ? code2 : code2--;
     document.querySelector("#code2").textContent = `${code2}`;
-
 })
 
 let code3 = parseInt(document.querySelector("#code3").textContent);
 document.querySelector("#code3UP").addEventListener("click", () => {
     code3===10 ? code3 : code3++;
     document.querySelector("#code3").textContent = `${code3}`;
-
 })
 document.querySelector("#code3DOWN").addEventListener("click", () => {
     code3===0 ? code3 : code3--;
     document.querySelector("#code3").textContent = `${code3}`;
-
 })
 
 let code4 = parseInt(document.querySelector("#code4").textContent);
 document.querySelector("#code4UP").addEventListener("click", () => {
     code4===10 ? code4 : code4++;
     document.querySelector("#code4").textContent = `${code4}`;
-
 })
 document.querySelector("#code4DOWN").addEventListener("click", () => {
     code4===0 ? code4 : code4--;
     document.querySelector("#code4").textContent = `${code4}`;
-
 })
 
 const abrirCofre = document.querySelector("#abrirCofre");
 const bodyCofreModal = document.querySelector("#bodyCofreModal");
 const heroIMG = document.querySelector("#heroHall3");
+const chaveTSIW = document.querySelector("#chaveTSIW");
 
 // Clicar no botão para abrir cofre. Comparar codigo inserido com codigo na session storage.
 abrirCofre.addEventListener("click", () => {
-
     const codigoInserido = `${code1}` + `${code2}` +`${code3}` + `${code4}`;
     
     const jogo = JSON.parse(sessionStorage.getItem("gameStatus"));
@@ -75,11 +67,8 @@ abrirCofre.addEventListener("click", () => {
 
     if (codigoInserido === codigoJogo) {
         cofreModal.hide();
-
-    //    heroIMG.src
-        
-        bodyCofreModal.appendChild(interiorCofre);
-
+        heroIMG.src = "../../media/img/ER-assets/hall3CofreAberto.png";
+        chaveTSIW.style.display = "block";
     }
 })
 
@@ -105,6 +94,12 @@ function hall3View() {
 
     // COFRE
     const cofre = document.querySelector("#cofre");
+
+    // PORTA FINAL
+    const portaFinal = document.querySelector("#portaFinal");
+
+    // CHAVE TSIW
+    
 
     // PARA APARECER O RELEVO NA PORTA ESQUERDA
     hall3LeftArea.addEventListener("mouseenter", (e)=> {
@@ -155,9 +150,24 @@ function hall3View() {
         }
     })
 
+    portaFinal.addEventListener("click", (e)=>{
+        if (checkItemInventory("chaveTSIW")) {
+            // Trocar por modal de vitoria e trocar hero img por hall3 sem a porta final
+            alert("vitoria")
+        } else {
+            noKey.show();
+        }
+    })
+
     cofre.addEventListener("click", (e) => {
         e.preventDefault();
         cofreModal.show();
+    })
+
+    chaveTSIW.addEventListener("click", (e) => {
+        e.preventDefault();
+        // chamar função que coloca chave no inventario
+        chaveTSIW.style.display = "none";
     })
 
 }

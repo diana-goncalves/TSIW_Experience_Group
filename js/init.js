@@ -50,6 +50,14 @@ function initdata() {
                 room: "sala 206",
                 inInventory: false
             },
+            {
+                x: "28vw",
+                y: "55vh",
+                name: "chaveTSIW",
+                img: "../../media/img/ER-assets/ChaveTSIW.png",
+                room: "hall 3",
+                inInventory: false
+            },
 
         ];
         items.forEach(item => {

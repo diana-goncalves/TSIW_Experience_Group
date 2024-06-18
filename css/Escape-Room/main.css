@@ -82,4 +82,14 @@
 /* NUMEROS DO CODIGO */
 .code {
     color: var(--color-yellow);
+    font-size: xx-large;
+}
+#chaveTSIW {
+    position: fixed;
+    left: 28vw;
+    top: 55vh;
+    z-index: 1001;
+    width: 32px;
+    height: 32px;
+    display: none;
 }
