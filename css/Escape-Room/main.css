@@ -88,7 +88,7 @@
     position: fixed;
     left: 28vw;
     top: 55vh;
-    z-index: 1001;
+    z-index: 1000;
     width: 32px;
     height: 32px;
     display: none;

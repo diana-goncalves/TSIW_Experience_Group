@@ -806,14 +806,14 @@
 
                             <h4>Colecionáveis</h4>
 
-                            <form>
+                            <form id="formCol">
 
                                 <div class="row justify-content-center align-items-center g-2">
 
                                     <div class="form-floating mb-3 col text-truncate">
 
                                         <input type="text" class="form-control" name="Nome" id="formNomeCol"
-                                            placeholder="" />
+                                            placeholder="" required/>
 
                                         <label for="formNomeCol">Nome</label>
 
@@ -821,10 +821,54 @@
 
                                     <div class="form-floating mb-3 col">
 
-                                        <input type="text" class="form-control" name="Mensagem" id="formMsgCol"
-                                            placeholder="" />
+                                        <input type="text" class="form-control" name="Mensagem" id="formSalaCol"
+                                            placeholder="" required/>
 
-                                        <label for="formMsgCol">Mensagem</label>
+                                        <label for="formSalaCol">Sala</label>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row justify-content-center align-items-center g-2">
+
+                                    <div class="form-floating mb-3 col text-truncate">
+
+                                        <input type="text" class="form-control" name="Nome" id="formLarguraCol"
+                                            placeholder="" required/>
+
+                                        <label for="formLarguraCol">Largura</label>
+
+                                    </div>
+
+                                    <div class="form-floating mb-3 col">
+
+                                        <input type="text" class="form-control" name="Mensagem" id="formAlturaCol"
+                                            placeholder="" required/>
+
+                                        <label for="formAlturaCol">Altura</label>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row justify-content-center align-items-center g-2">
+
+                                    <div class="form-floating mb-3 col text-truncate">
+
+                                        <input type="text" class="form-control" name="Nome" id="formPosxCol"
+                                            placeholder="" required/>
+
+                                        <label for="formPosxCol">Posição x</label>
+
+                                    </div>
+
+                                    <div class="form-floating mb-3 col">
+
+                                        <input type="text" class="form-control" name="Mensagem" id="formPosyCol"
+                                            placeholder="" required/>
+
+                                        <label for="formPosyCol">Posição y</label>
 
                                     </div>
 
@@ -834,11 +878,11 @@
 
                                     <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
 
-
+                                        <img src="" alt="Pré-visualização da imagem" class="imgsPreview" id="imgPreviewCol">
 
                                         <div class="imgInputContainer">
                                             <input type="file" name="file" class="fileInput" accept=".png, .jpg, .jpeg"
-                                                id="fileInputColecionaveis">
+                                                id="fileInputColecionaveis" required>
                                             <label for="fileInputColecionaveis" class="fileInputLabel">
                                                 <i class="fa-regular fa-file-image"></i>
                                             </label>
@@ -848,6 +892,9 @@
                                             id="btnGuardarColecionaveis">
                                             Guardar
                                         </button>
+
+                                        <input type="reset" value="Cancel"
+                                            class="btn btn-primary button_color btnGuardar" id="cancelEditCol">
 
                                     </div>
 
