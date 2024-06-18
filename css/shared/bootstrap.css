@@ -184,7 +184,7 @@ button:focus {
   border-radius: 10px;
   padding: 60px 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  max-width: 1140px;
+  max-width: 1280px;
   margin: 0 auto;
   min-height: 600px;
   z-index: 1;
@@ -333,5 +333,38 @@ button:focus {
   }
   #logoPPorto {
     max-height: 20px;
+  }
+  .card-title {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .custom-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-footer > div {
+    order: 1;
+    text-align: center;
+  }
+
+  .custom-footer > div:last-child {
+    order: 2;
+  }
+
+  #logoPPorto {
+    order: 3;
+    max-height: 20px;
+    margin-top: 20px;
   }
 }
