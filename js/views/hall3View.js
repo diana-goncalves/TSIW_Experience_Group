@@ -38,7 +38,7 @@ function hall3View() {
     const portaFinal = document.querySelector("#portaFinal");
 
     // CHAVE TSIW
-    const chaveFinal = document.querySelector("#chaveTSIW");
+    // const chaveFinal = document.querySelector("#chaveTSIW");
 
     // IMAGEM PRINCIPAL HALL 3
     const heroIMG = document.querySelector("#heroHall3");
@@ -105,11 +105,11 @@ function hall3View() {
         cofreModal.show();
     })
 
-    chaveFinal.addEventListener("click", (e) => {
-        e.preventDefault();
-        // chamar função que coloca chave no inventario
-        chaveFinal.style.display = "none";
-    })
+    // chaveFinal.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     // chamar função que coloca chave no inventario
+    //     chaveFinal.style.display = "none";
+    // })
 
 }
 hall3View();
@@ -172,8 +172,8 @@ abrirCofre.addEventListener("click", () => {
     if (codigoInserido === codigoJogo) {
         cofreModal.hide();
         heroIMG.src = "../../media/img/ER-assets/hall3CofreAberto.png";
-        chaveTSIW.style.display = "block";
-        
+        // chaveTSIW.style.display = "block";
+        setItems("cofre")
         // COLOCAR ISTO QUANDO ACABAR escape room
         let user = getUserLogged();
         user.victory = true;

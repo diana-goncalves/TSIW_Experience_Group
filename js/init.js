@@ -55,7 +55,7 @@ function initdata() {
                 y: "55vh",
                 name: "chaveTSIW",
                 img: "../../media/img/ER-assets/ChaveTSIW.png",
-                room: "hall 3",
+                room: "cofre",
                 inInventory: false
             },
 
