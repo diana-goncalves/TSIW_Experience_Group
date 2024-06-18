@@ -166,7 +166,6 @@ const chaveTSIW = document.querySelector("#chaveTSIW");
 // Clicar no botão para abrir cofre. Comparar codigo inserido com codigo na session storage.
 abrirCofre.addEventListener("click", () => {
     const codigoInserido = `${code1}` + `${code2}` +`${code3}` + `${code4}`;
-    let user = getUserLogged();
     const jogo = JSON.parse(sessionStorage.getItem("gameStatus"));
     const codigoJogo = `${jogo.code[0]}` + `${jogo.code[1]}` +`${jogo.code[2]}` + `${jogo.code[3]}`;
 
@@ -174,12 +173,11 @@ abrirCofre.addEventListener("click", () => {
         cofreModal.hide();
         heroIMG.src = "../../media/img/ER-assets/hall3CofreAberto.png";
         chaveTSIW.style.display = "block";
+        
+        // COLOCAR ISTO QUANDO ACABAR escape room
+        let user = getUserLogged();
         user.victory = true;
-
         let username = user.username;
-        console.log(username);
-        console.log(user);
-
         editUser(username, user);
 
     }
