@@ -53,11 +53,19 @@
 }
 
 .certo{
-    background-color: #058d0a;
+    background-color: #058d0a !important;
 }
 
 .errado{
-    background-color: #bc0505;
+    background-color: #bc0505 !important;
+}
+.mcerto{
+    color: #058d0a !important;
+
+}
+
+.merrado{
+    color: #bc0505 !important;
 }
 /*---------------Botao--------------------*/
   

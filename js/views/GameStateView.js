@@ -17,7 +17,9 @@ const historyLines = {
     "sala 202":[
         "Boa! entraste, procura o pc, ele deve tar no canto da sala"
     ],
-    "sala 203":[],
+    "sala 203":[
+        "Deixaram esta sala aberta? Interesante, talve tenha alguma coisa de util"
+    ],
     "sala 206":[],
     "sala 207":[],
     "sala 210":[],

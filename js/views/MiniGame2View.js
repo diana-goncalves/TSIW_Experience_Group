@@ -1,4 +1,4 @@
-import {init,addgamesCompleted,checkGameCompleted} from "../models/gameStateModel.js"
+import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
 
 let grabAndDrops = [
@@ -216,13 +216,37 @@ document.querySelector("#sala206Computer").addEventListener("click", ()=>{
     }
 })
 
+console.log(document.querySelector(".closeGame"));
 document.querySelector(".closeGame").addEventListener("click",() =>{
     modalGame.hide();
     progress = 1;
     Exercise=[];
+    console.log(progress);
+    console.log(Exercise);
 })
 
+document.querySelector("#gameDone").addEventListener('shown.bs.modal', () => {
+    let outputs = document.querySelectorAll(".gameDoneCode");
+    console.log(outputs);
+    let code = getCodeByIndex(1);
+    outputs[1].value = code;
+})
 
+document.querySelector("#gameDone").addEventListener('hidden.bs.modal', () => {
+    let outputs = document.querySelectorAll(".gameDoneCode");
+    outputs[1].innerHTML = "";
+});
+
+document.querySelector("#victoryModal").addEventListener('shown.bs.modal', () => {
+    let outputs = document.querySelectorAll(".vitoryCode");
+    let code = getCodeByIndex(1);
+    outputs[1].value = code;
+})
+
+document.querySelector("#victoryModal").addEventListener('hidden.bs.modal', () => {
+    let outputs = document.querySelectorAll(".vitoryCode");
+    outputs[1].innerHTML = "";
+});
 
 
 // Exposing functions to global scope

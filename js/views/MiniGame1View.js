@@ -1,4 +1,4 @@
-import {addgamesCompleted,checkGameCompleted,} from "../models/gameStateModel.js"
+import {addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
 
 let options = [
@@ -127,11 +127,25 @@ document.querySelector(".closeGame").addEventListener("click",() =>{
     Exercise=[];
 })
 
-document.querySelector(".gameDone").addEventListener('shown.bs.modal', () => {
-    let codes = document.querySelectorAll(".code input")
-
+document.querySelector("#gameDone").addEventListener('shown.bs.modal', () => {
+    let outputs = document.querySelectorAll(".gameDoneCode");
+    console.log(outputs);
+    let code = getCodeByIndex(3);
+    outputs[3].value = code;
 })
 
-document.querySelector(".gameDone").addEventListener('hidden.bs.modal', () => {
-    
+document.querySelector("#gameDone").addEventListener('hidden.bs.modal', () => {
+    let outputs = document.querySelectorAll(".gameDoneCode");
+    outputs[3].innerHTML = "";
+});
+
+document.querySelector("#victoryModal").addEventListener('shown.bs.modal', () => {
+    let outputs = document.querySelectorAll(".vitoryCode");
+    let code = getCodeByIndex(3);
+    outputs[3].value = code;
+})
+
+document.querySelector("#victoryModal").addEventListener('hidden.bs.modal', () => {
+    let outputs = document.querySelectorAll(".vitoryCode");
+    outputs[3].innerHTML = "";
 });

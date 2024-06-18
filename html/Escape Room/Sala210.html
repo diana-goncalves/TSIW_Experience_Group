@@ -63,7 +63,7 @@
             src="../../media/img/ER-assets/Sala2.jpg" alt="Sala 210">
         <map name="salaMap">
             <area id="sala210Computer" shape="rect" coords="1589,510,1771,666" alt="Computador" title="Computador"
-                href="#" data-bs-toggle="modal" data-bs-target="#miniGame4">
+                href="#">
             <area id="sala210Porta" shape="rect" coords="3,185,251,1076" alt="Saida" title="Saida" href="hall_3.html">
         </map>
         <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
@@ -77,23 +77,23 @@
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Descobre a Logo</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Conversão em Binário</h1>
                     <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <h1 class="col mt-3 align-content-center title text-capitalize">Será que és um craque no design?</h1>    
+                        <h1 class="col mt-3 align-content-center title text-capitalize">És bom em Binário?</h1>    
                 </div>
                 <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
-                    <p class="col text-white">Neste desafio, o jogador precisa demonstrar as suas habilidades de conhecimento sobre logótipos. O objetivo é simples: o jogador verá quatro variações de um logotipo, mas apenas uma delas é a correta. Sua tarefa é escolher o logotipo certo dentre as opções apresentadas.</p>
+                    <p class="col text-white">Neste desafio, o jogador precisa demonstrar as suas habilidades de conhecimento sobre a lingua do Computadores. O objetivo é simples: irá aparecer o mesmo numero em binário e decimal, o jogador tem so que completar os espaços vazios para a igualidade ser verdadeira.</p>
                 </div>
                 <div class="row mt-4 text-center justify-content-center d-flex flex-column mx-auto p-0">
                     <div class="col">
                         <h5 class="text-white">Instruções:</h5>
                         <ul class="text-white text-start d-inline-block">
-                            <li>Observa atentamente as quatro variações do logótipo.</li>
-                            <li>Clica na variação que acreditas ser a correta.</li>
-                            <li>Se acertares, avanças para o próximo nível com um novo logótipo</li>
-                            <li>Se falhares, terás que recomeçar e tentar novamente até acertar</li>
+                            <li>Os quadrados amarelos são dicas importantes</li>
+                            <li>cada posição é 2^n em que o resultado tá no quadrado amarelo</li>
+                            <li>Somando os numeros dos quadrados amarelos que em cima tem 1 dará o resultado em decimal</li>
+                            <li>Se falhares, as certas aparecerão em VERDE e as erradas em VERMELHO</li>
                         </ul>
                     </div>
                 </div>
@@ -121,26 +121,6 @@
                 </div>
                 <div class=" modal-body">
                     <div class="container-fluid text-center align-content-center gameBoard">
-                        <!-- <div class="password input-group justify-content-start">
-                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
-                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
-                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
-                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
-                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
-                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
-                            <input maxlength="1" min="0" max="1" class="input" name="binary" type="number" />
-                            <p class="m-3 text-white "> = </p>
-                            <input maxlength="3" min="0" max="128" class="input BinaryResult" name="binary" type="number" />
-                        </div> 
-                        <div class="password input-group justify-content-start helpBinary">
-                            <input maxlength="2" min="0" max="64" value="64" class="input help" name="binary" type="text" disabled/>
-                            <input maxlength="2" min="0" max="64" value="32" class="input help" name="binary" type="text" disabled/>
-                            <input maxlength="2" min="0" max="64" value="16" class="input help" name="binary" type="text" disabled/>
-                            <input maxlength="2" min="0" max="64" value="8" class="input help" name="binary" type="text" disabled/>
-                            <input maxlength="2" min="0" max="64" value="4" class="input help" name="binary" type="text" disabled/>
-                            <input maxlength="2" min="0" max="64" value="2" class="input help" name="binary" type="text" disabled/>
-                            <input maxlength="2" min="0" max="64" value="1" class="input help" name="binary" type="text" disabled/>
-                        </div>  -->
                     </div>
                 </div>
                 <div class="modal-footer border-black modal-background d-flex justify-content-between">
@@ -182,7 +162,7 @@
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
-                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class=" modal-body">
                     <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
@@ -191,21 +171,39 @@
                     <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
                         <p class="col text-white">Completaste todas as etapas com sucesso! Já podes seguir em frente</p>
                     </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Reparas-te que apareceu um numreo no computador, será do cofre?</p>
+                    </div>
+                    <div class="row code input-group text-center justify-content-center mx-1 p-0">
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 1" type="number" disabled/>
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 2" type="number" disabled/>
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 3" type="number" disabled/>
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 4" type="number" disabled/>
+                    </div>
+                    <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
+                        <p class="col text-white">Agora procura nas outras salas por mais jogos ou Itens</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--Modal PARA QUANDO O JOGO JA ESTÁ FEITO-->
-    <div class="modal fade"  id="gameDone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <!--Modal PARA QUANDO O JOGO JA ESTÁ FEITO-->
+   <div class="modal fade"  id="gameDone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
-                    <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class=" modal-body">
                     <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
                         <h1 class="col mt-3 align-content-center title text-capitalize">JA GANHASTE ESTE JOGO!</h1>    
+                    </div>
+                    <div class="row code input-group text-center justify-content-center mx-1 p-0">
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 1" type="number" disabled/>
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 2" type="number" disabled/>
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 3" type="number" disabled/>
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 4" type="number" disabled/>
                     </div>
                     <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
                         <p class="col text-white">Agora procura nas outras salas por mais jogos ou Itens</p>

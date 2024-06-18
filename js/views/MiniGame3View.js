@@ -1,4 +1,4 @@
-import {init,addgamesCompleted,checkGameCompleted} from "../models/gameStateModel.js"
+import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
 
 let options = [
@@ -122,8 +122,31 @@ document.querySelector("#miniGame3").addEventListener('hidden.bs.modal', () => {
     resetGame();
 });
 
+document.querySelector("#gameDone").addEventListener('shown.bs.modal', () => {
+    let outputs = document.querySelectorAll(".gameDoneCode");
+    console.log(outputs);
+    let code = getCodeByIndex(0);
+    outputs[0].value = code;
+})
 
-document.querySelector(".closeGame").addEventListener("click",() =>{
+document.querySelector("#gameDone").addEventListener('hidden.bs.modal', () => {
+    let outputs = document.querySelectorAll(".gameDoneCode");
+    outputs[0].innerHTML = "";
+});
+
+document.querySelector("#victoryModal").addEventListener('shown.bs.modal', () => {
+    let outputs = document.querySelectorAll(".vitoryCode");
+    let code = getCodeByIndex(0);
+    outputs[0].value = code;
+})
+
+document.querySelector("#victoryModal").addEventListener('hidden.bs.modal', () => {
+    let outputs = document.querySelectorAll(".vitoryCode");
+    outputs[0].innerHTML = "";
+});
+
+
+document.querySelector("#closeGame").addEventListener("click",() =>{
     progress = 1;
     document.querySelector(".progress-bar").style.width = `${progress}%`;
     Exercise=[];

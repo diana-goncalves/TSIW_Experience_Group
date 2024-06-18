@@ -8,7 +8,6 @@ $(document).ready(function(e) {
 });
 
 function sala210View() {
-    0
     GameStateView("sala 210");
     // Mete os items na sala
     setItems("sala 210");
