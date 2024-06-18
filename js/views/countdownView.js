@@ -1,3 +1,5 @@
+import { updateUserCollectibles } from "../models/UserModel.js";
+
 let countdown;
 let time = 100;
 let countdownTime = time * 60; // 30 minutos
@@ -185,6 +187,7 @@ window.addEventListener('load', () => {
     updateCountdown();
     startCountdown();
     makePauseMenu();
+    updateUserCollectibles();
 
     document.querySelector("#fullscreenBtn").addEventListener("click", () => {
         fullscreen();

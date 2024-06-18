@@ -27,6 +27,7 @@ export function add(username, password, victory, collectibles) {
 }
 
 export function editUser(username, userData) {
+  
   const user = users.find((user) => user.username === username);
 
   if (user) {
