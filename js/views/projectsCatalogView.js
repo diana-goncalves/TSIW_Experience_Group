@@ -45,7 +45,7 @@ function renderProject(projectData) {
         document.querySelector("#myCatalogRow").innerHTML += `
             <div class="col-md-4 projetos" id="${projectId}" style="height: 750px; padding-bottom: 32px;">
                 <div class="card custom-border" style="height: 750px;box-shadow: var(--custom-shadow);">
-                    <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" loading="lazy" class="card-img-top" style="height: 500px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
+                    <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" alt="${projectData.name}" loading="lazy" class="card-img-top" style="height: 500px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
                     <div class="card-body">
                         <h5 class="card-title">${projectData.name} - ${projectData.author}</h5>
                         <p class="event-description">${projectData.msgProjects}
@@ -61,7 +61,7 @@ function renderProject(projectData) {
         document.querySelector("#myCatalogRow").innerHTML += `
             <div class="col-md-4 eventos" id="${projectId}" style="height: 750px; padding-bottom: 32px;">
                 <div class="card custom-border" style="height: 750px;">
-                    <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" loading="lazy" class="card-img-top" style="height: 500px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
+                    <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" alt="${projectData.name}" loading="lazy" class="card-img-top" style="height: 500px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
                     <div class="card-body">
                         <h5 class="card-title">${projectData.name} - ${projectData.date}</h5>
                         <p class="event-description">${projectData.msgEvent}

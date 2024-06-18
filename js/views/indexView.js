@@ -54,7 +54,7 @@ function renderProject(projectData) {
 
             <div class="card custom-border" style="height: 750px">
 
-                <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" class="card-img-top" style="height: 500px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
+                <img src="${projectData.photo ? projectData.photo : '../../media/img/ImagePlaceholder.png'}" alt="${projectData.name}" class="card-img-top" style="height: 553,75375px;border-radius:0;border-bottom: 1px solid var(--color-yellow);">
 
                 <div class="card-body">
                     <h5 class="card-title">${projectData.name} - ${projectData.author}</h5>
