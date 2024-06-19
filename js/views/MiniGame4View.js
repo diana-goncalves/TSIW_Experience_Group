@@ -1,38 +1,48 @@
 import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
-
-
-let options = [
-    {
-        binario: ["0","0","0","1","0","1","0"],
-        decimal: `10`,
-    },{
-        binario: ["0","1","1","1","0","0","0"],
-        decimal: `56`,
-    },{
-        binario: ["0","0","1","1","0","0","0"],
-        decimal: `24`,
-    },{
-        binario: ["0","0","0","0","0","1","0"],
-        decimal: `2`,
-    },{
-        binario: ["0","0","1","1","1","1","0"],
-        decimal: `30`,
-    },{
-        binario: ["0","1","0","1","1","1","0"],
-        decimal: `46`,
-    },{
-        binario: ["0","0","0","1","0","1","1"],
-        decimal: `11`,
-    },{
-        binario: ["0","0","1","0","0","1","0"],
-        decimal: `18`,
-    },{
-        binario: ["0","0","0","1","0","0","1"],
-        decimal: `9`,
+let options
+function fillOptions() {
+    options = [
+        {
+            binario: ["0","0","0","1","0","1","0"],
+            decimal: `10`,
+        },{
+            binario: ["0","1","1","1","0","0","0"],
+            decimal: `56`,
+        },{
+            binario: ["0","0","1","1","0","0","0"],
+            decimal: `24`,
+        },{
+            binario: ["0","0","0","0","0","1","0"],
+            decimal: `2`,
+        },{
+            binario: ["0","0","1","1","1","1","0"],
+            decimal: `30`,
+        },{
+            binario: ["0","1","0","1","1","1","0"],
+            decimal: `46`,
+        },{
+            binario: ["0","0","0","1","0","1","1"],
+            decimal: `11`,
+        },{
+            binario: ["0","0","1","0","0","1","0"],
+            decimal: `18`,
+        },{
+            binario: ["0","0","0","1","0","0","1"],
+            decimal: `9`,
+        }
+    ];
+    if (localStorage.minigame4) {
+        const temp = JSON.parse(localStorage.minigame4);
+        for (const ex of temp) {
+            options.push(ex)
+        }    
     }
-];
+}
+
+fillOptions();
 init();
 let Exercise = [];
+console.log(options);
 let progress = 1;
 let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame4"));
 let modalIntro =  new bootstrap.Modal(document.querySelector("#intro4"));

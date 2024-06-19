@@ -6,7 +6,7 @@ let currentPage = 1;
 let totalPages = 1;
 
 // Form submit para editar e adicionar colecionaveis
-function submitForm() {
+function submitColectibles() {
     const form = document.querySelector("#formCol");
     const fileInput = document.querySelector("#fileInputColecionaveis");
     const previewImg = document.querySelector("#imgPreviewCol");
@@ -192,7 +192,38 @@ function resizeImage(imgURL, callback) {
 // INICIAR
 Collectible.init()
 
-submitForm();
+submitColectibles();
 
 initCancelButton();
 
+//Minigame 4
+function submitMiniGame4() {
+    let formMini4 = document.querySelector(".formMinigame4");
+
+    let Decimal = document.querySelector("#formDecimal");
+    let binarioPosicions = document.querySelectorAll(".formBinario")
+    let opts = []
+
+    formMini4.addEventListener("submit", (e)=>{
+        e.preventDefault();
+
+        if(localStorage.minigame4) {
+            const temp = JSON.parse(localStorage.minigame4);
+            temp.forEach(element => {
+                opts.push(element);
+            });
+        }
+        let object = {
+            binario: [binarioPosicions[0].value,binarioPosicions[1].value,
+                binarioPosicions[2].value,binarioPosicions[3].value,
+                binarioPosicions[4].value,binarioPosicions[5].value, binarioPosicions[6].value],
+            decimal: Decimal.value
+        }
+        opts.push(object);
+
+        localStorage.setItem("minigame4", JSON.stringify(opts));
+    });
+}
+submitMiniGame4();
+
+//Minigame 3

@@ -736,7 +736,8 @@
                         <div class="tab-pane fade" id="pills-er" role="tabpanel" aria-labelledby="pills-er-tab"
                             tabindex="0">
 
-                            <h4>Perguntas</h4>
+                            <!-- ------------------------------------------------------------Minigame 1------------------------------------------------------------>
+                            <h4>Minigame 1 - Logos</h4>
 
                             <form>
 
@@ -747,35 +748,67 @@
                                         <input type="text" class="form-control" name="Nome" id="formNomeE"
                                             placeholder="" />
 
-                                        <label for="formNomeE">Nome</label>
-
-                                    </div>
-
-                                    <div class="form-floating mb-3 col">
-
-                                        <input type="text" class="form-control" name="Mensagem" id="formMsgE"
-                                            placeholder="" />
-
-                                        <label for="formMsgE">Mensagem</label>
+                                        <label for="formMarca">Marca</label>
 
                                     </div>
 
                                     <br>
+                                    <h6>Dá check no logo correcto</h6>
                                     <br>
 
                                     <div class="row justify-content-center g-2">
-
-                                        <div class="form-floating mb-3 col">
-
-                                            <input type="date" class="form-control align-items-center" name="formData"
-                                                id="formDataE" placeholder="" />
-
+                                        <div class="col">
+                                            <div class="imgInputContainer">
+                                                <input type="file" name="file" class="fileInput"
+                                                    accept=".png, .jpg, .jpeg" id="fileInputgame1">
+                                                <label for="fileInputPerguntas" class="fileInputLabel">
+                                                    <i class="fa-regular fa-file-image"></i>
+                                                </label>
+                                                <br>
+                                            </div>
+                                            <input type="radio" name="certo" id="radioCerto1" value="0">
+                                            <br>
+                                            <br>
                                         </div>
-
-                                        <div class="form-floating mb-3 col">
-                                            <!-- div criado para melhorar responsividade -->
+                                        <div class="col">
+                                            <div class="imgInputContainer">
+                                                <input type="file" name="file" class="fileInput"
+                                                    accept=".png, .jpg, .jpeg" id="fileInputgame2">
+                                                <label for="fileInputPerguntas" class="fileInputLabel">
+                                                    <i class="fa-regular fa-file-image"></i>
+                                                </label>
+                                                <br>
+                                            </div>
+                                            <input type="radio" name="certo" id="radioCerto2" value="1">
+                                            <br>
+                                            <br>
                                         </div>
-
+                                        <div class="col">
+                                            <div class="imgInputContainer">
+                                                <input type="file" name="file" class="fileInput"
+                                                    accept=".png, .jpg, .jpeg" id="fileInputgame3">
+                                                <label for="fileInputPerguntas" class="fileInputLabel">
+                                                    <i class="fa-regular fa-file-image"></i>
+                                                </label>
+                                                <br>
+                                            </div>
+                                            <input type="radio" name="certo" id="radioCerto3" value="2">
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="imgInputContainer">
+                                                <input type="file" name="file" class="fileInput"
+                                                    accept=".png, .jpg, .jpeg" id="fileInputgame4">
+                                                <label for="fileInputPerguntas" class="fileInputLabel">
+                                                    <i class="fa-regular fa-file-image"></i>
+                                                </label>
+                                                <br>
+                                            </div>
+                                            <input type="radio" name="certo" id="radioCerto4" value="3">
+                                            <br>
+                                            <br>
+                                        </div>
                                     </div>
 
                                     <div class="row justify-content-center align-items-center g-2">
@@ -783,27 +816,336 @@
                                         <div
                                             class="form-floating mb-3 col d-flex justify-content-end align-items-center">
 
-                                            <div class="imgInputContainer">
-                                                <input type="file" name="file" class="fileInput"
-                                                    accept=".png, .jpg, .jpeg" id="fileInputPerguntas">
-                                                <label for="fileInputPerguntas" class="fileInputLabel">
-                                                    <i class="fa-regular fa-file-image"></i>
-                                                </label>
-                                            </div>
-
                                             <button type="submit" class="btn btn-primary button_color btnGuardar"
-                                                id="btnGuardarPerguntas">
+                                                id="btnGuardarmini1">
                                                 Guardar
                                             </button>
-
                                         </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <br><br><hr><br><br>
+<!-- ------------------------------------------------------------Minigame 2------------------------------------------------------------>
+                            <h4>Minigame 2 - Drag n' Drop</h4>
+
+                            <form>
+
+                                <div class="row justify-content-center  g-2 text-truncate">
+
+                                    <div class="form-floating mb-3 col text-truncate">
+
+                                        <input type="text" class="form-control" name="Nome" id="formfrase1"
+                                            placeholder="" />
+
+                                        <label for="formfrase1">Frase (1ªParte)</label>
+
+                                    </div>
+                                    <div class="form-floating mb-3 col text-truncate">
+
+                                        <input type="text" class="form-control" name="Nome" id="formfrase2"
+                                            placeholder="" />
+
+                                        <label for="formfrase2">Frase (2ªParte)</label>
+
+                                    </div>
+                                    <div class="form-floating mb-3 col text-truncate">
+
+                                        <input type="text" class="form-control" name="Nome" id="formfrase3"
+                                            placeholder="" />
+
+                                        <label for="formfrase3">Frase (3ªParte)</label>
 
                                     </div>
 
+                                    <br>
+                                    <h6>Dá check nas opções correcto(3)</h6>
+                                    <br>
+
+                                    <div class="row justify-content-center g-2">
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formNomeE"
+                                                    placeholder="" />
+        
+                                                <label for="formfrase2">Opção 1</label>
+        
+                                            </div>
+                                            <input type="checkbox" class="limitedCheckbox" name="option" value="0">
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formNomeE"
+                                                    placeholder="" />
+        
+                                                <label for="formfrase2">Opção 2</label>
+        
+                                            </div>
+                                            <input type="checkbox" class="limitedCheckbox" name="option" value="1">
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formNomeE"
+                                                    placeholder="" />
+        
+                                                <label for="formfrase2">Opção 3</label>
+        
+                                            </div>
+                                            <input type="checkbox" class="limitedCheckbox" name="option" value="2">
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formNomeE"
+                                                    placeholder="" />
+        
+                                                <label for="formfrase2">Opção 4</label>
+        
+                                            </div>
+                                            <input type="checkbox" class="limitedCheckbox" name="option" value="3">
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formNomeE"
+                                                    placeholder="" />
+        
+                                                <label for="formfrase2">Opção 5</label>
+        
+                                            </div>
+                                            <input type="checkbox" class="limitedCheckbox" name="option" value="4">
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center align-items-center g-2">
+
+                                        <div
+                                            class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+
+                                            <button type="submit" class="btn btn-primary button_color btnGuardar"
+                                                id="btnGuardarmini2">
+                                                Guardar
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </form>
+                            <br><br><hr><br><br>
+<!-- ------------------------------------------------------------Minigame 3------------------------------------------------------------>
+                            <h4>Minigame 3 - Quizz</h4>
 
+                            <form>
+
+                                <div class="row justify-content-center  g-2 text-truncate">
+
+                                    <div class="form-floating mb-3 col text-truncate">
+
+                                        <input type="text" class="form-control" name="Nome" id="formpergunta3"
+                                            placeholder="" />
+
+                                        <label for="formpergunta3">Pergunta</label>
+
+                                    </div>
+
+                                    <br>
+                                    <h6>Dá check nas opção correcto</h6>
+                                    <br>
+
+                                    <div class="row justify-content-center g-2">
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formOp1"
+                                                    placeholder="" />
+
+                                                <label for="formfrase2">Opção 1</label>
+
+                                            </div>
+                                            <input type="radio" class="radiomini_3" name="mini3" value="0">
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formOp2"
+                                                    placeholder="" />
+
+                                                <label for="formfrase2">Opção 2</label>
+
+                                            </div>
+                                            <input type="radio" class="radiomini_3" name="mini3" value="1">
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formOp3"
+                                                    placeholder="" />
+
+                                                <label for="formfrase2">Opção 3</label>
+
+                                            </div>
+                                            <input type="radio" class="radiomini_3" name="mini3" value="2">
+                                            <br>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="text" class="form-control" name="Nome" id="formOp4"
+                                                    placeholder="" />
+
+                                                <label for="formfrase2">Opção 4</label>
+
+                                            </div>
+                                            <input type="radio" class="radiomini_3" name="mini3" value="3">
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center align-items-center g-2">
+
+                                        <div
+                                            class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+
+                                            <button type="submit" class="btn btn-primary button_color btnGuardar"
+                                                id="btnGuardarmini3">
+                                                Guardar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <br><br><hr><br><br>
+<!-- ------------------------------------------------------------Minigame 4------------------------------------------------------------>
+                            <h4>Minigame 4 - Binário</h4>
+
+                            <form class="formMinigame4">
+
+                                <div class="row justify-content-center  g-2 text-truncate">
+
+                                    <div class="form-floating mb-3 col text-truncate">
+
+                                        <input type="text" class="form-control" name="Nome" id="formDecimal"
+                                            placeholder="" />
+
+                                        <label for="formDecimal">Decimal</label>
+
+                                    </div>
+
+                                    <br>
+                                    <h6>Binário</h6>
+                                    <br>
+
+                                    <div class="row justify-content-center g-2">
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="number" min="0" max="1" class="form-control formBinario" name="Nome" id="formBi0"
+                                                    placeholder="" required/>
+
+                                                <label for="formBi0">posição 0</label>
+
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="number" min="0" max="1" class="form-control formBinario" name="Nome" id="formBi1"
+                                                    placeholder="" required/>
+
+                                                <label for="formBi1">posição 1</label>
+
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="number" min="0" max="1" class="form-control formBinario" name="Nome" id="formBi2"
+                                                    placeholder="" required/>
+
+                                                <label for="formBi2">posição 2</label>
+
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="number" min="0" max="1" class="form-control formBinario" name="Nome" id="formBi3"
+                                                    placeholder="" required/>
+
+                                                <label for="formBi3">posição 3</label>
+
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="number" min="0" max="1" class="form-control formBinario" name="Nome" id="formBi4"
+                                                    placeholder="" required/>
+
+                                                <label for="formBi4">posição 4</label>
+
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="number" min="0" max="1" class="form-control formBinario" name="Nome" id="formBi5"
+                                                    placeholder="" required/>
+
+                                                <label for="formBi5">posição 5</label>
+
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating mb-3 col text-truncate">
+
+                                                <input type="number" min="0" max="1" class="form-control formBinario" name="Nome" id="formBi6"
+                                                    placeholder="" required/>
+
+                                                <label for="formBi6">posição 6</label>
+
+                                            </div>
+                                            <br>
+                                        </div>                                        
+
+                                    <div class="row justify-content-center align-items-center g-2">
+
+                                        <div
+                                            class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+
+                                            <button type="submit" class="btn btn-primary button_color btnGuardar"
+                                                id="btnGuardarmini4">
+                                                Guardar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <br><br><hr><br><br>
+<!-- ------------------------------------------------------------Colecionaveis------------------------------------------------------------>
                             <h4>Colecionáveis</h4>
 
                             <form id="formCol">
