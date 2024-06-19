@@ -1,4 +1,4 @@
-import { updateUserCollectibles, getUserLogged, editUser } from "../models/UserModel.js";
+import { updateUserCollectibles, getUserLogged } from "../models/UserModel.js";
 
 let countdown;
 let time = 100;

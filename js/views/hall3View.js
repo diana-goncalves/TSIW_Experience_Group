@@ -3,6 +3,7 @@ import setCollectibles from "../views/collectiblesView.js";
 import GameStateView from "./GameStateView.js";
 import {checkItemInventory} from "../models/inventoryModel.js"
 import { init , editUser, getUserLogged } from "../models/UserModel.js";
+import {init as initColectibles, getCollectibles} from "../models/collectiblesModel.js";
 
 init();
 
@@ -173,11 +174,12 @@ abrirCofre.addEventListener("click", () => {
 
 function makeVictoryMenu() {
 
-    // Guardar vitoria no user
-    let user = getUserLogged();
-    user.victory = true;
-    let username = user.username;
-    editUser(username, user);
+    const tempoRestante = document.querySelector("#countdown").textContent;
+
+    initColectibles();
+    let collectibles = getCollectibles();
+    const totalCollectibles = collectibles.length;
+    const userCol = user.collectibles;
 
     document.querySelector("#bodyCofreModal").innerHTML =
     `
@@ -188,14 +190,14 @@ function makeVictoryMenu() {
                     Conseguiste!</h1>
             </div>
             <div class="row mt-4">
-                <p class="col text-white">Conseguiste completar todos os desafios, salvas-te todos os alunos da ESMAD!!! Será o fim? Será que apanhas-te todos os colecionáveis? Será que consegues melhorar o teu tempo?</p>
+                <p class="col text-white">Conseguiste completar todos os desafios, salvas-te todos os alunos da ESMAD!!! Será o fim? Será que consegues melhorar o teu tempo?</p>
             </div>
             <div class="row mt-4">
                 <img class="col d-block" src="../../media/img/ER-assets/trofeu.png" style="height:20rem;" alt="Trofeu">
             </div>
             <div class="row mt-4">
                 <div class="col">
-                    <h5 class="text-white">Tempo: <span id="time-remaining">30:00</span></h5>
+                    <h5 class="text-white">Tempo: <span id="time-remaining">${tempoRestante}</span> Colecionáveis: <span>${userCol!=0 ? userCol : 0}/${totalCollectibles}</span></h5>
                 </div>
                 
                 <div class="col"><button class="align-content-center btnGuardar" id="sairEscapeRoom">SAIR</button></div>
@@ -208,5 +210,25 @@ function makeVictoryMenu() {
     `
 
     cofreModal.show();
+
+    document.querySelector("#sairEscapeRoom").addEventListener("click", () => {
+
+        // Guardar vitoria no user
+        let user = getUserLogged();
+        user.victory = true;
+        let username = user.username;
+        editUser(username, user);
+        
+        location.href="../account.html";
+
+        // Colocar aqui funcao que guarda o tempo
+
+    })
+
+    document.querySelector("#CONTINUAR").addEventListener("click", () => {
+
+        cofreModal.hide();
+
+    })
 
 }
