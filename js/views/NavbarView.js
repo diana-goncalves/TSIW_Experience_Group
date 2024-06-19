@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
         else {
             
             document.querySelector(".user_icon").href = "../../html/account.html"
-            console.log(selectUserIcon);
             document.querySelector(".user_icon").innerHTML = `
                 ${selectUserIcon(user)} 
                 ${user.username}

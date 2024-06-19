@@ -147,7 +147,11 @@ function renderCollectibles() {
         img.id = item.name;
         
         // Caso o utilizador não tenha encontrado o colecionavel aplicar filtro preto e branco
-        if (userCollectibles.includes(item.name)) {
+        // Debugging logs
+        console.log("Item name:", item.name);
+        console.log("User collectibles:", userCollectibles);
+        console.log("Includes check:", userCollectibles.includes(item.name));
+        if (userCollectibles.some(element => element.name == item.name)) {
             img.className = 'perfilCollectibleUnlocked';
         } else {
             img.className = 'perfilCollectibleLocked';
