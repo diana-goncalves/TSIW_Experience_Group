@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape Romm - Sala 206</title>
-    <!--CSS-->
+    <title>Escape Room - Sala 206</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="../../css/style.css">
     <!-- Icon Image Browser Tab -->
-    <link rel="shortcut icon" type="image/x-icon" href="../../media/img/logo.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../media/img/logo.png" />
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -23,9 +23,9 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" id="navbarNav">
-            <div class="container ">
-                <a class="navbar-brand" href="../../index.html">
-                    <img src="../../media/img/logo.png" alt="TSIW Logo" class="img-fluid" style="max-height: 50px;">
+            <div class="container">
+                <a class="navbar-brand" href="../../index.html" aria-label="Página inicial">
+                    <img src="../../media/img/logo.png" alt="Logo TSIW" class="img-fluid" style="max-height: 50px;">
                 </a>
                 <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -34,22 +34,28 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link home_page" href="../../index.html">Home</a>
+                            <a class="nav-link home_page" href="../../index.html"
+                                aria-label="Ir para a página inicial">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link projects_page" href="../../index.html#projects">Projetos</a>
+                            <a class="nav-link projects_page" href="../../index.html#projects"
+                                aria-label="Ir para a secção Projetos">Projetos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link about_page" href="../../index.html#about">Sobre</a>
+                            <a class="nav-link about_page" href="../../index.html#about"
+                                aria-label="Ir para a secção Sobre">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link er_page" href="../../index.html#escapeRoom">Escape Room</a>
+                            <a class="nav-link er_page" href="../../index.html#escapeRoom"
+                                aria-label="Ir para a secção Escape Room">Escape Room</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav" id="LoginLogout_Container">
                         <li class="nav-item">
-                            <a class="nav-link text-white user_icon" href="../../html/login.html"><i
-                                    class="fas fa-user"></i></a>
+                            <a class="nav-link text-white user_icon" href="../../html/login.html"
+                                aria-label="Iniciar sessão">
+                                <i class="fas fa-user" title="Iniciar sessão"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -63,45 +69,52 @@
             src="../../media/img/ER-assets/Sala3.jpg" alt="Sala 206">
         <map name="salaMap">
             <area id="sala206Computer" shape="rect" coords="1577,521,1832,715" alt="Computador" title="Computador"
-                href="#">
-            <area id="sala206Porta" shape="rect" coords="180,420,483,719" alt="Saida" title="Saida" href="hall_2.html">
+                href="#" aria-label="Ver computador">
+            <area id="sala206Porta" shape="rect" coords="180,420,483,719" alt="Saída" title="Saída" href="hall_2.html"
+                aria-label="Ir para o hall 2">
         </map>
         <img usemap="#salaMap" class="imgComputador img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
-            src="../../media/img/ER-assets/Sala3-computador.png" alt="Computador" title="Computador">
+            src="../../media/img/ER-assets/Sala3-computador.png" alt="Computador" title="Computador"
+            aria-label="Ver computador">
         <img usemap="#salaMap" class="imgSaida img-fluid img-responsive vh-100 w-100 z-0 fixed-top"
-            src="../../media/img/ER-assets/Sala3-saida.png" alt="Saida" title="Saida">
+            src="../../media/img/ER-assets/Sala3-saida.png" alt="Saída" title="Saída" aria-label="Ir para o hall 2">
     </section>
 
-
-     <!-- Modal MiniGame -->
-     <div class="modal fade"  id="intro2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- Modal MiniGame -->
+    <div class="modal fade" id="intro2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Completa as frases</h1>
-                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
                 </div>
                 <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <h1 class="col mt-3 align-content-center title text-capitalize">Vamos pôr os teus conhecimentos à prova!</h1>    
+                    <h1 class="col mt-3 align-content-center title text-capitalize">Vamos pôr os teus conhecimentos à
+                        prova!</h1>
                 </div>
                 <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
-                    <p class="col text-white">Neste desafio o jogador precisa de demonstrar o seu conhecimento sobre algumas tecnologias que são utilizadas na área de programação para a web.</p>
+                    <p class="col text-white">Neste desafio o jogador precisa de demonstrar o seu conhecimento sobre
+                        algumas tecnologias que são utilizadas na área de programação web.</p>
                 </div>
                 <div class="row mt-4 text-center justify-content-center d-flex flex-column mx-auto p-0">
                     <div class="col">
                         <h5 class="text-white">Instruções:</h5>
                         <ul class="text-white text-start d-inline-block">
                             <li>Observa atentamente as opções</li>
-                            <li>Arrastar as opções para os espaços vazios da respetiva frase</li>
+                            <li>Arrasta as opções para os espaços vazios da respetiva frase</li>
                             <li>Quando tiveres tudo preenchido, clica na seta para avançar</li>
-                            <li>Ao clicar no botão, as erradas vão aparecer com o fundo vermelho e as certas com o fundo verde</li>
+                            <li>Ao clicar no botão, as respostas erradas vão aparecer com o fundo vermelho e as certas com o fundo
+                                verde</li>
                         </ul>
                     </div>
                     <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
                         <p class="col text-capitalize text-white">Boa sorte e divirte-te!</p>
                     </div>
                     <div class="modal-footer border-black modal-background d-flex justify-content-center">
-                        <button type="button" class="buttonStart btn m-0 p-0" data-bs-toggle="modal" data-bs-target="#miniGame2">
+                        <button type="button" class="buttonStart btn m-0 p-0" data-bs-toggle="modal"
+                            data-bs-target="#miniGame2" aria-label="Iniciar o minijogo">
                             <span class="actual-text">&nbsp;Start Experience&nbsp;</span>
                             <span aria-hidden="true" class="hover-text">&nbsp;Start Experience&nbsp;</span>
                         </button>
@@ -110,31 +123,31 @@
             </div>
         </div>
     </div>
+
     <!-- Modal MiniGame -->
     <div class="modal fade" id="miniGame2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel"> Drag em Drop</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Drag and Drop</h1>
                     <button type="button" class="btn-close-white btn-close closeGame" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                        aria-label="Fechar"></button>
                 </div>
-                <div class=" modal-body">
-                    <div class="container-fluid text-center gameBoard">
-                        
-                    </div>
+                <div class="modal-body">
+                    <div class="container-fluid text-center gameBoard"></div>
                 </div>
                 <div class="modal-footer border-black modal-background d-flex justify-content-between">
-                    <div class="progress w-25 " role="progressbar" aria-label="Warning striped example"
-                        aria-valuenow="33.33" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress w-25" role="progressbar" aria-label="Progresso do jogo" aria-valuenow="33.33"
+                        aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
                             style="width: 33.33%"></div>
                     </div>
-                    <div class=" mx-1 p-1 align-items-center">
-                        <!--Botao Continue-->
+                    <div class="mx-1 p-1 align-items-center">
+                        <!-- Botão Continue -->
                         <div class="btn-conteiner d-flex justify-content-center">
-                            <a href="#" class="btn-content d-flex align-items-center CompleteLevel">
+                            <a href="#" class="btn-content d-flex align-items-center CompleteLevel"
+                                aria-label="Continuar para o próximo nível">
                                 <span class="icon-arrow">
                                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
                                         version="1.1" viewBox="0 0 66 43" height="30px" width="30px">
@@ -159,28 +172,34 @@
         </div>
     </div>
 
-    <!--Modal PARA QUANDO COMPLETAR O JOGO-->
-    <div class="modal fade"  id="victoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- Modal PARA QUANDO COMPLETAR O JOGO -->
+    <div class="modal fade" id="victoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
-                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
                 </div>
-                <div class=" modal-body">
+                <div class="modal-body">
                     <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <h1 class="col mt-3 align-content-center title text-capitalize">Vitória!</h1>    
+                        <h1 class="col mt-3 align-content-center title text-capitalize">Vitória!</h1>
                     </div>
                     <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
                         <p class="col text-white">Completaste todas as etapas com sucesso! Já podes seguir em frente</p>
                     </div>
                     <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <p class="col text-white">Reparas-te que apareceu um numreo no computador, será do cofre?</p>
+                        <p class="col text-white">Reparaste que apareceu um número no computador, será do cofre?</p>
                     </div>
                     <div class="row code input-group text-center justify-content-center mx-1 p-0">
-                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 1" type="number" disabled/>
-                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 2" type="number" disabled/>
-                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 3" type="number" disabled/>
-                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 4" type="number" disabled/>
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 1"
+                            type="number" disabled />
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 2"
+                            type="number" disabled />
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 3"
+                            type="number" disabled />
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 vitoryCode" name="code 4"
+                            type="number" disabled />
                     </div>
                     <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
                         <p class="col text-white">Agora procura nas outras salas por mais jogos ou Itens</p>
@@ -189,22 +208,29 @@
             </div>
         </div>
     </div>
-    <!--Modal PARA QUANDO O JOGO JA ESTÁ FEITO-->
-    <div class="modal fade"  id="gameDone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <!-- Modal PARA QUANDO O JOGO JÁ ESTÁ FEITO -->
+    <div class="modal fade" id="gameDone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-md-down">
             <div class="modal-content modal-background">
                 <div class="border-1 border-black modal-header">
-                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
                 </div>
-                <div class=" modal-body">
+                <div class="modal-body">
                     <div class="row modal-body text-center justify-content-center d-flex flex-column mx-auto p-0">
-                        <h1 class="col mt-3 align-content-center title text-capitalize">JA GANHASTE ESTE JOGO!</h1>    
+                        <h1 class="col mt-3 align-content-center title text-capitalize">JÁ GANHASTE ESTE JOGO!</h1>
                     </div>
                     <div class="row code input-group text-center justify-content-center mx-1 p-0">
-                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 1" type="number" disabled/>
-                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 2" type="number" disabled/>
-                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 3" type="number" disabled/>
-                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 4" type="number" disabled/>
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 1"
+                            type="number" disabled />
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 2"
+                            type="number" disabled />
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 3"
+                            type="number" disabled />
+                        <input maxlength="1" min="0" max="1" class="col input w-25 mx-5 gameDoneCode" name="code 4"
+                            type="number" disabled />
                     </div>
                     <div class="row mt-5 text-center justify-content-center d-flex flex-column mx-auto p-0">
                         <p class="col text-white">Agora procura nas outras salas por mais jogos ou Itens</p>
@@ -214,16 +240,15 @@
         </div>
     </div>
 
-
-    <!--History Lines-->
+    <!-- History Lines -->
     <div class="toast-container position-fixed bottom-0 end-0 p-2"></div>
 
     <!-- Contador -->
     <div id="countdown" class="fixed-bottom p-4 text-white text-center rounded-end-circle mb-5"></div>
 
-    <!-- Botao Inventory -->
+    <!-- Botão Inventory -->
     <button class="btn inventaryBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#inventory"
-        aria-controls="inventory">Inventory</button>
+        aria-controls="inventory" aria-label="Abrir inventário">Inventário</button>
 
     <!-- Inventory -->
     <div class="InventoryZone"></div>
@@ -232,13 +257,13 @@
     <!-- Collectibles -->
     <div class="collectiblesZone"></div>
 
-    <!--Items na sala-->
+    <!-- Items na sala -->
     <div class="ItemZone"></div>
 
-    <!-- Lanterna-->
+    <!-- Lanterna -->
     <div id="flashlight"></div>
 
-    <!--Pause-->
+    <!-- Pause -->
     <div class="pauseZone"></div>
 
     <!-- Bootstrap JavaScript Libraries -->
