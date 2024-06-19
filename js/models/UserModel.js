@@ -1,4 +1,4 @@
-import {init as collInit,getInventoryCollectibles} from "../models/collectiblesModel.js"
+import {getInventoryCollectibles} from "../models/collectiblesModel.js"
 
 let users = [];
 let blockedUsers = [];

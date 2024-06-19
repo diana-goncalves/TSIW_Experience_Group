@@ -1,5 +1,5 @@
 import { getUserLogged,logout } from "../models/UserModel.js";
-import {init as initColectibles, getCollectibles} from "../models/collectiblesModel.js";
+import { getCollectibles } from "../models/collectiblesModel.js";
 
 // Ajustar dinamicamente margem entre navbar e resto da página
 
@@ -101,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function selectUserIcon(user) {
     // Collectibles
-    initColectibles();
     let collectibles = getCollectibles();
     const totalCollectibles = collectibles.length;
     let userCollectibles = user.collectibles;

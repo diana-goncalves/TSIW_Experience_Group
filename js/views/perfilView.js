@@ -4,6 +4,12 @@ import {init as initColectibles, getCollectibles} from "../models/collectiblesMo
 let user = User.getUserLogged();
 let username = user.username;
 
+// Collectibles
+initColectibles();
+let collectibles = getCollectibles();
+const totalCollectibles = collectibles.length;
+let userCollectibles = user.collectibles;
+
 if (user.username === "admin") {
     location.href = "../../html/admin.html";
 }
@@ -126,12 +132,6 @@ function editPassword() {
 
 // form
 
-// Collectibles
-initColectibles();
-let collectibles = getCollectibles();
-const totalCollectibles = collectibles.length;
-let userCollectibles = user.collectibles;
-
 document.querySelector("#colecionaveisHeader").innerHTML += `  ${userCollectibles.length}/${totalCollectibles}`;
 
 function renderCollectibles() {
@@ -171,12 +171,10 @@ function customToast(message) {
 
 function selectUserIcon(user) {
     // Collectibles
-    initColectibles();
-    let collectibles = getCollectibles();
     const totalCollectibles = collectibles.length;
     let userCollectibles = user.collectibles;
     if (user.victory) {
-        if (totalCollectibles.length == userCollectibles.length) {
+        if (totalCollectibles == userCollectibles) {
             return `<img src="../../media/img/ER-assets/allCollectiblesAward.svg" width="64px" height="64px" alt="Award">`;
         }else{
             return `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>`;
