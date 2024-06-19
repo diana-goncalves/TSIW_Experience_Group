@@ -3,7 +3,7 @@ import setCollectibles from "../views/collectiblesView.js";
 import GameStateView from "./GameStateView.js";
 import {checkItemInventory} from "../models/inventoryModel.js"
 import { editUser, getUserLogged } from "../models/UserModel.js";
-import {init as initColectibles, getCollectibles} from "../models/collectiblesModel.js";
+import {getCollectibles} from "../models/collectiblesModel.js";
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
@@ -174,7 +174,6 @@ function makeVictoryMenu() {
 
     const tempoRestante = document.querySelector("#countdown").textContent;
 
-    initColectibles();
     let collectibles = getCollectibles();
     const totalCollectibles = collectibles.length;
     let user = getUserLogged();
