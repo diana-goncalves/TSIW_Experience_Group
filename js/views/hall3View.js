@@ -190,8 +190,8 @@ function makeVictoryMenu() {
             <div class="row mt-4">
                 <p class="col text-white">Conseguiste completar todos os desafios, salvas-te todos os alunos da ESMAD!!! Será o fim? Será que consegues melhorar o teu tempo?</p>
             </div>
-            <div class="row mt-4">
-                <img class="col d-block" src="../../media/img/ER-assets/trofeu.png" style="height:20rem;" alt="Trofeu">
+            <div class="row mt-4 justify-content-center">
+                <img class="d-block w-25" src="../../media/img/ER-assets/trofeu.png" height="200" width="150" alt="Trofeu">
             </div>
             <div class="row mt-4">
                 <div class="col">
