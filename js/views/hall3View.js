@@ -50,7 +50,7 @@ function hall3View() {
     const cofre = document.querySelector("#cofre");
 
     // CHAVE TSIW
-    const chaveFinal = document.querySelector("#chaveTSIW");
+    // const chaveFinal = document.querySelector("#chaveTSIW");
 
     // IMAGEM PRINCIPAL HALL 3
     const heroIMG = document.querySelector("#heroHall3");
@@ -111,11 +111,11 @@ function hall3View() {
         cofreModal.show();
     })
 
-    chaveFinal.addEventListener("click", (e) => {
-        e.preventDefault();
-        // chamar função que coloca chave no inventario
-        chaveFinal.style.display = "none";
-    })
+    // chaveFinal.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     // chamar função que coloca chave no inventario
+    //     chaveFinal.style.display = "none";
+    // })
 
 }
 hall3View();
