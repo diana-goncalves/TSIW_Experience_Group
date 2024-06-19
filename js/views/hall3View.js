@@ -177,7 +177,7 @@ function makeVictoryMenu() {
     let collectibles = getCollectibles();
     const totalCollectibles = collectibles.length;
     let user = getUserLogged();
-    const userCol = user.collectibles;
+    const userCol = user.collectibles.length;
 
     document.querySelector("#bodyCofreModal").innerHTML =
     `
