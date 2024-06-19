@@ -148,9 +148,6 @@ function renderCollectibles() {
         
         // Caso o utilizador não tenha encontrado o colecionavel aplicar filtro preto e branco
         // Debugging logs
-        console.log("Item name:", item.name);
-        console.log("User collectibles:", userCollectibles);
-        console.log("Includes check:", userCollectibles.includes(item.name));
         if (userCollectibles.some(element => element.name == item.name)) {
             img.className = 'perfilCollectibleUnlocked';
         } else {
@@ -175,8 +172,7 @@ function customToast(message) {
 
 function selectUserIcon(user) {
     // Collectibles
-    console.log(totalCollectibles);
-    console.log(userCollectibles.length);
+    
     if (user.victory) {
         if (totalCollectibles == userCollectibles.length) {
             return `<img src="../../media/img/ER-assets/allCollectiblesAward.svg" width="64px" height="64px" alt="Award">`;
