@@ -13,6 +13,21 @@ $(document).ready(function(e) {
 
 let noKey =  new bootstrap.Modal(document.querySelector("#noKeyModal"));
 
+// PORTA FINAL
+let portaFinal = document.querySelector("#portaFinal");
+function clickPortaFinal() {
+    if (checkItemInventory("chaveTSIW")) {
+        heroIMG.src = `../../media/img/ER-assets/hall3FIM.jpg`;
+        // remover event listener para conseguir colocar outro destinado a abrir o modal de vitoria
+        portaFinal.removeEventListener("click", clickPortaFinal);
+
+        portaFinal.addEventListener("click", makeVictoryMenu);
+
+    } else {
+        noKey.show();
+    }
+}
+
 function hall3View() {
     GameStateView("hall 3");
     // Mete os items na sala
@@ -33,9 +48,6 @@ function hall3View() {
 
     // COFRE
     const cofre = document.querySelector("#cofre");
-
-    // PORTA FINAL
-    const portaFinal = document.querySelector("#portaFinal");
 
     // CHAVE TSIW
     const chaveFinal = document.querySelector("#chaveTSIW");
@@ -92,13 +104,7 @@ function hall3View() {
         }
     })
 
-    portaFinal.addEventListener("click", (e)=>{
-        if (checkItemInventory("chaveTSIW")) {
-            heroIMG.src = `../../media/img/ER-assets/hall3FIM.jpg`;
-        } else {
-            noKey.show();
-        }
-    })
+    portaFinal.addEventListener("click", clickPortaFinal)
 
     cofre.addEventListener("click", (e) => {
         e.preventDefault();
@@ -173,12 +179,45 @@ abrirCofre.addEventListener("click", () => {
         cofreModal.hide();
         heroIMG.src = "../../media/img/ER-assets/hall3CofreAberto.png";
         chaveTSIW.style.display = "block";
-        
-        // COLOCAR ISTO QUANDO ACABAR escape room
-        let user = getUserLogged();
-        user.victory = true;
-        let username = user.username;
-        editUser(username, user);
-
     }
 })
+
+function makeVictoryMenu() {
+
+    // Guardar vitoria no user
+    let user = getUserLogged();
+    user.victory = true;
+    let username = user.username;
+    editUser(username, user);
+
+    document.querySelector("#bodyCofreModal").innerHTML =
+    `
+        <div class="container-fluid text-center">
+            <div class="row">
+                <h1
+                    class="col align-content-center d-flex justify-content-center title text-capitalize text-xxl-start">
+                    Conseguiste!</h1>
+            </div>
+            <div class="row mt-4">
+                <p class="col text-white">Conseguiste completar todos os desafios, salvas-te todos os alunos da ESMAD!!! Será o fim? Será que apanhas-te todos os colecionáveis? Será que consegues melhorar o teu tempo?</p>
+            </div>
+            <div class="row mt-4">
+                <img class="col d-block" src="../../media/img/ER-assets/trofeu.png" style="height:20rem;" alt="Trofeu">
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <h5 class="text-white">Tempo: <span id="time-remaining">30:00</span></h5>
+                </div>
+                
+                <div class="col"><button class="align-content-center btnGuardar" id="sairEscapeRoom">SAIR</button></div>
+
+                <div class="col"><button class="align-content-center btnGuardar" id="CONTINUAR">CONTINUAR</button></div>
+
+            </div>
+        </div>
+        
+    `
+
+    cofreModal.show();
+
+}

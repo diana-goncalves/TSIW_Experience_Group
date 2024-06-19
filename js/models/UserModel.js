@@ -131,32 +131,14 @@ export function getUserLogged() {
 }
 
 export function updateUserCollectibles() {
-  //collInit();
   init();
-  let userLogged //USER Logged
+  let userLogged = getUserLogged();
   let userCollectibles = getInventoryCollectibles(); // Collectibles 
 
-  if (localStorage.loggedUser) {// vai buscar o user Logged
-    userLogged = JSON.parse(localStorage.getItem("loggedUser"));
-  }else{
-    userLogged = JSON.parse(sessionStorage.getItem("loggedUser"));
-  }
-  // Vai buscar o index no array
-  let index = users.findIndex(element => element.username == userLogged.username)
+  userLogged.collectibles = userCollectibles;
 
+  editUser(userLogged.username, userLogged);
 
-  userCollectibles.forEach(element => {
-    if (!users[index].collectibles.includes(element.name)) {
-      users[index].collectibles.push(element.name);
-    }
-  });
-  // Guardar no storage
-  localStorage.setItem("users", JSON.stringify(users));
-  if (localStorage.loggedUser) {
-    localStorage.setItem("loggedUser", JSON.stringify(users[index]));
-  } else {
-    sessionStorage.setItem("loggedUser", JSON.stringify(users[index]));
-  }
 }
 
 export function findUser(username) {

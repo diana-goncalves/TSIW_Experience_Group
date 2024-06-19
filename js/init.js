@@ -247,13 +247,13 @@ function initdata() {
                 id: 2,
                 username: "Auser",
                 password: "Apass",
-                victory: true,
+                victory: false,
             },
             {
                 id: 3,
                 username: "user1",
                 password: "pass1",
-                victory: true,
+                victory: false,
             },
             {
                 id: 4,
@@ -284,7 +284,7 @@ function initdata() {
             {
                 name: "Design Tokens",
                 photo: "../media/projetos/Beatriz Rodrigues.jpg",
-                link: null,
+                link: "https://youtu.be/hOpRyUDhx1k?si=ZfoJ2YKnh4xwUakU",
                 author: "Beatriz Lopes",
                 msgProjects: "Research on Design Tokens - Managing and Exporting",
                 state: "Publicado"
@@ -292,7 +292,7 @@ function initdata() {
             {
                 name: "CustoJusto Pro",
                 photo: "../media/projetos/Maria Lima.jpg",
-                link: null,
+                link: "https://youtu.be/MYfA2XtiCks?si=k2lcceHnRSf3Hqn1",
                 author: "Maria Lima",
                 msgProjects: "Revitalização do Front-end do CustoJusto",
                 state: "Publicado"
@@ -300,7 +300,7 @@ function initdata() {
             {
                 name: "Gestão de Portefólio de Projetos",
                 photo: "../media/projetos/BrunoRodrigues.jpg",
-                link: null,
+                link: "https://youtu.be/QgzTLxErSHg?si=LN7cU4CPU_eYxRdL",
                 author: "Bruno Rodrigues",
                 msgProjects: "Portfólio de Projetos da plataforma SCRAIM",
                 state: "Publicado"
