@@ -179,6 +179,7 @@ function makeVictoryMenu() {
     initColectibles();
     let collectibles = getCollectibles();
     const totalCollectibles = collectibles.length;
+    let user = getUserLogged();
     const userCol = user.collectibles;
 
     document.querySelector("#bodyCofreModal").innerHTML =
@@ -214,7 +215,6 @@ function makeVictoryMenu() {
     document.querySelector("#sairEscapeRoom").addEventListener("click", () => {
 
         // Guardar vitoria no user
-        let user = getUserLogged();
         user.victory = true;
         let username = user.username;
         editUser(username, user);
