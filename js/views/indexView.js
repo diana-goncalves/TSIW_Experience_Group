@@ -1,6 +1,8 @@
 import { init as initProjetos, filtrarProjetosPorEstado } from "../models/ProjectModel.js";
 import { init as initEventos, filtrarEventoPorEstado} from "../models/EventModel.js";
 import { init as initAlumni, filtrarTestemunhoPorEstado, getTestemunhoByName } from "../models/AlumniModel.js";
+import { init as initColectibles } from "../models/collectiblesModel.js";
+
 import { isLogged } from "../models/UserModel.js";
 
 // Scrollspy bootstrap
@@ -367,6 +369,7 @@ renderProjects();
 initEventos();
 renderEvents();
 initAlumni();
+initColectibles();
 renderTestemunhos();
 seeMoreClick();
 

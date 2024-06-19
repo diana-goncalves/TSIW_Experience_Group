@@ -1,38 +1,32 @@
-import setItems from "../views/inventoryView.js"
-import setCollectibles from "../views/collectiblesView.js"
-import GameStateView from "../views/GameStateView.js";
-import {checkGameCompleted} from "../models/gameStateModel.js"
-
+import setItems from "./inventoryView.js"
+import setCollectibles from "./collectiblesView.js"
+import GameStateView from "./GameStateView.js";
 
 // função para por as imagens responsivas
 $(document).ready(function(e) {
     $('img[usemap]').rwdImageMaps();
 });
 
-function sala202View() {
+function sala207View() {
     
-    GameStateView("sala 202");
+    GameStateView("sala 207");
     // Mete os items na sala
-    if (checkGameCompleted("minigame1")) { 
-        setItems("sala 202");
-        setCollectibles("sala 202");
-        GameStateView("minigame1");
-    } 
-    // }
+    setItems("sala 207");
+    setCollectibles("sala 207");
     //--------------------------------------------------------------------
     //map das portas
-    const sala202ComputerArea = document.querySelector("#sala202Computer");
-    const salaPortaArea = document.querySelector("#sala202Porta");
+    const sala207QuadroArea = document.querySelector("#sala207Quadro");
+    const salaPortaArea = document.querySelector("#sala207Porta");
     const imgSaida = document.querySelector(".imgSaida");
     const imgComputador = document.querySelector(".imgComputador");
 
     // listener para criar o efeito de hover
-    sala202ComputerArea.addEventListener("mouseenter", (e)=> {
+    sala207QuadroArea.addEventListener("mouseenter", (e)=> {
         e.preventDefault();
         imgComputador.style.display = "block";
     });
 
-    sala202ComputerArea.addEventListener("mouseleave",(e)=>{
+    sala207QuadroArea.addEventListener("mouseleave",(e)=>{
         e.preventDefault();
         imgComputador.style.display = "none";
     });
@@ -48,5 +42,5 @@ function sala202View() {
     });
 }
 
-sala202View();
+sala207View();
 //--------------------------------------------------------------------

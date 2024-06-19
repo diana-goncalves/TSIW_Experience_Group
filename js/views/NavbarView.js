@@ -1,6 +1,5 @@
 import { getUserLogged,logout } from "../models/UserModel.js";
 import { getCollectibles } from "../models/collectiblesModel.js";
-
 // Ajustar dinamicamente margem entre navbar e resto da página
 
 const nav = document.querySelector("#navbarNav");
@@ -104,7 +103,8 @@ function selectUserIcon(user) {
     const totalCollectibles = collectibles.length;
     let userCollectibles = user.collectibles;
     if (user.victory) {
-        if (totalCollectibles.length == userCollectibles.length) {
+        if (totalCollectibles == userCollectibles.length) {
+            console.log("dfdfdsfdssd");
             return `<img src="../../media/img/ER-assets/allCollectiblesAward.svg" width="64px" height="64px" alt="Award">`;
         }else{
             return `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>`;

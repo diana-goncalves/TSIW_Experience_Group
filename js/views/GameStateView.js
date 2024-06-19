@@ -27,6 +27,9 @@ const historyLines = {
     "parque":[
         "Esse é o parque exterior, provavelmente deixaste aí o carro. Como és novo deixo a informação, para além desse espaço todo ainda existe um parque interior para funcionários e estudantes",
         "Com tanto espaço é impossivel ficar sem lugar 😂"
+    ],
+    "minigame1":[
+        "Boa, Deve estar aí a minha lanterna, a modifiquei para encontrar certos items, talvez te seja ser util"
     ]
 }
 

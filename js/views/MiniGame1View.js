@@ -1,6 +1,5 @@
 import {addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
-
 let options = [
     {
         nome: "CSS",
@@ -148,4 +147,5 @@ document.querySelector("#victoryModal").addEventListener('shown.bs.modal', () =>
 document.querySelector("#victoryModal").addEventListener('hidden.bs.modal', () => {
     let outputs = document.querySelectorAll(".vitoryCode");
     outputs[3].innerHTML = "";
+    location.reload();
 });

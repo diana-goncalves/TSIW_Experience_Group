@@ -175,6 +175,8 @@ function customToast(message) {
 
 function selectUserIcon(user) {
     // Collectibles
+    console.log(totalCollectibles);
+    console.log(userCollectibles.length);
     if (user.victory) {
         if (totalCollectibles == userCollectibles.length) {
             return `<img src="../../media/img/ER-assets/allCollectiblesAward.svg" width="64px" height="64px" alt="Award">`;
