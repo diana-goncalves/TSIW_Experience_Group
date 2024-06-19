@@ -1,4 +1,5 @@
 import { getUserLogged,logout } from "../models/UserModel.js";
+import {init as initColectibles, getCollectibles} from "../models/collectiblesModel.js";
 
 // Ajustar dinamicamente margem entre navbar e resto da página
 
@@ -31,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (user) {
         // admin
         if (user.id === 1) {
-        
             document.querySelector(".user_icon").href = "../../html/admin.html"
             document.querySelector(".user_icon").innerHTML = ` ${user.username}`
             document.querySelector("#LoginLogout_Container").innerHTML += 
@@ -43,12 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
             `
             
         } 
-        // user
+        // user   <i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>
+            
         else {
             
             document.querySelector(".user_icon").href = "../../html/account.html"
+            console.log(selectUserIcon);
             document.querySelector(".user_icon").innerHTML = `
-                ${user.victory ? `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>` : "" } 
+                ${selectUserIcon(user)} 
                 ${user.username}
              `
             document.querySelector("#LoginLogout_Container").innerHTML += 
@@ -97,4 +99,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
+function selectUserIcon(user) {
+    // Collectibles
+    initColectibles();
+    let collectibles = getCollectibles();
+    const totalCollectibles = collectibles.length;
+    let userCollectibles = user.collectibles;
+    if (user.victory) {
+        if (totalCollectibles.length == userCollectibles.length) {
+            return `<img src="../../media/img/ER-assets/allCollectiblesAward.svg" width="64px" height="64px" alt="Award">`;
+        }else{
+            return `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>`;
+        }
+    }else{
+        return "";
+    }
+}

@@ -14,7 +14,7 @@ if(user) {
     document.querySelector(".headerAccount").innerHTML = 
     `
         ${user.username} 
-        ${user.victory ? `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>` : "" }
+        ${selectUserIcon(user)}
         
     `;
 
@@ -168,6 +168,24 @@ function customToast(message) {
 
     toast.show();
 }
+
+function selectUserIcon(user) {
+    // Collectibles
+    initColectibles();
+    let collectibles = getCollectibles();
+    const totalCollectibles = collectibles.length;
+    let userCollectibles = user.collectibles;
+    if (user.victory) {
+        if (totalCollectibles.length == userCollectibles.length) {
+            return `<img src="../../media/img/ER-assets/allCollectiblesAward.svg" width="64px" height="64px" alt="Award">`;
+        }else{
+            return `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>`;
+        }
+    }else{
+        return "";
+    }
+}
+
 
 // Iniciar
 
