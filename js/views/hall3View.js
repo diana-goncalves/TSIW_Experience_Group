@@ -49,9 +49,6 @@ function hall3View() {
     // COFRE
     const cofre = document.querySelector("#cofre");
 
-    // CHAVE TSIW
-    // const chaveFinal = document.querySelector("#chaveTSIW");
-
     // IMAGEM PRINCIPAL HALL 3
     const heroIMG = document.querySelector("#heroHall3");
 
@@ -110,13 +107,6 @@ function hall3View() {
         e.preventDefault();
         cofreModal.show();
     })
-
-    // chaveFinal.addEventListener("click", (e) => {
-    //     e.preventDefault();
-    //     // chamar função que coloca chave no inventario
-    //     chaveFinal.style.display = "none";
-    // })
-
 }
 hall3View();
 
@@ -167,7 +157,6 @@ document.querySelector("#code4DOWN").addEventListener("click", () => {
 
 const abrirCofre = document.querySelector("#abrirCofre");
 const heroIMG = document.querySelector("#heroHall3");
-const chaveTSIW = document.querySelector("#chaveTSIW");
 
 // Clicar no botão para abrir cofre. Comparar codigo inserido com codigo na session storage.
 abrirCofre.addEventListener("click", () => {
@@ -178,7 +167,7 @@ abrirCofre.addEventListener("click", () => {
     if (codigoInserido === codigoJogo) {
         cofreModal.hide();
         heroIMG.src = "../../media/img/ER-assets/hall3CofreAberto.png";
-        chaveTSIW.style.display = "block";
+        setItems("cofre");
     }
 })
 
