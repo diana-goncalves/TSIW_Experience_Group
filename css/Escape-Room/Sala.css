@@ -44,8 +44,8 @@
 
 .drop{
     display:inline-block;
-    min-width:2rem;
-    min-height:1.5rem;
+    min-width:2.5rem;
+    min-height:2rem;
     border-style:solid;
     border-width:0px;
     border-bottom-width:0.2rem;
@@ -272,6 +272,10 @@
     }
     .help{
         font-size: 2rem !important;
+    }
+    .drop{
+        min-width:3.5rem;
+        min-height:2.5rem;
     }
 
   }

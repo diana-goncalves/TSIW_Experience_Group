@@ -4,6 +4,10 @@ let countdown;
 let time = 15;
 let countdownTime = time * 60; // 30 minutos
 let isPaused = false;
+
+const smallScreenModal = new bootstrap.Modal(document.querySelector("#alertModal"));
+const minScreenWidth = 625; 
+
 let havePause = false;
 let user = getUserLogged();
 
@@ -143,16 +147,27 @@ function fullscreen() {
     
 }
 
+function checkScreenSize() {
+    if (window.innerWidth < minScreenWidth) {
+        console.log("siimmmmm");
+        smallScreenModal.show();
+    } else {
+        console.log("NOOOOOOOOOOOOOOOOO");
+        smallScreenModal.hide();
+    }
+}
+
 window.addEventListener('load', () => {
     updateCountdown();
     startCountdown();
     makePauseMenu();
     updateUserCollectibles();
+    checkScreenSize();
 
     document.querySelector("#fullscreenBtn").addEventListener("click", () => {
         fullscreen();
     })
-
+    window.addEventListener('resize', checkScreenSize);
 });
 
 window.addEventListener("pagehide",()=>{
