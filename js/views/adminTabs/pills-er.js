@@ -226,4 +226,4 @@ function submitMiniGame4() {
 }
 submitMiniGame4();
 
-//Minigame 3
+//Minigame 3.
