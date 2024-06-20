@@ -225,7 +225,6 @@ document.querySelector("#sala206Computer").addEventListener("click", ()=>{
     }
 })
 
-console.log(document.querySelector(".closeGame"));
 document.querySelector(".closeGame").addEventListener("click",() =>{
     modalGame.hide();
     progress = 1;

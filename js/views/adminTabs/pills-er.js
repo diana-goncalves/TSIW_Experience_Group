@@ -222,8 +222,50 @@ function submitMiniGame4() {
         opts.push(object);
 
         localStorage.setItem("minigame4", JSON.stringify(opts));
+
+        formMini4.reset();
+        customToast("Adicionado com Sucesso!")
     });
 }
 submitMiniGame4();
 
 //Minigame 3.
+
+function submitMinigame3() {
+    const formMinigame3 = document.querySelector(".formMinigame3")
+    let opts2 = []
+    formMinigame3.addEventListener("submit",(e)=>{
+        e.preventDefault()
+
+        const selectedRadio = document.querySelector(".radiomini_3:checked");
+        const per = document.querySelector("#formpergunta3");
+        let respostas = document.querySelectorAll(".opMini3")
+        let certa = "";
+        let temp = []
+        if(localStorage.minigame3) {
+            const temp = JSON.parse(localStorage.minigame3);
+            temp.forEach(element => {
+                opts2.push(element);
+            });
+        }
+        respostas.forEach((element,i) => {
+            if(i == selectedRadio.value){
+                certa = element.value
+            }
+            temp.push(element.value)
+        });
+        let object = {
+            pergunta:per.value,
+            certo: certa,
+            opt: temp
+        }
+        opts2.push(object);
+
+        localStorage.setItem("minigame3", JSON.stringify(opts2));
+
+        formMinigame3.reset();
+        customToast("Adicionado com Sucesso!");
+    })
+
+}
+submitMinigame3();
