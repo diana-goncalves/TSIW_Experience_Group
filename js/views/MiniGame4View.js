@@ -1,6 +1,6 @@
 import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 let options
-function fillOptions() {
+function fillOptions() {//função para dar fill aos exercicios
     options = [
         {
             binario: ["0","0","0","1","0","1","0"],
@@ -146,7 +146,7 @@ document.querySelector(".CompleteLevel").addEventListener("click",(e)=>{
     let lines = document.querySelectorAll(".binaryLine");//vai buscar todos os exercicios *** Nivel 1 = 1 //Nivel 2 = 2 //Nivel 3 = 3 ***
     lines.forEach(element => {
         let index = element.id;
-        options[index].binario.forEach((input,i) => {
+        options[index].binario.forEach((input,i) => {// muda o fundo ser tiver certo ou errado
             if (input == element.children[i].value) {
                 element.children[i].classList.add("certo");
             }else{
@@ -171,12 +171,14 @@ document.querySelector(".CompleteLevel").addEventListener("click",(e)=>{
         })
     });
     if (allCorrect) {
+        //se tiver no 3 nivel acaba o jogo
         if (progress==3) {
             modalGame.hide();
             vitoria.show();
             addgamesCompleted("minigame4");
             
         }else{
+            //avança no nivel
             progress +=1;
             //Actualizar a progress-bar
             switch (progress) {

@@ -48,9 +48,12 @@ let resetInventory = ()=>{
 }
 
 function fillInventory() {
+    //vai buscar os items que estão no inventario
     let InventaryItems = invItems.getInventory();
+    //vai buscar as slots
     let inventorySlot = document.querySelectorAll(".inventorySlot");
 
+    //preenche o inventario com os items
     InventaryItems.forEach(item => {        
         let img = document.createElement('img');
         img.src = item.img;
@@ -80,8 +83,11 @@ function inventoryItemClick(event) {
 
 function setItemZone(e) {
     e.preventDefault();
+    //adiciona o item
     invItems.AddToInventory(e.target.id);
+    //remove o item da sala
     e.target.remove();
+    //volta a preencher o inventario
     resetInventory();
     fillInventory();
 }
@@ -139,10 +145,11 @@ function turnpower() {
 
 
 function getMousePosition(e) {
+    //vai buscar a posição do rato
     mouseX = e.pageX;
     mouseY = e.pageY;
     
-
+    //actualiza as variaveis 
     flashlight.style.setProperty("--Xpos",mouseX+"px");
     flashlight.style.setProperty("--Ypos",mouseY+"px");
 }

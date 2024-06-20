@@ -11,11 +11,10 @@ $(document).ready(function(e) {
 function sala203View() {
     
     GameStateView("sala 203");
-    // Mete os items na sala
-    // if (checkGameCompleted("minigame1")) {   
-        setItems("sala 203");
-        setCollectibles("sala 203")
-    // }
+    // Mete os items na sala  
+    setItems("sala 203");
+    setCollectibles("sala 203")
+    
     //--------------------------------------------------------------------
     //map das portas
     const sala203QuadroArea = document.querySelector("#sala203Quadro");

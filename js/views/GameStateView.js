@@ -34,7 +34,7 @@ const historyLines = {
     ]
 }
 
-let makeToast = (line) => {
+let makeToast = (line) => {//toast com as lines
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = `
     <div class="toast modal-background" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="15000">
@@ -52,12 +52,12 @@ let makeToast = (line) => {
 }
 
 export default function GameStateView(room) {
-    gs.init();
-    if (!gs.checkVisitedRooms(room)  && historyLines[room] != [] ) {
+    gs.init();//init
+    if (!gs.checkVisitedRooms(room)  && historyLines[room] != [] ) {//confirma se é a primeira vez na sala e se tem falas
         const toastContainer = document.querySelector(".toast-container");
         let delay = 1000;
 
-        historyLines[room].forEach(line => {
+        historyLines[room].forEach(line => {//cria o toast
             let toastElement = makeToast(line);
             toastContainer.appendChild(toastElement);
             const toast = new bootstrap.Toast(toastElement);

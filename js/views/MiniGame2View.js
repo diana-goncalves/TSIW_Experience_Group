@@ -1,7 +1,7 @@
 import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
 let grabAndDrops
-function fillGrabAndDrops() {
+function fillGrabAndDrops() {//função para dar fill aos exercicios
     grabAndDrops = [
         {
             text: `Estudar <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> permite criar estruturas e estilos para páginas <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
@@ -70,10 +70,10 @@ let startGame = () =>{
         if (Exercise.some(element => element.text == grabAndDrops[index].text)) {
             i--;
         }else{
-            Exercise.push(grabAndDrops[index]);
+            Exercise.push(grabAndDrops[index]);// push para nao repetir
 
             //Make the Options 
-            grabAndDrops[index].choices.forEach(element => {
+            grabAndDrops[index].choices.forEach(element => {//para cada opção cria um span draggable
                 let span = document.createElement("span");
                 span.draggable="true";
                 span.ondragstart = drag ;
@@ -87,7 +87,7 @@ let startGame = () =>{
             line.classList.add("line");
             line.innerHTML = grabAndDrops[index].text;
             line.id = Exercise.length-1
-            document.querySelector(`#exercise${i}`).appendChild(line);   
+            document.querySelector(`#exercise${i}`).appendChild(line);
         }
     }        
 }

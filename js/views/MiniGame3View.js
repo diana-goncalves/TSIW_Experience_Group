@@ -1,7 +1,7 @@
 import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
 let options
-function fillOptions() {
+function fillOptions() {//função para dar fill aos exercicios
     options = [
         {
             pergunta: "Qual é o valor decimal do número binário 1010?",
@@ -57,7 +57,7 @@ let startGame = () =>{
             let p = document.createElement("p");
             p.classList.add("textminigame3", "text-black", "text-center" ,"p-1", "m-1");
             p.innerHTML = element;
-            if (element == options[index].certo) {
+            if (element == options[index].certo) {//se tiver certo
                 document.querySelector(`.card${i+1}`).addEventListener("click", optionRight)
             }else{
                 document.querySelector(`.card${i+1}`).addEventListener("click",gameOver)
@@ -68,6 +68,7 @@ let startGame = () =>{
 }
 
 function optionRight(e) { 
+    //se tiver certo
     progress += 33
 
     if (progress == 100) {
@@ -84,6 +85,7 @@ function optionRight(e) {
     }, 500);
 }
 function gameOver(e) {
+    //se tiver errado, recomeça
     progress = 1;
     document.querySelector(".progress-bar").style.width = `1%`;
     for (let i = 1; i <= 4; i++) {

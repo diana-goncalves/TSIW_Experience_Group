@@ -42,6 +42,7 @@ export function getInventoryCollectibles() {
     return filterCollectibles;
 }
 
+// RESET OS COLLECTIBLES
 export function resetCollectibles() {
     collectibles.forEach(element => {
         element.inInventory = false;

@@ -52,6 +52,7 @@ export function checkItemInventory(item) {
     }
 }
 
+//DA RESET
 export function resetInventory() {
     items.forEach(element => {
         element.inInventory = false;

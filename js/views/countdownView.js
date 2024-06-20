@@ -13,7 +13,7 @@ let user = getUserLogged();
 
 const countdownElement = document.querySelector("#countdown")
 
-function makePauseMenu() {
+function makePauseMenu() {//faz a modal da pausa
     document.querySelector(".pauseZone").innerHTML = `
     <div class="modal fade"  id="pauseModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xxl modal-fullscreen-md-down">
@@ -41,7 +41,7 @@ function makePauseMenu() {
     `
 }
 
-function makeGameOverMenu() {
+function makeGameOverMenu() {//faz a modal para quando acaba o tempo
     document.querySelector(".pauseZone").innerHTML +=`
         <div class="modal fade" id="gameOver" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="modalInicialLabel" aria-hidden="true">
@@ -76,7 +76,7 @@ function makeGameOverMenu() {
     `
 }
 
-function updateCountdown() {
+function updateCountdown() {//vai buscar  o tempo actualizado
     if (sessionStorage.countdown) {
         countdownTime = parseInt(sessionStorage.countdown);
     }
@@ -91,14 +91,18 @@ function updateDisplay() {
 }
 
 function startCountdown() {
+    //countdown
     countdown = setInterval(() => {
+        //confirma se não está em pausa
         if (!isPaused) {
+            //confirma se nao acabou o tempo
             if (countdownTime <= 0) {
                 clearInterval(countdown);
                 makeGameOverMenu();
                 let gameOver = new bootstrap.Modal(document.querySelector("#gameOver"));
                 gameOver.show();
             } else {
+                //continua o tempo
                 updateDisplay();
                 countdownTime--;
             }
@@ -147,7 +151,7 @@ function fullscreen() {
     
 }
 
-function checkScreenSize() {
+function checkScreenSize() {//confirma o tamanho da window
     if (window.innerWidth < minScreenWidth) {
         smallScreenModal.show();
     } else {
@@ -155,6 +159,7 @@ function checkScreenSize() {
     }
 }
 
+//executa quando entra na pagina
 window.addEventListener('load', () => {
     updateCountdown();
     startCountdown();
@@ -168,6 +173,7 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', checkScreenSize);
 });
 
+//guarda o tempo quando sai da sala
 window.addEventListener("pagehide",()=>{
     saveCountdown();
 })

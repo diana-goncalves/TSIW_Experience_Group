@@ -1,6 +1,6 @@
 import {addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 let options
-function fillOptions() {
+function fillOptions() {//função para dar fill aos exercicios
     options = [
         {
             nome: "CSS",
@@ -33,7 +33,7 @@ function fillOptions() {
             opt: [`../../media/img/ER-assets/mini-game1/python1.png`,`../../media/img/ER-assets/mini-game1/python2.png`,`../../media/img/ER-assets/mini-game1/python3.png`,`../../media/img/ER-assets/mini-game1/python4.png`]
         }
     ];
-    if (localStorage.minigame1) {
+    if (localStorage.minigame1) {// ve se tem exercicios submitidos pelo admin
         const temp = JSON.parse(localStorage.minigame1);
         for (const ex of temp) {
             options.push(ex)
@@ -43,24 +43,24 @@ function fillOptions() {
 fillOptions();
 let Exercise = [];
 let progress = 1;
-let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame1"));
-let modalIntro =  new bootstrap.Modal(document.querySelector("#intro1"));
-let gameDone =  new bootstrap.Modal(document.querySelector("#gameDone"));
-let vitoria = new bootstrap.Modal(document.querySelector("#victoryModal"));
+let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame1"));//modal do Jogo
+let modalIntro =  new bootstrap.Modal(document.querySelector("#intro1"));//modal da introdução
+let gameDone =  new bootstrap.Modal(document.querySelector("#gameDone"));//modal quando o jogo está acabado
+let vitoria = new bootstrap.Modal(document.querySelector("#victoryModal"));//modal quando acaba o minigame
 
 console.log(options);
 let startGame = () =>{  
     let index = Math.floor(Math.random() * options.length);//nao pode ter o mesmo index
-    if (Exercise.some(element => element.certo == options[index].certo)) {
+    if (Exercise.some(element => element.certo == options[index].certo)) {//se tiver recomeça
         startGame();
     }else{
-        Exercise.push(options[index]); 
-        document.querySelector(".logoName").textContent = options[index].nome;
-        options[index].opt.forEach((element,i) => {
-            let img = document.createElement("img");
+        Exercise.push(options[index]); // mete na variavel para nao repetir
+        document.querySelector(".logoName").textContent = options[index].nome;//actualiza o Nome
+        options[index].opt.forEach((element,i) => {//por cada opção
+            let img = document.createElement("img");//cria uma imagem
             img.classList.add("w-50", "h-50", "logo");
             img.src = element;
-            if (element == options[index].certo) {
+            if (element == options[index].certo) {//confima se é a opção certa
                 document.querySelector(`.card${i+1}`).addEventListener("click", optionRight)
             }else{
                 document.querySelector(`.card${i+1}`).addEventListener("click",gameOver)
@@ -71,6 +71,7 @@ let startGame = () =>{
 }
 
 function optionRight(e) { 
+    //se tiver certo 
     progress += 33
 
     if (progress == 100) {
@@ -87,6 +88,7 @@ function optionRight(e) {
     }, 500);
 }
 function gameOver(e) {
+    //se tiver errado
     progress = 1;
     document.querySelector(".progress-bar").style.width = `${progress}%`;
     modalGame.hide();
