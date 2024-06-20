@@ -1,7 +1,7 @@
 import {addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
-
+let options
 function fillOptions() {
-    let options = [
+    options = [
         {
             nome: "CSS",
             certo: `../../media/img/ER-assets/mini-game1/css1.png`,
@@ -40,6 +40,7 @@ function fillOptions() {
         }    
     }
 }
+fillOptions();
 let Exercise = [];
 let progress = 1;
 let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame1"));

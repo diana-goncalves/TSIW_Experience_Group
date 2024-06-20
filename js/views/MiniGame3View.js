@@ -1,7 +1,8 @@
 import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
+let options
 function fillOptions() {
-    let options = [
+    options = [
         {
             pergunta: "Qual é o valor decimal do número binário 1010?",
             certo: `10`,

@@ -1,7 +1,8 @@
 import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
+let grabAndDrops
 function fillGrabAndDrops() {
-    let grabAndDrops = [
+    grabAndDrops = [
         {
             text: `Estudar <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> permite criar estruturas e estilos para páginas <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
             choices: ['CSS', 'web', 'HTML', 'JavaScript','matematica'],
