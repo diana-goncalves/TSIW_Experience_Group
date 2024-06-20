@@ -2,20 +2,22 @@ import * as gs from "../models/gameStateModel.js"
 
 const historyLines = {
     "entrada": [
-        "Ja chegaste? Ótimo, obrigado por responderes ao meu pedido",
-        "Foste o único que pôde vir aqui a um domingo, seja como for, mãos à obra",
-        "O sistema está cheio de erros, preciso então que vás aos computadores para me dares acesso remoto",
-        "Assim, poderei reiniciar o sistema para amanhã os nossos alunos não terem problemas. Boa sorte!"
+        "Ola?? Finalmente acordas-te! Estava a ver que não ias conseguir",
+        "Temos pouco tempo, por isso vamos direto ao assunto, otem á noite, houve um incidente.",
+        "Algo... Inesperado acondeteu, as coisas saíram do controlo e agora estás preso no segundo andar",
+        "Tenta procurar um saída no corredor"
     ],
     "hall 1":[
-        "Boa, agora é que começa a sério! Como é domingo a maior parte das salas devem estar fechadas",
-        "Se não me engano mais para o fundo do corredor, deves encontrar umas chaves no chão",
-        "Deixei-as cair ontem quando estava a fazer a revisão, por favor não digas nada à gerência"
+        "Bem, não temos acesso ás escadas... e as portas estão trancada, deve a ver outra saida, continua pelo corredor",
     ],
     "hall 2":[],
-    "hall 3":[],
+    "hall 3":[
+        "Wow, isso nao estava aí, mas parece ser a tua unica opção de fuga",
+        "tens aí uma chave, parece ser da sala 202, no inicio do corredor, talvez tenhas lá qualquer coisa para descobrir o codigo"
+
+    ],
     "sala 202":[
-        "Boa! entraste, procura o pc, ele deve tar no canto da sala"
+        "Boa! entraste, talvez no pc. Procura por ele, deve tar no canto da sala"
     ],
     "sala 203":[
         "Deixaram esta sala aberta? Interesante, talve tenha alguma coisa de util"
@@ -25,11 +27,10 @@ const historyLines = {
     "sala 210":[],
     "sala 211":[],
     "parque":[
-        "Esse é o parque exterior, provavelmente deixaste aí o carro. Como és novo deixo a informação, para além desse espaço todo ainda existe um parque interior para funcionários e estudantes",
-        "Com tanto espaço é impossivel ficar sem lugar 😂"
+        "Parece que a queda é grande para te atirares, é melhor não"
     ],
     "minigame1":[
-        "Boa, Deve estar aí a minha lanterna, a modifiquei para encontrar certos items, talvez te seja ser util"
+        "Boa, lembrando bem, deve estar aí a minha lanterna, modifiquei-a para encontrar certos items, talvez te seja ser util"
     ]
 }
 
