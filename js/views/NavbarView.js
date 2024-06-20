@@ -102,12 +102,8 @@ function selectUserIcon(user) {
     let collectibles = getCollectibles();
     const totalCollectibles = collectibles.length;
     let userCollectibles = user.collectibles;
-
-    console.log(totalCollectibles);
-    console.log(userCollectibles);
     if (user.victory) {
         if (totalCollectibles == userCollectibles.length) {
-            console.log("dfdfdsfdssd");
             return `<img src="../../media/img/ER-assets/allCollectiblesAward.svg" width="64px" height="64px" alt="Award">`;
         }else{
             return `<i class="fa-solid fa-medal" style="color: var(--color-yellow)"></i>`;
