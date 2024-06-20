@@ -51,7 +51,9 @@ function fillGrabAndDrops() {
         }    
     }
 }
+
 fillGrabAndDrops();
+console.log(grabAndDrops);
 let progress = 1;
 let Exercise = [];
 let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame2"));
@@ -86,6 +88,7 @@ let startGame = () =>{
             line.classList.add("line");
             line.innerHTML = grabAndDrops[index].text;
             line.id = Exercise.length-1
+            console.log(line.id);
             document.querySelector(`#exercise${i}`).appendChild(line);   
         }
     }        

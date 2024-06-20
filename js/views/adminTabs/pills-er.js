@@ -229,7 +229,7 @@ function submitMiniGame4() {
 }
 submitMiniGame4();
 
-//Minigame 3.
+//Minigame 3
 
 function submitMinigame3() {
     const formMinigame3 = document.querySelector(".formMinigame3")
@@ -269,3 +269,71 @@ function submitMinigame3() {
 
 }
 submitMinigame3();
+
+//Minigame 2
+
+const checkboxes = document.querySelectorAll(".limitedCheckbox")
+
+checkboxes.forEach(checkbox =>{
+    checkbox.addEventListener("change", ()=>{
+        const selectedCheckboxes = document.querySelectorAll('.limitedCheckbox:checked');
+
+
+        if (selectedCheckboxes.length >= 3) {
+            checkboxes.forEach(cb => {
+                if (!cb.checked) {
+                    cb.disabled = true;
+                }
+            });
+        } else {
+            checkboxes.forEach(cb => {
+                cb.disabled = false;
+            });
+        }
+    })
+})
+
+function submitMinigame2() {
+    const formMinigame2 = document.querySelector(".formMinigame2")
+    let opts3 = []
+    formMinigame2.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const selectedCheckboxes = document.querySelectorAll('.limitedCheckbox:checked');
+        let frase1 = document.querySelector("#formfrase1").value;
+        let frase2 = document.querySelector("#formfrase2").value;
+        let frase3 = document.querySelector("#formfrase3").value;
+        let frase4 = document.querySelector("#formfrase4").value;
+        let opcoes = document.querySelectorAll(".optsMinigame2");
+        let temp = [];
+        let certas = [];
+        if(localStorage.minigame2) {
+            const tempm = JSON.parse(localStorage.minigame2);
+            tempm.forEach(element => {
+                opts3.push(element);
+            });
+        }
+
+        let fraseCompleta = frase1+`<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`+frase2+`<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`+frase3+`<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`+frase4
+        
+        opcoes.forEach(element => {
+            temp.push(element.value)
+
+        });
+        selectedCheckboxes.forEach(element => {
+            certas.push(temp[element.value])
+        });
+
+        let object = {
+            text: fraseCompleta,
+            choices: temp,
+            result: certas
+        }
+        opts3.push(object);
+
+        localStorage.setItem("minigame2", JSON.stringify(opts3));
+        formMinigame2.reset();
+        customToast("Adicionado com Sucesso!");
+
+    });
+}
+submitMinigame2();

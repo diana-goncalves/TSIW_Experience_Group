@@ -149,10 +149,8 @@ function fullscreen() {
 
 function checkScreenSize() {
     if (window.innerWidth < minScreenWidth) {
-        console.log("siimmmmm");
         smallScreenModal.show();
     } else {
-        console.log("NOOOOOOOOOOOOOOOOO");
         smallScreenModal.hide();
     }
 }
