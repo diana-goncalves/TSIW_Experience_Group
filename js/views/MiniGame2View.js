@@ -53,7 +53,6 @@ function fillGrabAndDrops() {
 }
 
 fillGrabAndDrops();
-console.log(grabAndDrops);
 let progress = 1;
 let Exercise = [];
 let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame2"));
@@ -88,7 +87,6 @@ let startGame = () =>{
             line.classList.add("line");
             line.innerHTML = grabAndDrops[index].text;
             line.id = Exercise.length-1
-            console.log(line.id);
             document.querySelector(`#exercise${i}`).appendChild(line);   
         }
     }        
@@ -232,13 +230,10 @@ document.querySelector(".closeGame").addEventListener("click",() =>{
     modalGame.hide();
     progress = 1;
     Exercise=[];
-    console.log(progress);
-    console.log(Exercise);
 })
 
 document.querySelector("#gameDone").addEventListener('shown.bs.modal', () => {
     let outputs = document.querySelectorAll(".gameDoneCode");
-    console.log(outputs);
     let code = getCodeByIndex(1);
     outputs[1].value = code;
 })

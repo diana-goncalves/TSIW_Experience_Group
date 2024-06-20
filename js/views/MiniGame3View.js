@@ -133,7 +133,6 @@ document.querySelector("#miniGame3").addEventListener('hidden.bs.modal', () => {
 
 document.querySelector("#gameDone").addEventListener('shown.bs.modal', () => {
     let outputs = document.querySelectorAll(".gameDoneCode");
-    console.log(outputs);
     let code = getCodeByIndex(0);
     outputs[0].value = code;
 })

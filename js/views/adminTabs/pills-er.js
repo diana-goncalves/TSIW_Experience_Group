@@ -337,3 +337,65 @@ function submitMinigame2() {
     });
 }
 submitMinigame2();
+
+//Minigame 1
+
+document.querySelectorAll('.inputMini1').forEach((input, index) => {
+    input.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.querySelector(`#preview${index + 1}`);
+                img.src = e.target.result;
+                img.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+function submitMinigame1() {
+    const formMinigame1 = document.querySelector(".formMinigame1")
+    
+    formMinigame1.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const logoName = document.querySelector('#formMarca').value;
+        const radios = document.querySelectorAll(".radioCorrecto");
+        let temp = "";
+        let opts = [];
+        let exercices = [];
+        if(localStorage.minigame1) {
+            const tempm = JSON.parse(localStorage.minigame1);
+            tempm.forEach(element => {
+                exercices.push(element);
+            });
+        }
+
+        radios.forEach((radio, index) => {
+            const preview = document.querySelector(`#preview${index + 1}`).src;
+            opts.push(preview);
+            if (radio.checked) {
+                temp = preview;
+            }
+        });
+
+        const object = {
+            nome: logoName,
+            certo: temp,
+            opt: opts
+        };
+
+        exercices.push(object);
+
+        localStorage.setItem("minigame1", JSON.stringify(exercices));
+        formMinigame1.reset();
+        customToast("Adicionado com Sucesso!");
+
+    })
+    
+}
+submitMinigame1();
+
+
+

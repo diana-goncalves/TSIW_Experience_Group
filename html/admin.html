@@ -736,88 +736,74 @@
                         <div class="tab-pane fade" id="pills-er" role="tabpanel" aria-labelledby="pills-er-tab"
                             tabindex="0">
 
-                            <!-- ------------------------------------------------------------Minigame 1------------------------------------------------------------>
+<!-- ------------------------------------------------------------Minigame 1------------------------------------------------------------>
                             <h4>Minigame 1 - Logos</h4>
 
-                            <form>
-
-                                <div class="row justify-content-center  g-2 text-truncate">
-
+                            <form class="formMinigame1">
+                                <div class="row justify-content-center g-2 text-truncate">
                                     <div class="form-floating mb-3 col text-truncate">
-
-                                        <input type="text" class="form-control" name="Nome" id="formNomeE"
-                                            placeholder="" />
-
+                                        <input type="text" class="form-control" name="Nome" id="formMarca" placeholder="" />
                                         <label for="formMarca">Marca</label>
-
                                     </div>
-
+                    
                                     <br>
                                     <h6>Dá check no logo correcto</h6>
                                     <br>
-
+                    
                                     <div class="row justify-content-center g-2">
                                         <div class="col">
                                             <div class="imgInputContainer">
-                                                <input type="file" name="file" class="fileInput"
-                                                    accept=".png, .jpg, .jpeg" id="fileInputgame1">
-                                                <label for="fileInputPerguntas" class="fileInputLabel">
+                                                <input type="file" name="file" class="fileInput inputMini1" accept=".png, .jpg, .jpeg" id="fileInputgame1">
+                                                <label for="fileInputgame1" class="fileInputLabel">
                                                     <i class="fa-regular fa-file-image"></i>
                                                 </label>
                                                 <br>
+                                                <img id="preview1" src="#" alt="Preview Image" class="img-fluid" style="display:none;"/>
                                             </div>
-                                            <input type="radio" name="certo" id="radioCerto1" value="0">
-                                            <br>
-                                            <br>
+                                            <input type="radio" name="certo" class="radioCorrecto" value="0">
+                                            <br><br>
                                         </div>
                                         <div class="col">
                                             <div class="imgInputContainer">
-                                                <input type="file" name="file" class="fileInput"
-                                                    accept=".png, .jpg, .jpeg" id="fileInputgame2">
-                                                <label for="fileInputPerguntas" class="fileInputLabel">
+                                                <input type="file" name="file" class="fileInput inputMini1" accept=".png, .jpg, .jpeg" id="fileInputgame2">
+                                                <label for="fileInputgame2" class="fileInputLabel">
                                                     <i class="fa-regular fa-file-image"></i>
                                                 </label>
                                                 <br>
+                                                <img id="preview2" src="#" alt="Preview Image" class="img-fluid" style="display:none;"/>
                                             </div>
-                                            <input type="radio" name="certo" id="radioCerto2" value="1">
-                                            <br>
-                                            <br>
+                                            <input type="radio" name="certo" class="radioCorrecto" value="1">
+                                            <br><br>
                                         </div>
                                         <div class="col">
                                             <div class="imgInputContainer">
-                                                <input type="file" name="file" class="fileInput"
-                                                    accept=".png, .jpg, .jpeg" id="fileInputgame3">
-                                                <label for="fileInputPerguntas" class="fileInputLabel">
+                                                <input type="file" name="file" class="fileInput inputMini1" accept=".png, .jpg, .jpeg" id="fileInputgame3">
+                                                <label for="fileInputgame3" class="fileInputLabel">
                                                     <i class="fa-regular fa-file-image"></i>
                                                 </label>
                                                 <br>
+                                                <img id="preview3" src="#" alt="Preview Image" class="img-fluid" style="display:none;"/>
                                             </div>
-                                            <input type="radio" name="certo" id="radioCerto3" value="2">
-                                            <br>
-                                            <br>
+                                            <input type="radio" name="certo" class="radioCorrecto" value="2">
+                                            <br><br>
                                         </div>
                                         <div class="col">
                                             <div class="imgInputContainer">
-                                                <input type="file" name="file" class="fileInput"
-                                                    accept=".png, .jpg, .jpeg" id="fileInputgame4">
-                                                <label for="fileInputPerguntas" class="fileInputLabel">
+                                                <input type="file" name="file" class="fileInput inputMini1" accept=".png, .jpg, .jpeg" id="fileInputgame4">
+                                                <label for="fileInputgame4" class="fileInputLabel">
                                                     <i class="fa-regular fa-file-image"></i>
                                                 </label>
                                                 <br>
+                                                <img id="preview4" src="#" alt="Preview Image" class="img-fluid" style="display:none;"/>
                                             </div>
-                                            <input type="radio" name="certo" id="radioCerto4" value="3">
-                                            <br>
-                                            <br>
+                                            <input type="radio" name="certo" class="radioCorrecto" value="3">
+                                            <br><br>
                                         </div>
                                     </div>
-
+                    
                                     <div class="row justify-content-center align-items-center g-2">
-
-                                        <div
-                                            class="form-floating mb-3 col d-flex justify-content-end align-items-center">
-
-                                            <button type="submit" class="btn btn-primary button_color btnGuardar"
-                                                id="btnGuardarmini1">
+                                        <div class="form-floating mb-3 col d-flex justify-content-end align-items-center">
+                                            <button type="submit" class="btn btn-primary button_color btnGuardar" id="btnGuardarmini1">
                                                 Guardar
                                             </button>
                                         </div>

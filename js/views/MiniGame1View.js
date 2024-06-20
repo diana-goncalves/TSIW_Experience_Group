@@ -48,7 +48,7 @@ let modalIntro =  new bootstrap.Modal(document.querySelector("#intro1"));
 let gameDone =  new bootstrap.Modal(document.querySelector("#gameDone"));
 let vitoria = new bootstrap.Modal(document.querySelector("#victoryModal"));
 
-
+console.log(options);
 let startGame = () =>{  
     let index = Math.floor(Math.random() * options.length);//nao pode ter o mesmo index
     if (Exercise.some(element => element.certo == options[index].certo)) {
@@ -137,7 +137,6 @@ document.querySelector(".closeGame").addEventListener("click",() =>{
 
 document.querySelector("#gameDone").addEventListener('shown.bs.modal', () => {
     let outputs = document.querySelectorAll(".gameDoneCode");
-    console.log(outputs);
     let code = getCodeByIndex(3);
     outputs[3].value = code;
 })

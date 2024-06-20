@@ -42,7 +42,6 @@ function fillOptions() {
 fillOptions();
 init();
 let Exercise = [];
-console.log(options);
 let progress = 1;
 let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame4"));
 let modalIntro =  new bootstrap.Modal(document.querySelector("#intro4"));
@@ -51,7 +50,6 @@ let vitoria = new bootstrap.Modal(document.querySelector("#victoryModal"));
 
 
 let startGame = () =>{  
-    console.log("Progress no start game: "+ progress);
     for (let index = 1; index <= progress; index++) {
         let versao = Math.floor(Math.random() * 2);
         switch (versao) {

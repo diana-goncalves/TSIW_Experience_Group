@@ -497,7 +497,6 @@ function tableHeaders() {
         
             header.addEventListener("click", () => {
                 isSorted = !isSorted;
-                console.log(isSorted);
                 sortTable(headerIndex, isSorted);
             })
         }
