@@ -2,35 +2,35 @@ import * as gs from "../models/gameStateModel.js"
 
 const historyLines = {
     "entrada": [
-        "Ola?? Finalmente acordas-te! Estava a ver que não ias conseguir",
-        "Temos pouco tempo, por isso vamos direto ao assunto, otem á noite, houve um incidente.",
-        "Algo... Inesperado acondeteu, as coisas saíram do controlo e agora estás preso no segundo andar",
-        "Tenta procurar um saída no corredor"
+        "Olá?? Finalmente acordas-te! Estava a ver que não ias conseguir.",
+        "Temos pouco tempo, por isso vamos direto ao assunto, ontem à noite, ocorreu um incidente.",
+        "Algo... Inesperado aconteceu, perdi o controlo da situação e agora estás preso no 2º andar.",
+        "Tenta procurar um saída no corredor."
     ],
     "hall 1":[
-        "Bem, não temos acesso ás escadas... e as portas estão trancada, deve a ver outra saida, continua pelo corredor",
+        "Bem, não temos acesso ás escadas... e as portas estão trancadas, deve haver outra saida, continua pelo corredor!",
     ],
     "hall 2":[],
     "hall 3":[
-        "Wow, isso nao estava aí, mas parece ser a tua unica opção de fuga",
-        "tens aí uma chave, parece ser da sala 202, no inicio do corredor, talvez tenhas lá qualquer coisa para descobrir o codigo"
+        "Wow, isso não estava aí, mas parece ser a tua única opção de fuga.",
+        "Tens aí uma chave, parece ser da sala 202, no início do corredor, talvez tenhas lá algum código para abrires o cofre."
 
     ],
     "sala 202":[
-        "Boa! entraste, talvez no pc. Procura por ele, deve tar no canto da sala"
+        "Boa! Entraste, talvez no PC. Procura o PC, deve tar no canto da sala."
     ],
     "sala 203":[
-        "Deixaram esta sala aberta? Interesante, talve tenha alguma coisa de util"
+        "Deixaram esta sala aberta? Interesante, talve tenha alguma pista útil."
     ],
     "sala 206":[],
     "sala 207":[],
     "sala 210":[],
     "sala 211":[],
     "parque":[
-        "Parece que a queda é grande para te atirares, é melhor não"
+        "Parece que a queda é grande para te atirares, é melhor não."
     ],
     "minigame1":[
-        "Boa, lembrando bem, deve estar aí a minha lanterna, modifiquei-a para encontrar certos items, talvez te seja ser util"
+        "Boa, lembrando bem, deve estar aí a minha lanterna, modifiquei-a para encontrar certos items, talvez te seja ser úti."
     ]
 }
 
