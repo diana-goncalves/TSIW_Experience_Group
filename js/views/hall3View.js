@@ -17,6 +17,12 @@ let portaFinal = document.querySelector("#portaFinal");
 function clickPortaFinal() {
     if (checkItemInventory("chaveTSIW")) {
         heroIMG.src = `../../media/img/ER-assets/hall3FIM.jpg`;
+
+        document.querySelector(".imgLeft").src = "../../media/img/ER-assets/hall3FIM-toLeft.png"
+        document.querySelector(".imgRight").src = "../../media/img/ER-assets/hall3FIM-toRight.png"
+        document.querySelector(".imgBack").src = "../../media/img/ER-assets/hall3FIM-to-hall2.png"
+
+
         // remover event listener para conseguir colocar outro destinado a abrir o modal de vitoria
         portaFinal.removeEventListener("click", clickPortaFinal);
 
@@ -165,6 +171,7 @@ abrirCofre.addEventListener("click", () => {
 
     if (codigoInserido === codigoJogo) {
         cofreModal.hide();
+        //document.querySelector(".imgBack").src = "../../media/img/ER-assets/hall3CofreAberto-toHall2.png"
         heroIMG.src = "../../media/img/ER-assets/hall3CofreAberto.png";
         setItems("cofre");
     }
