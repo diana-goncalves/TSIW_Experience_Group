@@ -218,8 +218,6 @@ function makeVictoryMenu() {
         
         location.href="../account.html";
 
-        // Colocar aqui funcao que guarda o tempo
-
     })
 
     document.querySelector("#CONTINUAR").addEventListener("click", () => {

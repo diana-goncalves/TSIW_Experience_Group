@@ -8,7 +8,7 @@ const historyLines = {
         "Tenta procurar um saída no corredor."
     ],
     "hall 1":[
-        "Bem, não temos acesso ás escadas... e as portas estão trancadas, deve haver outra saida, continua pelo corredor!",
+        "Bem, não temos acesso às escadas... e as portas estão trancadas, deve haver outra saida, continua pelo corredor!",
     ],
     "hall 2":[],
     "hall 3":[
@@ -17,10 +17,10 @@ const historyLines = {
 
     ],
     "sala 202":[
-        "Boa! Entraste, talvez no PC. Procura o PC, deve tar no canto da sala."
+        "Boa! Procura o PC, deve estar no canto da sala."
     ],
     "sala 203":[
-        "Deixaram esta sala aberta? Interesante, talve tenha alguma pista útil."
+        "Deixaram esta sala aberta? Interessante, talvez tenha alguma pista útil."
     ],
     "sala 206":[],
     "sala 207":[],
@@ -30,7 +30,7 @@ const historyLines = {
         "Parece que a queda é grande para te atirares, é melhor não."
     ],
     "minigame1":[
-        "Boa, lembrando bem, deve estar aí a minha lanterna, modifiquei-a para encontrar certos items, talvez te seja ser úti."
+        "Boa, se bem me lembro, deve estar aí a minha lanterna, modifiquei-a para encontrar certos items, talvez te seja útil."
     ]
 }
 
