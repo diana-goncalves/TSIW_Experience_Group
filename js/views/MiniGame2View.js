@@ -47,7 +47,7 @@ function fillGrabAndDrops() {
     if (localStorage.minigame2) {
         const temp = JSON.parse(localStorage.minigame2);
         for (const ex of temp) {
-            options.push(ex)
+            grabAndDrops.push(ex)
         }    
     }
 }
