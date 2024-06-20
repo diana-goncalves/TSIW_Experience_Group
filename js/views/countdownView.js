@@ -55,7 +55,7 @@ function makeGameOverMenu() {
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <h5 class="text-white">Tempo: <span id="time-remaining">30:00</span></h5>
+                                <h5 class="text-white">Tempo: <span id="time-remaining">${time}:00</span></h5>
                             </div>
                         </div>
                     </div>
