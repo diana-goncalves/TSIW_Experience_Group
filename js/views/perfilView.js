@@ -8,14 +8,13 @@ let username = user.username;
 initColectibles();
 let collectibles = getCollectibles();
 const totalCollectibles = collectibles.length;
-let userCollectibles = user.collectibles;
 
+let userCollectibles = user.collectibles;
 if (user.username === "admin") {
     location.href = "../../html/admin.html";
 }
 
 if(user) {
-    
     // Mudar username
     document.querySelector(".headerAccount").innerHTML = 
     `
@@ -172,7 +171,6 @@ function customToast(message) {
 
 function selectUserIcon(user) {
     // Collectibles
-    
     if (user.victory) {
         if (totalCollectibles == userCollectibles.length) {
             return `<img src="../../media/img/ER-assets/allCollectiblesAward.svg" width="64px" height="64px" alt="Award">`;

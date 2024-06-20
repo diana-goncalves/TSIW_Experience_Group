@@ -1,33 +1,41 @@
 import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
-
-let options = [
-    {
-        pergunta: "Qual é o valor decimal do número binário 1010?",
-        certo: `10`,
-        opt: [`8`,`9`,`10`,`12`,]
-    },{
-        pergunta: "Qual é o valor decimal do número binário 0111?",
-        certo: `7`,
-        opt: [`5`,`9`,`4`,`7`,]
-    },{
-        pergunta: "Qual é o valor binario do número binário 9?",
-        certo: `1001`,
-        opt: [`0101`,`0111`,`1001`,`0001`,]
-    },{
-        pergunta: "Qual é o valor binario do número binário 2?",
-        certo: `0010`,
-        opt: [`0010`,`1111`,`0001`,`1000`,]
-    },{
-        pergunta: `Como você imprime "Hello, World!" em Python?`,
-        certo: `print("Hello, World!")`,
-        opt: [`console.log("Hello Word")`,`print("Hello, World!")`,`printf("Hello, World!")`,`System.out.println("Hello, World!")`,]
-    },{
-        pergunta: `Qual tag HTML é usada para criar um parágrafo?`,
-        certo: `p`,
-        opt: [`p`,`span`,`h1`,`div`,]
+function fillOptions() {
+    let options = [
+        {
+            pergunta: "Qual é o valor decimal do número binário 1010?",
+            certo: `10`,
+            opt: [`8`,`9`,`10`,`12`,]
+        },{
+            pergunta: "Qual é o valor decimal do número binário 0111?",
+            certo: `7`,
+            opt: [`5`,`9`,`4`,`7`,]
+        },{
+            pergunta: "Qual é o valor binario do número binário 9?",
+            certo: `1001`,
+            opt: [`0101`,`0111`,`1001`,`0001`,]
+        },{
+            pergunta: "Qual é o valor binario do número binário 2?",
+            certo: `0010`,
+            opt: [`0010`,`1111`,`0001`,`1000`,]
+        },{
+            pergunta: `Como você imprime "Hello, World!" em Python?`,
+            certo: `print("Hello, World!")`,
+            opt: [`console.log("Hello Word")`,`print("Hello, World!")`,`printf("Hello, World!")`,`System.out.println("Hello, World!")`,]
+        },{
+            pergunta: `Qual tag HTML é usada para criar um parágrafo?`,
+            certo: `p`,
+            opt: [`p`,`span`,`h1`,`div`,]
+        }
+    ];
+    if (localStorage.minigame3) {
+        const temp = JSON.parse(localStorage.minigame3);
+        for (const ex of temp) {
+            options.push(ex)
+        }    
     }
-];
+}
+fillOptions();
 init();
 let Exercise = [];
 let progress = 1;

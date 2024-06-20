@@ -1,48 +1,55 @@
 import {init,addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
-
-let grabAndDrops = [
-    {
-        text: `Estudar <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> permite criar estruturas e estilos para páginas <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
-        choices: ['CSS', 'web', 'HTML', 'JavaScript','matematica'],
-        result: ['HTML','CSS','web']
-    },
-    {
-        text: `A Linguagem de programação <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é conhecida por sua sintaxe simple e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> diversas`,
-        choices: ['javaScript', 'aplicações', 'páginas', 'python', 'versatilidade'],
-        result: ['python','versatilidade','aplicações']
-    },
-    {
-        text: `<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> permite adicionar <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e dinamismo aos <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> online`,
-        choices: ['CSS', 'JavaScript', 'projetos', 'responsabiblidade', 'iteratividade'],
-        result: ['JavaScript','iteratividade','projetos']
-    },
-    {
-        text: `A Tag <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usada para inserir <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> dentro de uma página <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
-        choices: ['<img>', '<asset>', 'imagens', 'HTML', 'CSS'],
-        result: ['<img>','imagens','HTML']
-    },
-    {
-        text: `Utilize <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> para ajustar o  <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> entre elementos em uma página Web`,
-        choices: ['margin', 'padding', 'border', 'espaçamento', 'font-size'],
-        result: ['margin','padding','espaçamento']
-    },
-    {
-        text: `<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> define a <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> dos elementos na <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
-        choices: ['CSS', 'padding', 'página', 'aparência', 'Font'],
-        result: ['CSS','aparência','página']
-    },
-    {
-        text: `A Tag <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usado para criar um <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
-        choices: ['CSS', '<h1>', 'HTML', 'aparência', 'cabeçalho'],
-        result: ['<h1>','HTML','cabeçalho']
-    },
-    {
-        text: `A propiedade <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usada para definir a <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> do texto`,
-        choices: ['CSS', 'color', 'HTML', 'cor', 'cabeçalho'],
-        result: ['color','CSS','cor']
-    },
-];
+function fillGrabAndDrops() {
+    let grabAndDrops = [
+        {
+            text: `Estudar <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> permite criar estruturas e estilos para páginas <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
+            choices: ['CSS', 'web', 'HTML', 'JavaScript','matematica'],
+            result: ['HTML','CSS','web']
+        },
+        {
+            text: `A Linguagem de programação <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é conhecida por sua sintaxe simple e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> diversas`,
+            choices: ['javaScript', 'aplicações', 'páginas', 'python', 'versatilidade'],
+            result: ['python','versatilidade','aplicações']
+        },
+        {
+            text: `<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> permite adicionar <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e dinamismo aos <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> online`,
+            choices: ['CSS', 'JavaScript', 'projetos', 'responsabiblidade', 'iteratividade'],
+            result: ['JavaScript','iteratividade','projetos']
+        },
+        {
+            text: `A Tag <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usada para inserir <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> dentro de uma página <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
+            choices: ['<img>', '<asset>', 'imagens', 'HTML', 'CSS'],
+            result: ['<img>','imagens','HTML']
+        },
+        {
+            text: `Utilize <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> e <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> para ajustar o  <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> entre elementos em uma página Web`,
+            choices: ['margin', 'padding', 'border', 'espaçamento', 'font-size'],
+            result: ['margin','padding','espaçamento']
+        },
+        {
+            text: `<span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> define a <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> dos elementos na <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
+            choices: ['CSS', 'padding', 'página', 'aparência', 'Font'],
+            result: ['CSS','aparência','página']
+        },
+        {
+            text: `A Tag <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usado para criar um <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span>`,
+            choices: ['CSS', '<h1>', 'HTML', 'aparência', 'cabeçalho'],
+            result: ['<h1>','HTML','cabeçalho']
+        },
+        {
+            text: `A propiedade <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> em <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> é usada para definir a <span class="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></span> do texto`,
+            choices: ['CSS', 'color', 'HTML', 'cor', 'cabeçalho'],
+            result: ['color','CSS','cor']
+        },
+    ];
+    if (localStorage.minigame2) {
+        const temp = JSON.parse(localStorage.minigame2);
+        for (const ex of temp) {
+            options.push(ex)
+        }    
+    }
+}
 let progress = 1;
 let Exercise = [];
 let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame2"));

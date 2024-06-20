@@ -102,6 +102,9 @@ function selectUserIcon(user) {
     let collectibles = getCollectibles();
     const totalCollectibles = collectibles.length;
     let userCollectibles = user.collectibles;
+
+    console.log(totalCollectibles);
+    console.log(userCollectibles);
     if (user.victory) {
         if (totalCollectibles == userCollectibles.length) {
             console.log("dfdfdsfdssd");

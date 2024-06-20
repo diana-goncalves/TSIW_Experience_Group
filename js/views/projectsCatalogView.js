@@ -1,5 +1,7 @@
 import { init as initProjects, filtrarProjetosPorEstado } from "../models/ProjectModel.js";
 import { init as initEvents, filtrarEventoPorEstado } from "../models/EventModel.js";
+import { init as initColectibles } from "../models/collectiblesModel.js";
+
 
 function renderAll() {
     const myCatalog = document.querySelector("#myCatalogRow");
@@ -189,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderAll();
     filtrarPorNome();
     filtrarPorTipo();
+    initColectibles();
 });
 
 // Dar refresh da página caso a local storage dos projetos ou eventos mude

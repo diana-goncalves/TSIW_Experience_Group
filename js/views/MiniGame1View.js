@@ -1,37 +1,45 @@
 import {addgamesCompleted,checkGameCompleted,getCodeByIndex} from "../models/gameStateModel.js"
 
-let options = [
-    {
-        nome: "CSS",
-        certo: `../../media/img/ER-assets/mini-game1/css1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/css1.png`,`../../media/img/ER-assets/mini-game1/css2.png`,`../../media/img/ER-assets/mini-game1/css3.png`,`../../media/img/ER-assets/mini-game1/css4.png`]
-    },
-    {
-        nome: "HTML",
-        certo: `../../media/img/ER-assets/mini-game1/html1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/html2.png`,`../../media/img/ER-assets/mini-game1/html3.png`,`../../media/img/ER-assets/mini-game1/html4.png`,`../../media/img/ER-assets/mini-game1/html1.png`]
-    },
-    {
-        nome: "vscode",
-        certo: `../../media/img/ER-assets/mini-game1/vscode1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/vscode1.png`,`../../media/img/ER-assets/mini-game1/vscode2.png`,`../../media/img/ER-assets/mini-game1/vscode3.png`,`../../media/img/ER-assets/mini-game1/vscode4.png`]
-    },
-    {
-        nome: "Arduino",
-        certo: `../../media/img/ER-assets/mini-game1/arduino1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/arduino2.png`,`../../media/img/ER-assets/mini-game1/arduino3.png`,`../../media/img/ER-assets/mini-game1/arduino1.png`,`../../media/img/ER-assets/mini-game1/arduino4.png`]
-    },
-    {
-        nome: "Bootstrap",
-        certo: `../../media/img/ER-assets/mini-game1/bootstrap1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/bootstrap2.png`,`../../media/img/ER-assets/mini-game1/bootstrap3.png`,`../../media/img/ER-assets/mini-game1/bootstrap4.png`,`../../media/img/ER-assets/mini-game1/bootstrap1.png`]
-    },
-    {
-        nome: "Python",
-        certo: `../../media/img/ER-assets/mini-game1/python1.png`,
-        opt: [`../../media/img/ER-assets/mini-game1/python1.png`,`../../media/img/ER-assets/mini-game1/python2.png`,`../../media/img/ER-assets/mini-game1/python3.png`,`../../media/img/ER-assets/mini-game1/python4.png`]
+function fillOptions() {
+    let options = [
+        {
+            nome: "CSS",
+            certo: `../../media/img/ER-assets/mini-game1/css1.png`,
+            opt: [`../../media/img/ER-assets/mini-game1/css1.png`,`../../media/img/ER-assets/mini-game1/css2.png`,`../../media/img/ER-assets/mini-game1/css3.png`,`../../media/img/ER-assets/mini-game1/css4.png`]
+        },
+        {
+            nome: "HTML",
+            certo: `../../media/img/ER-assets/mini-game1/html1.png`,
+            opt: [`../../media/img/ER-assets/mini-game1/html2.png`,`../../media/img/ER-assets/mini-game1/html3.png`,`../../media/img/ER-assets/mini-game1/html4.png`,`../../media/img/ER-assets/mini-game1/html1.png`]
+        },
+        {
+            nome: "vscode",
+            certo: `../../media/img/ER-assets/mini-game1/vscode1.png`,
+            opt: [`../../media/img/ER-assets/mini-game1/vscode1.png`,`../../media/img/ER-assets/mini-game1/vscode2.png`,`../../media/img/ER-assets/mini-game1/vscode3.png`,`../../media/img/ER-assets/mini-game1/vscode4.png`]
+        },
+        {
+            nome: "Arduino",
+            certo: `../../media/img/ER-assets/mini-game1/arduino1.png`,
+            opt: [`../../media/img/ER-assets/mini-game1/arduino2.png`,`../../media/img/ER-assets/mini-game1/arduino3.png`,`../../media/img/ER-assets/mini-game1/arduino1.png`,`../../media/img/ER-assets/mini-game1/arduino4.png`]
+        },
+        {
+            nome: "Bootstrap",
+            certo: `../../media/img/ER-assets/mini-game1/bootstrap1.png`,
+            opt: [`../../media/img/ER-assets/mini-game1/bootstrap2.png`,`../../media/img/ER-assets/mini-game1/bootstrap3.png`,`../../media/img/ER-assets/mini-game1/bootstrap4.png`,`../../media/img/ER-assets/mini-game1/bootstrap1.png`]
+        },
+        {
+            nome: "Python",
+            certo: `../../media/img/ER-assets/mini-game1/python1.png`,
+            opt: [`../../media/img/ER-assets/mini-game1/python1.png`,`../../media/img/ER-assets/mini-game1/python2.png`,`../../media/img/ER-assets/mini-game1/python3.png`,`../../media/img/ER-assets/mini-game1/python4.png`]
+        }
+    ];
+    if (localStorage.minigame1) {
+        const temp = JSON.parse(localStorage.minigame1);
+        for (const ex of temp) {
+            options.push(ex)
+        }    
     }
-];
+}
 let Exercise = [];
 let progress = 1;
 let modalGame =  new bootstrap.Modal(document.querySelector("#miniGame1"));
