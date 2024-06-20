@@ -62,7 +62,7 @@ function entradaView() {
             e.preventDefault();
             NewGame();
             resetInventory();
-            resetCollectibles();
+            //resetCollectibles();
             
             GameStateView("entrada");
         })

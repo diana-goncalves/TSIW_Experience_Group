@@ -1,7 +1,7 @@
 import { updateUserCollectibles, getUserLogged } from "../models/UserModel.js";
 
 let countdown;
-let time = 100;
+let time = 15;
 let countdownTime = time * 60; // 30 minutos
 let isPaused = false;
 let havePause = false;
